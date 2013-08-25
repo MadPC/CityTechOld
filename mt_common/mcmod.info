@@ -1,0 +1,20 @@
+[
+{
+  "modid": "MT",
+  "name": "MadTech",
+  "description": "MadTech",
+  "version": "@VERSION@",
+  "url": "www.github.com/madpc/MadTech",
+  "updateUrl": "",
+  "authorList": [
+    "reinei","advtech","johulk"
+  ],
+  "credits": "By Reinei, Advtech, Johulk, and §4MadPC§r Crew",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]

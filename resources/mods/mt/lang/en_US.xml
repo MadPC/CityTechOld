@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+		<comment>English (en_US) Localization File</comment>
+		<entry key="item.ingotAluminium.name">Aluminum Ingot</entry>
+		<entry key="item.ingotCopper.name">Copper ingot</entry>
+		<entry key="item.ingotTin.name">Tin Ingot</entry>
+		<entry key="item.ingotPlatinum.name">Platinum Ingot</entry>
+		<entry key="item.ingotPalladium.name">Palladium Ingot</entry>
+		<entry key="item.ingotSilver.name">Silver Ingot</entry>
+		<entry key="item.wiring.name">Wiring</entry>
+		<entry key="item.silicon.name">Silicon</entry>
+		<entry key="item.rubber.name">Rubber</entry>
+		<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
+		<entry key="tile.oreCopper.name">Copper Ore</entry>
+		<entry key="tile.orePalladium.name">Palladium Ore</entry>
+		<entry key="tile.orePlatinum.name">Platinum Ore</entry>
+		<entry key="tile.oreSilver.name">Silver Ore</entry>
+		<entry key="tile.oreTin.name">Tin Ore</entry>
+		<entry key="tile.liquidsilicon.name">Liquid Silicon</entry>
+		<entry key="tile.electrolyser.name">Electrolyser</entry>
+		<entry key="itemGroup.MT">Mad Tech</entry>
+</properties>
