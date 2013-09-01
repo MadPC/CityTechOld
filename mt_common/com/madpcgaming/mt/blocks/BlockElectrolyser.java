@@ -2,8 +2,6 @@ package com.madpcgaming.mt.blocks;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -18,8 +16,6 @@ import com.madpcgaming.mt.lib.Reference;
 import com.madpcgaming.mt.lib.Strings;
 import com.madpcgaming.mt.lib.Utils;
 import com.madpcgaming.mt.tileentitys.TileElectrolyser;
-
-import cpw.mods.fml.common.network.FMLNetworkHandler;
 
 public class BlockElectrolyser extends BlockContainer
 {

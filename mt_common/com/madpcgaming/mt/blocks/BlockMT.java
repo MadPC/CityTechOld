@@ -2,15 +2,10 @@ package com.madpcgaming.mt.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-
 import net.minecraftforge.common.MinecraftForge;
 
 import com.madpcgaming.mt.MadTech;
 import com.madpcgaming.mt.lib.Reference;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockMT extends Block
 {
