@@ -23,4 +23,9 @@ public class UniversalElectricityHandler
 	{
 		return f * CONVERT_TO;
 	}
+	
+	public float convertFromUE(float f)
+	{
+		return f / CONVERT_TO;
+	}
 }

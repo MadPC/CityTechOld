@@ -4,6 +4,8 @@ import net.minecraft.creativetab.CreativeTabs;
 
 import com.madpcgaming.mt.blocks.ModBlocks;
 import com.madpcgaming.mt.core.proxy.CommonProxy;
+import com.madpcgaming.mt.handlers.ConfigurationHandler;
+import com.madpcgaming.mt.handlers.LocalizationHandler;
 import com.madpcgaming.mt.items.ModItems;
 import com.madpcgaming.mt.lib.Reference;
 
@@ -27,16 +29,24 @@ public class MadTech
 	public static CreativeTabs	tabsMT	= new CreativeTabMT(CreativeTabs.getNextID(), Reference.MOD_ID);
 
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event){
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+		LocalizationHandler.loadLanguages();
+		
 		ModBlocks.init();
 		ModItems.init();
 	}
+	
 	@EventHandler
-	public void load(FMLInitializationEvent event){
+	public void load(FMLInitializationEvent event)
+	{
 		
 	}
+	
 	@EventHandler
-	public void modsLoaded(FMLPostInitializationEvent event){
+	public void modsLoaded(FMLPostInitializationEvent event)
+	{
 		
 	}
 }

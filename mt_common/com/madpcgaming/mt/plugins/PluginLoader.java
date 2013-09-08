@@ -10,19 +10,17 @@ public class PluginLoader
 	/**
 	 * Array Holding small Humanreadable Identifiers
 	 */
-	private static String[]				plugins			= new String[] { "CC Computers" };
+	private static String[]				plugins			= new String[] { "" };
 	
 	/**
 	 * Array Holding the Corresponding Classes
 	 */
-	private static String[]				pluginClasses	= new String[] { "dan200.computer.api.ComputerCraftAPI" };
+	private static String[]				pluginClasses	= new String[] { "" };
 	
 	private static Class<?>[]			pluginClass		= new Class<?>[pluginClasses.length];
 	
 	// Keep it a Singleton!
-	private PluginLoader()
-	{
-	}
+	private PluginLoader() {}
 	
 	public void loadPlugins()
 	{

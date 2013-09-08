@@ -28,18 +28,21 @@ public class TileElectrolyser extends TileEntity implements IFluidHandler, IEner
 	
 	/** Slot 0 */
 	public FluidTank		ingredient			= new FluidTank(LIQUID_PER_INPUT);
+	
 	/** Slot 1 */
 	public FluidTank		result1				= new FluidTank(LIQUID_PER_OUTPUT);
+	
 	/** Slot 2 */
 	public FluidTank		result2				= new FluidTank(LIQUID_PER_OUTPUT);
 	private EnergyHandler	powerProvider;
 	
-	// private boolean isActive;
+	private boolean active;
 	
 	public TileElectrolyser()
 	{
 		powerProvider = new EnergyHandler(this.xCoord, this.yCoord, this.zCoord);
 		this.inv = new ItemStack[3];
+		active = false;
 	}
 	
 	// STANDART BLOCK STUFF
@@ -48,7 +51,7 @@ public class TileElectrolyser extends TileEntity implements IFluidHandler, IEner
 	@Override
 	public boolean isActive()
 	{
-		return false;
+		return active;
 	}
 	
 	@Override
@@ -129,7 +132,7 @@ public class TileElectrolyser extends TileEntity implements IFluidHandler, IEner
 	@Override
 	public String getInvName()
 	{
-		return "Electronical Splitter";
+		return "electronical.splitter";
 	}
 	
 	@Override
@@ -147,7 +150,7 @@ public class TileElectrolyser extends TileEntity implements IFluidHandler, IEner
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer entityplayer)
 	{
-		return worldObj.getBlockTileEntity(xCoord, yCoord, zCoord) == this;
+		return (worldObj.getBlockTileEntity(xCoord, yCoord, zCoord) == this) && (entityplayer.getDistanceSq(xCoord, yCoord, zCoord) <=64);
 	}
 	
 	@Override
@@ -186,8 +189,9 @@ public class TileElectrolyser extends TileEntity implements IFluidHandler, IEner
 	
 	/**
 	 * Returns information about the possible tanks for the chosen direction:
-	 * Up/down: ingredient slot Sides: result1 and result2 slots. Unknown:
-	 * ingredient, result1 and result2 slots.
+	 * Up/down: ingredient slot 
+	 * Sides: result1 and result2 slots. 
+	 * Unknown: ingredient, result1 and result2 slots.
 	 * 
 	 * @return A array of possible Tanks for the chosen direction.
 	 */
@@ -228,7 +232,6 @@ public class TileElectrolyser extends TileEntity implements IFluidHandler, IEner
 	@Override
 	public FluidStack drain(ForgeDirection from, FluidStack resource, boolean doDrain)
 	{
-		
 		return drain(from, resource.amount, doDrain);
 	}
 	
@@ -269,15 +272,18 @@ public class TileElectrolyser extends TileEntity implements IFluidHandler, IEner
 	@Override
 	public boolean canFill(ForgeDirection from, Fluid fluid)
 	{
-		// TODO NYI!
-		return true;
+		if (from == ForgeDirection.DOWN || from == ForgeDirection.UP)
+			if (this.ingredient.getFluid() == null || this.ingredient.getFluid().getFluid().getID() == fluid.getID())
+				return true;
+		return false;
 	}
 	
 	@Override
 	public boolean canDrain(ForgeDirection from, Fluid fluid)
 	{
-		// TODO NYI!
-		return true;
+		if (from != ForgeDirection.DOWN && from != ForgeDirection.UP)
+			return true;
+		return false;
 	}
 	
 	// Fluid Helper methods
@@ -297,10 +303,64 @@ public class TileElectrolyser extends TileEntity implements IFluidHandler, IEner
 	/**
 	 * Reads a tile entity from NBT.
 	 */
-	public void readFromNBT(NBTTagCompound par1NBTTagCompound)
+	@Override
+	public void readFromNBT(NBTTagCompound par1)
 	{
-		super.readFromNBT(par1NBTTagCompound);
+		super.readFromNBT(par1);
 		this.powerProvider.updatePosition(this.xCoord, this.yCoord, this.zCoord);
+		this.powerProvider.readFromNBT(par1);
+		
+		//own stuff
+		NBTTagCompound fluids = par1.getCompoundTag("fluids");
+		
+		this.ingredient.readFromNBT(fluids.getCompoundTag("Input"));
+		this.result1.readFromNBT(fluids.getCompoundTag("Output1"));
+		this.result2.readFromNBT(fluids.getCompoundTag("Output2"));
+		
+		NBTTagCompound invtag = par1.getCompoundTag("Inventory");
+		for (int i = 0; i < this.inv.length; i++)
+		{
+			NBTTagCompound itemtag = invtag.getCompoundTag("Slot" + i);
+			inv[i] = ItemStack.loadItemStackFromNBT(itemtag);
+		}
+	}
+	
+	@Override
+	public void writeToNBT(NBTTagCompound par1)
+	{
+		super.writeToNBT(par1);
+		
+		//power
+		this.powerProvider.writeToNBT(par1);
+		
+		//own stuff
+		//fluids
+		NBTTagCompound fluids = new NBTTagCompound();
+		
+		NBTTagCompound ingredient = new NBTTagCompound();
+		NBTTagCompound res1 = new NBTTagCompound();
+		NBTTagCompound res2 = new NBTTagCompound();
+		this.ingredient.writeToNBT(ingredient);
+		this.result1.writeToNBT(res1);
+		this.result2.writeToNBT(res2);
+		
+		fluids.setCompoundTag("Input", ingredient);
+		fluids.setCompoundTag("Output1", res1);
+		fluids.setCompoundTag("Output2", res2);
+		
+		par1.setCompoundTag("Fluids", fluids);
+		
+		//inventory
+		NBTTagCompound invtag = new NBTTagCompound();
+		for (int i = 0; i < this.inv.length; i++)
+		{
+			ItemStack item = inv[i];
+			NBTTagCompound itemtag = new NBTTagCompound();
+			item.writeToNBT(itemtag);
+			invtag.setCompoundTag("Slot" + i, itemtag);
+		}
+		
+		par1.setCompoundTag("Inventory", invtag);
 	}
 	
 	@Override

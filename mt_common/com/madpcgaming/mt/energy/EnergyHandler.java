@@ -1,5 +1,6 @@
 package com.madpcgaming.mt.energy;
 
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
@@ -120,5 +121,15 @@ public class EnergyHandler
 			ret += f;
 		}
 		return ret;
+	}
+
+	public void readFromNBT(NBTTagCompound par1)
+	{
+		par1.setFloat("Energy", this.Energy);
+	}
+
+	public void writeToNBT(NBTTagCompound par1)
+	{
+		this.Energy = par1.getFloat("Energy");
 	}
 }

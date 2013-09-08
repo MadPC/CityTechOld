@@ -65,7 +65,6 @@ public class CableTE extends TileEntity implements IEnergyConductor
 		}
 	}
 	
-	@SideOnly(Side.CLIENT)
 	public void update()
 	{
 		for (int i = 0; i < 6; i++)
@@ -89,9 +88,8 @@ public class CableTE extends TileEntity implements IEnergyConductor
 	@Override
 	public void updateEntity()
 	{
-		if (this.worldObj.isRemote)
-			this.update();
-		else
+		this.update();
+		if (!this.worldObj.isRemote)
 			energy.update(this.worldObj);
 	}
 	
@@ -109,9 +107,19 @@ public class CableTE extends TileEntity implements IEnergyConductor
 	/**
 	 * Reads a tile entity from NBT.
 	 */
-	public void readFromNBT(NBTTagCompound par1NBTTagCompound)
+	public void readFromNBT(NBTTagCompound par1)
 	{
-		super.readFromNBT(par1NBTTagCompound);
+		super.readFromNBT(par1);
 		this.energy.updatePosition(this.xCoord, this.yCoord, this.zCoord);
+		this.energy.readFromNBT(par1);
 	}
+	
+	/**
+     * Writes a tile entity to NBT.
+     */
+    public void writeToNBT(NBTTagCompound par1)
+    {
+    	super.writeToNBT(par1);
+    	this.energy.writeToNBT(par1);
+    }
 }
