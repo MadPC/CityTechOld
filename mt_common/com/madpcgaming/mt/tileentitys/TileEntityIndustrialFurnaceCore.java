@@ -3,6 +3,7 @@ package com.madpcgaming.mt.tileentitys;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
@@ -330,7 +331,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	@Override
 	public boolean canExtractItem(int i, ItemStack itemstack, int j) {
 		
-		return false;
+		return j != 0 || i != 1 || itemstack.itemID == Item.bucketEmpty.itemID;
 	}
 	@Override
 	public void writeToNBT(NBTTagCompound tagCompound)
