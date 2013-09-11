@@ -17,6 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ElectrolyserContainer extends Container
 {
 	private TileElectrolyser	tile;
+	@SuppressWarnings("unused")
 	private InventoryPlayer		inv;
 	
 	public ElectrolyserContainer(InventoryPlayer par1InventoryPlayer, TileElectrolyser tile)

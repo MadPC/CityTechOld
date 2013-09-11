@@ -19,5 +19,7 @@
 		<entry key="tile.oreTin.name">Tin Ore</entry>
 		<entry key="tile.liquidsilicon.name">Liquid Silicon</entry>
 		<entry key="tile.electrolyser.name">Electrolyser</entry>
+		<entry key="tile.coreFurnace.name"> Industrial Furnace Core </entry>
+		<entry key="tile.dummyFurnace.name"> Industrial Furnace Block </entry>	
 		<entry key="itemGroup.MT">Mad Tech</entry>
 </properties>

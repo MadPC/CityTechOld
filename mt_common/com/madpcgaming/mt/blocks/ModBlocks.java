@@ -10,6 +10,8 @@ import com.madpcgaming.mt.lib.Strings;
 import com.madpcgaming.mt.tileentitys.CableTE;
 import com.madpcgaming.mt.tileentitys.DrainTE;
 import com.madpcgaming.mt.tileentitys.TileElectrolyser;
+import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceCore;
+import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceDummy;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -26,6 +28,8 @@ public class ModBlocks
 	public static Block	SiliconFlowing;
 	public static Block	CableCopper;
 	public static Block	BlockElectrolyser;
+	public static Block IndustrialFurnaceCore;
+	public static Block IndustrialFurnaceDummy;
 	
 	/**
 	 * Hard coded
@@ -51,6 +55,8 @@ public class ModBlocks
 		SuperDrain = new SuperDrain(BlockIds.COPPER_CABLE + 1);
 		
 		BlockElectrolyser = new BlockElectrolyser(BlockIds.BLOCK_ELECTROLYSER);
+		IndustrialFurnaceCore = new BlockIndustrialFurnaceCore(BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
+		IndustrialFurnaceDummy = new BlockIndustrialFurnaceDummy(BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
 		
 		GameRegistry.registerBlock(AluminumOre, Strings.ALUMINUM_ORE_NAME);
 		GameRegistry.registerBlock(CopperOre, Strings.COPPER_ORE_NAME);
@@ -62,6 +68,8 @@ public class ModBlocks
 		
 		GameRegistry.registerBlock(SuperDrain, "DEBUG_SUPER_DRAIN");
 		GameRegistry.registerBlock(BlockElectrolyser, Strings.ELECTROLYSER_NAME);
+		GameRegistry.registerBlock(IndustrialFurnaceCore, Strings.FURNACECORE_NAME);
+		GameRegistry.registerBlock(IndustrialFurnaceDummy, Strings.FURNACEDUMMY_NAME);
 		// GameRegistry.registerBlock(SiliconFlowing,
 		// Strings.SILICON_LIQUID_FLOWING);
 		// GameRegistry.registerBlock(SiliconStill,
@@ -70,6 +78,9 @@ public class ModBlocks
 		GameRegistry.registerTileEntity(CableTE.class, "MTcableCopper");
 		GameRegistry.registerTileEntity(DrainTE.class, "MTsuperDrain");
 		GameRegistry.registerTileEntity(TileElectrolyser.class, Strings.ELECTROLYSER_NAME);
+		GameRegistry.registerTileEntity(TileEntityIndustrialFurnaceCore.class, Strings.FURNACECORE_NAME);
+		GameRegistry.registerTileEntity(TileEntityIndustrialFurnaceDummy.class, Strings.FURNACEDUMMY_NAME);
+		
 		
 		initOreDictionaryRegister();
 		initFluidDictionary();

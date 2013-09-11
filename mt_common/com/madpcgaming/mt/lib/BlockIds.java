@@ -12,7 +12,9 @@ public class BlockIds
 	// public static int SILICON_LIQUID_FLOWING_DEFAULT = 2995;
 	public static int		SILICON_LIQUID_STILL_DEFAULT	= 2996;
 	public static int		COPPER_CABLE_DEFAULT			= 2997;
-	public static final int	BLOCK_ELECTROLYSER_DEFAULT		= 3000;
+	public static int		BLOCK_ELECTROLYSER_DEFAULT		= 3000;
+	public static int		BLOCK_INDUSTRIAL_FURNACE_CORE_DEFAULT = 3001;
+	public static int 		BLOCK_INDUSTRIAL_FURNACE_DUMMY_DEFAULT = 3002;
 	
 	public static int		ALUMINUM_ORE;
 	public static int		COPPER_ORE;
@@ -24,5 +26,7 @@ public class BlockIds
 	// public static int SILICON_LIQUID_FLOWING;
 	public static int		COPPER_CABLE;
 	public static int		BLOCK_ELECTROLYSER;
+	public static int 		BLOCK_INDUSTRIAL_FURNACE_CORE;
+	public static int		BLOCK_INDUSTRIAL_FURNACE_DUMMY;
 	
 }

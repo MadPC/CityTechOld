@@ -8,9 +8,6 @@ import com.madpcgaming.mt.energy.EnergyHandler;
 import com.madpcgaming.mt.energy.interfaces.IEnergyConductor;
 import com.madpcgaming.mt.helpers.OrientationHelper;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 public class CableTE extends TileEntity implements IEnergyConductor
 {
 	

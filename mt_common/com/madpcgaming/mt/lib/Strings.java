@@ -23,5 +23,7 @@ public class Strings
 	public static final String	COPPER_CABLE_NAME		= "cableCopper";
 	public static final String	ELECTROLYSER_NAME		= "electrolyser";
 	public static final String  MACHINEBLOCK_NAME       = "machineblock";
+	public static final String  FURNACECORE_NAME 		= "coreFurnace";
+	public static final String  FURNACEDUMMY_NAME 		= "dummyFurnace";
 	
 }
