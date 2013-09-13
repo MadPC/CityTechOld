@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.material.Material;
 
-import com.madpcgaming.mt.items.ModItems;
+import com.madpcgaming.mt.lib.BlockIds;
 import com.madpcgaming.mt.lib.Strings;
 
 public class SilverOre extends BlockMT
@@ -20,7 +20,7 @@ public class SilverOre extends BlockMT
 	@Override
 	public int idDropped(int par1, Random random, int par3)
 	{
-		return ModItems.SilverIngot.itemID;
+		return BlockIds.SLIVER_ORE;
 	}
 	
 	@Override

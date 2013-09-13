@@ -2,6 +2,7 @@ package com.madpcgaming.mt.blocks;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -29,7 +30,15 @@ public class BlockElectrolyser extends BlockContainer
 		this.setUnlocalizedName(Strings.ELECTROLYSER_NAME);
 		this.field_111026_f = this.getUnlocalizedName();
 		this.func_111022_d(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
+		
 	}
+	
+	@Override
+	public void registerIcons(IconRegister iconRegister)
+	{
+		blockIcon = iconRegister.registerIcon("mt:BlockElectrolyser");
+	}
+	
 	
 	@Override
 	public TileEntity createNewTileEntity(World world)
