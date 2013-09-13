@@ -7,15 +7,15 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityIndustrialFurnaceDummy extends TileEntity implements
-		ISidedInventory {
-	
+		ISidedInventory
+{
 	TileEntityIndustrialFurnaceCore tileEntityCore;
 	int coreX;
 	int coreY;
 	int coreZ;
 
-	public TileEntityIndustrialFurnaceDummy() 
-	{	
+	public TileEntityIndustrialFurnaceDummy()
+	{
 	}
 	
 	public void setCore(TileEntityIndustrialFurnaceCore core)
@@ -30,18 +30,8 @@ public class TileEntityIndustrialFurnaceDummy extends TileEntity implements
 	{
 		if(tileEntityCore == null)
 			tileEntityCore = (TileEntityIndustrialFurnaceCore)worldObj.getBlockTileEntity(coreX, coreY, coreZ);
+		
 		return tileEntityCore;
-	}
-	
-	@Override
-	public void readFromNBT(NBTTagCompound tagCompound)
-	{
-		super.readFromNBT(tagCompound);
-		
-		coreX = tagCompound.getInteger("CoreX");
-		coreY = tagCompound.getInteger("CoreY");
-		coreZ = tagCompound.getInteger("CoreZ");
-		
 	}
 	
 	@Override
@@ -55,93 +45,91 @@ public class TileEntityIndustrialFurnaceDummy extends TileEntity implements
 	}
 
 	@Override
-	public int getSizeInventory() {
-		// TODO Auto-generated method stub
+	public int getSizeInventory()
+	{
 		return tileEntityCore.getSizeInventory();
 	}
 
 	@Override
-	public ItemStack getStackInSlot(int i) {
-		// TODO Auto-generated method stub
-		return tileEntityCore.getStackInSlot(i);
+	public ItemStack getStackInSlot(int slot)
+	{
+		return tileEntityCore.getStackInSlot(slot);
 	}
 
 	@Override
-	public ItemStack decrStackSize(int i, int j) {
-		// TODO Auto-generated method stub
-		return tileEntityCore.decrStackSize(i, j);
+	public ItemStack decrStackSize(int slot, int count)
+	{
+		return tileEntityCore.decrStackSize(slot, count);
 	}
 
 	@Override
-	public ItemStack getStackInSlotOnClosing(int i) {
-		// TODO Auto-generated method stub
-		return tileEntityCore.getStackInSlotOnClosing(i);
+	public ItemStack getStackInSlotOnClosing(int slot)
+	{
+		return tileEntityCore.getStackInSlotOnClosing(slot);
 	}
 
 	@Override
-	public void setInventorySlotContents(int i, ItemStack itemstack) {
-		// TODO Auto-generated method stub
-		tileEntityCore.setInventorySlotContents(i, itemstack);
+	public void setInventorySlotContents(int slot, ItemStack itemStack)
+	{
+		tileEntityCore.setInventorySlotContents(slot, itemStack);
 	}
 
 	@Override
-	public String getInvName() {
-		// TODO Auto-generated method stub
+	public String getInvName()
+	{
 		return tileEntityCore.getInvName();
 	}
 
 	@Override
-	public boolean isInvNameLocalized() {
-		// TODO Auto-generated method stub
+	public boolean isInvNameLocalized()
+	{
 		return tileEntityCore.isInvNameLocalized();
 	}
 
 	@Override
-	public int getInventoryStackLimit() {
-		// TODO Auto-generated method stub
+	public int getInventoryStackLimit()
+	{
 		return tileEntityCore.getInventoryStackLimit();
 	}
 
 	@Override
-	public boolean isUseableByPlayer(EntityPlayer entityplayer) {
-		// TODO Auto-generated method stub
-		return worldObj.getBlockTileEntity(xCoord, yCoord, zCoord) != this ? false : entityplayer.getDistanceSq((double)xCoord + 0.5, (double)yCoord + 0.5, (double)zCoord + 0.5) <= 64.0;
+	public boolean isUseableByPlayer(EntityPlayer entityPlayer)
+	{
+		return worldObj.getBlockTileEntity(xCoord, yCoord, zCoord) != this ? false : entityPlayer.getDistanceSq((double)xCoord +0.5f, (double)yCoord + 0.5f, (double)zCoord + 0.5f) <= 64.0;
 	}
 
 	@Override
-	public void openChest() {
-		// TODO Auto-generated method stub
-
+	public void openChest()
+	{
 	}
 
 	@Override
-	public void closeChest() {
-		// TODO Auto-generated method stub
-
+	public void closeChest()
+	{
 	}
 
 	@Override
-	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
-		// TODO Auto-generated method stub
-		return tileEntityCore.isItemValidForSlot(i, itemstack);
+	public boolean isItemValidForSlot(int slot, ItemStack itemStack)
+	{
+		return tileEntityCore.isItemValidForSlot(slot, itemStack);
 	}
 
 	@Override
-	public int[] getAccessibleSlotsFromSide(int var1) {
-		// TODO Auto-generated method stub
-		return tileEntityCore.getAccessibleSlotsFromSide(var1);
+	public int[] getAccessibleSlotsFromSide(int par1)
+	{
+		return tileEntityCore.getAccessibleSlotsFromSide(par1);
 	}
 
 	@Override
-	public boolean canInsertItem(int i, ItemStack itemstack, int j) {
-		// TODO Auto-generated method stub
-		return tileEntityCore.canInsertItem(i, itemstack, j);
+	public boolean canInsertItem(int slot, ItemStack itemStack, int count)
+	{
+		return tileEntityCore.canInsertItem(slot, itemStack, count);
 	}
 
 	@Override
-	public boolean canExtractItem(int i, ItemStack itemstack, int j) {
-		// TODO Auto-generated method stub
-		return tileEntityCore.canExtractItem(i, itemstack, j);
+	public boolean canExtractItem(int slot, ItemStack itemStack, int count)
+	{
+		return tileEntityCore.canExtractItem(slot, itemStack, count);
 	}
 
 }

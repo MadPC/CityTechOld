@@ -8,7 +8,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnace;
 import net.minecraft.item.ItemStack;
 
-public class ContainerIndustrialFurnace extends Container 
+public class ContainerIndustrialFurnace extends Container
 {
 	private TileEntityIndustrialFurnaceCore tileEntity;
 	private int lastCookTime = 0;
@@ -16,16 +16,17 @@ public class ContainerIndustrialFurnace extends Container
 	private int lastItemBurnTime = 0;
 	
 
-	public ContainerIndustrialFurnace(InventoryPlayer playerInventory, TileEntityIndustrialFurnaceCore tileEntity) {
+	public ContainerIndustrialFurnace(InventoryPlayer playerInventory, TileEntityIndustrialFurnaceCore tileEntity)
+	{
 		this.tileEntity = tileEntity;
 		
-		//Input (just one for now?)
+		//input
 		addSlotToContainer(new Slot(tileEntity, 0, 56, 17));
 		
-		//Fuel
+		//fuel
 		addSlotToContainer(new Slot(tileEntity, 1, 56, 53));
 		
-		//Output (same as Input?)
+		//output
 		addSlotToContainer(new SlotFurnace(playerInventory.player, tileEntity, 2, 116, 35));
 		
 		bindPlayerInventory(playerInventory);
@@ -46,17 +47,15 @@ public class ContainerIndustrialFurnace extends Container
 	{
 		super.detectAndSendChanges();
 		
-		for (int i = 0; i < this.crafters.size(); i++)
+		for(int i = 0; i < this.crafters.size(); ++i)
 		{
 			ICrafting icrafting = (ICrafting)this.crafters.get(i);
 			
 			if(this.lastCookTime != this.tileEntity.furnaceCookTime)
 				icrafting.sendProgressBarUpdate(this, 0, this.tileEntity.furnaceCookTime);
-				
 			if(this.lastBurnTime != this.tileEntity.furnaceBurnTime)
 				icrafting.sendProgressBarUpdate(this, 1, this.tileEntity.furnaceBurnTime);
-			
-			if(this.lastItemBurnTime != this.tileEntity.currentItemBurnTime)
+			if(this.lastItemBurnTime != this.tileEntity.currentItemBurnTime);
 				icrafting.sendProgressBarUpdate(this, 2, this.tileEntity.currentItemBurnTime);
 		}
 		
@@ -85,18 +84,17 @@ public class ContainerIndustrialFurnace extends Container
 	}
 
 	@Override
-	public boolean canInteractWith(EntityPlayer entityPlayer) {
-		// TODO Auto-generated method stub
+	public boolean canInteractWith(EntityPlayer entityPlayer)
+	{
 		return tileEntity.isUseableByPlayer(entityPlayer);
 	}
 	
 	private void bindPlayerInventory(InventoryPlayer playerInventory)
 	{
-		//Inv
 		for(int y = 0; y < 3; y++)
 			for(int x = 0; x < 9; x++)
 				addSlotToContainer(new Slot(playerInventory, x + y * 9 + 9, 8 + x * 18, 84 + y * 18));
-		//ActionBar
+		
 		for(int x = 0; x < 9; x++)
 			addSlotToContainer(new Slot(playerInventory, x, 8 + x * 18, 142));
 	}
@@ -116,13 +114,13 @@ public class ContainerIndustrialFurnace extends Container
 				if(!this.mergeItemStack(stackInSlot, 3, 39, true))
 					return null;
 			}
-			else if (!this.mergeItemStack(stackInSlot, 0, 3, false))
+			else if(!this.mergeItemStack(stackInSlot, 0, 3, false))
 				return null;
 			
 			if(stackInSlot.stackSize == 0)
 				slotObject.putStack(null);
 			else
-				slotObject.onSlotChanged(); 
+				slotObject.onSlotChanged();
 			
 			if(stackInSlot.stackSize == stack.stackSize)
 				return null;

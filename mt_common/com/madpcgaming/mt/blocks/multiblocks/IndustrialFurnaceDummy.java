@@ -1,4 +1,4 @@
-package com.madpcgaming.mt.blocks;
+package com.madpcgaming.mt.blocks.multiblocks;
 
 import java.util.Random;
 
@@ -15,9 +15,11 @@ import com.madpcgaming.mt.lib.Strings;
 import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceCore;
 import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceDummy;
 
-public class BlockIndustrialFurnaceDummy extends BlockContainer {
+public class IndustrialFurnaceDummy extends BlockContainer
+{
 
-	public BlockIndustrialFurnaceDummy(int id) {
+	public IndustrialFurnaceDummy(int id)
+	{
 		super(id, Material.rock);
 		setUnlocalizedName(Strings.FURNACEDUMMY_NAME);
 		setStepSound(Block.soundStoneFootstep);
@@ -26,21 +28,21 @@ public class BlockIndustrialFurnaceDummy extends BlockContainer {
 	}
 	
 	@Override
-	public int idDropped(int id, Random random, int par3)
+	public int idDropped(int par1, Random par2Random, int par3)
 	{
-		return ModBlocks.IndustrialFurnaceDummy.blockID;
+		return Block.brick.blockID;
 	}
 
 	@Override
-	public TileEntity createNewTileEntity(World world) {
-		// TODO Auto-generated method stub
+	public TileEntity createNewTileEntity(World world)
+	{
 		return new TileEntityIndustrialFurnaceDummy();
 	}
+	
 	@Override
 	public void registerIcons(IconRegister iconRegister)
 	{
-		//Johulk or Krystian texture please
-		
+		blockIcon = iconRegister.registerIcon("madtech:brick");
 	}
 	
 	@Override
@@ -65,8 +67,9 @@ public class BlockIndustrialFurnaceDummy extends BlockContainer {
 		if(dummy != null && dummy.getCore() != null)
 		{
 			TileEntityIndustrialFurnaceCore core = dummy.getCore();
-			return core.getBlockType().onBlockActivated(world, core.xCoord, core.yCoord, core.zCoord, player, par6, par7, par8, par9);
+			return core.getBlockType().onBlockActivated(world, core.xCoord, core.yCoord, core.zCoord, player , par6, par7, par8, par9);
 		}
+		
 		return true;
 	}
 
