@@ -11,6 +11,7 @@
 		<entry key="item.wiring.name">Wiring</entry>
 		<entry key="item.silicon.name">Silicon</entry>
 		<entry key="item.rubber.name">Rubber</entry>
+		<entry key="item.wrench.name">Wrench</entry>
 		<entry key="tile.oreAluminum.name">Aluminum Ore</entry>
 		<entry key="tile.oreCopper.name">Copper Ore</entry>
 		<entry key="tile.orePalladium.name">Palladium Ore</entry>

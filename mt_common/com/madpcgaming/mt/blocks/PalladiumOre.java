@@ -4,7 +4,7 @@ import net.minecraft.block.material.Material;
 
 import java.util.Random;
 
-import com.madpcgaming.mt.lib.BlockIds;
+import com.madpcgaming.mt.items.ModItems;
 import com.madpcgaming.mt.lib.Strings;
 
 public class PalladiumOre extends BlockMT
@@ -19,7 +19,7 @@ public class PalladiumOre extends BlockMT
 	
 	public int idDropped(int par1, Random random, int par3)
 	{
-		return BlockIds.PALLADIUM_ORE;
+		return ModItems.PalladiumIngot.itemID;
 	}
 	
 	public int quantityDropped(Random random)

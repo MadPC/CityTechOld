@@ -14,13 +14,12 @@ public class ElectrolyserGUI extends GuiContainer
 	{
 		super(par1Container);
 		tile = t;
-		this.mc.thePlayer.sendChatMessage("Not working.");
 	}
 	
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
 	{
-		this.drawDefaultBackground();
+		
 	}
 	
 }

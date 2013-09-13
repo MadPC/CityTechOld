@@ -25,5 +25,6 @@ public class Strings
 	public static final String  MACHINEBLOCK_NAME       = "machineblock";
 	public static final String  FURNACECORE_NAME 		= "coreFurnace";
 	public static final String  FURNACEDUMMY_NAME 		= "dummyFurnace";
+	public static final String  WRENCH_ITEM_NAME        = "itemWrench";
 	
 }

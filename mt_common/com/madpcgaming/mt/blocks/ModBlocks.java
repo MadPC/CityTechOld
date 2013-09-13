@@ -14,7 +14,6 @@ import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceCore;
 import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceDummy;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ModBlocks
 {
@@ -81,7 +80,7 @@ public class ModBlocks
 		GameRegistry.registerTileEntity(TileElectrolyser.class, Strings.ELECTROLYSER_NAME);
 		GameRegistry.registerTileEntity(TileEntityIndustrialFurnaceCore.class, Strings.FURNACECORE_NAME);
 		GameRegistry.registerTileEntity(TileEntityIndustrialFurnaceDummy.class, Strings.FURNACEDUMMY_NAME);
-		LanguageRegistry.instance().addStringLocalization("itemGroup.mt", "en_US", "MadTech");
+		
 		
 		initOreDictionaryRegister();
 		initFluidDictionary();

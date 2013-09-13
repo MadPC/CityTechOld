@@ -4,10 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.madpcgaming.mt.lib.BlockIds;
 import com.madpcgaming.mt.lib.ItemIds;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems
 {
@@ -21,6 +18,8 @@ public class ModItems
 	public static Silicon			Silicon;
 	public static Rubber			Rubber;
 	public static Item				wireTester;
+	public static Wrench			Wrench;
+	
 	
 	public static void init()
 	{
@@ -35,16 +34,10 @@ public class ModItems
 		Wiring = new Wiring(ItemIds.WIRING_ITEM);
 		Silicon = new Silicon(ItemIds.SILICON_ITEM);
 		Rubber = new Rubber(ItemIds.RUBBER_ITEM);
-		
+		Wrench = new Wrench(ItemIds.WRENCH_ITEM);
+			
 		// Hardcoded due to DEBUG purposes only!
 		wireTester = new WireTester(ItemIds.RUBBER_ITEM + 1);
-		
-		GameRegistry.addSmelting(BlockIds.SLIVER_ORE,new ItemStack(SilverIngot),0.7F);
-		GameRegistry.addSmelting(BlockIds.ALUMINUM_ORE, new ItemStack(AluminumIngot), 0.7F);
-		GameRegistry.addSmelting(BlockIds.COPPER_ORE, new ItemStack(CopperIngot), 0.7F);
-		GameRegistry.addSmelting(BlockIds.PALLADIUM_ORE, new ItemStack(PalladiumIngot), 0.7F);
-		GameRegistry.addSmelting(BlockIds.PLATINUM_ORE, new ItemStack(PlatinumIngot), 0.7F);
-		GameRegistry.addSmelting(BlockIds.TIN_ORE, new ItemStack(TinIngot), 0.7F);
 		
 		initOreDictionaryRegister();
 	}
