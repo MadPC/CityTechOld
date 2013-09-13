@@ -59,6 +59,24 @@ public class ConfigurationHandler {
 					Strings.FURNACEDUMMY_NAME,
 					BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY_DEFAULT).getInt(
 					BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY_DEFAULT);
+			BlockIds.ALUMINUM_BLOCK = configuration.getBlock(
+					Strings.ALUMINUM_BLOCK_NAME, BlockIds.ALUMINUM_BLOCK)
+					.getInt(BlockIds.ALUMINUM_BLOCK_DEFAULT);
+			BlockIds.COPPER_BLOCK = configuration.getBlock(
+					Strings.COPPER_BLOCK_NAME, BlockIds.COPPER_BLOCK)
+					.getInt(BlockIds.COPPER_BLOCK_DEFAULT);
+			BlockIds.PALLADIUM_BLOCK = configuration.getBlock(
+					Strings.PALLADIUM_BLOCK_NAME, BlockIds.PALLADIUM_BLOCK)
+					.getInt(BlockIds.PALLADIUM_BLOCK_DEFAULT);
+			BlockIds.PLATINUM_BLOCK = configuration.getBlock(
+					Strings.PLATINUM_BLOCK_NAME, BlockIds.PLATINUM_BLOCK)
+					.getInt(BlockIds.PLATINUM_BLOCK_DEFAULT);
+			BlockIds.SILVER_BLOCK = configuration.getBlock(
+					Strings.SILVER_BLOCK_NAME, BlockIds.SILVER_BLOCK)
+					.getInt(BlockIds.SILVER_BLOCK_DEFAULT);
+			BlockIds.TIN_BLOCK = configuration.getBlock(
+					Strings.TIN_BLOCK_NAME, BlockIds.TIN_BLOCK)
+					.getInt(BlockIds.TIN_BLOCK_DEFAULT);
 
 			/* Item Configs */
 			ItemIds.ALUMINIUM_INGOT = configuration.getItem(

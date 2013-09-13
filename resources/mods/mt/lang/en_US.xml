@@ -22,5 +22,11 @@
 		<entry key="tile.electrolyser.name">Electrolyser</entry>
 		<entry key="tile.coreFurnace.name"> Industrial Furnace Core </entry>
 		<entry key="tile.dummyFurnace.name"> Industrial Furnace Block </entry>	
+		<entry key="tile.blockAluminum.name">Aluminum Block</entry>
+		<entry key="tile.blockCopper.name">Copper Block</entry>
+		<entry key="tile.blockPalladium.name">Palladium Block</entry>
+		<entry key="tile.blockPlatinum.name">Platinum Block</entry>
+		<entry key="tile.blockSilver.name">Silver Block</entry>
+		<entry key="tile.blockTin.name">Tin Block</entry>
 		<entry key="itemGroup.MT">Mad Tech</entry>
 </properties>

@@ -30,6 +30,12 @@ public class ModBlocks
 	public static Block	BlockElectrolyser;
 	public static Block IndustrialFurnaceCore;
 	public static Block IndustrialFurnaceDummy;
+	public static Block AluminumBlock;
+	public static Block CopperBlock;
+	public static Block PalladiumBlock;
+	public static Block PlatinumBlock;
+	public static Block SilverBlock;
+	public static Block TinBlock;
 	
 	/**
 	 * Hard coded
@@ -51,6 +57,13 @@ public class ModBlocks
 		SiliconStill = new SiliconLiquidStill(BlockIds.SILICON_LIQUID_STILL);
 		SiliconFlowing = new SiliconLiquidFlowing(BlockIds.SILICON_LIQUID_STILL - 1);
 		CableCopper = new SimpleCable(BlockIds.COPPER_CABLE);
+		AluminumBlock = new AluminumBlock(BlockIds.ALUMINUM_BLOCK);
+		CopperBlock = new CopperBlock(BlockIds.COPPER_BLOCK);
+		PalladiumBlock = new PalladiumBlock(BlockIds.PALLADIUM_BLOCK);
+		PlatinumBlock = new PlatinumBlock(BlockIds.PLATINUM_BLOCK);
+		SilverBlock = new SilverBlock(BlockIds.SILVER_BLOCK);
+		TinBlock = new TinBlock(BlockIds.TIN_BLOCK);
+		
 		
 		SuperDrain = new SuperDrain(BlockIds.COPPER_CABLE + 1);
 		
@@ -74,6 +87,12 @@ public class ModBlocks
 		// Strings.SILICON_LIQUID_FLOWING);
 		// GameRegistry.registerBlock(SiliconStill,
 		// Strings.SILICON_LIQUID_STILL);
+		GameRegistry.registerBlock(AluminumBlock, Strings.ALUMINUM_BLOCK_NAME);
+		GameRegistry.registerBlock(CopperBlock, Strings.COPPER_BLOCK_NAME);
+		GameRegistry.registerBlock(PalladiumBlock, Strings.PALLADIUM_BLOCK_NAME);
+		GameRegistry.registerBlock(PlatinumBlock, Strings.PLATINUM_BLOCK_NAME);
+		GameRegistry.registerBlock(SilverBlock, Strings.SILVER_BLOCK_NAME);
+		GameRegistry.registerBlock(TinBlock, Strings.TIN_BLOCK_NAME);
 		
 		GameRegistry.registerTileEntity(CableTE.class, "MTcableCopper");
 		GameRegistry.registerTileEntity(DrainTE.class, "MTsuperDrain");

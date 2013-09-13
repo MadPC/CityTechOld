@@ -26,5 +26,11 @@ public class Strings
 	public static final String  FURNACECORE_NAME 		= "coreFurnace";
 	public static final String  FURNACEDUMMY_NAME 		= "dummyFurnace";
 	public static final String  WRENCH_ITEM_NAME        = "itemWrench";
+	public static final String	ALUMINUM_BLOCK_NAME		= "blockAluminum";
+	public static final String	COPPER_BLOCK_NAME		= "blockCopper";
+	public static final String	PALLADIUM_BLOCK_NAME	= "blockPalladium";
+	public static final String	PLATINUM_BLOCK_NAME		= "blockPlatinum";
+	public static final String	SILVER_BLOCK_NAME		= "blockSilver";
+	public static final String	TIN_BLOCK_NAME			= "blockTin";
 	
 }

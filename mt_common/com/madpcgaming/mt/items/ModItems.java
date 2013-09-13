@@ -3,8 +3,11 @@ package com.madpcgaming.mt.items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-
+import com.madpcgaming.mt.blocks.ModBlocks;
+import com.madpcgaming.mt.lib.BlockIds;
 import com.madpcgaming.mt.lib.ItemIds;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems
 {
@@ -38,6 +41,25 @@ public class ModItems
 			
 		// Hardcoded due to DEBUG purposes only!
 		wireTester = new WireTester(ItemIds.RUBBER_ITEM + 1);
+		GameRegistry.addSmelting(BlockIds.SLIVER_ORE,new ItemStack(SilverIngot),0.7F);
+		GameRegistry.addSmelting(BlockIds.ALUMINUM_ORE, new ItemStack(AluminumIngot), 0.7F);
+		GameRegistry.addSmelting(BlockIds.COPPER_ORE, new ItemStack(CopperIngot), 0.7F);
+		GameRegistry.addSmelting(BlockIds.PALLADIUM_ORE, new ItemStack(PalladiumIngot), 0.7F);
+		GameRegistry.addSmelting(BlockIds.PLATINUM_ORE, new ItemStack(PlatinumIngot), 0.7F);
+		GameRegistry.addSmelting(BlockIds.TIN_ORE, new ItemStack(TinIngot), 0.7F);
+		
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.AluminumBlock, 1), new Object[] { "DDD", "DDD", "DDD", 'D', AluminumIngot });
+		GameRegistry.addShapelessRecipe(new ItemStack(AluminumIngot, 9), new Object[] {ModBlocks.AluminumBlock});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.CopperBlock, 1), new Object[] { "DDD", "DDD", "DDD", 'D', CopperIngot });
+		GameRegistry.addShapelessRecipe(new ItemStack(CopperIngot, 9), new Object[] {ModBlocks.CopperBlock});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.PalladiumBlock, 1), new Object[] { "DDD", "DDD", "DDD", 'D', PalladiumIngot });
+		GameRegistry.addShapelessRecipe(new ItemStack(PalladiumIngot, 9), new Object[] {ModBlocks.PalladiumBlock});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.PlatinumBlock, 1), new Object[] { "DDD", "DDD", "DDD", 'D', PlatinumIngot });
+		GameRegistry.addShapelessRecipe(new ItemStack(PlatinumIngot, 9), new Object[] {ModBlocks.PlatinumBlock});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.SilverBlock, 1), new Object[] { "DDD", "DDD", "DDD", 'D', SilverIngot });
+		GameRegistry.addShapelessRecipe(new ItemStack(SilverIngot, 9), new Object[] {ModBlocks.SilverBlock});
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.TinBlock, 1), new Object[] { "DDD", "DDD", "DDD", 'D', TinIngot });
+		GameRegistry.addShapelessRecipe(new ItemStack(TinIngot, 9), new Object[] {ModBlocks.TinBlock});
 		
 		initOreDictionaryRegister();
 	}

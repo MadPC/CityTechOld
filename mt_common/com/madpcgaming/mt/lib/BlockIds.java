@@ -15,6 +15,13 @@ public class BlockIds
 	public static int		BLOCK_ELECTROLYSER_DEFAULT		= 3000;
 	public static int		BLOCK_INDUSTRIAL_FURNACE_CORE_DEFAULT = 3001;
 	public static int 		BLOCK_INDUSTRIAL_FURNACE_DUMMY_DEFAULT = 3002;
+	public static int		ALUMINUM_BLOCK_DEFAULT			= 3003;
+	public static int		COPPER_BLOCK_DEFAULT			= 3004;
+	public static int		PALLADIUM_BLOCK_DEFAULT			= 3005;
+	public static int		PLATINUM_BLOCK_DEFAULT			= 3006;
+	public static int		SILVER_BLOCK_DEFAULT			= 3007;
+	public static int		TIN_BLOCK_DEFAULT				= 3008;
+
 	
 	public static int		ALUMINUM_ORE;
 	public static int		COPPER_ORE;
@@ -28,5 +35,12 @@ public class BlockIds
 	public static int		BLOCK_ELECTROLYSER;
 	public static int 		BLOCK_INDUSTRIAL_FURNACE_CORE;
 	public static int		BLOCK_INDUSTRIAL_FURNACE_DUMMY;
+	public static int		ALUMINUM_BLOCK;
+	public static int		COPPER_BLOCK;
+	public static int		PALLADIUM_BLOCK;
+	public static int		PLATINUM_BLOCK;
+	public static int		SILVER_BLOCK;
+	public static int		TIN_BLOCK;
+	
 	
 }
