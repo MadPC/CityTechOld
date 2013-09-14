@@ -5,7 +5,6 @@ import net.minecraft.block.material.Material;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.madpcgaming.mt.MadTech;
-import com.madpcgaming.mt.lib.Reference;
 
 public class BlockMT extends Block
 {
@@ -27,7 +26,7 @@ public class BlockMT extends Block
 	{
 		//This sets the variable used for auto texture allocation
 		//the substring removes 'tile.'
-		this.func_111022_d(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
+		
 	}
 	
 }

@@ -32,5 +32,6 @@ public class Strings
 	public static final String	PLATINUM_BLOCK_NAME		= "blockPlatinum";
 	public static final String	SILVER_BLOCK_NAME		= "blockSilver";
 	public static final String	TIN_BLOCK_NAME			= "blockTin";
+	public static final String	GUI_INDUSTRIAL_FURNACE	= "guiFurnaceIndustrial";
 	
 }

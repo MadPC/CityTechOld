@@ -137,6 +137,7 @@ public class ElectrolyserContainer extends Container
 		
 		for (int i = 0; i < this.crafters.size(); ++i)
 		{
+			@SuppressWarnings("unused")
 			ICrafting icrafting = (ICrafting) this.crafters.get(i);
 			
 			/*

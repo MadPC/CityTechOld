@@ -12,7 +12,6 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.madpcgaming.mt.MadTech;
-import com.madpcgaming.mt.lib.Reference;
 import com.madpcgaming.mt.lib.Strings;
 import com.madpcgaming.mt.lib.Utils;
 import com.madpcgaming.mt.tileentitys.TileElectrolyser;
@@ -27,8 +26,8 @@ public class BlockElectrolyser extends BlockContainer
 		this.setHardness(0.5F);
 		this.setCreativeTab(MadTech.tabsMT);
 		this.setUnlocalizedName(Strings.ELECTROLYSER_NAME);
-		this.field_111026_f = this.getUnlocalizedName();
-		this.func_111022_d(Reference.MOD_ID + ":" + this.getUnlocalizedName().substring(5));
+		this.textureName = this.getUnlocalizedName();
+		
 	}
 	
 	@Override
