@@ -17,6 +17,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
@@ -33,7 +34,8 @@ public class MadTech
 	{
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		LocalizationHandler.loadLanguages();
-		
+		NetworkRegistry.instance().registerGuiHandler(this, MadTech.proxy);
+		instance = this;
 		ModBlocks.init();
 		ModItems.init();
 	}
