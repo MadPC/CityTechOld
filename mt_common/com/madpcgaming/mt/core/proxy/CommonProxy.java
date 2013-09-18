@@ -8,7 +8,10 @@ import com.madpcgaming.mt.MadTech;
 import com.madpcgaming.mt.client.gui.ElectrolyserGUI;
 import com.madpcgaming.mt.helpers.LogHelper;
 import com.madpcgaming.mt.inventory.ElectrolyserContainer;
+import com.madpcgaming.mt.lib.GuiIds;
+import com.madpcgaming.mt.tileentitys.ContainerIndustrialFurnace;
 import com.madpcgaming.mt.tileentitys.TileElectrolyser;
+import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceCore;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -30,6 +33,11 @@ public class CommonProxy implements IGuiHandler
 		{
 			return new ElectrolyserContainer(player.inventory, (TileElectrolyser) t);
 		}
+		else if (ID == GuiIds.FURNACE_CORE)
+		{
+			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.getBlockTileEntity(x, y, z);
+			return new ContainerIndustrialFurnace(player.inventory, tileIndustrialFurnaceCore);
+		}
 		return null;
 	}
 	
@@ -41,6 +49,11 @@ public class CommonProxy implements IGuiHandler
 		if (ID == 0 && t instanceof TileElectrolyser)
 		{
 			return new ElectrolyserGUI(new ElectrolyserContainer(player.inventory, (TileElectrolyser) t), (TileElectrolyser) t);
+		}
+		else if (ID == GuiIds.FURNACE_CORE)
+		{
+			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.getBlockTileEntity(x, y, z);
+			return new ContainerIndustrialFurnace(player.inventory, tileIndustrialFurnaceCore);
 		}
 		return null;
 	}

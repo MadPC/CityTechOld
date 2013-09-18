@@ -7,9 +7,11 @@ import cpw.mods.fml.client.registry.ClientRegistry;
 
 public class ClientProxy extends CommonProxy
 {
-	
+
 	public void registerRenderings()
 	{
-		ClientRegistry.bindTileEntitySpecialRenderer(CableTE.class, new CableRenderer());
+		ClientRegistry.bindTileEntitySpecialRenderer(CableTE.class,
+				new CableRenderer());
 	}
+	
 }
