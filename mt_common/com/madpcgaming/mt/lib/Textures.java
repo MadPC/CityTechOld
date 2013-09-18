@@ -7,9 +7,11 @@ import com.madpcgaming.mt.helpers.ResourceLocationHelper;
 public class Textures
 {
 	//Base
-	public static final String GUI_SHEET_LOCATION = "textures/gui";
+	public static final String GUI_SHEET_LOCATION = "textures/gui/";
+	
 	
 	//GUI
 	public static final ResourceLocation GUI_INDUSTRIAL_FURNACE = ResourceLocationHelper.getResourceLocation(GUI_SHEET_LOCATION + "industrialFurnace.png");
+	
 	
 }

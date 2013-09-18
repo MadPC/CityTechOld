@@ -1,5 +1,7 @@
 package com.madpcgaming.mt.items;
 
+import net.minecraft.client.renderer.texture.IconRegister;
+
 
 public class Rubber extends ItemMT
 {
@@ -7,8 +9,12 @@ public class Rubber extends ItemMT
 	public Rubber(int id)
 	{
 		super(id);
-		// TODO Auto-generated constructor stub
 		afterInit();
+	}
+	
+	public void registerIcons(IconRegister iconRegister)
+	{
+		itemIcon = iconRegister.registerIcon("mt:Rubber");
 	}
 	
 }

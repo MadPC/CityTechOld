@@ -31,7 +31,7 @@ public class CopperBlock extends BlockMT
 	
 	public void registerIcons(IconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("mt:lolol");
+		blockIcon = iconRegister.registerIcon("mt:blockCopper");
 	}
 	
 }

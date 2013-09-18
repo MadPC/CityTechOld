@@ -30,8 +30,9 @@
 		<entry key="tile.blockPlatinum.name">Platinum Block</entry>
 		<entry key="tile.blockSilver.name">Silver Block</entry>
 		<entry key="tile.blockTin.name">Tin Block</entry>
-		<entry key="itemGroup.MT">Mad Tech</entry>
-		<entry key="container.guiFurnaceIndustrial"> Industrial Furnace</entry>
+		<entry key="tile.glassReinforced.name"> Reinforced Glass</entry>
+		<entry key="tile.stoneReinforced.name"> Reinforced Stone</entry>
+		<entry key="container.guiFurnaceIndustrial.name"> Industrial Furnace</entry>
 		<entry key="item.itemWrench.name">Wrench</entry>
 		<entry key="itemGroup.mt">Mad Tech</entry>
 

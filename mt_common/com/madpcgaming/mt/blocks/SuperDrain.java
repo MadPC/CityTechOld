@@ -2,6 +2,7 @@ package com.madpcgaming.mt.blocks;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
@@ -19,6 +20,11 @@ public class SuperDrain extends BlockContainer
 		this.blockHardness = 1.0f;
 		this.setCreativeTab(MadTech.tabsMT);
 		LanguageRegistry.addName(this, "A Quantum Drain. Drains TONS of Power.");
+	}
+	
+	public void registerIcons(IconRegister iconRegister)
+	{
+		blockIcon = iconRegister.registerIcon("mt:BlockDrain");
 	}
 	
 	@Override

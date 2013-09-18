@@ -40,7 +40,6 @@ public class GuiIndustrialFurnace extends GuiContainer
 	protected void drawGuiContainerBackgroundLayer(float f, int i, int j)
 	{
 		GL11.glColor4f(1f, 1f, 1f, 1f);
-		// func_110577_a = bindTexture?
 
 		this.mc.getTextureManager()
 				.bindTexture(Textures.GUI_INDUSTRIAL_FURNACE);

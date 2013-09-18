@@ -1,6 +1,7 @@
 package com.madpcgaming.mt.blocks;
 
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 
 import java.util.Random;
 
@@ -26,5 +27,8 @@ public class CopperOre extends BlockMT
 	{
 		return 1;
 	}
-	
+	public void registerIcons(IconRegister iconRegister)
+	{
+		blockIcon = iconRegister.registerIcon("mt:oreCopper");
+	}
 }

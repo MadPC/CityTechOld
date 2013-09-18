@@ -13,4 +13,5 @@ public class PlatinumIngot extends ItemMT
 		afterInit();
 	}
 	
+	
 }
