@@ -25,14 +25,15 @@
 		<entry key="tile.blockAluminum.name">Aluminum Block</entry>
 		<entry key="tile.blockCopper.name">Copper Block</entry>
 		<entry key="tile.blockPalladium.name">Palladium Block</entry>
+		<entry key="tile.reinforcedGlass.name">Reinforced Glass</entry>
+		<entry key="tile.reinforcedStone.name">Reinforced Stone</entry>
 		<entry key="tile.blockPlatinum.name">Platinum Block</entry>
 		<entry key="tile.blockSilver.name">Silver Block</entry>
 		<entry key="tile.blockTin.name">Tin Block</entry>
-<<<<<<< Updated upstream
 		<entry key="itemGroup.MT">Mad Tech</entry>
 		<entry key="container.guiFurnaceIndustrial"> Industrial Furnace</entry>
-=======
 		<entry key="item.itemWrench.name">Wrench</entry>
 		<entry key="itemGroup.mt">Mad Tech</entry>
->>>>>>> Stashed changes
+
+
 </properties>
