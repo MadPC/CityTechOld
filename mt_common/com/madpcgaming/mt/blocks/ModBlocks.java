@@ -5,8 +5,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import com.madpcgaming.mt.blocks.liquids.SiliconLiquidFlowing;
 import com.madpcgaming.mt.blocks.liquids.SiliconLiquidStill;
-import com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceCore;
-import com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceDummy;
 import com.madpcgaming.mt.lib.BlockIds;
 import com.madpcgaming.mt.lib.Strings;
 import com.madpcgaming.mt.tileentitys.CableTE;
@@ -70,8 +68,8 @@ public class ModBlocks
 		SuperDrain = new SuperDrain(BlockIds.COPPER_CABLE + 1);
 		
 		BlockElectrolyser = new BlockElectrolyser(BlockIds.BLOCK_ELECTROLYSER);
-		IndustrialFurnaceCore = new IndustrialFurnaceCore(BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
-		IndustrialFurnaceDummy = new IndustrialFurnaceDummy(BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
+		IndustrialFurnaceCore = new com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceCore(BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
+		IndustrialFurnaceDummy = new com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceDummy(BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
 		
 		GameRegistry.registerBlock(AluminumOre, Strings.ALUMINUM_ORE_NAME);
 		GameRegistry.registerBlock(CopperOre, Strings.COPPER_ORE_NAME);
