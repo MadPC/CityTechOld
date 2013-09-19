@@ -1,5 +1,7 @@
 package com.madpcgaming.mt.items;
 
+import net.minecraft.client.renderer.texture.IconRegister;
+
 import com.madpcgaming.mt.lib.Strings;
 
 public class AluminumIngot extends ItemMT
@@ -12,5 +14,10 @@ public class AluminumIngot extends ItemMT
 		this.setUnlocalizedName(Strings.ALUMINUM_INGOT_NAME);
 		maxStackSize = 64;
 		afterInit();
+	}
+	
+	public void registerIcons(IconRegister iconRegister)
+	{
+		itemIcon = iconRegister.registerIcon("mt:ingotAluminum");
 	}
 }
