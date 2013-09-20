@@ -9,7 +9,10 @@ public class ReinforcedGlass extends BlockMT {
 	public ReinforcedGlass(int id) {
 		super(id, Material.glass);
 		this.setUnlocalizedName(Strings.REINFORCED_GLASS_NAME);
+		this.setResistance(2000.0F);
+		this.setHardness(1.0F);
 		this.afterInit();
+		
 	}
 
 	

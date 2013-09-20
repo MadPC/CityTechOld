@@ -12,11 +12,13 @@ import com.madpcgaming.mt.lib.Strings;
 
 import cpw.mods.fml.common.FMLLog;
 
-public class ConfigurationHandler {
+public class ConfigurationHandler
+{
 
-	public static Configuration configuration;
+	public static Configuration	configuration;
 
-	public static void init(File configFile) {
+	public static void init(File configFile)
+	{
 		configuration = new Configuration(configFile);
 
 		try {
@@ -63,8 +65,8 @@ public class ConfigurationHandler {
 					Strings.ALUMINUM_BLOCK_NAME, BlockIds.ALUMINUM_BLOCK)
 					.getInt(BlockIds.ALUMINUM_BLOCK_DEFAULT);
 			BlockIds.COPPER_BLOCK = configuration.getBlock(
-					Strings.COPPER_BLOCK_NAME, BlockIds.COPPER_BLOCK)
-					.getInt(BlockIds.COPPER_BLOCK_DEFAULT);
+					Strings.COPPER_BLOCK_NAME, BlockIds.COPPER_BLOCK).getInt(
+					BlockIds.COPPER_BLOCK_DEFAULT);
 			BlockIds.PALLADIUM_BLOCK = configuration.getBlock(
 					Strings.PALLADIUM_BLOCK_NAME, BlockIds.PALLADIUM_BLOCK)
 					.getInt(BlockIds.PALLADIUM_BLOCK_DEFAULT);
@@ -72,11 +74,13 @@ public class ConfigurationHandler {
 					Strings.PLATINUM_BLOCK_NAME, BlockIds.PLATINUM_BLOCK)
 					.getInt(BlockIds.PLATINUM_BLOCK_DEFAULT);
 			BlockIds.SILVER_BLOCK = configuration.getBlock(
-					Strings.SILVER_BLOCK_NAME, BlockIds.SILVER_BLOCK)
-					.getInt(BlockIds.SILVER_BLOCK_DEFAULT);
-			BlockIds.TIN_BLOCK = configuration.getBlock(
-					Strings.TIN_BLOCK_NAME, BlockIds.TIN_BLOCK)
-					.getInt(BlockIds.TIN_BLOCK_DEFAULT);
+					Strings.SILVER_BLOCK_NAME, BlockIds.SILVER_BLOCK).getInt(
+					BlockIds.SILVER_BLOCK_DEFAULT);
+			BlockIds.TIN_BLOCK = configuration.getBlock(Strings.TIN_BLOCK_NAME,
+					BlockIds.TIN_BLOCK).getInt(BlockIds.TIN_BLOCK_DEFAULT);
+			BlockIds.REINFORCED_GLASS = configuration.getBlock(
+					Strings.REINFORCED_GLASS_NAME, BlockIds.REINFORCED_GLASS)
+					.getInt(BlockIds.REINFORCED_GLASS_DEFAULT);
 
 			/* Item Configs */
 			ItemIds.ALUMINIUM_INGOT = configuration.getItem(
@@ -121,7 +125,8 @@ public class ConfigurationHandler {
 	}
 
 	public static void set(String categoryName, String propertyName,
-			String newValue) {
+			String newValue)
+	{
 
 		configuration.load();
 		if (configuration.getCategoryNames().contains(categoryName)) {
