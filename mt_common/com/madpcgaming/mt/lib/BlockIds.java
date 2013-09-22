@@ -20,8 +20,7 @@ public class BlockIds
 	public static int	PLATINUM_BLOCK_DEFAULT					= 3006;
 	public static int	SILVER_BLOCK_DEFAULT					= 3007;
 	public static int	TIN_BLOCK_DEFAULT						= 3008;
-	public static int	REINFORCED_STONE_DEFAULT				= 3009;
-	public static int	REINFORCED_GLASS_DEFAULT				= 3010;
+	public static int	REINFORCED_GLASS_DEFAULT				= 3009;
 
 	public static int	ALUMINUM_ORE;
 	public static int	COPPER_ORE;
@@ -40,7 +39,6 @@ public class BlockIds
 	public static int	PLATINUM_BLOCK;
 	public static int	SILVER_BLOCK;
 	public static int	TIN_BLOCK;
-	public static int	REINFORCED_STONE;
 	public static int	REINFORCED_GLASS;
 
 }

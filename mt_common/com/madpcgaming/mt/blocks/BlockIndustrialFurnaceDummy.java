@@ -30,6 +30,7 @@ public class BlockIndustrialFurnaceDummy extends BlockContainer {
 	{
 		return ModBlocks.IndustrialFurnaceDummy.blockID;
 	}
+	
 
 	@Override
 	public TileEntity createNewTileEntity(World world) {

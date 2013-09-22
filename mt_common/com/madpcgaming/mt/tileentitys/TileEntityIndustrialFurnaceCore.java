@@ -116,8 +116,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 					if (horiz == 0 && vert == 0 && (depth == 0 || depth == 1))
 						continue;
 
-					worldObj.setBlock(x, y, z,
-							ModBlocks.IndustrialFurnaceDummy.blockID);
+					worldObj.setBlock(x, y, z, ModBlocks.IndustrialFurnaceDummy.blockID);
 					worldObj.markBlockForUpdate(x, y, z);
 					TileEntityIndustrialFurnaceDummy dummyTE = (TileEntityIndustrialFurnaceDummy) worldObj
 							.getBlockTileEntity(x, y, z);
