@@ -36,7 +36,7 @@ public class ModBlocks
 	public static Block	PlatinumBlock;
 	public static Block	SilverBlock;
 	public static Block	TinBlock;
-
+	public static Block	ReinforcedStone;
 	public static Block	ReinforcedGlass;
 
 	/**
@@ -66,17 +66,17 @@ public class ModBlocks
 		PlatinumBlock = new PlatinumBlock(BlockIds.PLATINUM_BLOCK);
 		SilverBlock = new SilverBlock(BlockIds.SILVER_BLOCK);
 		TinBlock = new TinBlock(BlockIds.TIN_BLOCK);
-
 		ReinforcedGlass = new ReinforcedGlass(BlockIds.REINFORCED_GLASS);
-
+		ReinforcedStone = new ReinforcedStone(BlockIds.REINFORCED_STONE);
 		SuperDrain = new SuperDrain(BlockIds.COPPER_CABLE + 1);
-
 		BlockElectrolyser = new BlockElectrolyser(BlockIds.BLOCK_ELECTROLYSER);
 		IndustrialFurnaceCore = new com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceCore(
 				BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
 		IndustrialFurnaceDummy = new com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceDummy(
 				BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
-
+		
+		
+		//GameRegistery stuff
 		GameRegistry.registerBlock(AluminumOre, Strings.ALUMINUM_ORE_NAME);
 		GameRegistry.registerBlock(CopperOre, Strings.COPPER_ORE_NAME);
 		GameRegistry.registerBlock(PalladiumOre, Strings.PALLADIUM_ORE_NAME);
@@ -85,6 +85,8 @@ public class ModBlocks
 		GameRegistry.registerBlock(TinOre, Strings.TIN_ORE_NAME);
 		GameRegistry.registerBlock(ReinforcedGlass,
 				Strings.REINFORCED_GLASS_NAME);
+		GameRegistry.registerBlock(ReinforcedStone,
+				Strings.REINFORCED_STONE_NAME);
 		GameRegistry.registerBlock(CableCopper, Strings.COPPER_CABLE_NAME);
 
 		GameRegistry.registerBlock(SuperDrain, "DEBUG_SUPER_DRAIN");

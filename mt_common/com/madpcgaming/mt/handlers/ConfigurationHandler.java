@@ -81,6 +81,9 @@ public class ConfigurationHandler
 			BlockIds.REINFORCED_GLASS = configuration.getBlock(
 					Strings.REINFORCED_GLASS_NAME, BlockIds.REINFORCED_GLASS)
 					.getInt(BlockIds.REINFORCED_GLASS_DEFAULT);
+			BlockIds.REINFORCED_STONE = configuration.getBlock(
+					Strings.REINFORCED_STONE_NAME, BlockIds.REINFORCED_STONE)
+					.getInt(BlockIds.REINFORCED_STONE_DEFAULT);
 
 			/* Item Configs */
 			ItemIds.ALUMINIUM_INGOT = configuration.getItem(
