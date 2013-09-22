@@ -127,6 +127,7 @@ public class BlockElectrolyser extends BlockContainer
 	
 	private void openGUI(EntityPlayer entityPlayer, World w, int x, int y, int z)
 	{
+		System.out.println("Opening GUI!");
 		entityPlayer.openGui(MadTech.instance, 0, w, x, y, z);
 	}
 	

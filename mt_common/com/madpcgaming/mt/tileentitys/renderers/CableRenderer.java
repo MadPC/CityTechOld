@@ -2,11 +2,15 @@ package com.madpcgaming.mt.tileentitys.renderers;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
+import com.madpcgaming.mt.lib.Reference;
 import com.madpcgaming.mt.models.ModelbasicCable;
 import com.madpcgaming.mt.tileentitys.CableTE;
+
+import cpw.mods.fml.client.FMLClientHandler;
 
 public class CableRenderer extends TileEntitySpecialRenderer
 {
@@ -29,8 +33,7 @@ public class CableRenderer extends TileEntitySpecialRenderer
 		GL11.glTranslatef((float) d + 0.5F, (float) d1 + 1.5F, (float) d2 + 0.5F);
 		GL11.glRotatef(180F, 0F, 0F, 1F);
 		
-		// FMLClientHandler.instance().getClient().renderEngine.func_110577_a(
-		//(new ResourceLocation(Reference.MOD_ID, "/textures/gui/test.png"));
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(new ResourceLocation(Reference.MOD_ID, "/textures/gui/test.png"));
 		GL11.glPushMatrix();
 		m.renderModel(t, 0.0625F);
 		GL11.glPopMatrix();
