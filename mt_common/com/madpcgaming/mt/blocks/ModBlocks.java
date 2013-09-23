@@ -134,10 +134,6 @@ public class ModBlocks
 		// Block/Item/ID a special constant specifying the "base" volume
 		// LiquidDictionary.getOrCreateLiquid("Silicon", new
 		// FluidStack(SiliconStill, FluidContainerRegistry.BUCKET_VOLUME));
-		/**
-		 * TODO: Figure out if the FluidRegister is to be used instead since
-		 * there is no FluidDictionary
-		 */
 
 	}
 
