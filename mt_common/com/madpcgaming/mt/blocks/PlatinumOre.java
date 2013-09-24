@@ -3,6 +3,7 @@ package com.madpcgaming.mt.blocks;
 import java.util.Random;
 
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 
 import com.madpcgaming.mt.items.ModItems;
 import com.madpcgaming.mt.lib.Strings;
@@ -27,5 +28,10 @@ public class PlatinumOre extends BlockMT
 	public int quantityDropped(Random random)
 	{
 		return 1;
+	}
+	
+	public void registerIcons(IconRegister iconRegister)
+	{
+		blockIcon = iconRegister.registerIcon("mt:orePlatinum");
 	}
 }

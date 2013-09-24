@@ -1,5 +1,7 @@
 package com.madpcgaming.mt.items;
 
+import net.minecraft.client.renderer.texture.IconRegister;
+
 import com.madpcgaming.mt.lib.Strings;
 
 public class PlatinumIngot extends ItemMT
@@ -11,6 +13,11 @@ public class PlatinumIngot extends ItemMT
 		this.setUnlocalizedName(Strings.PLATINUM_INGOT_NAME);
 		maxStackSize = 64;
 		afterInit();
+	}
+	
+	public void registerIcons(IconRegister iconRegister)
+	{
+		itemIcon = iconRegister.registerIcon("mt:ingotPlatinum");
 	}
 	
 	

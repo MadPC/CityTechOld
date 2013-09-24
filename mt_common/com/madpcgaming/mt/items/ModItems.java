@@ -41,7 +41,7 @@ public class ModItems
 			
 		// Hardcoded due to DEBUG purposes only!
 		wireTester = new WireTester(ItemIds.RUBBER_ITEM + 1);
-		GameRegistry.addSmelting(BlockIds.SLIVER_ORE,new ItemStack(SilverIngot),0.7F);
+		GameRegistry.addSmelting(BlockIds.SILVER_ORE,new ItemStack(SilverIngot),0.7F);
 		GameRegistry.addSmelting(BlockIds.ALUMINUM_ORE, new ItemStack(AluminumIngot), 0.7F);
 		GameRegistry.addSmelting(BlockIds.COPPER_ORE, new ItemStack(CopperIngot), 0.7F);
 		GameRegistry.addSmelting(BlockIds.PALLADIUM_ORE, new ItemStack(PalladiumIngot), 0.7F);

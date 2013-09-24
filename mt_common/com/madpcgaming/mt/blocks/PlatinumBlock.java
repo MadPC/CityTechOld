@@ -1,6 +1,7 @@
 package com.madpcgaming.mt.blocks;
 
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 
 import java.util.Random;
 
@@ -9,7 +10,7 @@ import com.madpcgaming.mt.lib.Strings;
 
 public class PlatinumBlock extends BlockMT
 {
-	
+
 	public PlatinumBlock(int id)
 	{
 		super(id, Material.rock);
@@ -17,15 +18,20 @@ public class PlatinumBlock extends BlockMT
 		this.setUnlocalizedName(Strings.PLATINUM_BLOCK_NAME);
 		this.afterInit();
 	}
-	
+
 	public int idDropped(int par1, Random random, int par3)
 	{
 		return BlockIds.PLATINUM_BLOCK;
 	}
-	
+
 	public int quantityDropped(Random random)
 	{
 		return 1;
 	}
-	
+
+	public void registerIcons(IconRegister iconRegister)
+	{
+		blockIcon = iconRegister.registerIcon("mt:blockPlatinum");
+	}
+
 }

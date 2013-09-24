@@ -2,7 +2,7 @@ package com.madpcgaming.mt.lib;
 
 public class Strings
 {
-	
+
 	public static final String	ALUMINUM_INGOT_NAME		= "ingotAluminium";
 	public static final String	COPPER_INGOT_NAME		= "ingotCopper";
 	public static final String	TIN_INGOT_NAME			= "ingotTin";
@@ -22,10 +22,10 @@ public class Strings
 	public static final String	RUBBER_ITEM_NAME		= "itemRubber";
 	public static final String	COPPER_CABLE_NAME		= "cableCopper";
 	public static final String	ELECTROLYSER_NAME		= "electrolyser";
-	public static final String  MACHINEBLOCK_NAME       = "machineblock";
-	public static final String  FURNACECORE_NAME 		= "coreFurnace";
-	public static final String  FURNACEDUMMY_NAME 		= "dummyFurnace";
-	public static final String  WRENCH_ITEM_NAME        = "itemWrench";
+	public static final String	MACHINEBLOCK_NAME		= "machineblock";
+	public static final String	FURNACECORE_NAME		= "coreFurnace";
+	public static final String	FURNACEDUMMY_NAME		= "dummyFurnace";
+	public static final String	WRENCH_ITEM_NAME		= "itemWrench";
 	public static final String	ALUMINUM_BLOCK_NAME		= "blockAluminum";
 	public static final String	COPPER_BLOCK_NAME		= "blockCopper";
 	public static final String	PALLADIUM_BLOCK_NAME	= "blockPalladium";
@@ -35,5 +35,6 @@ public class Strings
 	public static final String	GUI_INDUSTRIAL_FURNACE	= "Industrial Furnace";
 	public static final String	REINFORCED_GLASS_NAME	= "glassReinforced";
 	public static final String	REINFORCED_STONE_NAME	= "stoneReinforced";
-	
+	public static final String	LAMP_NAME				= "lamp";
+
 }

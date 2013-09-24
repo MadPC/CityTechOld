@@ -38,6 +38,7 @@ public class ModBlocks
 	public static Block	TinBlock;
 	public static Block	ReinforcedStone;
 	public static Block	ReinforcedGlass;
+	public static Block Lamp;
 
 	/**
 	 * Hard coded
@@ -54,7 +55,7 @@ public class ModBlocks
 		CopperOre = new CopperOre(BlockIds.COPPER_ORE);
 		PalladiumOre = new PalladiumOre(BlockIds.PALLADIUM_ORE);
 		PlatinumOre = new PlatinumOre(BlockIds.PLATINUM_ORE);
-		SilverOre = new SilverOre(BlockIds.SLIVER_ORE);
+		SilverOre = new SilverOre(BlockIds.SILVER_ORE);
 		TinOre = new TinOre(BlockIds.TIN_ORE);
 		SiliconStill = new SiliconLiquidStill(BlockIds.SILICON_LIQUID_STILL);
 		SiliconFlowing = new SiliconLiquidFlowing(
@@ -74,6 +75,7 @@ public class ModBlocks
 				BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
 		IndustrialFurnaceDummy = new com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceDummy(
 				BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
+		Lamp = new Lamp(BlockIds.LAMP_OFF, false, false);
 		
 		
 		//GameRegistery stuff
@@ -103,7 +105,9 @@ public class ModBlocks
 		GameRegistry.registerBlock(PlatinumBlock, Strings.PLATINUM_BLOCK_NAME);
 		GameRegistry.registerBlock(SilverBlock, Strings.SILVER_BLOCK_NAME);
 		GameRegistry.registerBlock(TinBlock, Strings.TIN_BLOCK_NAME);
+		GameRegistry.registerBlock(Lamp, Strings.LAMP_NAME);
 
+		//Tile Entities
 		GameRegistry.registerTileEntity(CableTE.class, "MTcableCopper");
 		GameRegistry.registerTileEntity(DrainTE.class, "MTsuperDrain");
 		GameRegistry.registerTileEntity(TileElectrolyser.class,
