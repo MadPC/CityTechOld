@@ -35,6 +35,6 @@ public class Strings
 	public static final String	GUI_INDUSTRIAL_FURNACE	= "Industrial Furnace";
 	public static final String	REINFORCED_GLASS_NAME	= "glassReinforced";
 	public static final String	REINFORCED_STONE_NAME	= "stoneReinforced";
-	public static final String	LAMP_NAME				= "lamp";
+	public static final String	BLOCK_LAMP_NAME			= "blockLamp";
 
 }

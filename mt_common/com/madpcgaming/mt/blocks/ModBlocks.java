@@ -75,7 +75,7 @@ public class ModBlocks
 				BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
 		IndustrialFurnaceDummy = new com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceDummy(
 				BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
-		Lamp = new Lamp(BlockIds.LAMP_OFF, false, false);
+		
 		
 		
 		//GameRegistery stuff
@@ -105,7 +105,6 @@ public class ModBlocks
 		GameRegistry.registerBlock(PlatinumBlock, Strings.PLATINUM_BLOCK_NAME);
 		GameRegistry.registerBlock(SilverBlock, Strings.SILVER_BLOCK_NAME);
 		GameRegistry.registerBlock(TinBlock, Strings.TIN_BLOCK_NAME);
-		GameRegistry.registerBlock(Lamp, Strings.LAMP_NAME);
 
 		//Tile Entities
 		GameRegistry.registerTileEntity(CableTE.class, "MTcableCopper");

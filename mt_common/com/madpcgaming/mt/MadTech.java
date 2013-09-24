@@ -27,7 +27,9 @@ public class MadTech
 	public static CommonProxy	proxy;
 	@Instance("MT")
 	public static MadTech		instance;
-	public static CreativeTabs	tabsMT	= new CreativeTabMT(CreativeTabs.getNextID(), Reference.MOD_ID);
+	public static CreativeTabs	tabsMT	= new CreativeTabMT(
+												CreativeTabs.getNextID(),
+												Reference.MOD_ID);
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -39,17 +41,16 @@ public class MadTech
 		ModBlocks.init();
 		ModItems.init();
 	}
-	
+
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-		
+
 	}
-	
+
 	@EventHandler
 	public void modsLoaded(FMLPostInitializationEvent event)
 	{
-		
+
 	}
 }
-

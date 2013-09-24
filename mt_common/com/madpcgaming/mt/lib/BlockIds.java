@@ -22,7 +22,6 @@ public class BlockIds
 	public static int	TIN_BLOCK_DEFAULT						= 3008;
 	public static int	REINFORCED_GLASS_DEFAULT				= 3009;
 	public static int	REINFORCED_STONE_DEFAULT				= 3010;
-	public static int	LAMP_OFF_DEFAULT						= 3011;
 
 	public static int	ALUMINUM_ORE;
 	public static int	COPPER_ORE;
@@ -43,6 +42,5 @@ public class BlockIds
 	public static int	TIN_BLOCK;
 	public static int	REINFORCED_GLASS;
 	public static int	REINFORCED_STONE;
-	public static int	LAMP_OFF;
 
 }
