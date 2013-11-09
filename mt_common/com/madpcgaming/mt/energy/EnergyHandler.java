@@ -8,6 +8,9 @@ import net.minecraftforge.common.ForgeDirection;
 import com.madpcgaming.mt.energy.interfaces.IEnergyConductor;
 import com.madpcgaming.mt.helpers.LogHelper;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class EnergyHandler
 {
 	private static final float	MAX_NORM_ENERGY	= 100.0f;
