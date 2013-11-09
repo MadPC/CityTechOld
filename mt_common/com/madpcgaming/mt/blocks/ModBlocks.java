@@ -12,6 +12,7 @@ import com.madpcgaming.mt.tileentitys.DrainTE;
 import com.madpcgaming.mt.tileentitys.TileElectrolyser;
 import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceCore;
 import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceDummy;
+import com.madpcgaming.mt.tileentitys.TileSimpleEFurnace;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -39,6 +40,8 @@ public class ModBlocks
 	public static Block	ReinforcedStone;
 	public static Block	ReinforcedGlass;
 	public static Block Lamp;
+	
+	public static Block SimpleFurnace;
 
 	/**
 	 * Hard coded
@@ -58,8 +61,7 @@ public class ModBlocks
 		SilverOre = new SilverOre(BlockIds.SILVER_ORE);
 		TinOre = new TinOre(BlockIds.TIN_ORE);
 		SiliconStill = new SiliconLiquidStill(BlockIds.SILICON_LIQUID_STILL);
-		SiliconFlowing = new SiliconLiquidFlowing(
-				BlockIds.SILICON_LIQUID_STILL - 1);
+		SiliconFlowing = new SiliconLiquidFlowing(BlockIds.SILICON_LIQUID_STILL - 1);
 		CableCopper = new SimpleCable(BlockIds.COPPER_CABLE);
 		AluminumBlock = new AluminumBlock(BlockIds.ALUMINUM_BLOCK);
 		CopperBlock = new CopperBlock(BlockIds.COPPER_BLOCK);
@@ -71,12 +73,13 @@ public class ModBlocks
 		ReinforcedStone = new ReinforcedStone(BlockIds.REINFORCED_STONE);
 		SuperDrain = new SuperDrain(BlockIds.COPPER_CABLE + 1);
 		BlockElectrolyser = new BlockElectrolyser(BlockIds.BLOCK_ELECTROLYSER);
+		
 		IndustrialFurnaceCore = new com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceCore(
 				BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
 		IndustrialFurnaceDummy = new com.madpcgaming.mt.blocks.multiblocks.IndustrialFurnaceDummy(
 				BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
 		
-		
+		SimpleFurnace = new SimpleEFurnace(BlockIds.BLOCK_SE_FURNACE);
 		
 		//GameRegistery stuff
 		GameRegistry.registerBlock(AluminumOre, Strings.ALUMINUM_ORE_NAME);
@@ -85,36 +88,30 @@ public class ModBlocks
 		GameRegistry.registerBlock(PlatinumOre, Strings.PLATINUM_ORE_NAME);
 		GameRegistry.registerBlock(SilverOre, Strings.SILVER_ORE_NAME);
 		GameRegistry.registerBlock(TinOre, Strings.TIN_ORE_NAME);
-		GameRegistry.registerBlock(ReinforcedGlass,
-				Strings.REINFORCED_GLASS_NAME);
-		GameRegistry.registerBlock(ReinforcedStone,
-				Strings.REINFORCED_STONE_NAME);
+		GameRegistry.registerBlock(ReinforcedGlass,	Strings.REINFORCED_GLASS_NAME);
+		GameRegistry.registerBlock(ReinforcedStone,	Strings.REINFORCED_STONE_NAME);
 		GameRegistry.registerBlock(CableCopper, Strings.COPPER_CABLE_NAME);
 
 		GameRegistry.registerBlock(SuperDrain, "DEBUG_SUPER_DRAIN");
-		GameRegistry
-				.registerBlock(BlockElectrolyser, Strings.ELECTROLYSER_NAME);
-		GameRegistry.registerBlock(IndustrialFurnaceCore,
-				Strings.FURNACECORE_NAME);
-		GameRegistry.registerBlock(IndustrialFurnaceDummy,
-				Strings.FURNACEDUMMY_NAME);
+		GameRegistry.registerBlock(BlockElectrolyser, Strings.ELECTROLYSER_NAME);
+		GameRegistry.registerBlock(IndustrialFurnaceCore, Strings.FURNACECORE_NAME);
+		GameRegistry.registerBlock(IndustrialFurnaceDummy, Strings.FURNACEDUMMY_NAME);
 		GameRegistry.registerBlock(AluminumBlock, Strings.ALUMINUM_BLOCK_NAME);
 		GameRegistry.registerBlock(CopperBlock, Strings.COPPER_BLOCK_NAME);
-		GameRegistry
-				.registerBlock(PalladiumBlock, Strings.PALLADIUM_BLOCK_NAME);
+		GameRegistry.registerBlock(PalladiumBlock, Strings.PALLADIUM_BLOCK_NAME);
 		GameRegistry.registerBlock(PlatinumBlock, Strings.PLATINUM_BLOCK_NAME);
 		GameRegistry.registerBlock(SilverBlock, Strings.SILVER_BLOCK_NAME);
 		GameRegistry.registerBlock(TinBlock, Strings.TIN_BLOCK_NAME);
-
+		
+		GameRegistry.registerBlock(SimpleFurnace, Strings.SIMPLE_SE_FURNACE_NAME);
+		
 		//Tile Entities
 		GameRegistry.registerTileEntity(CableTE.class, "MTcableCopper");
 		GameRegistry.registerTileEntity(DrainTE.class, "MTsuperDrain");
-		GameRegistry.registerTileEntity(TileElectrolyser.class,
-				Strings.ELECTROLYSER_NAME);
-		GameRegistry.registerTileEntity(TileEntityIndustrialFurnaceCore.class,
-				Strings.FURNACECORE_NAME);
-		GameRegistry.registerTileEntity(TileEntityIndustrialFurnaceDummy.class,
-				Strings.FURNACEDUMMY_NAME);
+		GameRegistry.registerTileEntity(TileElectrolyser.class, Strings.ELECTROLYSER_NAME);
+		GameRegistry.registerTileEntity(TileEntityIndustrialFurnaceCore.class, Strings.FURNACECORE_NAME);
+		GameRegistry.registerTileEntity(TileEntityIndustrialFurnaceDummy.class, Strings.FURNACEDUMMY_NAME);
+		GameRegistry.registerTileEntity(TileSimpleEFurnace.class, Strings.SIMPLE_SE_FURNACE_NAME);
 
 		initOreDictionaryRegister();
 		initFluidDictionary();
@@ -133,10 +130,8 @@ public class ModBlocks
 
 	private static void initFluidDictionary()
 	{
-		// Method to get or create a liquid Name A special itemStack
-		// Block/Item/ID a special constant specifying the "base" volume
-		// LiquidDictionary.getOrCreateLiquid("Silicon", new
-		// FluidStack(SiliconStill, FluidContainerRegistry.BUCKET_VOLUME));
+		// Method to get or create a liquid     Name    A special itemStack Block/Item/ID   a special constant specifying the "base" volume
+		// LiquidDictionary.getOrCreateLiquid("Silicon", new FluidStack(SiliconStill, FluidContainerRegistry.BUCKET_VOLUME));
 
 	}
 

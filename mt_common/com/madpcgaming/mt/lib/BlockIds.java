@@ -2,7 +2,7 @@ package com.madpcgaming.mt.lib;
 
 public class BlockIds
 {
-
+	
 	public static int	ALUMINUM_ORE_DEFAULT					= 2989;
 	public static int	COPPER_ORE_DEFAULT						= 2990;
 	public static int	PALLADIUM_ORE_DEFAULT					= 2991;
@@ -22,7 +22,10 @@ public class BlockIds
 	public static int	TIN_BLOCK_DEFAULT						= 3008;
 	public static int	REINFORCED_GLASS_DEFAULT				= 3009;
 	public static int	REINFORCED_STONE_DEFAULT				= 3010;
+	public static int 	BLOCK_SE_FURNACE_DEFAULT				= 3011;
 
+	
+	public static int 	BLOCK_SE_FURNACE;
 	public static int	ALUMINUM_ORE;
 	public static int	COPPER_ORE;
 	public static int	PALLADIUM_ORE;

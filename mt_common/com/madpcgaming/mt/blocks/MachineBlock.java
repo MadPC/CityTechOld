@@ -17,4 +17,5 @@ public class MachineBlock extends Block {
 		setUnlocalizedName(Strings.MACHINEBLOCK_NAME);
 		this.textureName = this.getUnlocalizedName();
 		
-	}}
+	}
+}

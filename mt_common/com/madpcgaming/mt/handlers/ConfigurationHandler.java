@@ -83,7 +83,12 @@ public class ConfigurationHandler
 			BlockIds.REINFORCED_STONE = configuration.getBlock(
 					Strings.REINFORCED_STONE_NAME, BlockIds.REINFORCED_STONE)
 					.getInt(BlockIds.REINFORCED_STONE_DEFAULT);
-
+			
+			//Shouldnt it look like this?
+			BlockIds.BLOCK_SE_FURNACE = configuration.getBlock(
+					Strings.SIMPLE_SE_FURNACE_NAME, BlockIds.BLOCK_SE_FURNACE_DEFAULT).getInt();
+			
+			
 			/* Item Configs */
 			ItemIds.ALUMINIUM_INGOT = configuration.getItem(
 					Strings.ALUMINUM_INGOT_NAME, ItemIds.ALUMINIUM_INGOT)

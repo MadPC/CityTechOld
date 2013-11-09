@@ -6,9 +6,9 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
+import com.madpcgaming.mt.inventory.ContainerIndustrialFurnace;
 import com.madpcgaming.mt.lib.Strings;
 import com.madpcgaming.mt.lib.Textures;
-import com.madpcgaming.mt.tileentitys.ContainerIndustrialFurnace;
 import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceCore;
 
 public class GuiIndustrialFurnace extends GuiContainer
@@ -16,8 +16,7 @@ public class GuiIndustrialFurnace extends GuiContainer
 
 	private TileEntityIndustrialFurnaceCore	tileEntity;
 
-	public GuiIndustrialFurnace(InventoryPlayer playerInventory,
-			TileEntityIndustrialFurnaceCore tileEntity)
+	public GuiIndustrialFurnace(InventoryPlayer playerInventory, TileEntityIndustrialFurnaceCore tileEntity)
 	{
 		super(new ContainerIndustrialFurnace(playerInventory, tileEntity));
 
@@ -28,12 +27,8 @@ public class GuiIndustrialFurnace extends GuiContainer
 	protected void drawGuiContainerForegroundLayer(int par1, int par2)
 	{
 		final String invTitle = Strings.GUI_INDUSTRIAL_FURNACE;
-		fontRenderer.drawString(invTitle,
-				xSize / 2 - fontRenderer.getStringWidth(invTitle) / 2, 6,
-				4210752);
-		fontRenderer.drawString(
-				StatCollector.translateToLocal("container.inventory"), 8,
-				ySize - 96 + 2, 4210752);
+		fontRenderer.drawString(invTitle, xSize / 2 - fontRenderer.getStringWidth(invTitle) / 2, 6, 4210752);
+		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8,ySize - 96 + 2, 4210752);
 	}
 
 	@Override
@@ -41,8 +36,7 @@ public class GuiIndustrialFurnace extends GuiContainer
 	{
 		GL11.glColor4f(1f, 1f, 1f, 1f);
 
-		this.mc.getTextureManager()
-				.bindTexture(Textures.GUI_INDUSTRIAL_FURNACE);
+		this.mc.getTextureManager().bindTexture(Textures.GUI_INDUSTRIAL_FURNACE);
 
 		int x = (width - xSize) / 2;
 		int y = (height - ySize) / 2;

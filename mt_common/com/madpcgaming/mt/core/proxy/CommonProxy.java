@@ -6,12 +6,15 @@ import net.minecraft.world.World;
 
 import com.madpcgaming.mt.MadTech;
 import com.madpcgaming.mt.client.gui.ElectrolyserGUI;
+import com.madpcgaming.mt.client.gui.GuiSimpleEFurnace;
 import com.madpcgaming.mt.helpers.LogHelper;
+import com.madpcgaming.mt.inventory.ContainerIndustrialFurnace;
+import com.madpcgaming.mt.inventory.ContainerSimpleEFurnace;
 import com.madpcgaming.mt.inventory.ElectrolyserContainer;
 import com.madpcgaming.mt.lib.GuiIds;
-import com.madpcgaming.mt.tileentitys.ContainerIndustrialFurnace;
 import com.madpcgaming.mt.tileentitys.TileElectrolyser;
 import com.madpcgaming.mt.tileentitys.TileEntityIndustrialFurnaceCore;
+import com.madpcgaming.mt.tileentitys.TileSimpleEFurnace;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -29,7 +32,7 @@ public class CommonProxy implements IGuiHandler
 	{
 		LogHelper.info("Getting Server GUI!");
 		TileEntity t = world.getBlockTileEntity(x, y, z);
-		if (ID == 0 && t instanceof TileElectrolyser)
+		if (t instanceof TileElectrolyser)
 		{
 			return new ElectrolyserContainer(player.inventory, (TileElectrolyser) t);
 		}
@@ -37,6 +40,11 @@ public class CommonProxy implements IGuiHandler
 		{
 			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.getBlockTileEntity(x, y, z);
 			return new ContainerIndustrialFurnace(player.inventory, tileIndustrialFurnaceCore);
+		}
+		else if (ID == GuiIds.FURNACE_SIMPLE)
+		{
+			TileSimpleEFurnace t1 = (TileSimpleEFurnace) t;
+			return new ContainerSimpleEFurnace(player.inventory, t1);
 		}
 		return null;
 	}
@@ -46,14 +54,20 @@ public class CommonProxy implements IGuiHandler
 	{
 		LogHelper.info("Getting CLient GUI!");
 		TileEntity t = world.getBlockTileEntity(x, y, z);
-		if (ID == 0 && t instanceof TileElectrolyser)
+		if (t instanceof TileElectrolyser)
 		{
 			return new ElectrolyserGUI(new ElectrolyserContainer(player.inventory, (TileElectrolyser) t), (TileElectrolyser) t);
 		}
 		else if (ID == GuiIds.FURNACE_CORE)
 		{
+			//WHY DO I DECLARE T IF YOU DONT USE IT?
 			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.getBlockTileEntity(x, y, z);
 			return new ContainerIndustrialFurnace(player.inventory, tileIndustrialFurnaceCore);
+		}
+		else if (ID == GuiIds.FURNACE_SIMPLE)
+		{
+			TileSimpleEFurnace t1 = (TileSimpleEFurnace) t;
+			return new GuiSimpleEFurnace(player.inventory, t1);
 		}
 		return null;
 	}

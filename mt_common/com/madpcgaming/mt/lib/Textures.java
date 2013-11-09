@@ -12,6 +12,7 @@ public class Textures
 	
 	//GUI
 	public static final ResourceLocation GUI_INDUSTRIAL_FURNACE = ResourceLocationHelper.getResourceLocation(GUI_SHEET_LOCATION + "industrialFurnace.png");
+	public static final ResourceLocation GUI_SIMPLE_EFURNACE = ResourceLocationHelper.getResourceLocation(GUI_SHEET_LOCATION + "simpleEFurnace.png");
 	
 	
 }

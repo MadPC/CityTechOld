@@ -35,6 +35,7 @@
 		<entry key="container.guiFurnaceIndustrial.name"> Industrial Furnace</entry>
 		<entry key="item.itemWrench.name">Wrench</entry>
 		<entry key="itemGroup.mt">Mad Tech</entry>
+		<entry key="tile.blockElectricFurnace.name">Electronic Furnace</entry>
 
 
 </properties>

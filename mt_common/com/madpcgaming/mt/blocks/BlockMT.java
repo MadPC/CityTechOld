@@ -24,8 +24,6 @@ public class BlockMT extends Block
 	
 	protected void afterInit()
 	{
-		//This sets the variable used for auto texture allocation
-		//the substring removes 'tile.'
 		
 	}
 	
