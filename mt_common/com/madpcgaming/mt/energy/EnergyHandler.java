@@ -99,7 +99,7 @@ public class EnergyHandler
 					if (te != null && te instanceof IEnergyConductor)
 						((IEnergyConductor) te).requestFrom(ForgeDirection.getOrientation(i), request);
 					else
-						LogHelper.severe("&&Where did %s go? It requested %f!", ForgeDirection.getOrientation(i), request);
+						LogHelper.severe("&&Where did %s go? It requested %f Flux!", ForgeDirection.getOrientation(i), request);
 				} else
 				{
 					for (int j = 0; j < 6; j++)
