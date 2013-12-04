@@ -52,7 +52,7 @@ public class GuiSimpleEFurnace extends GuiContainer
             this.drawTexturedModalRect(k + 56, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 2);
         }
 
-        i1 = this.tile.getCookProgressScaled(24);
+        i1 = this.tile.getCookProgressScaled(12);
         this.drawTexturedModalRect(k + 79, l + 34, 176, 14, i1 + 1, 16);
 	}
 	

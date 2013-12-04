@@ -15,7 +15,8 @@ public class EnergyHandler
 {
 	private static final float	MAX_NORM_ENERGY	= 100.0f;
 	
-	private float[]				Requested		= new float[6];
+	private float				internal_request 	=	0;
+	private float[]				Requested		= 	new float[6];
 	private float				Energy;
 	private int					x, y, z;
 	
@@ -52,6 +53,13 @@ public class EnergyHandler
 			}
 		} else
 		{
+			if (this.internal_request != 0)
+			{
+				this.internal_request -= amount;
+				if (this.internal_request < 0)
+					this.internal_request = 0;
+			}
+			
 			float temp = this.Energy + amount;
 			if (temp > MAX_NORM_ENERGY)
 			{
@@ -67,6 +75,12 @@ public class EnergyHandler
 		return 0.0f;
 	}
 	
+	/**
+	 * use this to tell another object YOU need energy
+	 * @param d
+	 * @param amount
+	 * @return if this Handler has enough energy
+	 */
 	public boolean requestEnergy(ForgeDirection d, float amount)
 	{
 		if (this.Energy >= amount)
@@ -75,6 +89,17 @@ public class EnergyHandler
 			return true;
 		}
 		this.Requested[d.ordinal()] = amount;
+		return false;
+	}
+	
+	/**
+	 * Use this to tell an EnergyHandler you need energy.
+	 * @param amount
+	 */
+	public boolean requestEnergy(float amount)
+	{
+		if (amount >= 0)
+			internal_request = amount;
 		return false;
 	}
 	
@@ -114,6 +139,21 @@ public class EnergyHandler
 				}
 			}
 		}
+		
+		if (internal_request != 0)
+		{
+			//LogHelper.info("&&Requesting %f Flux from nearby Conductors!", internal_request);
+			for (int j = 0; j < 6; j++)
+			{
+				ForgeDirection d = ForgeDirection.getOrientation(j);
+				TileEntity t = world.getBlockTileEntity(x + d.offsetX, y + d.offsetY, z + d.offsetZ);
+				if (t != null && t instanceof IEnergyConductor)
+				{
+					//LogHelper.info("&&Now Requesting from %s", t);
+					((IEnergyConductor) t).requestFrom(ForgeDirection.getOrientation(j).getOpposite(), internal_request);
+				}
+			}
+		}
 	}
 	
 	public float getOverallRequest()
@@ -126,9 +166,12 @@ public class EnergyHandler
 		return ret;
 	}
 
-	public void readFromNBT(NBTTagCompound par1)
+	public void readFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
-		par1.setFloat("Energy", this.Energy);
+		par1NBTTagCompound.setFloat("Energy", this.Energy);
+		this.x = par1NBTTagCompound.getInteger("x");
+        this.y = par1NBTTagCompound.getInteger("y");
+        this.z = par1NBTTagCompound.getInteger("z");
 	}
 
 	public void writeToNBT(NBTTagCompound par1)

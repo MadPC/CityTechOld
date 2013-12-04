@@ -11,12 +11,13 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.common.ForgeDirection;
 
 import com.madpcgaming.mt.energy.EnergyHandler;
+import com.madpcgaming.mt.energy.interfaces.IEnergyConductor;
 import com.madpcgaming.mt.lib.Strings;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileSimpleEFurnace extends TileEntity implements ISidedInventory
+public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, IEnergyConductor
 {
 
 	private ItemStack[] inv;
@@ -32,6 +33,8 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory
 		furnaceCookTime = 0;
 		furnaceBurnTime = 0;
 		currentItemBurnTime = 0;
+		
+		energy = new EnergyHandler(this.xCoord, this.yCoord, this.zCoord);
 	}
 	
 	//Update
@@ -50,6 +53,9 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory
 
         if (!this.worldObj.isRemote)
         {
+        	this.energy.update(worldObj);
+        	
+        	
             if (this.furnaceBurnTime == 0 && this.canSmelt())
             {
             	if (energy.getEnergyLevel() >= 50.0f)
@@ -57,6 +63,10 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory
              	   this.currentItemBurnTime = this.furnaceBurnTime = 6400;
              	   energy.placeEnegry(ForgeDirection.UNKNOWN, -50);
                 }
+            	else
+            	{
+            		this.energy.requestEnergy(50 - this.energy.getEnergyLevel());
+            	}
             	
                 if (this.furnaceBurnTime > 0)
                 {
@@ -245,7 +255,7 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory
 
 			if (inv[1] == null)
 				inv[1] = itemStack.copy();
-			else if (inv[2].isItemEqual(itemStack))
+			else if (inv[1].isItemEqual(itemStack))
 				inv[1].stackSize += itemStack.stackSize;
 
 			inv[0].stackSize--;
@@ -280,6 +290,7 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory
 
 			tagCompound.setTag("Items", itemsList);
 		}
+		energy.writeToNBT(tagCompound);
 	}
 	
 	@Override
@@ -302,5 +313,29 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory
 		furnaceBurnTime = tagCompound.getShort("BurnTime");
 		furnaceCookTime = tagCompound.getShort("CookTime");
 		currentItemBurnTime = TileEntityFurnace.getItemBurnTime(inv[1]);
+		
+		if (energy == null)
+		{
+			energy = new EnergyHandler(this.xCoord, this.yCoord, this.zCoord);
+		}
+		energy.readFromNBT(tagCompound);
+	}
+
+	@Override
+	public float transferTo(ForgeDirection d, float power)
+	{
+		return this.energy.placeEnegry(d, power);
+	}
+
+	@Override
+	public void requestFrom(ForgeDirection d, float power)
+	{
+		
+	}
+
+	@Override
+	public float getEnergyLevel()
+	{
+		return this.energy.getEnergyLevel();
 	}
 }

@@ -26,7 +26,7 @@ public class ContainerSimpleEFurnace extends Container
 		this.tile = tile;
 		
 		this.addSlotToContainer(new Slot(tile, 0, 56, 17));
-		this.addSlotToContainer(new Slot(tile, 1, 56, 53));
+		this.addSlotToContainer(new SlotEFurnace(par1InventoryPlayer.player, tile, 1, 116, 35));
 		
 		BindPlayerInventory(par1InventoryPlayer);
 	}

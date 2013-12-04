@@ -92,6 +92,5 @@ public class DrainTE extends TileEntity implements IEnergyConductor
 	public void readFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
 		super.readFromNBT(par1NBTTagCompound);
-		this.energy.updatePosition(this.xCoord, this.yCoord, this.zCoord);
 	}
 }
