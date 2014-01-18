@@ -40,13 +40,13 @@ public class MTCraftingManager {
 	}
 
 	private MTCraftingManager() {
-		(new RecipesTools()).addRecipes(this);
-		(new RecipesWeapons()).addRecipes(this);
-		(new RecipesIngots()).addRecipes(this);
-		(new RecipesFood()).addRecipes(this);
-		(new RecipesCrafting()).addRecipes(this);
-		(new RecipesArmor()).addRecipes(this);
-		(new RecipesDyes()).addRecipes(this);
+		this.recipes.add(new RecipesTools());
+		this.recipes.add(new RecipesWeapons());
+		this.recipes.add(new RecipesIngots());
+		this.recipes.add(new RecipesFood());
+		this.recipes.add(new RecipesCrafting());
+		this.recipes.add(new RecipesArmor());
+		this.recipes.add(new RecipesDyes());
 		this.recipes.add(new RecipesArmorDyes());
 		this.recipes.add(new RecipesMapCloning());
 		this.recipes.add(new RecipesMapExtending());
