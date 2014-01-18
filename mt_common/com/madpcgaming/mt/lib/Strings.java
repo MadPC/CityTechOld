@@ -20,6 +20,10 @@ public class Strings
 	public static final String	SILICON_LIQUID_FLOWING	= "liquidsilicon";
 	public static final String	SILICON_LIQUID_STILL	= "liquidsilicon";
 	public static final String	RUBBER_ITEM_NAME		= "itemRubber";
+	public static final String	ARMOR_HEAD		        = "armorHead";
+	public static final String	ARMOR_CHEST		        = "armorChest";
+	public static final String	ARMOR_LEGS		        = "armorLegs";
+	public static final String	ARMOR_BOOTS	        	= "armorBoots";
 	public static final String	COPPER_CABLE_NAME		= "cableCopper";
 	public static final String	ELECTROLYSER_NAME		= "electrolyser";
 	public static final String	MACHINEBLOCK_NAME		= "machineblock";
