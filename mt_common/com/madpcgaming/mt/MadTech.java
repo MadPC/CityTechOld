@@ -7,6 +7,7 @@ import com.madpcgaming.mt.blocks.ModBlocks;
 import com.madpcgaming.mt.core.proxy.CommonProxy;
 import com.madpcgaming.mt.handlers.ConfigurationHandler;
 import com.madpcgaming.mt.handlers.LocalizationHandler;
+import com.madpcgaming.mt.handlers.MaterialHandler;
 import com.madpcgaming.mt.items.ModItems;
 import com.madpcgaming.mt.lib.Reference;
 
@@ -39,6 +40,8 @@ public class MadTech
 		LocalizationHandler.loadLanguages();
 		NetworkRegistry.instance().registerGuiHandler(this, MadTech.proxy);
 		instance = this;
+		MaterialHandler.addToolMaterials();
+		
 		ModBlocks.init();
 		ModItems.init();
 		
