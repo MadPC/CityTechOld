@@ -22,6 +22,7 @@ public class ModItems
 	public static Rubber			Rubber;
 	public static Item				wireTester;
 	public static Wrench			Wrench;
+	public static EnergyReader		EnergyReader;
 	
 	
 	public static void init()
@@ -38,6 +39,7 @@ public class ModItems
 		Silicon = new Silicon(ItemIds.SILICON_ITEM);
 		Rubber = new Rubber(ItemIds.RUBBER_ITEM);
 		Wrench = new Wrench(ItemIds.WRENCH_ITEM);
+		EnergyReader = new EnergyReader(ItemIds.ENERGYREADER);
 			
 		// Hardcoded due to DEBUG purposes only!
 		wireTester = new WireTester(ItemIds.RUBBER_ITEM + 1);

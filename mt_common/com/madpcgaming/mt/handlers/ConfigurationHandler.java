@@ -119,6 +119,9 @@ public class ConfigurationHandler
 			ItemIds.WRENCH_ITEM = configuration.getItem(
 					Strings.WRENCH_ITEM_NAME, ItemIds.WRENCH_ITEM).getInt(
 					ItemIds.WRENCH_ITEM_DEFAULT);
+			
+			//shouldn't you pass a default value NOT a Null value as standard?
+			ItemIds.ENERGYREADER = configuration.getItem(Strings.ENERGYREADER_ITEM_NAME, ItemIds.ENERGYREADER_ITEM_DEFAULT).getInt(ItemIds.ENERGYREADER_ITEM_DEFAULT);
 
 			/* Gui Configs */
 

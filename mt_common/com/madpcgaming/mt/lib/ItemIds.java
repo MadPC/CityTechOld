@@ -15,6 +15,7 @@ public class ItemIds
 	public static int	SILICON_ITEM_DEFAULT	= 27007;
 	public static int	RUBBER_ITEM_DEFAULT		= 27008;
 	public static int   WRENCH_ITEM_DEFAULT     = 27009;
+	public static int   ENERGYREADER_ITEM_DEFAULT     = 27010;
 	
 	
 	public static int	ALUMINIUM_INGOT;
@@ -27,4 +28,5 @@ public class ItemIds
 	public static int	SILICON_ITEM;
 	public static int	RUBBER_ITEM;
 	public static int   WRENCH_ITEM;
+	public static int	ENERGYREADER;
 }
