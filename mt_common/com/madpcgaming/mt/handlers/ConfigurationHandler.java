@@ -122,7 +122,8 @@ public class ConfigurationHandler
 			
 			//shouldn't you pass a default value NOT a Null value as standard?
 			ItemIds.ENERGYREADER = configuration.getItem(Strings.ENERGYREADER_ITEM_NAME, ItemIds.ENERGYREADER_ITEM_DEFAULT).getInt(ItemIds.ENERGYREADER_ITEM_DEFAULT);
-
+			
+			ItemIds.CYBERSOWRD = configuration.getItem(Strings.CYBERSWORD_ITEM_NAME, ItemIds.CYBERSWORD_ITEM_DEFAULT).getInt(ItemIds.CYBERSWORD_ITEM_DEFAULT);
 			/* Gui Configs */
 
 		} catch (Exception e) {

@@ -42,5 +42,6 @@ public class Strings
 	public static final String	BLOCK_LAMP_NAME			= "blockLamp";
 	public static final String	SIMPLE_SE_FURNACE_NAME  = "blockElectricFurnace";
 	public static final String	ENERGYREADER_ITEM_NAME	= "energyreader";
+	public static final String	CYBERSWORD_ITEM_NAME	= "cybersword";
 
 }

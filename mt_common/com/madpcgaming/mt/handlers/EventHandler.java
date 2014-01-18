@@ -38,8 +38,10 @@ public class EventHandler implements IEventListener
 			if (item.itemID == ItemIds.CYBERSOWRD)
 			{
 				NBTTagCompound tag = item.stackTagCompound;
-				int level = tag.getInteger("level");
-				int durability = tag.getInteger("durability");
+				if (tag.hasKey("kills"))
+					tag.setInteger("kills", tag.getInteger("kills") + 1);
+				else
+					tag.setInteger("kills", 1);
 			}
 		}
 		LogHelper.info("&&Entity %s died due to Damage %s with %s as DamageSource", target, source.damageType, source.getSourceOfDamage());

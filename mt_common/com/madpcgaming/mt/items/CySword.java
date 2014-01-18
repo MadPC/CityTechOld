@@ -1,6 +1,8 @@
 package com.madpcgaming.mt.items;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -29,7 +31,8 @@ public class CySword extends ItemSword implements ILevelableItem
 	@Override
 	public void recalculate(ItemStack item)
 	{
-		
+		item.stackTagCompound.setInteger("durability", (item.stackTagCompound.getInteger("level") * 50 + 50 + this.mat.getMaxUses()));
+		this.getDamageVsEntity(new EntityBlaze(null), item);
 	}
 	
 	public int getMaxDamage(ItemStack stack)
@@ -45,6 +48,22 @@ public class CySword extends ItemSword implements ILevelableItem
 			par1ItemStack.damageItem(1, par3EntityLivingBase);
         return true;
     }
+	
+	public float getDamageVsEntity(Entity par1Entity, ItemStack itemStack)
+	{
+		float damage = super.getDamageVsEntity(par1Entity, itemStack);
+		NBTTagCompound tag = itemStack.stackTagCompound;
+		int durability = tag.getInteger("durability");
+		if (durability > 0)
+		{
+			damage += tag.getInteger("level") * 2;
+		}
+		else
+		{
+			damage = 1;
+		}
+		return damage;
+	}
 	
 	@Override
 	public void onCreated(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)

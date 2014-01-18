@@ -6,6 +6,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.madpcgaming.mt.blocks.ModBlocks;
 import com.madpcgaming.mt.lib.BlockIds;
 import com.madpcgaming.mt.lib.ItemIds;
+import com.madpcgaming.mt.lib.Materials;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -23,6 +24,7 @@ public class ModItems
 	public static Item				wireTester;
 	public static Wrench			Wrench;
 	public static EnergyReader		EnergyReader;
+	public static CySword			CyberSword;
 	
 	
 	public static void init()
@@ -40,6 +42,8 @@ public class ModItems
 		Rubber = new Rubber(ItemIds.RUBBER_ITEM);
 		Wrench = new Wrench(ItemIds.WRENCH_ITEM);
 		EnergyReader = new EnergyReader(ItemIds.ENERGYREADER);
+		CyberSword = new CySword(ItemIds.CYBERSOWRD, Materials.cyberEnergeticMaterial);
+		
 			
 		// Hardcoded due to DEBUG purposes only!
 		wireTester = new WireTester(ItemIds.RUBBER_ITEM + 1);
