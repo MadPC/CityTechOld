@@ -10,6 +10,5 @@ public class Wiring extends ItemMT
 		super(id);
 		this.setUnlocalizedName(Strings.WIRING_ITEM_NAME);
 		maxStackSize = 64;
-		afterInit();
 	}
 }

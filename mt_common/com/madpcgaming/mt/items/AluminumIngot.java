@@ -13,7 +13,6 @@ public class AluminumIngot extends ItemMT
 		super(id);
 		this.setUnlocalizedName(Strings.ALUMINUM_INGOT_NAME);
 		maxStackSize = 64;
-		afterInit();
 	}
 	
 	public void registerIcons(IconRegister iconRegister)

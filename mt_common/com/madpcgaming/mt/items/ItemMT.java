@@ -12,9 +12,4 @@ public class ItemMT extends Item
 		super(par1);
 		this.setCreativeTab(MadTech.tabsMT);
 	}
-	
-	protected void afterInit()
-	{
-		
-	}
 }

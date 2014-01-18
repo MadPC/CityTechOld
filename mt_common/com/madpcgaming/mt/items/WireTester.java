@@ -13,7 +13,6 @@ public class WireTester extends ItemMT
 		this.setCreativeTab(MadTech.tabsMT);
 		this.maxStackSize = 1;
 		LanguageRegistry.addName(this, "Wire tester DEV");
-		afterInit();
 	}
 	
 }

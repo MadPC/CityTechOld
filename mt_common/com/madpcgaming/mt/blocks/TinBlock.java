@@ -16,7 +16,6 @@ public class TinBlock extends BlockMT
 		super(id, Material.rock);
 		this.setResistance(5.0F);
 		this.setUnlocalizedName(Strings.TIN_BLOCK_NAME);
-		this.afterInit();
 	}
 	
 	public int idDropped(int par1, Random random, int par3)

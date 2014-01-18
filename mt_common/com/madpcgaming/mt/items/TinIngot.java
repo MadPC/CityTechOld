@@ -12,7 +12,6 @@ public class TinIngot extends ItemMT
 		super(id);
 		this.setUnlocalizedName(Strings.TIN_INGOT_NAME);
 		maxStackSize = 64;
-		afterInit();
 	}
 	
 	public void registerIcons(IconRegister iconRegister)

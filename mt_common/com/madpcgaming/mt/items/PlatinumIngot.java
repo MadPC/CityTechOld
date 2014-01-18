@@ -12,7 +12,6 @@ public class PlatinumIngot extends ItemMT
 		super(id);
 		this.setUnlocalizedName(Strings.PLATINUM_INGOT_NAME);
 		maxStackSize = 64;
-		afterInit();
 	}
 	
 	public void registerIcons(IconRegister iconRegister)

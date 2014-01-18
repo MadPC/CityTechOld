@@ -21,10 +21,4 @@ public class BlockMT extends Block
 		// Sets effectiveness.
 		MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 1);
 	}
-	
-	protected void afterInit()
-	{
-		
-	}
-	
 }

@@ -15,7 +15,6 @@ public class SilverOre extends BlockMT
 	{
 		super(id, Material.rock);
 		this.setUnlocalizedName(Strings.SILVER_ORE_NAME);
-		this.afterInit();
 	}
 	
 	@Override

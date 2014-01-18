@@ -10,7 +10,6 @@ public class Wrench extends ItemMT
 		super(id);
 		this.setUnlocalizedName(Strings.WRENCH_ITEM_NAME);
 		maxStackSize = 1;
-		afterInit();
 	}
 	
 }

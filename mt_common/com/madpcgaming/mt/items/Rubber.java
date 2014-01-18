@@ -9,7 +9,6 @@ public class Rubber extends ItemMT
 	public Rubber(int id)
 	{
 		super(id);
-		afterInit();
 	}
 	
 	public void registerIcons(IconRegister iconRegister)

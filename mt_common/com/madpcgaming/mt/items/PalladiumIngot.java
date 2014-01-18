@@ -12,7 +12,6 @@ public class PalladiumIngot extends ItemMT
 		super(par1);
 		this.setUnlocalizedName(Strings.PALLADIUM_INGOT_NAME);
 		maxStackSize = 64;
-		afterInit();
 	}
 	public void registerIcons(IconRegister iconRegister)
 	{

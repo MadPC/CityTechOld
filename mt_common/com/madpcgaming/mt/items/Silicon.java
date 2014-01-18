@@ -12,7 +12,6 @@ public class Silicon extends ItemMT
 		super(id);
 		this.setUnlocalizedName(Strings.SILICON_ITEM_NAME);
 		maxStackSize = 64;
-		afterInit();
 	}
 	
 	public void registerIcons(IconRegister iconRegister)

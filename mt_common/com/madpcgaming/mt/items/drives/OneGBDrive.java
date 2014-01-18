@@ -12,6 +12,5 @@ public class OneGBDrive extends ItemMT
 		super(id);
 		this.setUnlocalizedName(Strings.ALUMINUM_BLOCK_NAME);
 		maxStackSize = 1;
-		afterInit();
 	}
 }

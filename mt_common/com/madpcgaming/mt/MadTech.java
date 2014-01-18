@@ -1,6 +1,7 @@
 package com.madpcgaming.mt;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 
 import com.madpcgaming.mt.blocks.ModBlocks;
 import com.madpcgaming.mt.core.proxy.CommonProxy;
@@ -40,6 +41,8 @@ public class MadTech
 		instance = this;
 		ModBlocks.init();
 		ModItems.init();
+		
+		MinecraftForge.EVENT_BUS.register(new com.madpcgaming.mt.handlers.EventHandler());
 	}
 
 	@EventHandler

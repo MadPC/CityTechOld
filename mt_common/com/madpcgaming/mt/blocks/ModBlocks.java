@@ -3,7 +3,7 @@ package com.madpcgaming.mt.blocks;
 import net.minecraft.block.Block;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.madpcgaming.mt.blocks.craftingtable.MadTech;
+import com.madpcgaming.mt.blocks.craftingtable.TechocratsWorkbench;
 import com.madpcgaming.mt.blocks.liquids.SiliconLiquidFlowing;
 import com.madpcgaming.mt.blocks.liquids.SiliconLiquidStill;
 import com.madpcgaming.mt.lib.BlockIds;
@@ -66,7 +66,7 @@ public class ModBlocks
 		SiliconStill = new SiliconLiquidStill(BlockIds.SILICON_LIQUID_STILL);
 		SiliconFlowing = new SiliconLiquidFlowing(BlockIds.SILICON_LIQUID_STILL - 1);
 		CableCopper = new SimpleCable(BlockIds.COPPER_CABLE);
-		CraftingTable = new MadTech(BlockIds.CRAFTING_TABLE);
+		CraftingTable = new TechocratsWorkbench(BlockIds.CRAFTING_TABLE);
 		AluminumBlock = new AluminumBlock(BlockIds.ALUMINUM_BLOCK);
 		CopperBlock = new CopperBlock(BlockIds.COPPER_BLOCK);
 		PalladiumBlock = new PalladiumBlock(BlockIds.PALLADIUM_BLOCK);

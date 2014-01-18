@@ -12,7 +12,6 @@ public class CopperIngot extends ItemMT
 		super(id);
 		this.setUnlocalizedName(Strings.COPPER_INGOT_NAME);
 		maxStackSize = 64;
-		afterInit();
 	}
 	
 	public void registerIcons(IconRegister iconRegister)

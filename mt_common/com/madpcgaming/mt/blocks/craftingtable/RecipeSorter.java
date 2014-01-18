@@ -6,7 +6,7 @@ import net.minecraft.item.crafting.IRecipe;
 
 public class RecipeSorter implements Comparator
 {
-    final MTCraftingManager CraftingManager;
+    private final MTCraftingManager CraftingManager;
 
     public RecipeSorter(MTCraftingManager par1CraftingManager)
     {

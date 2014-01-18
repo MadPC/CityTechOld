@@ -10,22 +10,20 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MadTech extends Block
+public class TechocratsWorkbench extends Block
 {
-	private static final Object instance = null;
 	@SideOnly(Side.CLIENT)
     private Icon workbenchIconTop;
     @SideOnly(Side.CLIENT)
     private Icon workbenchIconFront;
     
-    public MadTech(int i)
+    public TechocratsWorkbench(int i)
     {
         super(i, Material.ground);
         this.setCreativeTab(CreativeTabs.tabBlock);
     }
     
     @SideOnly(Side.CLIENT)
-
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
@@ -51,7 +49,7 @@ public class MadTech extends Block
     {
         if (!player.isSneaking())
 			{
-				player.openGui(MadTech.instance, 0, var1, var2, var3, var4);
+				player.openGui(com.madpcgaming.mt.MadTech.instance, 0, var1, var2, var3, var4);
 				return true;
 			}
 			else

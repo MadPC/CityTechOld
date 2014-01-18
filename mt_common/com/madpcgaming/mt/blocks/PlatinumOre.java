@@ -15,7 +15,6 @@ public class PlatinumOre extends BlockMT
 	{
 		super(id, Material.rock);
 		this.setUnlocalizedName(Strings.PLATINUM_ORE_NAME);
-		this.afterInit();
 	}
 	
 	@Override

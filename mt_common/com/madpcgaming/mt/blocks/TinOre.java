@@ -15,7 +15,6 @@ public class TinOre extends BlockMT
 	{
 		super(id, Material.rock);
 		this.setUnlocalizedName(Strings.TIN_ORE_NAME);
-		this.afterInit();
 	}
 	
 	public int idDropped(int par1, Random random, int par3)
