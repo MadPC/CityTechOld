@@ -8,7 +8,9 @@ import com.madpcgaming.madtech.MadTech;
 import com.madpcgaming.madtech.client.gui.GuiIndustrialFurnace;
 import com.madpcgaming.madtech.client.gui.GuiSimpleEFurnace;
 import com.madpcgaming.madtech.helpers.LogHelper;
+import com.madpcgaming.madtech.inventory.ContainerSimpleEFurnace;
 import com.madpcgaming.madtech.lib.GuiIds;
+import com.madpcgaming.madtech.inventory.ContainerIndustrialFurnace;
 import com.madpcgaming.madtech.tileentitys.TileEntityIndustrialFurnaceCore;
 import com.madpcgaming.madtech.tileentitys.TileSimpleEFurnace;
 
@@ -35,12 +37,12 @@ public class CommonProxy implements IGuiHandler
 		if (ID == GuiIds.FURNACE_CORE)
 		{
 			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.func_147438_o(x, y, z);
-			return new GuiIndustrialFurnace(player.inventory, tileIndustrialFurnaceCore);
+			return new ContainerIndustrialFurnace(player.inventory, tileIndustrialFurnaceCore);
 		}
 		else if (ID == GuiIds.FURNACE_SIMPLE)
 		{
 			TileSimpleEFurnace t1 = (TileSimpleEFurnace) t;
-			return new GuiSimpleEFurnace(player.inventory, t1);
+			return new ContainerSimpleEFurnace(player.inventory, t1);
 		}
 		return null;
 	}
