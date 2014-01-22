@@ -98,7 +98,7 @@ public class ModBlocks
 		GameRegistry.registerBlock(CableCopper, Strings.COPPER_CABLE_NAME);
 
 		GameRegistry.registerBlock(SuperDrain, "DEBUG_SUPER_DRAIN");
-		GameRegistry.registerBlock(BlockElectrolyser, Strings.ELECTROLYSER_NAME);
+		//GameRegistry.registerBlock(BlockElectrolyser, Strings.ELECTROLYSER_NAME);
 		GameRegistry.registerBlock(IndustrialFurnaceCore, Strings.FURNACECORE_NAME);
 		GameRegistry.registerBlock(IndustrialFurnaceDummy, Strings.FURNACEDUMMY_NAME);
 		GameRegistry.registerBlock(AluminumBlock, Strings.ALUMINUM_BLOCK_NAME);
