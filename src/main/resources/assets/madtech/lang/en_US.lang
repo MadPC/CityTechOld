@@ -34,6 +34,6 @@ item.cableCopper.name=Copper Cable
 item.itemWrench.name=Wrench
 item.cybersword.name=Cyber Sword
 
-gui.furnaceIndustrial.name= Industrial Furnace
-gui.furnaceElectric.name=Electric Furnace
+container.furnaceIndustrial.name=Industrial Furnace
+container.furnaceElectric.name=Electric Furnace
 
