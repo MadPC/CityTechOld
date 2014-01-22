@@ -1,0 +1,16 @@
+[
+{
+ "modid": "madtech",
+ "name": "MadTech",
+ "description": "Technology gone mad!",
+ "version": "${version}",
+ "mcversion": "${mcversion}",
+ "url": "",
+ "updateUrl": "",
+ "authors": ["Advtech", "Johulk", "reinei"],
+ "credits": "Authored by the MadPC Team",
+ "logoFile": "",
+ "screenshots": [],
+ "dependencies": []
+}
+]

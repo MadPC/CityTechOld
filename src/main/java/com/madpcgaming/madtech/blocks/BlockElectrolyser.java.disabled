@@ -1,0 +1,134 @@
+package com.madpcgaming.madtech.blocks;
+
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.FluidStack;
+
+import com.madpcgaming.madtech.MadTech;
+import com.madpcgaming.madtech.lib.Strings;
+import com.madpcgaming.madtech.lib.Utils;
+import com.madpcgaming.madtech.tileentitys.TileElectrolyser;
+
+public class BlockElectrolyser extends BlockContainer
+{
+	
+	protected BlockElectrolyser(int id)
+	{
+		super(Material.field_151573_f);
+		
+		this.func_149711_c(0.5F);
+		this.func_149647_a(MadTech.tabsMT);
+		this.func_149663_c(Strings.ELECTROLYSER_NAME);
+		this.field_149768_d = this.func_149739_a();
+		
+	}
+	
+	public void registerIcons(IIconRegister iconRegister)
+	{
+		field_149761_L = iconRegister.registerIcon("mt:BlockElectrolyser");
+	}
+	
+	@Override
+	public TileEntity func_149915_a(World world, int var1)
+	{
+		return new TileElectrolyser();
+	}
+	
+	@Override
+	public void func_149689_a(World world, int x, int y, int z, EntityLivingBase entityLivingBase, ItemStack itemStack)
+	{
+		
+		super.func_149689_a(world, x, y, z, entityLivingBase, itemStack);
+	}
+	
+	public boolean onBlockActived(World world, int i, int j, int k, EntityPlayer entityPlayer, int par6, float par7, float par8, float par9)
+	{
+		if (entityPlayer.isSneaking())
+		{
+			return false;
+		}
+		
+		ItemStack current = entityPlayer.inventory.getCurrentItem();
+		if (current != null)
+		{
+			
+			FluidStack fluid = FluidContainerRegistry.getFluidForFilledItem(current);
+			
+			TileElectrolyser tank = (TileElectrolyser) world.func_147438_o(i, j, k);
+			
+			if (fluid != null)
+			{
+				int qty = tank.fill(ForgeDirection.UNKNOWN, fluid, true);
+				
+				if (qty != 0 && !entityPlayer.capabilities.isCreativeMode)
+				{
+					entityPlayer.inventory.setInventorySlotContents(entityPlayer.inventory.currentItem, Utils.consumeItem(current));
+				}
+				
+				return true;
+			} else
+			{
+				
+				FluidStack available = tank.getTankInfo(ForgeDirection.UNKNOWN)[0].fluid;
+				if (available != null)
+				{
+					ItemStack filled = FluidContainerRegistry.fillFluidContainer(available, current);
+					
+					fluid = FluidContainerRegistry.getFluidForFilledItem(filled);
+					
+					if (fluid != null)
+					{
+						if (!entityPlayer.capabilities.isCreativeMode)
+						{
+							if (current.stackSize > 1)
+							{
+								if (!entityPlayer.inventory.addItemStackToInventory(filled))
+									return false;
+								else
+								{
+									entityPlayer.inventory.setInventorySlotContents(entityPlayer.inventory.currentItem,
+											Utils.consumeItem(current));
+								}
+							} else
+							{
+								entityPlayer.inventory.setInventorySlotContents(entityPlayer.inventory.currentItem,
+										Utils.consumeItem(current));
+								entityPlayer.inventory.setInventorySlotContents(entityPlayer.inventory.currentItem, filled);
+							}
+						}
+						tank.drain(ForgeDirection.UNKNOWN, fluid.amount, true);
+						return true;
+					} else
+					{
+						this.openGUI(entityPlayer, world, i, j, k);
+						return true;
+					}
+				} else
+				{
+					// Stupid way to make guis work ...
+					this.openGUI(entityPlayer, world, i, j, k);
+					return true;
+				}
+			}
+		} else
+		{
+			this.openGUI(entityPlayer, world, i, j, k);
+			return true;
+		}
+	}
+	
+	private void openGUI(EntityPlayer entityPlayer, World w, int x, int y, int z)
+	{
+		System.out.println("Opening GUI!");
+		entityPlayer.openGui(MadTech.instance, 0, w, x, y, z);
+	}
+	
+}
