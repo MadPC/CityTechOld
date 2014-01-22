@@ -20,21 +20,25 @@ public class GuiIndustrialFurnace extends GuiContainer
 		super(new ContainerIndustrialFurnace(playerInventory, tileEntity));
 		this.tileEntity = tileEntity;
 	}
-	
+	//func_146979_b = drawGuiContainerForegroundLayer
 	@Override
 	protected void func_146979_b(int x, int y)
 	{
+		//field_146289_q = fontRendererObj
 		field_146289_q.drawString(StatCollector.translateToLocal(Strings.GUI_INDUSTRIAL_FURNACE),28, 6, 4210752);
 		field_146289_q.drawString(StatCollector.translateToLocal("container.inventory"), 8, 176 - 96 + 2, 4210752);
 	}
-
+	
+	//func_146976_a = drawGuiContainerBackgroundLayer
 	@Override
 	protected void func_146976_a(float f, int par1, int par2)
 	{
 		GL11.glColor4f(1f, 1f, 1f, 1f);
-
+		//field_146297_k = MC
 		this.field_146297_k.getTextureManager().bindTexture(Textures.GUI_INDUSTRIAL_FURNACE);
-
+		
+		//field_146294_l = width
+		//field_146295_m = height
 		int x = (field_146294_l - par1) / 2;
 		int y = (field_146295_m - par2) / 2;
 		drawTexturedModalRect(x, y, 0, 0, par1, par2);

@@ -35,16 +35,22 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 
 
 	public BlockIndustrialFurnaceCore(int id) {
+		//field_151576_e - rock
 		super(Material.field_151576_e);
+		//func_149663_c - setUnlocalizedName
 		func_149663_c(Strings.FURNACECORE_NAME);
+		//func_149711_c - setHardness
 		func_149711_c (3.5F);
+		//func_149647_a - setcreativeTab
 		func_149647_a(MadTech.tabsMT);
 		
 	}
 	
+	//func_149651_a - registerBlockIcons
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
+		//field_149761_L - blockIcon
 		field_149761_L = iconRegister.registerIcon("madtech:brick");
 		faceIconUnlit = iconRegister.registerIcon("madtech:IndustrialFurnace_Front_Unlit");
 		faceIconLit  = iconRegister.registerIcon("madtech:IndustrialFurnace_Front_Lit");
@@ -69,6 +75,7 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 		world.setBlockMetadataWithNotify(x, y, z, metadata, 2);
 	}
 	
+	//func_149691_a - getIcon
 	@Override
 	public IIcon func_149691_a(int side, int metadata)
 	{
@@ -78,10 +85,12 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 		return (side == getSideFromFacing(facing) ? (isActive ? faceIconLit: faceIconUnlit): field_149761_L);
 	}
 	
+	//func_149727_a - onBlockActivated
 	@Override
 	public boolean func_149727_a(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9){
 		if(player.isSneaking())
 			return false;
+																							//func_147438_o - getTileEntity
 		TileEntityIndustrialFurnaceCore tileEntity = (TileEntityIndustrialFurnaceCore) world.func_147438_o(x, y, z);
 		
 		if(tileEntity != null)
@@ -91,6 +100,7 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 				if(tileEntity.checkIfProperlyFormed()){
 					tileEntity.convertDummies();
 					if(world.isRemote)
+						//func_145747_a - addChatMessage
 						player.func_145747_a(new ChatComponentText("Industrial Furnace Completed"));
 				}
 			}
@@ -100,6 +110,7 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 		return true;
 	}
 	
+	//func_149734_b - randomDisplayTick
 	@Override
 	public void func_149734_b(World world, int x, int y, int z, Random random)
 	{
@@ -137,12 +148,14 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 		world.spawnParticle("flame", x + xMod, y + yMod, z + zMod, 0, 0, 0);
 	}
 
+	//func_149915_a - createNewTileEntity
 	@Override
 	public TileEntity func_149915_a(World world, int var1) {
 		
 		return new TileEntityIndustrialFurnaceCore();
 	}
 	
+	//func_149749_a - breakBlock
 	@Override
 	public void func_149749_a(World world, int x, int y, int z, Block par5, int par6)
 	{

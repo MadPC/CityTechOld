@@ -15,9 +15,13 @@ public class AluminiumOre extends BlockMT
 	
 	public AluminiumOre(int id)
 	{
+		//field_151576_e = rock
 		super(id, Material.field_151576_e);
+		//func_149752_b = setResistence
 		this.func_149752_b(5.0F);
+		//func_149663_c  = setUnlocalizedName
 		this.func_149663_c (Strings.ALUMINIUM_ORE_NAME);
+		//func_149647_a - setcreativeTab
 		this.func_149647_a(MadTech.tabsMT);
 	}
 	
@@ -31,9 +35,11 @@ public class AluminiumOre extends BlockMT
 		return 1;
 	}
 	
+	//func_149651_a - registerBlockIcons
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
+		//field_149761_L - blockIcon
 		field_149761_L = iconRegister.registerIcon("madtech:blockAluminium");
 	}
 	
