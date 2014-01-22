@@ -8,3 +8,4 @@
 /.project
 /.gradle/
 /bin/
+!gradle-wrapper.jar
