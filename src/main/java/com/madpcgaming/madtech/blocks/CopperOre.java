@@ -33,6 +33,6 @@ public class CopperOre extends BlockMT
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("mt:oreCopper");
+		field_149761_L = iconRegister.registerIcon("madtech:oreCopper");
 	}
 }

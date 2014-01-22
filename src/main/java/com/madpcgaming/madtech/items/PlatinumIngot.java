@@ -16,7 +16,7 @@ public class PlatinumIngot extends ItemMT
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		itemIcon = iconRegister.registerIcon("mt:ingotPlatinum");
+		itemIcon = iconRegister.registerIcon("madtech:ingotPlatinum");
 	}
 	
 	

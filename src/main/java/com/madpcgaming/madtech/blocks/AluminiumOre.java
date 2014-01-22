@@ -10,20 +10,20 @@ import com.madpcgaming.madtech.MadTech;
 import com.madpcgaming.madtech.items.ModItems;
 import com.madpcgaming.madtech.lib.Strings;
 
-public class AluminumOre extends BlockMT
+public class AluminiumOre extends BlockMT
 {
 	
-	public AluminumOre(int id)
+	public AluminiumOre(int id)
 	{
 		super(id, Material.field_151576_e);
 		this.func_149752_b(5.0F);
-		this.func_149663_c(Strings.ALUMINUM_ORE_NAME);
+		this.func_149663_c (Strings.ALUMINIUM_ORE_NAME);
 		this.func_149647_a(MadTech.tabsMT);
 	}
 	
 	public Item idDropped(int par1, Random random, int par3)
 	{
-		return ModItems.AluminumIngot;
+		return ModItems.AluminiumIngot;
 	}
 	
 	public int quantityDropped(Random random)
@@ -34,7 +34,7 @@ public class AluminumOre extends BlockMT
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("mt:blockAluminum");
+		field_149761_L = iconRegister.registerIcon("madtech:blockAluminium");
 	}
 	
 }

@@ -33,7 +33,7 @@ public class TinOre extends BlockMT
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("mt:oreTin");
+		field_149761_L = iconRegister.registerIcon("madtech:oreTin");
 	}
 	
 }

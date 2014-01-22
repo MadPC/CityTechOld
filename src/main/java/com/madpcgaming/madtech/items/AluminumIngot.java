@@ -17,6 +17,6 @@ public class AluminumIngot extends ItemMT
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		itemIcon = iconRegister.registerIcon("mt:ingotAluminum");
+		itemIcon = iconRegister.registerIcon("madtech:ingotAluminum");
 	}
 }

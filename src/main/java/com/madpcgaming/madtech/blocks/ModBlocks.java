@@ -21,7 +21,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class ModBlocks
 {
 
-	public static Block	AluminumOre;
+	public static Block	AluminiumOre;
 	public static Block	CopperOre;
 	public static Block	PalladiumOre;
 	public static Block	PlatinumOre;
@@ -33,7 +33,7 @@ public class ModBlocks
 	public static Block	BlockElectrolyser;
 	public static Block	IndustrialFurnaceCore;
 	public static Block	IndustrialFurnaceDummy;
-	public static Block	AluminumBlock;
+	public static Block	AluminiumBlock;
 	public static Block	CopperBlock;
 	public static Block	PalladiumBlock;
 	public static Block	PlatinumBlock;
@@ -58,7 +58,7 @@ public class ModBlocks
 	{
 
 		/* Initialize each mod item individually */
-		AluminumOre = new AluminumOre(BlockIds.ALUMINUM_ORE);
+		AluminiumOre = new AluminiumOre(BlockIds.ALUMINUM_ORE);
 		CopperOre = new CopperOre(BlockIds.COPPER_ORE);
 		PalladiumOre = new PalladiumOre(BlockIds.PALLADIUM_ORE);
 		PlatinumOre = new PlatinumOre(BlockIds.PLATINUM_ORE);
@@ -68,7 +68,7 @@ public class ModBlocks
 		SiliconFlowing = new SiliconLiquidFlowing(BlockIds.SILICON_LIQUID_STILL - 1);
 		CableCopper = new SimpleCable(BlockIds.COPPER_CABLE);
 		CraftingTable = new TechocratsWorkbench(BlockIds.CRAFTING_TABLE);
-		AluminumBlock = new AluminumBlock(BlockIds.ALUMINUM_BLOCK);
+		AluminiumBlock = new AluminiumBlock(BlockIds.ALUMINUM_BLOCK);
 		CopperBlock = new CopperBlock(BlockIds.COPPER_BLOCK);
 		PalladiumBlock = new PalladiumBlock(BlockIds.PALLADIUM_BLOCK);
 		PlatinumBlock = new PlatinumBlock(BlockIds.PLATINUM_BLOCK);
@@ -87,7 +87,7 @@ public class ModBlocks
 		SimpleFurnace = new SimpleEFurnace(BlockIds.BLOCK_SE_FURNACE);
 		
 		//GameRegistery stuff
-		GameRegistry.registerBlock(AluminumOre, Strings.ALUMINUM_ORE_NAME);
+		GameRegistry.registerBlock(AluminiumOre, Strings.ALUMINIUM_ORE_NAME);
 		GameRegistry.registerBlock(CopperOre, Strings.COPPER_ORE_NAME);
 		GameRegistry.registerBlock(PalladiumOre, Strings.PALLADIUM_ORE_NAME);
 		GameRegistry.registerBlock(PlatinumOre, Strings.PLATINUM_ORE_NAME);
@@ -101,7 +101,7 @@ public class ModBlocks
 		//GameRegistry.registerBlock(BlockElectrolyser, Strings.ELECTROLYSER_NAME);
 		GameRegistry.registerBlock(IndustrialFurnaceCore, Strings.FURNACECORE_NAME);
 		GameRegistry.registerBlock(IndustrialFurnaceDummy, Strings.FURNACEDUMMY_NAME);
-		GameRegistry.registerBlock(AluminumBlock, Strings.ALUMINUM_BLOCK_NAME);
+		GameRegistry.registerBlock(AluminiumBlock, Strings.ALUMINIUM_BLOCK_NAME);
 		GameRegistry.registerBlock(CopperBlock, Strings.COPPER_BLOCK_NAME);
 		GameRegistry.registerBlock(PalladiumBlock, Strings.PALLADIUM_BLOCK_NAME);
 		GameRegistry.registerBlock(PlatinumBlock, Strings.PLATINUM_BLOCK_NAME);
@@ -125,7 +125,7 @@ public class ModBlocks
 
 	private static void initOreDictionaryRegister()
 	{
-		OreDictionary.registerOre("oreAluminum", AluminumOre);
+		OreDictionary.registerOre("oreAluminum", AluminiumOre);
 		OreDictionary.registerOre("oreCopper", CopperOre);
 		OreDictionary.registerOre("orePalladium", PalladiumOre);
 		OreDictionary.registerOre("orePlatinum", PlatinumOre);

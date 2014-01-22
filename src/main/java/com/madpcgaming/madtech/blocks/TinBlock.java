@@ -33,7 +33,7 @@ public class TinBlock extends BlockMT
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("mt:blockTin");
+		field_149761_L = iconRegister.registerIcon("madtech:blockTin");
 	}
 	
 }

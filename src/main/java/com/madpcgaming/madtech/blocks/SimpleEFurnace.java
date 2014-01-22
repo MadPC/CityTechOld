@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import com.madpcgaming.madtech.MadTech;
 import com.madpcgaming.madtech.lib.BlockIds;
 import com.madpcgaming.madtech.lib.GuiIds;
+import com.madpcgaming.madtech.lib.Strings;
 import com.madpcgaming.madtech.tileentitys.TileSimpleEFurnace;
 
 public class SimpleEFurnace extends BlockContainer
@@ -38,6 +39,7 @@ public class SimpleEFurnace extends BlockContainer
 		super(Material.field_151573_f);
 		this.func_149711_c(1.0f);
 		this.func_149647_a(MadTech.tabsMT);
+		func_149663_c(Strings.SIMPLE_SE_FURNACE_NAME);
 	}
 	
 	//Display
@@ -45,8 +47,8 @@ public class SimpleEFurnace extends BlockContainer
 	public void func_149651_a(IIconRegister iconRegister)
 	{
 		field_149761_L = iconRegister.registerIcon("iron");
-		faceIconUnlit = iconRegister.registerIcon("mt:SEFurnace_Front_Unlit");
-		faceIconLit  = iconRegister.registerIcon("mt:SEFurnace_Front_Lit");
+		faceIconUnlit = iconRegister.registerIcon("madtech:SEFurnace_Front_Unlit");
+		faceIconLit  = iconRegister.registerIcon("madtech:SEFurnace_Front_Lit");
 	}
 	
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)

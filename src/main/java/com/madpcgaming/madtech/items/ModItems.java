@@ -12,7 +12,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ModItems
 {
-	public static Item	AluminumIngot;
+	public static Item	AluminiumIngot;
 	public static Item	CopperIngot;
 	public static Item	TinIngot;
 	public static Item	PlatinumIngot;
@@ -30,7 +30,7 @@ public class ModItems
 	{
 
 		/* Initialize each mod item individually */
-		AluminumIngot = new AluminumIngot(ItemIds.ALUMINIUM_INGOT);
+		AluminiumIngot = new AluminumIngot(ItemIds.ALUMINIUM_INGOT);
 		CopperIngot = new CopperIngot(ItemIds.COPPER_INGOT);
 		TinIngot = new TinIngot(ItemIds.TIN_INGOT);
 		PlatinumIngot = new PlatinumIngot(ItemIds.PLATINUM_INGOT);
@@ -47,8 +47,8 @@ public class ModItems
 		wireTester = new WireTester(ItemIds.RUBBER_ITEM + 1);
 		GameRegistry.addSmelting(ModBlocks.SilverOre,
 				new ItemStack(SilverIngot), 0.7F);
-		GameRegistry.addSmelting(ModBlocks.AluminumOre, new ItemStack(
-				AluminumIngot), 0.7F);
+		GameRegistry.addSmelting(ModBlocks.AluminiumOre, new ItemStack(
+				AluminiumIngot), 0.7F);
 		GameRegistry.addSmelting(ModBlocks.CopperOre,
 				new ItemStack(CopperIngot), 0.7F);
 		GameRegistry.addSmelting(ModBlocks.PalladiumOre, new ItemStack(
@@ -58,10 +58,10 @@ public class ModItems
 		GameRegistry.addSmelting(ModBlocks.TinOre, new ItemStack(TinIngot),
 				0.7F);
 
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.AluminumBlock, 1),
-				new Object[] { "DDD", "DDD", "DDD", 'D', AluminumIngot });
-		GameRegistry.addShapelessRecipe(new ItemStack(AluminumIngot, 9),
-				new Object[] { ModBlocks.AluminumBlock });
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.AluminiumBlock, 1),
+				new Object[] { "DDD", "DDD", "DDD", 'D', AluminiumIngot });
+		GameRegistry.addShapelessRecipe(new ItemStack(AluminiumIngot, 9),
+				new Object[] { ModBlocks.AluminiumBlock });
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.CopperBlock, 1),
 				new Object[] { "DDD", "DDD", "DDD", 'D', CopperIngot });
 		GameRegistry.addShapelessRecipe(new ItemStack(CopperIngot, 9),
@@ -89,7 +89,7 @@ public class ModItems
 	public static void initOreDictionaryRegister()
 	{
 		OreDictionary
-				.registerOre("ingotAluminum", new ItemStack(AluminumIngot));
+				.registerOre("ingotAluminum", new ItemStack(AluminiumIngot));
 		OreDictionary.registerOre("ingotCopper", new ItemStack(CopperIngot));
 		OreDictionary.registerOre("ingotTin", new ItemStack(TinIngot));
 		OreDictionary

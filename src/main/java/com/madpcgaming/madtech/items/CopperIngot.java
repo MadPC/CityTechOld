@@ -16,7 +16,7 @@ public class CopperIngot extends ItemMT
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		itemIcon = iconRegister.registerIcon("mt:ingotCopper");
+		itemIcon = iconRegister.registerIcon("madtech:ingotCopper");
 	}
 	
 }

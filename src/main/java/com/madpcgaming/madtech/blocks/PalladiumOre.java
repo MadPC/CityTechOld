@@ -33,6 +33,6 @@ public class PalladiumOre extends BlockMT
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("mt:orePalladium");
+		field_149761_L = iconRegister.registerIcon("madtech:orePalladium");
 	}
 }

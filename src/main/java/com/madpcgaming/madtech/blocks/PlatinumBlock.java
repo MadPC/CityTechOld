@@ -33,7 +33,7 @@ public class PlatinumBlock extends BlockMT
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("mt:blockPlatinum");
+		field_149761_L = iconRegister.registerIcon("madtech:blockPlatinum");
 	}
 
 }

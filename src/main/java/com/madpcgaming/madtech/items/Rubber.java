@@ -14,7 +14,7 @@ public class Rubber extends ItemMT
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		itemIcon = iconRegister.registerIcon("mt:Rubber");
+		itemIcon = iconRegister.registerIcon("madtech:Rubber");
 	}
 	
 }

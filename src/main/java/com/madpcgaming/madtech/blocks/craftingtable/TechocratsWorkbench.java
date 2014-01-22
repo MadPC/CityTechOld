@@ -1,5 +1,7 @@
 package com.madpcgaming.madtech.blocks.craftingtable;
 
+import com.madpcgaming.madtech.lib.Strings;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -22,6 +24,7 @@ public class TechocratsWorkbench extends Block
     {
         super(Material.field_151578_c);
         this.func_149647_a(CreativeTabs.tabBlock);
+        func_149663_c(Strings.WORKBENCH_NAME);
     }
     
     @SideOnly(Side.CLIENT)

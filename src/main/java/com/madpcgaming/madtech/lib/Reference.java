@@ -3,7 +3,7 @@ package com.madpcgaming.madtech.lib;
 public class Reference
 {
 	
-	public static final String	MOD_ID				= "mt";
+	public static final String	MOD_ID				= "madtech";
 	public static final String	MOD_NAME			= "MadTech";
 	public static final String	VERSION				= "pre-release-0.0.1";
 	public static final String	CHANNEL_NAME		= MOD_ID;
