@@ -1,0 +1,78 @@
+// this part adds in ForgeGradle
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.0-SNAPSHOT'
+    }
+}
+
+apply plugin: "forge"
+
+// stuff specific to my mod
+group = 'com.madpcgaming.madtech'
+version = "1.7.2-0.1"
+archivesBaseName = 'MadTech'
+
+// spit out the version for debugging sake
+logger.lifecycle ""+version
+
+minecraft {
+        version = "1.7.2-10.12.0.1012" // grab latest forge
+        assetDir = "run/assets"
+}
+
+// add some stuff to the version
+version = "${minecraft.version}-$version.${System.getenv().BUILD_NUMBER}"
+
+processResources
+{
+        // replace stuff in text files, not binary ones.
+    from(sourceSets.main.resources.srcDirs) {
+        include '**/*.lang'
+        include '**/*.info'
+                
+                // replace version and MCVersion
+                // forge version is also accessible via project.minecraftforgeVersion
+                // it contains the full minecraft version, including buildNumber
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+        // copy everything else, thats not text
+    from(sourceSets.main.resources.srcDirs) {
+        exclude '**/*.lang'
+        exclude '**/*.info'
+    }
+}
+
+repositories {
+        mavenCentral()
+}
+
+// change the name of my obfuscated jar
+jar {
+        appendix = 'universal'
+}
+
+// add a source jar
+task sourceJar(type: Jar) {
+        from sourceSets.main.allSource
+        appendix = 'src'
+}
+
+// because the normal output has been made to be obfuscated
+task deobfJar(type: Jar) {
+        from sourceSets.main.output
+        appendix = 'deobf'
+}
+
+artifacts {
+        archives sourceJar
+        archives deobfJar
+
+}
