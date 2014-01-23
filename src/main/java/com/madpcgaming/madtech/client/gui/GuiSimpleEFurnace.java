@@ -41,7 +41,7 @@ public class GuiSimpleEFurnace extends GuiContainer
 	protected void func_146976_a(float f, int par1, int par2)
 	{
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		field_146297_k.renderEngine.bindTexture(Textures.GUI_SIMPLE_EFURNACE);
+		this.field_146297_k.renderEngine.bindTexture(Textures.GUI_SIMPLE_EFURNACE);
         int k = (this.field_146294_l - field_146999_f) / 2;
         int l = (this.field_146295_m - field_147000_g) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, field_146999_f, field_147000_g);
