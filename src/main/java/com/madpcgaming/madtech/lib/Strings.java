@@ -36,7 +36,7 @@ public class Strings
 	public static final String	PLATINUM_BLOCK_NAME		= "blockPlatinum";
 	public static final String	SILVER_BLOCK_NAME		= "blockSilver";
 	public static final String	TIN_BLOCK_NAME			= "blockTin";
-	public static final String	GUI_INDUSTRIAL_FURNACE	= "furnaceIndustrial";
+	public static final String	GUI_INDUSTRIAL_FURNACE	= "Industrial Furnace";
 	public static final String	REINFORCED_GLASS_NAME	= "glassReinforced";
 	public static final String	REINFORCED_STONE_NAME	= "stoneReinforced";
 	public static final String	BLOCK_LAMP_NAME			= "blockLamp";
@@ -45,7 +45,7 @@ public class Strings
 	public static final String	CYBERSWORD_ITEM_NAME	= "cybersword";
 	public static final String	GUI_SIMPLE_E_FURNACE	= "furnaceElectric";
 	public static final String	SIMPLE_MACERATOR_NAME	= "blockMacerator";
-	public static final String	SUPER_DRAIN_NAME	    = "drainSuper";
+	public static final String	SUPER_DRAIN_NAME		= "drainSuper";
 	public static final String	WORKBENCH_NAME			= "workbench";
 
 }

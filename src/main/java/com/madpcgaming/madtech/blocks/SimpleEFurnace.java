@@ -46,7 +46,7 @@ public class SimpleEFurnace extends BlockContainer
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("iron");
+		field_149761_L = iconRegister.registerIcon("minecraft:iron");
 		faceIconUnlit = iconRegister.registerIcon("madtech:SEFurnace_Front_Unlit");
 		faceIconLit  = iconRegister.registerIcon("madtech:SEFurnace_Front_Lit");
 	}
@@ -92,10 +92,10 @@ public class SimpleEFurnace extends BlockContainer
 	/**
 	 * Called upon block activation (right click on the block.)
 	 */
-	public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
+	@Override
+	public boolean func_149727_a(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
 			float par8, float par9)
 	{
-		//LogHelper.info("Simple furnace activated");
 		if(par5EntityPlayer.isSneaking())
 			return false;
 		TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) par1World.func_147438_o(par2, par3, par4);

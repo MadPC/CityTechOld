@@ -1,4 +1,4 @@
-package com.madpcgaming.madtech.tileentitys;
+	package com.madpcgaming.madtech.tileentitys;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,6 +14,7 @@ import net.minecraft.tileentity.TileEntityFurnace;
 
 import com.madpcgaming.madtech.blocks.ModBlocks;
 import com.madpcgaming.madtech.blocks.multiblocks.IndustrialFurnaceCore;
+import com.madpcgaming.madtech.lib.Strings;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -275,7 +276,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	@Override
 	public String func_145825_b()
 	{
-		return "MadTech.container.IndustrialFurnaceCore";
+		return Strings.GUI_INDUSTRIAL_FURNACE;
 	}
 
 	@Override

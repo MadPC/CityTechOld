@@ -24,6 +24,7 @@ public class GuiSimpleEFurnace extends GuiContainer
 	{
 		super(new ContainerSimpleEFurnace(playerinv, tile));
 		this.tile = tile;
+		field_147000_g = 166;
 	}
 	
 	/**
@@ -32,8 +33,8 @@ public class GuiSimpleEFurnace extends GuiContainer
     protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
     	final String invTitle = Strings.GUI_SIMPLE_E_FURNACE;
-        this.field_146289_q.drawString(invTitle, par1 / 2 - this.field_146289_q.getStringWidth(invTitle) / 2, 6, 4210752);
-        this.field_146289_q.drawString(I18n.getStringParams("container.inventory"), 8, par2 - 96 + 2, 4210752);
+        this.field_146289_q.drawString(invTitle, field_146999_f / 2 - this.field_146289_q.getStringWidth(invTitle) / 2, 6, 4210752);
+        this.field_146289_q.drawString(I18n.getStringParams("container.inventory"), 8, field_147000_g - 96 + 2, 4210752);
     }
 	
 	@Override
@@ -41,9 +42,9 @@ public class GuiSimpleEFurnace extends GuiContainer
 	{
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		field_146297_k.renderEngine.bindTexture(Textures.GUI_SIMPLE_EFURNACE);
-        int k = (this.field_146294_l - par1) / 2;
-        int l = (this.field_146295_m - par2) / 2;
-        this.drawTexturedModalRect(k, l, 0, 0, par1, par2);
+        int k = (this.field_146294_l - field_146999_f) / 2;
+        int l = (this.field_146295_m - field_147000_g) / 2;
+        this.drawTexturedModalRect(k, l, 0, 0, field_146999_f, field_147000_g);
         int i1;
 
         if (this.tile.isBurning())

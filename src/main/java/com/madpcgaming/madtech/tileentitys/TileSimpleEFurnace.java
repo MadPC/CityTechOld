@@ -37,12 +37,10 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 		energy = new EnergyHandler(this.field_145851_c, this.field_145848_d, this.field_145849_e);
 	}
 	
-	//Update
 	@Override
 	public void func_145845_h()
 	{
 		
-		//Furnace updating
 		boolean flag = this.furnaceBurnTime > 0;
         boolean flag1 = false;
 
@@ -186,8 +184,6 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 	@Override
 	public void closeChest() {}
 	
-	//Hopper stuff
-	//For now disabled.
 	@Override
 	public boolean isItemValidForSlot(int i, ItemStack itemstack)
 	{
