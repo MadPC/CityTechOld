@@ -1,13 +1,12 @@
 package com.madpcgaming.madtech.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
 import com.madpcgaming.madtech.inventory.ContainerSimpleEFurnace;
-import com.madpcgaming.madtech.lib.Strings;
 import com.madpcgaming.madtech.lib.Textures;
 import com.madpcgaming.madtech.tileentitys.TileSimpleEFurnace;
 
@@ -17,44 +16,53 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiSimpleEFurnace extends GuiContainer
 {
-	
-	private TileSimpleEFurnace tile;
-	
-	public GuiSimpleEFurnace(InventoryPlayer playerinv, TileSimpleEFurnace tile)
+
+	public TileSimpleEFurnace	tileEntity;
+
+	public GuiSimpleEFurnace(InventoryPlayer playerInventory, TileSimpleEFurnace tileEntity)
 	{
-		super(new ContainerSimpleEFurnace(playerinv, tile));
-		this.tile = tile;
+		super(new ContainerSimpleEFurnace(playerInventory, tileEntity));
+		this.tileEntity = tileEntity;
 		field_147000_g = 166;
 	}
+	//func_146979_b = drawGuiContainerForegroundLayer
+	@Override
+	protected void func_146979_b(int x, int y)
+	{
+		//field_146289_q = fontRendererObj
+        String invName = tileEntity.func_145818_k_() ? tileEntity.func_145825_b() : StatCollector.translateToLocal(tileEntity.func_145825_b());
+        field_146289_q.drawString(invName, field_146999_f / 2 - field_146289_q.getStringWidth(invName) / 2, 6, 4210752);
+		//field_146289_q.drawString(StatCollector.translateToLocal(Strings.GUI_INDUSTRIAL_FURNACE),28, 6, 4210752);
+		field_146289_q.drawString(StatCollector.translateToLocal("container.inventory"), 6, field_147000_g - 96 + 2, 4210752);
+	}
 	
-	/**
-     * Draw the foreground layer for the GuiContainer (everything in front of the items)
-     */
-    protected void drawGuiContainerForegroundLayer(int par1, int par2)
-    {
-    	final String invTitle = Strings.GUI_SIMPLE_E_FURNACE;
-        this.field_146289_q.drawString(invTitle, field_146999_f / 2 - this.field_146289_q.getStringWidth(invTitle) / 2, 6, 4210752);
-        this.field_146289_q.drawString(I18n.getStringParams("container.inventory"), 8, field_147000_g - 96 + 2, 4210752);
-    }
-	
+	//func_146976_a = drawGuiContainerBackgroundLayer
 	@Override
 	protected void func_146976_a(float f, int par1, int par2)
 	{
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		this.field_146297_k.renderEngine.bindTexture(Textures.GUI_SIMPLE_EFURNACE);
-        int k = (this.field_146294_l - field_146999_f) / 2;
-        int l = (this.field_146295_m - field_147000_g) / 2;
-        this.drawTexturedModalRect(k, l, 0, 0, field_146999_f, field_147000_g);
-        int i1;
-
-        if (this.tile.isBurning())
-        {
-            i1 = this.tile.getBurnTimeRemainingScaled(12);
-            this.drawTexturedModalRect(k + 56, l + 36 + 12 - i1, 176, 12 - i1, 14, i1 + 2);
-        }
-
-        i1 = this.tile.getCookProgressScaled(12);
-        this.drawTexturedModalRect(k + 79, l + 34, 176, 14, i1 + 1, 16);
+		GL11.glColor4f(1f, 1f, 1f, 1f);
+		//field_146297_k = MC
+		this.field_146297_k.getTextureManager().bindTexture(Textures.GUI_SIMPLE_EFURNACE);
+		
+		//field_146294_l = width
+		//field_146295_m = height
+		//field_146999_f = xSize
+		//field_147000_g = ySize
+		//field_147003_i = guiLeft
+		//field_147009_r = guiTop
+		int x = (field_146294_l - field_146999_f) / 2;
+		int y = (field_146295_m - field_147000_g) / 2;
+		drawTexturedModalRect(x, y, 0, 0, field_146999_f, field_147000_g);
+		int i1;
+		
+		if(tileEntity.isBurning())
+		{
+			i1 = tileEntity.getBurnTimeRemainingScaled(12);
+			drawTexturedModalRect(x + 57, y + 36 + 23 - i1, 176, 12 - i1, 14, i1 + 2);
+		}
+		
+		i1 = tileEntity.getCookProgressScaled(24);
+		drawTexturedModalRect(x + 83, y + 34, 176, 14, i1 + 1, 16);
 	}
-	
+
 }

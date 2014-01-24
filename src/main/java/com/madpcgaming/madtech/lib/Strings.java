@@ -43,9 +43,10 @@ public class Strings
 	public static final String	SIMPLE_SE_FURNACE_NAME	= "blockElectricFurnace";
 	public static final String	ENERGYREADER_ITEM_NAME	= "energyreader";
 	public static final String	CYBERSWORD_ITEM_NAME	= "cybersword";
-	public static final String	GUI_SIMPLE_E_FURNACE	= "furnaceElectric";
+	public static final String	GUI_SIMPLE_E_FURNACE	= "Electric Furnace";
 	public static final String	SIMPLE_MACERATOR_NAME	= "blockMacerator";
 	public static final String	SUPER_DRAIN_NAME		= "drainSuper";
 	public static final String	WORKBENCH_NAME			= "workbench";
+	public static final String	GUI_WORKBENCH_NAME		= "Better Crafting";
 
 }

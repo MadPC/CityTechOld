@@ -46,12 +46,13 @@ public class SimpleEFurnace extends BlockContainer
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("minecraft:iron");
+		field_149761_L = iconRegister.registerIcon("iron");
 		faceIconUnlit = iconRegister.registerIcon("madtech:SEFurnace_Front_Unlit");
 		faceIconLit  = iconRegister.registerIcon("madtech:SEFurnace_Front_Lit");
 	}
+
 	
-	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)
+	public void func_149689_a(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)
 	{
 		int metadata = 0;
 		int facing = META_DIR_WEST;
@@ -92,20 +93,19 @@ public class SimpleEFurnace extends BlockContainer
 	/**
 	 * Called upon block activation (right click on the block.)
 	 */
+	
 	@Override
-	public boolean func_149727_a(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
-			float par8, float par9)
-	{
-		if(par5EntityPlayer.isSneaking())
+	public boolean func_149727_a(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9){
+		if(player.isSneaking())
 			return false;
-		TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) par1World.func_147438_o(par2, par3, par4);
+																							//func_147438_o - getTileEntity
+		TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.func_147438_o(x, y, z);
 		
-		if(tileEntity != null && !par1World.isRemote)
+		if(tileEntity != null)
 		{
-			par5EntityPlayer.openGui(MadTech.instance, GuiIds.FURNACE_SIMPLE, par1World, par2, par3, par4);
-			return true;
+				player.openGui(MadTech.instance, GuiIds.FURNACE_SIMPLE, world, x, y, z);
 		}
-		return false;
+		return true;
 	}
 	
 	@Override

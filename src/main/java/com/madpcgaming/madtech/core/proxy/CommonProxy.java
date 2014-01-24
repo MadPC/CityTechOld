@@ -7,10 +7,12 @@ import net.minecraft.world.World;
 import com.madpcgaming.madtech.MadTech;
 import com.madpcgaming.madtech.client.gui.GuiIndustrialFurnace;
 import com.madpcgaming.madtech.client.gui.GuiSimpleEFurnace;
+import com.madpcgaming.madtech.client.gui.TableGui;
 import com.madpcgaming.madtech.helpers.LogHelper;
-import com.madpcgaming.madtech.inventory.ContainerSimpleEFurnace;
-import com.madpcgaming.madtech.lib.GuiIds;
 import com.madpcgaming.madtech.inventory.ContainerIndustrialFurnace;
+import com.madpcgaming.madtech.inventory.ContainerSimpleEFurnace;
+import com.madpcgaming.madtech.inventory.ContainerTable;
+import com.madpcgaming.madtech.lib.GuiIds;
 import com.madpcgaming.madtech.tileentitys.TileEntityIndustrialFurnaceCore;
 import com.madpcgaming.madtech.tileentitys.TileSimpleEFurnace;
 
@@ -41,8 +43,12 @@ public class CommonProxy implements IGuiHandler
 		}
 		else if (ID == GuiIds.FURNACE_SIMPLE)
 		{
-			TileSimpleEFurnace t1 = (TileSimpleEFurnace) t;
-			return new ContainerSimpleEFurnace(player.inventory, t1);
+			TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.func_147438_o(x, y, z);
+			return new ContainerSimpleEFurnace(player.inventory, tileEntity);
+		}
+		else if (ID == GuiIds.TABLE)
+		{
+			return new ContainerTable(player.inventory, world, x, y, z);
 		}
 		return null;
 	}
@@ -50,7 +56,7 @@ public class CommonProxy implements IGuiHandler
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
 	{
-		LogHelper.info("Getting CLient GUI!");
+		LogHelper.info("Getting Client GUI!");
 		TileEntity t = world.func_147438_o(x, y, z);
 		/*if (t instanceof TileElectrolyser)
 		{
@@ -64,9 +70,11 @@ public class CommonProxy implements IGuiHandler
 		}
 		else if (ID == GuiIds.FURNACE_SIMPLE)
 		{
-			TileSimpleEFurnace t1 = (TileSimpleEFurnace) t;
-			return new GuiSimpleEFurnace(player.inventory, t1);
+			TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.func_147438_o(x, y, z);
+			return new GuiSimpleEFurnace(player.inventory, tileEntity);
 		}
+		else if (ID == GuiIds.TABLE)
+			return new TableGui(player.inventory, world, x, y, z);
 		return null;
 	}
 }

@@ -1,4 +1,5 @@
 itemGroup.madtech=MadTech!
+#Blocks
 tile.oreAluminium.name=Aluminium Ore
 tile.oreCopper.name=Copper Ore
 tile.orePalladium.name=Palladium Ore
@@ -22,6 +23,7 @@ tile.simpleMacerator.name=Macerator
 tile.drainSuper.name=Super Drain
 tile.workbench.name= Techocrats Workbench
 
+#Items
 item.ingotAluminium.name=Aluminium Ingot
 item.ingotCopper.name=Copper Ingot
 item.ingotTin.name=Tin Ingot
@@ -34,6 +36,7 @@ item.cableCopper.name=Copper Cable
 item.itemWrench.name=Wrench
 item.cybersword.name=Cyber Sword
 
+#GUIs?
 container.furnaceIndustrial.name=Industrial Furnace
 container.furnaceElectric.name=Electric Furnace
 

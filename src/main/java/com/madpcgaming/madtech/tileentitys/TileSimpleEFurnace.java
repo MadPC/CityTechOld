@@ -155,7 +155,7 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 	@Override
 	public String func_145825_b()
 	{
-		return "MadTech.container." + Strings.SIMPLE_SE_FURNACE_NAME;
+		return Strings.GUI_SIMPLE_E_FURNACE;
 	}
 
 	@Override

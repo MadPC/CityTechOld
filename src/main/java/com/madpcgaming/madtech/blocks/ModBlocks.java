@@ -3,7 +3,6 @@ package com.madpcgaming.madtech.blocks;
 import net.minecraft.block.Block;
 import net.minecraftforge.oredict.OreDictionary;
 
-import com.madpcgaming.madtech.blocks.craftingtable.TechocratsWorkbench;
 import com.madpcgaming.madtech.blocks.liquids.SiliconLiquidFlowing;
 import com.madpcgaming.madtech.blocks.liquids.SiliconLiquidStill;
 import com.madpcgaming.madtech.blocks.multiblocks.IndustrialFurnaceCore;
@@ -43,8 +42,6 @@ public class ModBlocks
 	public static Block	ReinforcedGlass;
 	public static Block Lamp;
 	public static Block CraftingTable;
-	
-	
 	public static Block SimpleFurnace;
 	public static Block SimpleMacerator;
 	/**
@@ -78,12 +75,8 @@ public class ModBlocks
 		ReinforcedStone = new ReinforcedStone(BlockIds.REINFORCED_STONE);
 		SuperDrain = new SuperDrain(BlockIds.COPPER_CABLE + 1);
 		//BlockElectrolyser = new BlockElectrolyser(BlockIds.BLOCK_ELECTROLYSER);
-		
-		IndustrialFurnaceCore = new IndustrialFurnaceCore(
-				BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
-		IndustrialFurnaceDummy = new IndustrialFurnaceDummy(
-				BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
-		
+		IndustrialFurnaceCore = new IndustrialFurnaceCore(BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
+		IndustrialFurnaceDummy = new IndustrialFurnaceDummy(BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
 		SimpleFurnace = new SimpleEFurnace(BlockIds.BLOCK_SE_FURNACE);
 		
 		//GameRegistery stuff
@@ -96,7 +89,6 @@ public class ModBlocks
 		GameRegistry.registerBlock(ReinforcedGlass,	Strings.REINFORCED_GLASS_NAME);
 		GameRegistry.registerBlock(ReinforcedStone,	Strings.REINFORCED_STONE_NAME);
 		GameRegistry.registerBlock(CableCopper, Strings.COPPER_CABLE_NAME);
-
 		GameRegistry.registerBlock(SuperDrain, "DEBUG_SUPER_DRAIN");
 		//GameRegistry.registerBlock(BlockElectrolyser, Strings.ELECTROLYSER_NAME);
 		GameRegistry.registerBlock(IndustrialFurnaceCore, Strings.FURNACECORE_NAME);
@@ -107,8 +99,8 @@ public class ModBlocks
 		GameRegistry.registerBlock(PlatinumBlock, Strings.PLATINUM_BLOCK_NAME);
 		GameRegistry.registerBlock(SilverBlock, Strings.SILVER_BLOCK_NAME);
 		GameRegistry.registerBlock(TinBlock, Strings.TIN_BLOCK_NAME);
-		
 		GameRegistry.registerBlock(SimpleFurnace, Strings.SIMPLE_SE_FURNACE_NAME);
+		GameRegistry.registerBlock(CraftingTable, Strings.WORKBENCH_NAME);
 		
 		//Tile Entities
 		GameRegistry.registerTileEntity(CableTE.class, "MTcableCopper");
