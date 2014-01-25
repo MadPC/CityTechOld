@@ -9,7 +9,7 @@ import com.madpcgaming.madtech.lib.Strings;
 public class SiliconLiquidStill extends BlockStaticLiquid
 {
 	
-	public SiliconLiquidStill(int id)
+	public SiliconLiquidStill()
 	{
 		super(Material.field_151586_h);
 		func_149711_c(100F);

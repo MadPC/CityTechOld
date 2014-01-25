@@ -9,7 +9,7 @@ import com.madpcgaming.madtech.lib.Strings;
 public class ReinforcedStone extends Block
 {
 
-	public ReinforcedStone(int id)
+	public ReinforcedStone()
 	{
 		super(Material.field_151576_e);
 		this.func_149647_a(MadTech.tabsMT);

@@ -13,9 +13,9 @@ import com.madpcgaming.madtech.lib.Strings;
 public class PalladiumOre extends BlockMT
 {
 	
-	public PalladiumOre(int id)
+	public PalladiumOre()
 	{
-		super(id, Material.field_151576_e);
+		super(Material.field_151576_e);
 		this.func_149663_c(Strings.PALLADIUM_ORE_NAME);
 		this.func_149647_a(MadTech.tabsMT);
 	}

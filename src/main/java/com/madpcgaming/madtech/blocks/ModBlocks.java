@@ -7,7 +7,6 @@ import com.madpcgaming.madtech.blocks.liquids.SiliconLiquidFlowing;
 import com.madpcgaming.madtech.blocks.liquids.SiliconLiquidStill;
 import com.madpcgaming.madtech.blocks.multiblocks.IndustrialFurnaceCore;
 import com.madpcgaming.madtech.blocks.multiblocks.IndustrialFurnaceDummy;
-import com.madpcgaming.madtech.lib.BlockIds;
 import com.madpcgaming.madtech.lib.Strings;
 import com.madpcgaming.madtech.tileentitys.CableTE;
 import com.madpcgaming.madtech.tileentitys.DrainTE;
@@ -55,29 +54,29 @@ public class ModBlocks
 	{
 
 		/* Initialize each mod item individually */
-		AluminiumOre = new AluminiumOre(BlockIds.ALUMINUM_ORE);
-		CopperOre = new CopperOre(BlockIds.COPPER_ORE);
-		PalladiumOre = new PalladiumOre(BlockIds.PALLADIUM_ORE);
-		PlatinumOre = new PlatinumOre(BlockIds.PLATINUM_ORE);
-		SilverOre = new SilverOre(BlockIds.SILVER_ORE);
-		TinOre = new TinOre(BlockIds.TIN_ORE);
-		SiliconStill = new SiliconLiquidStill(BlockIds.SILICON_LIQUID_STILL);
-		SiliconFlowing = new SiliconLiquidFlowing(BlockIds.SILICON_LIQUID_STILL - 1);
-		CableCopper = new SimpleCable(BlockIds.COPPER_CABLE);
-		CraftingTable = new TechocratsWorkbench(BlockIds.CRAFTING_TABLE);
-		AluminiumBlock = new AluminiumBlock(BlockIds.ALUMINUM_BLOCK);
-		CopperBlock = new CopperBlock(BlockIds.COPPER_BLOCK);
-		PalladiumBlock = new PalladiumBlock(BlockIds.PALLADIUM_BLOCK);
-		PlatinumBlock = new PlatinumBlock(BlockIds.PLATINUM_BLOCK);
-		SilverBlock = new SilverBlock(BlockIds.SILVER_BLOCK);
-		TinBlock = new TinBlock(BlockIds.TIN_BLOCK);
-		ReinforcedGlass = new ReinforcedGlass(BlockIds.REINFORCED_GLASS);
-		ReinforcedStone = new ReinforcedStone(BlockIds.REINFORCED_STONE);
-		SuperDrain = new SuperDrain(BlockIds.COPPER_CABLE + 1);
+		AluminiumOre = new AluminiumOre();
+		CopperOre = new CopperOre();
+		PalladiumOre = new PalladiumOre();
+		PlatinumOre = new PlatinumOre();
+		SilverOre = new SilverOre();
+		TinOre = new TinOre();
+		SiliconStill = new SiliconLiquidStill();
+		SiliconFlowing = new SiliconLiquidFlowing();
+		CableCopper = new SimpleCable();
+		CraftingTable = new TechocratsWorkbench();
+		AluminiumBlock = new AluminiumBlock();
+		CopperBlock = new CopperBlock();
+		PalladiumBlock = new PalladiumBlock();
+		PlatinumBlock = new PlatinumBlock();
+		SilverBlock = new SilverBlock();
+		TinBlock = new TinBlock();
+		ReinforcedGlass = new ReinforcedGlass();
+		ReinforcedStone = new ReinforcedStone();
+		SuperDrain = new SuperDrain();
 		//BlockElectrolyser = new BlockElectrolyser(BlockIds.BLOCK_ELECTROLYSER);
-		IndustrialFurnaceCore = new IndustrialFurnaceCore(BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
-		IndustrialFurnaceDummy = new IndustrialFurnaceDummy(BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
-		SimpleFurnace = new SimpleEFurnace(BlockIds.BLOCK_SE_FURNACE);
+		IndustrialFurnaceCore = new IndustrialFurnaceCore();
+		IndustrialFurnaceDummy = new IndustrialFurnaceDummy();
+		SimpleFurnace = new SimpleEFurnace();
 		
 		//GameRegistery stuff
 		GameRegistry.registerBlock(AluminiumOre, Strings.ALUMINIUM_ORE_NAME);

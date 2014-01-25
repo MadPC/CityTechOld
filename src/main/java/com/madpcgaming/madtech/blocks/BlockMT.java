@@ -8,7 +8,7 @@ import com.madpcgaming.madtech.MadTech;
 public class BlockMT extends Block
 {
 	
-	public BlockMT(int par1, Material par2Material)
+	public BlockMT(Material par2Material)
 	{
 		super(par2Material);
 		// LogHelper.info("&&Calling BlockMT constructor with id %d and Material %s",

@@ -8,7 +8,7 @@ import com.madpcgaming.madtech.lib.Strings;
 
 public class ReinforcedGlass extends Block {
 
-	public ReinforcedGlass(int id) {
+	public ReinforcedGlass() {
 		super(Material.field_151592_s);
 		this.func_149663_c(Strings.REINFORCED_GLASS_NAME);
 		this.func_149752_b(2000.0F);

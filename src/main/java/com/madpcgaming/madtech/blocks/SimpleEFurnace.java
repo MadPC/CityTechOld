@@ -16,7 +16,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 import com.madpcgaming.madtech.MadTech;
-import com.madpcgaming.madtech.lib.BlockIds;
 import com.madpcgaming.madtech.lib.GuiIds;
 import com.madpcgaming.madtech.lib.Strings;
 import com.madpcgaming.madtech.tileentitys.TileSimpleEFurnace;
@@ -34,7 +33,7 @@ public class SimpleEFurnace extends BlockContainer
 	private IIcon faceIconUnlit;
 	private IIcon faceIconLit;
 	
-	public SimpleEFurnace(int par1)
+	public SimpleEFurnace()
 	{
 		super(Material.field_151573_f);
 		this.func_149711_c(1.0f);
@@ -77,12 +76,6 @@ public class SimpleEFurnace extends BlockContainer
 		int facing = (metadata & MASK_DIR);
 		
 		return (side == getSideFromFacing(facing) ? (isActive ? faceIconLit: faceIconUnlit): field_149761_L);
-	}
-	
-	//Vanilla
-	public int idDropped(int par1, Random random, int par3)
-	{
-		return BlockIds.BLOCK_SE_FURNACE;
 	}
 	
 	public int quantityDropped(Random random)

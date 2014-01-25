@@ -17,7 +17,7 @@ import com.madpcgaming.madtech.tileentitys.CableTE;
 public class SimpleCable extends BlockContainer
 {
 	
-	protected SimpleCable(int par1)
+	protected SimpleCable()
 	{
 		super(Material.field_151573_f);
 		this.func_149647_a(MadTech.tabsMT);

@@ -22,7 +22,7 @@ public class TechocratsWorkbench extends Block
     @SideOnly(Side.CLIENT)
     private IIcon workbenchIconFront;
     
-    public TechocratsWorkbench(int i)
+    public TechocratsWorkbench()
     {
         super(Material.field_151578_c);
         this.func_149647_a(MadTech.tabsMT);
