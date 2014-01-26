@@ -27,7 +27,7 @@ archivesBaseName = 'MadTech'
 logger.lifecycle ""+version
 
 minecraft {
-        version = "1.7.2-10.12.0.1012" // grab latest forge
+        version = "1.7.2-10.12.0.1015" // grab latest forge
         assetDir = "run/assets"
 }
 

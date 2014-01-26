@@ -13,7 +13,7 @@ import com.madpcgaming.madtech.tileentitys.DrainTE;
 public class SuperDrain extends BlockContainer
 {
 	
-	protected SuperDrain()
+	protected SuperDrain(int par1)
 	{
 		super(Material.field_151573_f);
 		this.func_149711_c(1.0f);

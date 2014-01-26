@@ -20,7 +20,7 @@ import com.madpcgaming.madtech.tileentitys.TileEntityIndustrialFurnaceDummy;
 public class IndustrialFurnaceDummy extends BlockContainer
 {
 
-	public IndustrialFurnaceDummy()
+	public IndustrialFurnaceDummy(int id)
 	{
 		super(Material.field_151576_e);
 		func_149663_c(Strings.FURNACEDUMMY_NAME);

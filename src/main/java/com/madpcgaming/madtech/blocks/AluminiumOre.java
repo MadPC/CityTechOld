@@ -13,10 +13,10 @@ import com.madpcgaming.madtech.lib.Strings;
 public class AluminiumOre extends BlockMT
 {
 	
-	public AluminiumOre()
+	public AluminiumOre(int id)
 	{
 		//field_151576_e = rock
-		super(Material.field_151576_e);
+		super(id, Material.field_151576_e);
 		//func_149752_b = setResistence
 		this.func_149752_b(5.0F);
 		//func_149663_c  = setUnlocalizedName
@@ -40,7 +40,7 @@ public class AluminiumOre extends BlockMT
 	public void func_149651_a(IIconRegister iconRegister)
 	{
 		//field_149761_L - blockIcon
-		field_149761_L = iconRegister.registerIcon("madtech:blockAluminium");
+		field_149761_L = iconRegister.registerIcon("madtech:oreAluminium");
 	}
 	
 }

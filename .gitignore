@@ -9,5 +9,3 @@
 /.gradle/
 /bin/
 !gradle-wrapper.jar
-/eclipse
-/build

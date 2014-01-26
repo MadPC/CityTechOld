@@ -22,7 +22,7 @@ public class TechocratsWorkbench extends Block
     @SideOnly(Side.CLIENT)
     private IIcon workbenchIconFront;
     
-    public TechocratsWorkbench()
+    public TechocratsWorkbench(int i)
     {
         super(Material.field_151578_c);
         this.func_149647_a(MadTech.tabsMT);
@@ -44,7 +44,7 @@ public class TechocratsWorkbench extends Block
      * When this method is called, your block should register all the icons it needs with the given IconRegister. This
      * is the only chance you get to register icons.
      */
-    public void registerIcons(IIconRegister par1IconRegister)
+    public void func_94581_a(IIconRegister par1IconRegister)
     {
 		this.field_149761_L = par1IconRegister.registerIcon("BetterTable:better_side");
 		this.workbenchIconTop = par1IconRegister.registerIcon("BetterTable:better_top");

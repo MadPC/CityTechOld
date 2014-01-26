@@ -48,5 +48,6 @@ public class Strings
 	public static final String	SUPER_DRAIN_NAME		= "drainSuper";
 	public static final String	WORKBENCH_NAME			= "workbench";
 	public static final String	GUI_WORKBENCH_NAME		= "Better Crafting";
+	public static final String  SIMPLE_CABLE_NAME 		= "cable";
 
 }

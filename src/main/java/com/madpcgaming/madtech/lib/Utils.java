@@ -9,7 +9,7 @@ public class Utils
 	{
 		if (stack.stackSize == 1)
 		{
-			if (stack.getItem().hasContainerItem())
+			if (stack.getItem().hasContainerItem(stack))
 			{
 				return stack.getItem().getContainerItem(stack);
 			} else

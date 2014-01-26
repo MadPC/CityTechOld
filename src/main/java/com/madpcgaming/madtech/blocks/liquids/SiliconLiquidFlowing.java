@@ -9,7 +9,7 @@ import com.madpcgaming.madtech.lib.Strings;
 public class SiliconLiquidFlowing extends BlockLiquid
 {
 	
-	public SiliconLiquidFlowing()
+	public SiliconLiquidFlowing(int id)
 	{
 		super(Material.field_151586_h);
 		func_149711_c(100F);

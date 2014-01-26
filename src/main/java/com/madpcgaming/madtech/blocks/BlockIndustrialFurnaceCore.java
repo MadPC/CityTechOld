@@ -34,7 +34,7 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 	private IIcon faceIconLit;
 
 
-	public BlockIndustrialFurnaceCore() {
+	public BlockIndustrialFurnaceCore(int id) {
 		//field_151576_e - rock
 		super(Material.field_151576_e);
 		//func_149663_c - setUnlocalizedName

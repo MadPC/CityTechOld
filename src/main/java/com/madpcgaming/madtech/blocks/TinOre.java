@@ -13,9 +13,9 @@ import com.madpcgaming.madtech.lib.Strings;
 public class TinOre extends BlockMT
 {
 	
-	public TinOre()
+	public TinOre(int id)
 	{
-		super(Material.field_151576_e);
+		super(id, Material.field_151576_e);
 		this.func_149663_c(Strings.TIN_ORE_NAME);
 		this.func_149647_a(MadTech.tabsMT);
 	}

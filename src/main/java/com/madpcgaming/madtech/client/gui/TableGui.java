@@ -1,10 +1,7 @@
 package com.madpcgaming.madtech.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
@@ -16,10 +13,6 @@ import com.madpcgaming.madtech.lib.Textures;
 
 public class TableGui extends GuiContainer {
 
-	public void registerIcons(IIconRegister iconRegister)
-	{
-		IIcon blockIcon = iconRegister.registerIcon("mt:Table");
-	}
 
 	public TableGui(InventoryPlayer inventoryplayer, World world, int i,
 			int j, int k) {

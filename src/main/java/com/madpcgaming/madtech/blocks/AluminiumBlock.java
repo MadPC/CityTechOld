@@ -6,21 +6,27 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
 import com.madpcgaming.madtech.MadTech;
+import com.madpcgaming.madtech.lib.BlockIds;
 import com.madpcgaming.madtech.lib.Strings;
 
 public class AluminiumBlock extends BlockMT
 {
 	
-	public AluminiumBlock()
+	public AluminiumBlock(int id)
 	{
 		//field_151573_f = iron
-		super(Material.field_151573_f);
+		super(id, Material.field_151573_f);
 		//func_149752_b = setResistence
 		this.func_149752_b(5.0F);
 		//func_149647_a = setCreativeTab
 		this.func_149647_a(MadTech.tabsMT);
 		//func_149663_c = setUnlocalizedName
 		this.func_149663_c(Strings.ALUMINIUM_BLOCK_NAME);
+	}
+	
+	public int idDropped(int par1, Random random, int par3)
+	{
+		return BlockIds.ALUMINUM_BLOCK;
 	}
 	
 	public int quantityDropped(Random random)
@@ -33,7 +39,7 @@ public class AluminiumBlock extends BlockMT
 	public void func_149651_a(IIconRegister iconRegister)
 	{
 		//field_149761_L = blockIcon
-		field_149761_L = iconRegister.registerIcon("madtech:blockAluminum");
+		field_149761_L = iconRegister.registerIcon("madtech:blockAluminium");
 	}
 	
 }

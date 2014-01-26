@@ -13,9 +13,9 @@ import com.madpcgaming.madtech.lib.Strings;
 public class SilverOre extends BlockMT
 {
 	
-	public SilverOre()
+	public SilverOre(int id)
 	{
-		super(Material.field_151576_e);
+		super(id, Material.field_151576_e);
 		this.func_149663_c(Strings.SILVER_ORE_NAME);
 		this.func_149647_a(MadTech.tabsMT);
 	}

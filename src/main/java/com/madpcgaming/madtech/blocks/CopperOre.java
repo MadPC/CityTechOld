@@ -13,9 +13,9 @@ import com.madpcgaming.madtech.lib.Strings;
 public class CopperOre extends BlockMT
 {
 	
-	public CopperOre()
+	public CopperOre(int id)
 	{
-		super(Material.field_151576_e);
+		super(id, Material.field_151576_e);
 		this.func_149663_c (Strings.COPPER_ORE_NAME);
 		this.func_149647_a(MadTech.tabsMT);
 	}

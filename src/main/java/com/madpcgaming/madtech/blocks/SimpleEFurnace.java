@@ -33,7 +33,7 @@ public class SimpleEFurnace extends BlockContainer
 	private IIcon faceIconUnlit;
 	private IIcon faceIconLit;
 	
-	public SimpleEFurnace()
+	public SimpleEFurnace(int id)
 	{
 		super(Material.field_151573_f);
 		this.func_149711_c(1.0f);
@@ -45,7 +45,7 @@ public class SimpleEFurnace extends BlockContainer
 	@Override
 	public void func_149651_a(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("iron");
+		field_149761_L = iconRegister.registerIcon("madtech:SEFurnace_Side");
 		faceIconUnlit = iconRegister.registerIcon("madtech:SEFurnace_Front_Unlit");
 		faceIconLit  = iconRegister.registerIcon("madtech:SEFurnace_Front_Lit");
 	}
@@ -70,7 +70,8 @@ public class SimpleEFurnace extends BlockContainer
 		world.setBlockMetadataWithNotify(x, y, z, metadata, 2);
 	}
 	
-	public IIcon getIcon(int side, int metadata)
+	@Override
+	public IIcon func_149691_a(int side, int metadata)
 	{
 		boolean isActive = ((metadata >> 3) == 1);
 		int facing = (metadata & MASK_DIR);
