@@ -5,7 +5,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.madpcgaming.madtech.energy.interfaces.IEnergyConductor;
 import com.madpcgaming.madtech.helpers.LogHelper;
 
 public class EnergyHandler

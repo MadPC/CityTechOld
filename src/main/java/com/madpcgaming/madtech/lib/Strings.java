@@ -1,5 +1,10 @@
 package com.madpcgaming.madtech.lib;
-
+/**
+ * Block/Items/Guis Naming
+ * 
+ * @author Advtech92
+ *
+ */
 public class Strings
 {
 

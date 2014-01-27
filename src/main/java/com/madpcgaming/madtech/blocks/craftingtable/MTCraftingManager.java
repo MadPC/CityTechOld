@@ -41,6 +41,7 @@ public class MTCraftingManager {
 		this.recipes.addAll(CraftingManager.getInstance().getRecipeList());
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public ShapedRecipes addRecipe(ItemStack par1ItemStack,
 			Object... par2ArrayOfObj) {
 		String s = "";
@@ -105,7 +106,7 @@ public class MTCraftingManager {
 
 	public void addShapelessRecipe(ItemStack par1ItemStack,
 			Object... par2ArrayOfObj) {
-		ArrayList arraylist = new ArrayList();
+		ArrayList<ItemStack> arraylist = new ArrayList<ItemStack>();
 		Object[] aobject = par2ArrayOfObj;
 		int i = par2ArrayOfObj.length;
 
@@ -190,7 +191,7 @@ public class MTCraftingManager {
 	/**
 	 * returns the List<> of all recipes
 	 */
-	public List getRecipeList() {
+	public List<IRecipe> getRecipeList() {
 		return this.recipes;
 	}
 }

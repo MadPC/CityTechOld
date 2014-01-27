@@ -11,7 +11,7 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.madpcgaming.madtech.energy.EnergyHandler;
-import com.madpcgaming.madtech.energy.interfaces.IEnergyConductor;
+import com.madpcgaming.madtech.energy.IEnergyConductor;
 import com.madpcgaming.madtech.lib.Strings;
 
 import cpw.mods.fml.relauncher.Side;

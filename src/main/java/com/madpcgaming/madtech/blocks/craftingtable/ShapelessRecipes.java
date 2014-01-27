@@ -15,9 +15,9 @@ public class ShapelessRecipes implements IRecipe
     private final ItemStack recipeOutput;
 
     /** Is a List of ItemStack that composes the recipe. */
-    public final List recipeItems;
+    public final List<?> recipeItems;
 
-    public ShapelessRecipes(ItemStack par1ItemStack, List par2List)
+    public ShapelessRecipes(ItemStack par1ItemStack, List<?> par2List)
     {
         this.recipeOutput = par1ItemStack;
         this.recipeItems = par2List;
@@ -33,7 +33,7 @@ public class ShapelessRecipes implements IRecipe
      */
     public boolean matches(InventoryCrafting par1InventoryCrafting, World par2World)
     {
-        ArrayList arraylist = new ArrayList(this.recipeItems);
+        ArrayList<?> arraylist = new ArrayList<Object>(this.recipeItems);
 
         for (int i = 0; i < 5; ++i)
         {
@@ -44,7 +44,7 @@ public class ShapelessRecipes implements IRecipe
                 if (itemstack != null)
                 {
                     boolean flag = false;
-                    Iterator iterator = arraylist.iterator();
+                    Iterator<?> iterator = arraylist.iterator();
 
                     while (iterator.hasNext())
                     {

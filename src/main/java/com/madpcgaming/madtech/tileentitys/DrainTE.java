@@ -5,7 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.madpcgaming.madtech.energy.EnergyHandler;
-import com.madpcgaming.madtech.energy.interfaces.IEnergyConductor;
+import com.madpcgaming.madtech.energy.IEnergyConductor;
 
 public class DrainTE extends TileEntity implements IEnergyConductor
 {

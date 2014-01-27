@@ -79,7 +79,7 @@ public class SimpleEFurnace extends BlockContainer
 		return (side == getSideFromFacing(facing) ? (isActive ? faceIconLit: faceIconUnlit): field_149761_L);
 	}
 	
-	public int quantityDropped(Random random)
+	public int func_149745_a(Random random)
 	{
 		return 1;
 	}

@@ -1,7 +1,6 @@
 package com.madpcgaming.madtech.core.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 import com.madpcgaming.madtech.MadTech;
@@ -31,7 +30,7 @@ public class CommonProxy implements IGuiHandler
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
 	{
 		LogHelper.info("Getting Server GUI!");
-		TileEntity t = world.func_147438_o(x, y, z);
+		world.func_147438_o(x, y, z);
 		/*if (t instanceof TileElectrolyser)
 		{
 			return new ElectrolyserContainer(player.inventory, (TileElectrolyser) t);
@@ -57,7 +56,7 @@ public class CommonProxy implements IGuiHandler
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
 	{
 		LogHelper.info("Getting Client GUI!");
-		TileEntity t = world.func_147438_o(x, y, z);
+		world.func_147438_o(x, y, z);
 		/*if (t instanceof TileElectrolyser)
 		{
 			return new ElectrolyserGUI(new ElectrolyserContainer(player.inventory, (TileElectrolyser) t), (TileElectrolyser) t);

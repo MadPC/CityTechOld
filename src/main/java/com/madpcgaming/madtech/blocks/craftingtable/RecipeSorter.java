@@ -4,9 +4,11 @@ import java.util.Comparator;
 
 import net.minecraft.item.crafting.IRecipe;
 
+@SuppressWarnings("rawtypes")
 public class RecipeSorter implements Comparator
 {
-    private final MTCraftingManager CraftingManager;
+    @SuppressWarnings("unused")
+	private final MTCraftingManager CraftingManager;
 
     public RecipeSorter(MTCraftingManager par1CraftingManager)
     {

@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.madpcgaming.madtech.MadTech;
-import com.madpcgaming.madtech.energy.interfaces.IEnergyConductor;
+import com.madpcgaming.madtech.energy.IEnergyConductor;
 import com.madpcgaming.madtech.helpers.LogHelper;
 import com.madpcgaming.madtech.items.ModItems;
 import com.madpcgaming.madtech.lib.Strings;

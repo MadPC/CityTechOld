@@ -1,4 +1,4 @@
-package com.madpcgaming.madtech.energy.interfaces;
+package com.madpcgaming.madtech.energy;
 
 import net.minecraftforge.common.util.ForgeDirection;
 
