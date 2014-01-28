@@ -20,7 +20,7 @@ apply plugin: "forge"
 
 // stuff specific to my mod
 group = 'com.madpcgaming.madtech'
-version = "1.7.2-0.1"
+version = "prerelease-0.1"
 archivesBaseName = 'MadTech'
 
 // spit out the version for debugging sake
