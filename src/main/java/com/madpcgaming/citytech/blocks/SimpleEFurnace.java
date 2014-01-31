@@ -15,7 +15,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.GuiIds;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.tileentitys.TileSimpleEFurnace;
@@ -37,7 +37,7 @@ public class SimpleEFurnace extends BlockContainer
 	{
 		super(Material.field_151573_f);
 		this.func_149711_c(1.0f);
-		this.func_149647_a(MadTech.tabsMT);
+		this.func_149647_a(CityTech.tabsMT);
 		func_149663_c(Strings.SIMPLE_SE_FURNACE_NAME);
 	}
 	
@@ -97,7 +97,7 @@ public class SimpleEFurnace extends BlockContainer
 		
 		if(tileEntity != null)
 		{
-				player.openGui(MadTech.instance, GuiIds.FURNACE_SIMPLE, world, x, y, z);
+				player.openGui(CityTech.instance, GuiIds.FURNACE_SIMPLE, world, x, y, z);
 		}
 		return true;
 	}

@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.tileentitys.TileEntityIndustrialFurnaceCore;
 import com.madpcgaming.citytech.tileentitys.TileEntityIndustrialFurnaceDummy;
@@ -21,7 +21,7 @@ public class BlockIndustrialFurnaceDummy extends BlockContainer {
 		func_149663_c(Strings.FURNACEDUMMY_NAME);
 		func_149672_a(Block.field_149769_e);
 		func_149711_c(3.5f);
-		func_149647_a(MadTech.tabsMT);
+		func_149647_a(CityTech.tabsMT);
 	}
 	
 	@Override

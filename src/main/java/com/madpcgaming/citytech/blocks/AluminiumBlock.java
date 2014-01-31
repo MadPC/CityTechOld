@@ -5,7 +5,7 @@ import java.util.Random;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.BlockIds;
 import com.madpcgaming.citytech.lib.Strings;
 
@@ -19,7 +19,7 @@ public class AluminiumBlock extends BlockMT
 		//func_149752_b = setResistence
 		this.func_149752_b(5.0F);
 		//func_149647_a = setCreativeTab
-		this.func_149647_a(MadTech.tabsMT);
+		this.func_149647_a(CityTech.tabsMT);
 		//func_149663_c = setUnlocalizedName
 		this.func_149663_c(Strings.ALUMINIUM_BLOCK_NAME);
 	}

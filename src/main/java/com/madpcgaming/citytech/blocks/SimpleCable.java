@@ -8,7 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.energy.IEnergyConductor;
 import com.madpcgaming.citytech.helpers.LogHelper;
 import com.madpcgaming.citytech.items.ModItems;
@@ -21,7 +21,7 @@ public class SimpleCable extends BlockContainer
 	protected SimpleCable(int par1)
 	{
 		super(Material.field_151573_f);
-		this.func_149647_a(MadTech.tabsMT);
+		this.func_149647_a(CityTech.tabsMT);
 		this.func_149711_c(1.0f);
 		this.func_149663_c(Strings.SIMPLE_CABLE_NAME);
 		this.func_149752_b(0.5f);

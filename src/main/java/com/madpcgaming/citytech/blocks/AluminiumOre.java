@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.Strings;
 
@@ -22,7 +22,7 @@ public class AluminiumOre extends BlockMT
 		//func_149663_c  = setUnlocalizedName
 		this.func_149663_c (Strings.ALUMINIUM_ORE_NAME);
 		//func_149647_a - setcreativeTab
-		this.func_149647_a(MadTech.tabsMT);
+		this.func_149647_a(CityTech.tabsMT);
 	}
 	
 	public Item idDropped(int par1, Random random, int par3)

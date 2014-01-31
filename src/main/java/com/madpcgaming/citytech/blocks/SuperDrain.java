@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.tileentitys.DrainTE;
 
@@ -17,7 +17,7 @@ public class SuperDrain extends BlockContainer
 	{
 		super(Material.field_151573_f);
 		this.func_149711_c(1.0f);
-		this.func_149647_a(MadTech.tabsMT);
+		this.func_149647_a(CityTech.tabsMT);
 		func_149663_c(Strings.SUPER_DRAIN_NAME);
 	}
 	

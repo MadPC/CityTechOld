@@ -3,7 +3,7 @@ package com.madpcgaming.citytech.core.proxy;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.client.gui.GuiIndustrialFurnace;
 import com.madpcgaming.citytech.client.gui.GuiSimpleEFurnace;
 import com.madpcgaming.citytech.client.gui.TableGui;
@@ -23,7 +23,7 @@ public class CommonProxy implements IGuiHandler
 	
 	public void registerRenderings()
 	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(MadTech.instance, this);
+		NetworkRegistry.INSTANCE.registerGuiHandler(CityTech.instance, this);
 	}
 	
 	@Override

@@ -16,7 +16,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.GuiIds;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.tileentitys.TileEntityIndustrialFurnaceCore;
@@ -42,7 +42,7 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 		//func_149711_c - setHardness
 		func_149711_c (3.5F);
 		//func_149647_a - setcreativeTab
-		func_149647_a(MadTech.tabsMT);
+		func_149647_a(CityTech.tabsMT);
 		
 	}
 	
@@ -105,7 +105,7 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 				}
 			}
 			if(tileEntity.getIsValid())
-				player.openGui(MadTech.instance, GuiIds.FURNACE_CORE, world, x, y, z);
+				player.openGui(CityTech.instance, GuiIds.FURNACE_CORE, world, x, y, z);
 		}
 		return true;
 	}

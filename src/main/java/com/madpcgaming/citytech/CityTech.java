@@ -19,18 +19,18 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
-public class MadTech
+public class CityTech
 {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy	proxy;
 	@Instance("MT")
-	public static MadTech		instance;
+	public static CityTech		instance;
 	public static CreativeTabs	tabsMT	= new CreativeTabMT(CreativeTabs.getNextID(), Reference.MOD_ID);
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, MadTech.proxy);
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, CityTech.proxy);
 		instance = this;
 		MaterialHandler.addToolMaterials();
 		

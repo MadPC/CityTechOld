@@ -8,7 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.GuiIds;
 import com.madpcgaming.citytech.lib.Strings;
 
@@ -25,7 +25,7 @@ public class TechocratsWorkbench extends Block
     public TechocratsWorkbench(int i)
     {
         super(Material.field_151578_c);
-        this.func_149647_a(MadTech.tabsMT);
+        this.func_149647_a(CityTech.tabsMT);
         func_149663_c(Strings.WORKBENCH_NAME);
     }
     
@@ -56,7 +56,7 @@ public class TechocratsWorkbench extends Block
     {
         if (!player.isSneaking())
 			{
-				player.openGui(MadTech.instance, GuiIds.TABLE, var1, var2, var3, var4);
+				player.openGui(CityTech.instance, GuiIds.TABLE, var1, var2, var3, var4);
 				return true;
 			}
 			else

@@ -17,7 +17,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import com.madpcgaming.citytech.MadTech;
+import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.GuiIds;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.tileentitys.TileEntityIndustrialFurnaceCore;
@@ -37,7 +37,7 @@ public class IndustrialFurnaceCore extends BlockContainer {
 		super(Material.field_151576_e);
 		func_149663_c(Strings.FURNACECORE_NAME);
 		func_149711_c(3.5f);
-		func_149647_a(MadTech.tabsMT);
+		func_149647_a(CityTech.tabsMT);
 	}
 	
 	@Override
@@ -101,7 +101,7 @@ public class IndustrialFurnaceCore extends BlockContainer {
 			}
 			
 			if(tileEntity.getIsValid())
-				player.openGui(MadTech.instance, GuiIds.FURNACE_CORE, world, x, y, z);
+				player.openGui(CityTech.instance, GuiIds.FURNACE_CORE, world, x, y, z);
 		}
 		
 		return true;
