@@ -19,9 +19,9 @@ buildscript {
 apply plugin: "forge"
 
 // stuff specific to my mod
-group = 'com.madpcgaming.madtech'
+group = 'com.madpcgaming.citytech'
 version = "prerelease-0.1"
-archivesBaseName = 'MadTech'
+archivesBaseName = 'CityTech'
 
 // spit out the version for debugging sake
 logger.lifecycle ""+version
