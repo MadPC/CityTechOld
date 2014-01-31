@@ -19,7 +19,7 @@ buildscript {
 apply plugin: "forge"
 
 // stuff specific to my mod
-group = 'com.madpcgaming.citytech'
+group = 'com.madpcgaming.CityTech'
 version = "prerelease-0.1"
 archivesBaseName = 'CityTech'
 
