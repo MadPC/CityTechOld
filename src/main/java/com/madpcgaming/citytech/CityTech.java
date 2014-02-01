@@ -7,6 +7,7 @@ import com.madpcgaming.citytech.blocks.ModBlocks;
 import com.madpcgaming.citytech.core.proxy.CommonProxy;
 import com.madpcgaming.citytech.handlers.MaterialHandler;
 import com.madpcgaming.citytech.items.ModItems;
+import com.madpcgaming.citytech.lib.CityTechConfig;
 import com.madpcgaming.citytech.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
@@ -34,6 +35,7 @@ public class CityTech
 		instance = this;
 		MaterialHandler.addToolMaterials();
 		
+		CityTechConfig.initProps(event.getModConfigurationDirectory());
 		ModBlocks.init();
 		ModItems.init();
 		
