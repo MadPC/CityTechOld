@@ -9,6 +9,7 @@ import com.madpcgaming.citytech.handlers.MaterialHandler;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.CityTechConfig;
 import com.madpcgaming.citytech.lib.Reference;
+import com.madpcgaming.citytech.world.CityTechWorldGenerator;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -18,6 +19,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class CityTech
@@ -40,6 +42,8 @@ public class CityTech
 		ModItems.init();
 		
 		MinecraftForge.EVENT_BUS.register(new com.madpcgaming.citytech.handlers.EventHandler());
+		
+		GameRegistry.registerWorldGenerator(new CityTechWorldGenerator(), 0);
 	}
 
 	@EventHandler
