@@ -17,7 +17,7 @@ public class SilverOre extends BlockMT
 	{
 		super(id, Material.field_151576_e);
 		this.func_149663_c(Strings.SILVER_ORE_NAME);
-		this.func_149647_a(CityTech.tabsMT);
+		this.func_149647_a(CityTech.tabsCT);
 	}
 	
 	

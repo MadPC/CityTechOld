@@ -10,6 +10,6 @@ public class ItemMT extends Item
 	public ItemMT()
 	{
 		super();
-		this.setCreativeTab(CityTech.tabsMT);
+		this.setCreativeTab(CityTech.tabsCT);
 	}
 }

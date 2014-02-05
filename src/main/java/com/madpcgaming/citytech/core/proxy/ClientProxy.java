@@ -1,5 +1,8 @@
 package com.madpcgaming.citytech.core.proxy;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
+
 import com.madpcgaming.citytech.tileentitys.CableTE;
 import com.madpcgaming.citytech.tileentitys.renderers.CableRenderer;
 
@@ -12,6 +15,12 @@ public class ClientProxy extends CommonProxy
 	{
 		ClientRegistry.bindTileEntitySpecialRenderer(CableTE.class,
 				new CableRenderer());
+	}
+	
+	@Override
+	public EntityPlayer getClientPlayer()
+	{
+		return Minecraft.getMinecraft().thePlayer;
 	}
 	
 }

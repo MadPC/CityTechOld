@@ -17,7 +17,7 @@ public class TinOre extends BlockMT
 	{
 		super(id, Material.field_151576_e);
 		this.func_149663_c(Strings.TIN_ORE_NAME);
-		this.func_149647_a(CityTech.tabsMT);
+		this.func_149647_a(CityTech.tabsCT);
 	}
 	
 	public Item idDropped(int par1, Random random, int par3)

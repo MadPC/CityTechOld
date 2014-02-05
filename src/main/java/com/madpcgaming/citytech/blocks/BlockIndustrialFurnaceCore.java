@@ -42,7 +42,7 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 		//func_149711_c - setHardness
 		func_149711_c (3.5F);
 		//func_149647_a - setcreativeTab
-		func_149647_a(CityTech.tabsMT);
+		func_149647_a(CityTech.tabsCT);
 		
 	}
 	

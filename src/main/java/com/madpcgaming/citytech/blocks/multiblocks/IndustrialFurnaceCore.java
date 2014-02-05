@@ -37,7 +37,7 @@ public class IndustrialFurnaceCore extends BlockContainer {
 		super(Material.field_151576_e);
 		func_149663_c(Strings.FURNACECORE_NAME);
 		func_149711_c(3.5f);
-		func_149647_a(CityTech.tabsMT);
+		func_149647_a(CityTech.tabsCT);
 	}
 	
 	@Override

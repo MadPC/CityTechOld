@@ -15,7 +15,7 @@ public class SilverBlock extends BlockMT
 	public SilverBlock(int id)
 	{
 		super(id, Material.field_151576_e);
-		this.func_149647_a(CityTech.tabsMT);
+		this.func_149647_a(CityTech.tabsCT);
 		this.func_149752_b(5.0F);
 		this.func_149663_c(Strings.SILVER_BLOCK_NAME);
 	}

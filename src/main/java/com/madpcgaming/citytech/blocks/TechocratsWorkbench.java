@@ -25,7 +25,7 @@ public class TechocratsWorkbench extends Block
     public TechocratsWorkbench(int i)
     {
         super(Material.field_151578_c);
-        this.func_149647_a(CityTech.tabsMT);
+        this.func_149647_a(CityTech.tabsCT);
         func_149663_c(Strings.WORKBENCH_NAME);
     }
     

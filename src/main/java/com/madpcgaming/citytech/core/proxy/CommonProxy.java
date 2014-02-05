@@ -76,4 +76,9 @@ public class CommonProxy implements IGuiHandler
 			return new TableGui(player.inventory, world, x, y, z);
 		return null;
 	}
+
+	public EntityPlayer getClientPlayer()
+	{
+		return null;
+	}
 }

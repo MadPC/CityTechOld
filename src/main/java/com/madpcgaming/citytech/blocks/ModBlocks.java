@@ -50,6 +50,7 @@ public class ModBlocks
 	 * @see com.madpcgaming.mt.items.WireTester
 	 */
 	public static Block	SuperDrain;
+	public static Block	blockConduitBundle;
 
 	public static void init()
 	{

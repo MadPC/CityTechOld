@@ -21,7 +21,7 @@ public class BlockIndustrialFurnaceDummy extends BlockContainer {
 		func_149663_c(Strings.FURNACEDUMMY_NAME);
 		func_149672_a(Block.field_149769_e);
 		func_149711_c(3.5f);
-		func_149647_a(CityTech.tabsMT);
+		func_149647_a(CityTech.tabsCT);
 	}
 	
 	@Override

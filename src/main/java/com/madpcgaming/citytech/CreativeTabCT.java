@@ -7,10 +7,10 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 // import com.madpcgaming.mt.lib.ItemIds;
 
-public class CreativeTabMT extends CreativeTabs
+public class CreativeTabCT extends CreativeTabs
 {
 	
-	public CreativeTabMT(int par1, String par2Str)
+	public CreativeTabCT(int par1, String par2Str)
 	{
 		
 		super(par1, par2Str);

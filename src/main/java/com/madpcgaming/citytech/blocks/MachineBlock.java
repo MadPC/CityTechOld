@@ -13,7 +13,7 @@ public class MachineBlock extends Block {
 		super(Material.field_151573_f);
 		
 		func_149711_c(0.5F);
-		func_149647_a(CityTech.tabsMT);
+		func_149647_a(CityTech.tabsCT);
 		func_149663_c(Strings.MACHINEBLOCK_NAME);
 		this.field_149768_d = this.func_149739_a();
 		

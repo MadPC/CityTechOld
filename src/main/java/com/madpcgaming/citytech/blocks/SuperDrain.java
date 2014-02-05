@@ -17,7 +17,7 @@ public class SuperDrain extends BlockContainer
 	{
 		super(Material.field_151573_f);
 		this.func_149711_c(1.0f);
-		this.func_149647_a(CityTech.tabsMT);
+		this.func_149647_a(CityTech.tabsCT);
 		func_149663_c(Strings.SUPER_DRAIN_NAME);
 	}
 	

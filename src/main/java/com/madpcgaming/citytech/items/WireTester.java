@@ -8,7 +8,7 @@ public class WireTester extends ItemMT
 	public WireTester(int par1)
 	{
 		super();
-		this.setCreativeTab(CityTech.tabsMT);
+		this.setCreativeTab(CityTech.tabsCT);
 		this.maxStackSize = 1;
 	}
 	

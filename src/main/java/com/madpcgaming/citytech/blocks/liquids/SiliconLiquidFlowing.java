@@ -14,7 +14,7 @@ public class SiliconLiquidFlowing extends BlockLiquid
 		super(Material.field_151586_h);
 		func_149711_c(100F);
 		this.func_149713_g(3);
-		this.func_149647_a(CityTech.tabsMT);
+		this.func_149647_a(CityTech.tabsCT);
 		this.func_149663_c(Strings.SILICON_LIQUID_FLOWING);
 		
 	}

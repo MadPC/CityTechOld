@@ -17,7 +17,7 @@ public class TinBlock extends BlockMT
 		super(id, Material.field_151576_e);
 		this.func_149752_b(5.0F);
 		this.func_149663_c(Strings.TIN_BLOCK_NAME);
-		this.func_149647_a(CityTech.tabsMT);
+		this.func_149647_a(CityTech.tabsCT);
 	}
 	
 	public int idDropped(int par1, Random random, int par3)

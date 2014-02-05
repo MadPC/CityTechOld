@@ -16,9 +16,8 @@ public class PlatinumOre extends BlockMT
 	public PlatinumOre(int id)
 	{
 		super(id, Material.field_151576_e);
-		this.func_149647_a(CityTech.tabsMT);
+		this.func_149647_a(CityTech.tabsCT);
 		this.func_149663_c(Strings.PLATINUM_ORE_NAME);
-		this.func_149647_a(CityTech.tabsMT);
 	}
 	
 	

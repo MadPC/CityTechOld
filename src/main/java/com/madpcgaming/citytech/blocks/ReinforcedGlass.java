@@ -13,7 +13,7 @@ public class ReinforcedGlass extends Block {
 		this.func_149663_c(Strings.REINFORCED_GLASS_NAME);
 		this.func_149752_b(2000.0F);
 		this.func_149711_c(1.0F);
-		this.func_149647_a(CityTech.tabsMT);
+		this.func_149647_a(CityTech.tabsCT);
 		
 	}
 

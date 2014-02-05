@@ -26,9 +26,9 @@ public class CityTech
 {
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy	proxy;
-	@Instance("MT")
+	@Instance("CT")
 	public static CityTech		instance;
-	public static CreativeTabs	tabsMT	= new CreativeTabMT(CreativeTabs.getNextID(), Reference.MOD_ID);
+	public static CreativeTabs	tabsCT	= new CreativeTabCT(CreativeTabs.getNextID(), Reference.MOD_ID);
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
