@@ -35,17 +35,17 @@ public class SimpleEFurnace extends BlockContainer
 	
 	public SimpleEFurnace(int id)
 	{
-		super(Material.field_151573_f);
-		this.func_149711_c(1.0f);
-		this.func_149647_a(CityTech.tabsCT);
-		func_149663_c(Strings.SIMPLE_SE_FURNACE_NAME);
+		super(Material.iron);
+		this.setHardness(1.0f);
+		this.setCreativeTab(CityTech.tabsCT);
+		setBlockName(Strings.SIMPLE_SE_FURNACE_NAME);
 	}
 	
 	//Display
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("madtech:SEFurnace_Side");
+		blockIcon = iconRegister.registerIcon("madtech:SEFurnace_Side");
 		faceIconUnlit = iconRegister.registerIcon("madtech:SEFurnace_Front_Unlit");
 		faceIconLit  = iconRegister.registerIcon("madtech:SEFurnace_Front_Lit");
 	}
@@ -71,15 +71,15 @@ public class SimpleEFurnace extends BlockContainer
 	}
 	
 	@Override
-	public IIcon func_149691_a(int side, int metadata)
+	public IIcon getIcon(int side, int metadata)
 	{
 		boolean isActive = ((metadata >> 3) == 1);
 		int facing = (metadata & MASK_DIR);
 		
-		return (side == getSideFromFacing(facing) ? (isActive ? faceIconLit: faceIconUnlit): field_149761_L);
+		return (side == getSideFromFacing(facing) ? (isActive ? faceIconLit: faceIconUnlit): blockIcon);
 	}
 	
-	public int func_149745_a(Random random)
+	public int quantityDropped(Random random)
 	{
 		return 1;
 	}
@@ -89,11 +89,11 @@ public class SimpleEFurnace extends BlockContainer
 	 */
 	
 	@Override
-	public boolean func_149727_a(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9){
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9){
 		if(player.isSneaking())
 			return false;
-																							//func_147438_o - getTileEntity
-		TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.func_147438_o(x, y, z);
+																							//getTileEntity - getTileEntity
+		TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.getTileEntity(x, y, z);
 		
 		if(tileEntity != null)
 		{
@@ -103,7 +103,7 @@ public class SimpleEFurnace extends BlockContainer
 	}
 	
 	@Override
-	public void func_149734_b(World world, int x, int y, int z, Random random)
+	public void randomDisplayTick(World world, int x, int y, int z, Random random)
 	{
 		int metadata = world.getBlockMetadata(x, y, z);
 		if((metadata & META_IS_ACTIVE) == 0)
@@ -140,10 +140,10 @@ public class SimpleEFurnace extends BlockContainer
 	}
 	
 	@Override
-	public void func_149749_a(World world, int x, int y, int z, Block par5, int par6)
+	public void breakBlock(World world, int x, int y, int z, Block par5, int par6)
 	{
 		dropItems(world, x,y,z);
-		super.func_149749_a(world, x, y, z, par5, par6);
+		super.breakBlock(world, x, y, z, par5, par6);
 	}
 	
 	private static int getSideFromFacing(int facing)
@@ -167,7 +167,7 @@ public class SimpleEFurnace extends BlockContainer
 	{
 		Random random = new Random();
 		
-		TileSimpleEFurnace tileEntity = (TileSimpleEFurnace)world.func_147438_o(x, y, z);
+		TileSimpleEFurnace tileEntity = (TileSimpleEFurnace)world.getTileEntity(x, y, z);
 		if(tileEntity == null)
 			return;
 		
@@ -190,7 +190,7 @@ public class SimpleEFurnace extends BlockContainer
 	
 	//Tile Entity
 	@Override
-	public TileEntity func_149915_a(World world, int var1)
+	public TileEntity createNewTileEntity(World world, int var1)
 	{
 		return new TileSimpleEFurnace();
 	}

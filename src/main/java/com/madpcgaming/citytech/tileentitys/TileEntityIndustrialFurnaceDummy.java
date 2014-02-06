@@ -20,24 +20,24 @@ public class TileEntityIndustrialFurnaceDummy extends TileEntity implements
 	
 	public void setCore(TileEntityIndustrialFurnaceCore core)
 	{
-		coreX = core.field_145851_c;
-		coreY = core.field_145848_d;
-		coreZ = core.field_145849_e;
+		coreX = core.xCoord;
+		coreY = core.yCoord;
+		coreZ = core.zCoord;
 		tileEntityCore = core;
 	}
 	
 	public TileEntityIndustrialFurnaceCore getCore()
 	{
 		if(tileEntityCore == null)
-			tileEntityCore = (TileEntityIndustrialFurnaceCore)field_145850_b.func_147438_o(coreX, coreY, coreZ);
+			tileEntityCore = (TileEntityIndustrialFurnaceCore)worldObj.getTileEntity(coreX, coreY, coreZ);
 		
 		return tileEntityCore;
 	}
 	
 	@Override
-	public void func_145841_b(NBTTagCompound tagCompound)
+	public void writeToNBT(NBTTagCompound tagCompound)
 	{
-		super.func_145841_b(tagCompound);
+		super.writeToNBT(tagCompound);
 		
 		tagCompound.setInteger("CoreX", coreX);
 		tagCompound.setInteger("CoreY", coreY);
@@ -75,15 +75,15 @@ public class TileEntityIndustrialFurnaceDummy extends TileEntity implements
 	}
 
 	@Override
-	public String func_145825_b()
+	public String getInventoryName()
 	{
-		return tileEntityCore.func_145825_b();
+		return tileEntityCore.getInventoryName();
 	}
 
 	@Override
-	public boolean func_145818_k_()
+	public boolean hasCustomInventoryName()
 	{
-		return tileEntityCore.func_145818_k_();
+		return tileEntityCore.hasCustomInventoryName();
 	}
 
 	@Override
@@ -95,16 +95,16 @@ public class TileEntityIndustrialFurnaceDummy extends TileEntity implements
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer entityPlayer)
 	{
-		return field_145850_b.func_147438_o(field_145851_c, field_145848_d, field_145849_e) != this ? false : entityPlayer.getDistanceSq((double)field_145851_c +0.5f, (double)field_145848_d + 0.5f, (double)field_145849_e + 0.5f) <= 64.0;
+		return worldObj.getTileEntity(xCoord, yCoord, zCoord) != this ? false : entityPlayer.getDistanceSq((double)xCoord +0.5f, (double)yCoord + 0.5f, (double)zCoord + 0.5f) <= 64.0;
 	}
 
 	@Override
-	public void openChest()
+	public void openInventory()
 	{
 	}
 
 	@Override
-	public void closeChest()
+	public void closeInventory()
 	{
 	}
 

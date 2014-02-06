@@ -22,7 +22,7 @@ public class CableRenderer extends TileEntitySpecialRenderer
 	}
 	
 	@Override
-	public void func_147500_a(TileEntity tileentity, double d0, double d1, double d2, float f)
+	public void renderTileEntityAt(TileEntity tileentity, double d0, double d1, double d2, float f)
 	{
 		this.renderModelAt((CableTE) tileentity, d0, d1, d2, f);
 	}

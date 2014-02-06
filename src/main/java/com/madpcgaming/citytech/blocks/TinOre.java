@@ -15,9 +15,9 @@ public class TinOre extends BlockMT
 	
 	public TinOre(int id)
 	{
-		super(id, Material.field_151576_e);
-		this.func_149663_c(Strings.TIN_ORE_NAME);
-		this.func_149647_a(CityTech.tabsCT);
+		super(id, Material.rock);
+		this.setBlockName(Strings.TIN_ORE_NAME);
+		this.setCreativeTab(CityTech.tabsCT);
 	}
 	
 	public Item idDropped(int par1, Random random, int par3)
@@ -31,9 +31,9 @@ public class TinOre extends BlockMT
 	}
 	
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("madtech:oreTin");
+		blockIcon = iconRegister.registerIcon("madtech:oreTin");
 	}
 	
 }

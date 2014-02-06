@@ -8,8 +8,8 @@ import net.minecraft.block.material.Material;
 public class SimpleMacerator extends Block {
 
 	public SimpleMacerator(int par1, Material material) {
-		super(Material.field_151573_f);
-		func_149663_c(Strings.SIMPLE_MACERATOR_NAME);
+		super(Material.iron);
+		setBlockName(Strings.SIMPLE_MACERATOR_NAME);
 		// TODO Auto-generated constructor stub
 	}
 

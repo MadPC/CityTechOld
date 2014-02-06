@@ -30,19 +30,19 @@ public class CommonProxy implements IGuiHandler
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
 	{
 		LogHelper.info("Getting Server GUI!");
-		world.func_147438_o(x, y, z);
+		world.getTileEntity(x, y, z);
 		/*if (t instanceof TileElectrolyser)
 		{
 			return new ElectrolyserContainer(player.inventory, (TileElectrolyser) t);
 		}*/
 		if (ID == GuiIds.FURNACE_CORE)
 		{
-			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.func_147438_o(x, y, z);
+			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.getTileEntity(x, y, z);
 			return new ContainerIndustrialFurnace(player.inventory, tileIndustrialFurnaceCore);
 		}
 		else if (ID == GuiIds.FURNACE_SIMPLE)
 		{
-			TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.func_147438_o(x, y, z);
+			TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.getTileEntity(x, y, z);
 			return new ContainerSimpleEFurnace(player.inventory, tileEntity);
 		}
 		else if (ID == GuiIds.TABLE)
@@ -56,7 +56,7 @@ public class CommonProxy implements IGuiHandler
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
 	{
 		LogHelper.info("Getting Client GUI!");
-		world.func_147438_o(x, y, z);
+		world.getTileEntity(x, y, z);
 		/*if (t instanceof TileElectrolyser)
 		{
 			return new ElectrolyserGUI(new ElectrolyserContainer(player.inventory, (TileElectrolyser) t), (TileElectrolyser) t);
@@ -64,12 +64,12 @@ public class CommonProxy implements IGuiHandler
 		if (ID == GuiIds.FURNACE_CORE)
 		{
 			//WHY DO I DECLARE T IF YOU DONT USE IT?
-			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.func_147438_o(x, y, z);
+			TileEntityIndustrialFurnaceCore tileIndustrialFurnaceCore = (TileEntityIndustrialFurnaceCore) world.getTileEntity(x, y, z);
 			return new GuiIndustrialFurnace(player.inventory, tileIndustrialFurnaceCore);
 		}
 		else if (ID == GuiIds.FURNACE_SIMPLE)
 		{
-			TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.func_147438_o(x, y, z);
+			TileSimpleEFurnace tileEntity = (TileSimpleEFurnace) world.getTileEntity(x, y, z);
 			return new GuiSimpleEFurnace(player.inventory, tileEntity);
 		}
 		else if (ID == GuiIds.TABLE)

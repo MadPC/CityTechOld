@@ -15,9 +15,9 @@ public class PlatinumOre extends BlockMT
 	
 	public PlatinumOre(int id)
 	{
-		super(id, Material.field_151576_e);
-		this.func_149647_a(CityTech.tabsCT);
-		this.func_149663_c(Strings.PLATINUM_ORE_NAME);
+		super(id, Material.rock);
+		this.setCreativeTab(CityTech.tabsCT);
+		this.setBlockName(Strings.PLATINUM_ORE_NAME);
 	}
 	
 	
@@ -27,14 +27,14 @@ public class PlatinumOre extends BlockMT
 	}
 	
 	@Override
-	public int func_149745_a(Random random)
+	public int quantityDropped(Random random)
 	{
 		return 1;
 	}
 	
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("madtech:orePlatinum");
+		blockIcon = iconRegister.registerIcon("madtech:orePlatinum");
 	}
 }

@@ -32,7 +32,7 @@ public class EventHandler implements IEventListener
 		if (source.damageType == "player")
 		{
 			EntityPlayerMP player = (EntityPlayerMP) source.getSourceOfDamage();
-			ItemStack item = player.getCurrentItemOrArmor(0);
+			ItemStack item = player.getHeldItem();
 			if (item.getItem() == ModItems.CyberSword)
 			{
 				NBTTagCompound tag = item.stackTagCompound;

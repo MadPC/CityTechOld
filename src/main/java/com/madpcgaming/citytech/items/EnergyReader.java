@@ -41,11 +41,11 @@ public class EnergyReader extends ItemMT
 	{
 		if (world.isRemote)
 			return false;
-		TileEntity t = world.func_147438_o(x, y, z);
+		TileEntity t = world.getTileEntity(x, y, z);
 		if (t != null && t instanceof IEnergyConductor)
 		{
 			IEnergyConductor en = (IEnergyConductor) t;
-			player.func_145747_a(new ChatComponentText(String.format("This Device currently holds %.2f %s", en.getEnergyLevel(),("general.Energy.name"))));
+			player.addChatMessage(new ChatComponentText(String.format("This Device currently holds %.2f %s", en.getEnergyLevel(),("general.Energy.name"))));
 			return true;
 		}
 		return false;

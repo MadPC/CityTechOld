@@ -15,7 +15,7 @@ public class DrainTE extends TileEntity implements IEnergyConductor
 	public DrainTE()
 	{
 		super();
-		energy = new EnergyHandler(this.field_145851_c, this.field_145848_d, this.field_145849_e);
+		energy = new EnergyHandler(this.xCoord, this.yCoord, this.zCoord);
 	}
 	
 	@Override
@@ -39,7 +39,7 @@ public class DrainTE extends TileEntity implements IEnergyConductor
 			int ofY = opposite.offsetY;
 			int ofZ = opposite.offsetZ;
 			// get the TileEntity
-			TileEntity ent = this.field_145850_b.func_147438_o(this.field_145851_c + ofX, this.field_145848_d + ofY, this.field_145849_e + ofZ);
+			TileEntity ent = this.worldObj.getTileEntity(this.xCoord + ofX, this.yCoord + ofY, this.zCoord + ofZ);
 			// if it exists and is a Cable (or other object)
 			if (ent != null && ent instanceof IEnergyConductor)
 			{
@@ -55,11 +55,11 @@ public class DrainTE extends TileEntity implements IEnergyConductor
 	private byte	tickCount	= 0;
 	
 	@Override
-	public void func_145845_h()
+	public void updateEntity()
 	{
-		if (!this.field_145850_b.isRemote)
+		if (!this.worldObj.isRemote)
 		{
-			energy.update(this.field_145850_b);
+			energy.update(this.worldObj);
 			tickCount++;
 			if (tickCount == 6)
 			{
@@ -67,10 +67,10 @@ public class DrainTE extends TileEntity implements IEnergyConductor
 				for (int i = 0; i < 6; i++)
 				{
 					ForgeDirection d = ForgeDirection.getOrientation(i);
-					int X = this.field_145851_c + d.offsetX;
-					int Y = this.field_145848_d + d.offsetY;
-					int Z = this.field_145849_e + d.offsetZ;
-					TileEntity t = this.field_145850_b.func_147438_o(X, Y, Z);
+					int X = this.xCoord + d.offsetX;
+					int Y = this.yCoord + d.offsetY;
+					int Z = this.zCoord + d.offsetZ;
+					TileEntity t = this.worldObj.getTileEntity(X, Y, Z);
 					if (t != null && t instanceof IEnergyConductor)
 					{
 						((IEnergyConductor) t).requestFrom(d.getOpposite(), 5.0f);
@@ -91,6 +91,6 @@ public class DrainTE extends TileEntity implements IEnergyConductor
 	 */
 	public void readFromNBT(NBTTagCompound par1NBTTagCompound)
 	{
-		super.func_145839_a(par1NBTTagCompound);
+		super.readFromNBT(par1NBTTagCompound);
 	}
 }

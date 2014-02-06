@@ -77,7 +77,7 @@ public class ContainerTable extends Container {
 	}
 
 	public boolean canInteractWith(EntityPlayer entityplayer) {
-		if (worldObj.func_147439_a(posX, posY, posZ) != ModBlocks.CraftingTable) {
+		if (worldObj.getBlock(posX, posY, posZ) != ModBlocks.CraftingTable) {
 			return false;
 		} else {
 			return entityplayer.getDistanceSq((double) posX + 0.5D,

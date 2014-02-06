@@ -22,10 +22,10 @@ public class BlockElectrolyser extends BlockContainer
 	
 	protected BlockElectrolyser(int id)
 	{
-		super(Material.field_151573_f);
+		super(Material.iron);
 		
 		this.func_149711_c(0.5F);
-		this.func_149647_a(MadTech.tabsMT);
+		this.setCreativeTab(MadTech.tabsMT);
 		this.func_149663_c(Strings.ELECTROLYSER_NAME);
 		this.field_149768_d = this.func_149739_a();
 		

@@ -15,9 +15,9 @@ public class SilverOre extends BlockMT
 	
 	public SilverOre(int id)
 	{
-		super(id, Material.field_151576_e);
-		this.func_149663_c(Strings.SILVER_ORE_NAME);
-		this.func_149647_a(CityTech.tabsCT);
+		super(id, Material.rock);
+		this.setBlockName(Strings.SILVER_ORE_NAME);
+		this.setCreativeTab(CityTech.tabsCT);
 	}
 	
 	
@@ -27,14 +27,14 @@ public class SilverOre extends BlockMT
 	}
 	
 	@Override
-	public int func_149745_a(Random random)
+	public int quantityDropped(Random random)
 	{
 		return 1;
 	}
 	
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("madtech:oreSilver");
+		blockIcon = iconRegister.registerIcon("madtech:oreSilver");
 	}
 }

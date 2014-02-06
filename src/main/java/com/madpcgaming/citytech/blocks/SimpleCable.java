@@ -20,11 +20,11 @@ public class SimpleCable extends BlockContainer
 	
 	protected SimpleCable(int par1)
 	{
-		super(Material.field_151573_f);
-		this.func_149647_a(CityTech.tabsCT);
-		this.func_149711_c(1.0f);
-		this.func_149663_c(Strings.SIMPLE_CABLE_NAME);
-		this.func_149752_b(0.5f);
+		super(Material.iron);
+		this.setCreativeTab(CityTech.tabsCT);
+		this.setHardness(1.0f);
+		this.setBlockName(Strings.SIMPLE_CABLE_NAME);
+		this.setResistance(0.5f);
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public class SimpleCable extends BlockContainer
 	}
 	
 	@Override
-	public TileEntity func_149915_a(World world, int var1)
+	public TileEntity createNewTileEntity(World world, int var1)
 	{
 		return new CableTE();
 	}
@@ -71,7 +71,7 @@ public class SimpleCable extends BlockContainer
 			LogHelper.info("&&%s %s %s %s %s %s %s %s %s Block rightcliked with Item %s in hand!", par1World, par2, par3, par4,
 					par5EntityPlayer, par6, par7, par8, par9, par5EntityPlayer.getCurrentEquippedItem());
 			ItemStack i = par5EntityPlayer.getCurrentEquippedItem();
-			TileEntity t = par1World.func_147438_o(par2, par3, par4);
+			TileEntity t = par1World.getTileEntity(par2, par3, par4);
 			if (i != null)
 			{
 				if (i.getItem() == ModItems.wireTester)

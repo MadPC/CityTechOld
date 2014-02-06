@@ -34,10 +34,10 @@ public class IndustrialFurnaceCore extends BlockContainer {
 	private IIcon faceIconLit;
 
 	public IndustrialFurnaceCore(int id) {
-		super(Material.field_151576_e);
-		func_149663_c(Strings.FURNACECORE_NAME);
-		func_149711_c(3.5f);
-		func_149647_a(CityTech.tabsCT);
+		super(Material.rock);
+		setBlockName(Strings.FURNACECORE_NAME);
+		setHardness(3.5f);
+		setCreativeTab(CityTech.tabsCT);
 	}
 	
 	@Override
@@ -48,7 +48,7 @@ public class IndustrialFurnaceCore extends BlockContainer {
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("madtech:brick");
+		blockIcon = iconRegister.registerIcon("madtech:brick");
 		faceIconUnlit = iconRegister.registerIcon("madtech:IndustrialFurance_Front_Unlit");
 		faceIconLit = iconRegister.registerIcon("madtech:IndustrialFurnace_Front_Lit");
 	}
@@ -77,16 +77,16 @@ public class IndustrialFurnaceCore extends BlockContainer {
 		boolean isActive = ((metadata >> 3) == 1);
 		int facing = (metadata & MASK_DIR);
 		
-		return (side == getSideFromFacing(facing) ? (isActive ? faceIconLit : faceIconUnlit) : field_149761_L);
+		return (side == getSideFromFacing(facing) ? (isActive ? faceIconLit : faceIconUnlit) : blockIcon);
 	}
 	
 	@Override
-	public boolean func_149727_a(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
 	{
 		if(player.isSneaking())
 			return false;
 		
-		TileEntityIndustrialFurnaceCore tileEntity = (TileEntityIndustrialFurnaceCore)world.func_147438_o(x, y, z);
+		TileEntityIndustrialFurnaceCore tileEntity = (TileEntityIndustrialFurnaceCore)world.getTileEntity(x, y, z);
 		
 		if(tileEntity != null)
 		{
@@ -96,7 +96,7 @@ public class IndustrialFurnaceCore extends BlockContainer {
 				{
 					tileEntity.convertDummies();
 					if(world.isRemote)
-						player.func_145747_a(new ChatComponentText("Industrial Furnace Complete!"));
+						player.addChatMessage(new ChatComponentText("Industrial Furnace Complete!"));
 				}
 			}
 			
@@ -108,7 +108,7 @@ public class IndustrialFurnaceCore extends BlockContainer {
 	}
 	
 	@Override
-	public void func_149734_b(World world, int x, int y, int z, Random prng)
+	public void randomDisplayTick(World world, int x, int y, int z, Random prng)
 	{
 		int metadata = world.getBlockMetadata(x, y, z);
 		if((metadata & META_ISACTIVE) == 0)
@@ -149,20 +149,20 @@ public class IndustrialFurnaceCore extends BlockContainer {
 	
 
 	@Override
-	public TileEntity func_149915_a(World world, int var1) {
+	public TileEntity createNewTileEntity(World world, int var1) {
 		return new TileEntityIndustrialFurnaceCore();
 	}
 	
 	@Override
-	public void func_149749_a(World world, int x, int y, int z, Block par5, int par6)
+	public void breakBlock(World world, int x, int y, int z, Block par5, int par6)
 	{
-		TileEntityIndustrialFurnaceCore tileEntity = (TileEntityIndustrialFurnaceCore)world.func_147438_o(x, y, z);
+		TileEntityIndustrialFurnaceCore tileEntity = (TileEntityIndustrialFurnaceCore)world.getTileEntity(x, y, z);
 		
 		if(tileEntity != null)
 			tileEntity.invalidateMultiBlock();
 		
 		dropItems(world, x, y, z);
-		super.func_149749_a(world, x, y, z, par5, par6);
+		super.breakBlock(world, x, y, z, par5, par6);
 	}
 	
 	private static int getSideFromFacing(int facing)
@@ -190,7 +190,7 @@ public class IndustrialFurnaceCore extends BlockContainer {
 	{
 		Random random = new Random();
 		
-		TileEntityIndustrialFurnaceCore tileEntity = (TileEntityIndustrialFurnaceCore)world.func_147438_o(x, y, z);
+		TileEntityIndustrialFurnaceCore tileEntity = (TileEntityIndustrialFurnaceCore)world.getTileEntity(x, y, z);
 		if(tileEntity == null)
 			return;
 		

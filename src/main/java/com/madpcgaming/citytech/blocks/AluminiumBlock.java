@@ -14,14 +14,14 @@ public class AluminiumBlock extends BlockMT
 	
 	public AluminiumBlock(int id)
 	{
-		//field_151573_f = iron
-		super(id, Material.field_151573_f);
-		//func_149752_b = setResistence
-		this.func_149752_b(5.0F);
-		//func_149647_a = setCreativeTab
-		this.func_149647_a(CityTech.tabsCT);
-		//func_149663_c = setUnlocalizedName
-		this.func_149663_c(Strings.ALUMINIUM_BLOCK_NAME);
+		//iron = iron
+		super(id, Material.iron);
+		//setResistance = setResistence
+		this.setResistance(5.0F);
+		//setCreativeTab = setCreativeTab
+		this.setCreativeTab(CityTech.tabsCT);
+		//setBlockName = setUnlocalizedName
+		this.setBlockName(Strings.ALUMINIUM_BLOCK_NAME);
 	}
 	
 	public int idDropped(int par1, Random random, int par3)
@@ -34,12 +34,12 @@ public class AluminiumBlock extends BlockMT
 		return 1;
 	}
 	
-	//func_149651_a = registerBlockIcons
+	//registerBlockIcons = registerBlockIcons
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		//field_149761_L = blockIcon
-		field_149761_L = iconRegister.registerIcon("madtech:blockAluminium");
+		//blockIcon = blockIcon
+		blockIcon = iconRegister.registerIcon("madtech:blockAluminium");
 	}
 	
 }

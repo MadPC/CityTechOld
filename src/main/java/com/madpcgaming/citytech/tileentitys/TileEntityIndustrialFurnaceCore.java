@@ -47,9 +47,9 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	{
 		isValidMultiBlock = false;
 
-		int metadata = field_145850_b.getBlockMetadata(field_145851_c, field_145848_d , field_145849_e);
+		int metadata = worldObj.getBlockMetadata(xCoord, yCoord , zCoord);
 		metadata = metadata & IndustrialFurnaceCore.MASK_DIR;
-		field_145850_b.setBlockMetadataWithNotify(field_145851_c, field_145848_d , field_145849_e, metadata, 2);
+		worldObj.setBlockMetadataWithNotify(xCoord, yCoord , zCoord, metadata, 2);
 
 		furnaceBurnTime = 0;
 		currentItemBurnTime = 0;
@@ -60,7 +60,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 
 	public boolean checkIfProperlyFormed()
 	{
-		int dir = (func_145832_p() & IndustrialFurnaceCore.MASK_DIR);
+		int dir = (getBlockMetadata() & IndustrialFurnaceCore.MASK_DIR);
 
 		int depthMultiplier = ((dir == IndustrialFurnaceCore.META_DIR_NORTH || dir == IndustrialFurnaceCore.META_DIR_WEST) ? 1
 				: -1);
@@ -69,13 +69,13 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 		for (int horiz = -1; horiz <= 1; horiz++) {
 			for (int vert = -1; vert <= 1; vert++) {
 				for (int depth = 0; depth <= 2; depth++) {
-					int x = field_145851_c
+					int x = xCoord
 							+ (forwardZ ? horiz : (depth * depthMultiplier));
-					int y = field_145848_d  + vert;
-					int z = field_145849_e
+					int y = yCoord  + vert;
+					int z = zCoord
 							+ (forwardZ ? (depth * depthMultiplier) : horiz);
 
-					Block blockId = field_145850_b.func_147439_a(x,y,z);
+					Block blockId = worldObj.getBlock(x,y,z);
 
 					if (horiz == 0 && vert == 0) {
 						if (depth == 0)
@@ -100,7 +100,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 
 	public void convertDummies()
 	{
-		int dir = (func_145832_p() & IndustrialFurnaceCore.MASK_DIR);
+		int dir = (getBlockMetadata() & IndustrialFurnaceCore.MASK_DIR);
 
 		int depthMultiplier = ((dir == IndustrialFurnaceCore.META_DIR_NORTH || dir == IndustrialFurnaceCore.META_DIR_WEST) ? 1
 				: -1);
@@ -109,19 +109,19 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 		for (int horiz = -1; horiz <= 1; horiz++) {
 			for (int vert = -1; vert <= 1; vert++) {
 				for (int depth = 0; depth <= 2; depth++) {
-					int x = field_145851_c
+					int x = xCoord
 							+ (forwardZ ? horiz : (depth * depthMultiplier));
-					int y = field_145848_d  + vert;
-					int z = field_145849_e
+					int y = yCoord  + vert;
+					int z = zCoord
 							+ (forwardZ ? (depth * depthMultiplier) : horiz);
 
 					if (horiz == 0 && vert == 0 && (depth == 0 || depth == 1))
 						continue;
 
-					field_145850_b.func_147449_b(x, y, z, ModBlocks.IndustrialFurnaceDummy);
-					field_145850_b.func_147471_g(x, y, z);
-					TileEntityIndustrialFurnaceDummy dummyTE = (TileEntityIndustrialFurnaceDummy) field_145850_b
-							.func_147438_o(x, y, z);
+					worldObj.setBlock(x, y, z, ModBlocks.IndustrialFurnaceDummy);
+					worldObj.markBlockForUpdate(x, y, z);
+					TileEntityIndustrialFurnaceDummy dummyTE = (TileEntityIndustrialFurnaceDummy) worldObj
+							.getTileEntity(x, y, z);
 					dummyTE.setCore(this);
 				}
 			}
@@ -132,7 +132,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 
 	private void revertDummies()
 	{
-		int dir = (func_145832_p() & IndustrialFurnaceCore.MASK_DIR);
+		int dir = (getBlockMetadata() & IndustrialFurnaceCore.MASK_DIR);
 
 		int depthMultiplier = ((dir == IndustrialFurnaceCore.META_DIR_NORTH || dir == IndustrialFurnaceCore.META_DIR_WEST) ? 1
 				: -1);
@@ -141,13 +141,13 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 		for (int horiz = -1; horiz <= 1; horiz++) {
 			for (int vert = -1; vert <= 1; vert++) {
 				for (int depth = 0; depth <= 2; depth++) {
-					int x = field_145851_c
+					int x = xCoord
 							+ (forwardZ ? horiz : (depth * depthMultiplier));
-					int y = field_145848_d  + vert;
-					int z = field_145849_e
+					int y = yCoord  + vert;
+					int z = zCoord
 							+ (forwardZ ? (depth * depthMultiplier) : horiz);
 
-					Block blockId = field_145850_b.func_147439_a(x, y, z);
+					Block blockId = worldObj.getBlock(x, y, z);
 
 					if (horiz == 0 && vert == 0 && (depth == 0 || depth == 1))
 						continue;
@@ -155,8 +155,8 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 					if (blockId != ModBlocks.IndustrialFurnaceDummy)
 						continue;
 
-					field_145850_b.func_147449_b(x, y, z, Blocks.iron_block);
-					field_145850_b.func_147471_g(x, y, z);
+					worldObj.setBlock(x, y, z, Blocks.iron_block);
+					worldObj.markBlockForUpdate(x, y, z);
 				}
 			}
 		}
@@ -165,23 +165,23 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	}
 
 	@Override
-	public void func_145845_h()
+	public void updateEntity()
 	{
 		if (!isValidMultiBlock)
 			return;
 
 		boolean flag = furnaceBurnTime > 0;
 		boolean flag1 = false;
-		int metadata = func_145832_p();
+		int metadata = getBlockMetadata();
 		int isActive = (metadata >> 3);
 
 		if (flag)
 			furnaceBurnTime--;
 
-		if (!this.field_145850_b.isRemote) {
+		if (!this.worldObj.isRemote) {
 			if (furnaceBurnTime == 0 && canSmelt()) {
 				currentItemBurnTime = furnaceBurnTime = TileEntityFurnace
-						.func_145952_a(furnaceItems[1]);
+						.getItemBurnTime(furnaceItems[1]);
 
 				if (flag) {
 					flag1 = true;
@@ -210,18 +210,18 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 
 			if (isActive == 0 && flag) {
 				flag1 = true;
-				metadata = func_145832_p();
+				metadata = getBlockMetadata();
 				isActive = 1;
 				metadata = (isActive << 3)
 						| (metadata & IndustrialFurnaceCore.META_ISACTIVE);
 
-				field_145850_b.setBlockMetadataWithNotify(field_145851_c, field_145848_d , field_145849_e,
+				worldObj.setBlockMetadataWithNotify(xCoord, yCoord , zCoord,
 						metadata, 2);
 			}
 		}
 
 		if (flag1)
-			onInventoryChanged();
+			markDirty();
 	}
 
 	@Override
@@ -274,13 +274,13 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	}
 
 	@Override
-	public String func_145825_b()
+	public String getInventoryName()
 	{
 		return Strings.GUI_INDUSTRIAL_FURNACE;
 	}
 
 	@Override
-	public boolean func_145818_k_()
+	public boolean hasCustomInventoryName()
 	{
 		return false;
 	}
@@ -294,19 +294,19 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer entityPlayer)
 	{
-		return field_145850_b.func_147438_o(field_145851_c, field_145848_d , field_145849_e) != this ? false
-				: entityPlayer.getDistanceSq((double) field_145851_c + 0.5,
-						(double) field_145848_d  + 0.5, (double) field_145849_e + 0.5) <= 64.0;
+		return worldObj.getTileEntity(xCoord, yCoord , zCoord) != this ? false
+				: entityPlayer.getDistanceSq((double) xCoord + 0.5,
+						(double) yCoord  + 0.5, (double) zCoord + 0.5) <= 64.0;
 	}
 
 	@Override
-	public void openChest()
+	public void openInventory()
 	{
 
 	}
 
 	@Override
-	public void closeChest()
+	public void closeInventory()
 	{
 
 	}
@@ -315,7 +315,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	public boolean isItemValidForSlot(int slot, ItemStack itemStack)
 	{
 		return slot == 2 ? false : (slot == 1 ? TileEntityFurnace
-				.func_145954_b(itemStack) : true);
+				.isItemFuel(itemStack) : true);
 	}
 
 	@Override
@@ -339,18 +339,18 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	}
 
 	@Override
-	public void func_145839_a(NBTTagCompound tagCompound)
+	public void readFromNBT(NBTTagCompound tagCompound)
 	{
-		super.func_145839_a(tagCompound);
+		super.readFromNBT(tagCompound);
 
 		int md = tagCompound.getInteger("BlockMeta");
 		isValidMultiBlock = tagCompound.getBoolean("isValidMultiBlock");
 
-		NBTTagList itemsTag = tagCompound.func_150295_c("Items", md);
+		NBTTagList itemsTag = tagCompound.getTagList("Items", md);
 		furnaceItems = new ItemStack[getSizeInventory()];
 
 		for (int i = 0; i < itemsTag.tagCount(); i++) {
-			NBTTagCompound slotTag = (NBTTagCompound) itemsTag.func_150305_b(i);
+			NBTTagCompound slotTag = (NBTTagCompound) itemsTag.getCompoundTagAt(i);
 			byte slot = slotTag.getByte("slot");
 
 			if (slot >= 0 && slot < furnaceItems.length)
@@ -360,13 +360,13 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 		furnaceBurnTime = tagCompound.getShort("BurnTime");
 		furnaceCookTime = tagCompound.getShort("CookTime");
 		currentItemBurnTime = TileEntityFurnace
-				.func_145952_a(furnaceItems[1]);
+				.getItemBurnTime(furnaceItems[1]);
 	}
 
 	@Override
-	public void func_145841_b(NBTTagCompound tagCompound)
+	public void writeToNBT(NBTTagCompound tagCompound)
 	{
-		super.func_145841_b(tagCompound);
+		super.writeToNBT(tagCompound);
 
 		tagCompound.setBoolean("isValidMultiBlock", isValidMultiBlock);
 		System.out.println("Is Valid? " + (isValidMultiBlock ? "Yes" : "NO"));
@@ -412,7 +412,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 		if (furnaceItems[0] == null)
 			return false;
 		else {
-			ItemStack itemStack = FurnaceRecipes.smelting().func_151395_a(
+			ItemStack itemStack = FurnaceRecipes.smelting().getSmeltingResult(
 					furnaceItems[0]);
 			if (itemStack == null)
 				return false;
@@ -431,7 +431,7 @@ public class TileEntityIndustrialFurnaceCore extends TileEntity implements
 	public void smeltItem()
 	{
 		if (canSmelt()) {
-			ItemStack itemStack = FurnaceRecipes.smelting().func_151395_a(
+			ItemStack itemStack = FurnaceRecipes.smelting().getSmeltingResult(
 					furnaceItems[0]);
 
 			if (furnaceItems[2] == null)

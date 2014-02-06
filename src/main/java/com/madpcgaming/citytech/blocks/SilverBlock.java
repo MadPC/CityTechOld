@@ -14,10 +14,10 @@ public class SilverBlock extends BlockMT
 	
 	public SilverBlock(int id)
 	{
-		super(id, Material.field_151576_e);
-		this.func_149647_a(CityTech.tabsCT);
-		this.func_149752_b(5.0F);
-		this.func_149663_c(Strings.SILVER_BLOCK_NAME);
+		super(id, Material.rock);
+		this.setCreativeTab(CityTech.tabsCT);
+		this.setResistance(5.0F);
+		this.setBlockName(Strings.SILVER_BLOCK_NAME);
 	}
 	
 	public int idDropped(int par1, Random random, int par3)
@@ -31,9 +31,9 @@ public class SilverBlock extends BlockMT
 	}
 	
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("madtech:oreSilver");
+		blockIcon = iconRegister.registerIcon("madtech:oreSilver");
 	}
 	
 }

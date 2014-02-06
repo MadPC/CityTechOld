@@ -15,9 +15,9 @@ public class PalladiumOre extends BlockMT
 	
 	public PalladiumOre(int id)
 	{
-		super(id, Material.field_151576_e);
-		this.func_149663_c(Strings.PALLADIUM_ORE_NAME);
-		this.func_149647_a(CityTech.tabsCT);
+		super(id, Material.rock);
+		this.setBlockName(Strings.PALLADIUM_ORE_NAME);
+		this.setCreativeTab(CityTech.tabsCT);
 	}
 	
 	public Item idDropped(int par1, Random random, int par3)
@@ -31,8 +31,8 @@ public class PalladiumOre extends BlockMT
 	}
 	
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("madtech:orePalladium");
+		blockIcon = iconRegister.registerIcon("madtech:orePalladium");
 	}
 }

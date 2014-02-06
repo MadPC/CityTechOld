@@ -116,7 +116,7 @@ public class EnergyHandler
 			{
 				if (this.Energy >= request)
 				{
-					TileEntity te = world.func_147438_o(x, y, z);
+					TileEntity te = world.getTileEntity(x, y, z);
 					if (te != null && te instanceof IEnergyConductor)
 						((IEnergyConductor) te).requestFrom(ForgeDirection.getOrientation(i), request);
 					else
@@ -126,7 +126,7 @@ public class EnergyHandler
 					for (int j = 0; j < 6; j++)
 					{
 						ForgeDirection d = ForgeDirection.getOrientation(j);
-						TileEntity t = world.func_147438_o(x + d.offsetX, y + d.offsetY, z + d.offsetZ);
+						TileEntity t = world.getTileEntity(x + d.offsetX, y + d.offsetY, z + d.offsetZ);
 						if (i != j && t != null && t instanceof IEnergyConductor)
 						{
 							((IEnergyConductor) t).requestFrom(ForgeDirection.getOrientation(j).getOpposite(), request);
@@ -142,7 +142,7 @@ public class EnergyHandler
 			for (int j = 0; j < 6; j++)
 			{
 				ForgeDirection d = ForgeDirection.getOrientation(j);
-				TileEntity t = world.func_147438_o(x + d.offsetX, y + d.offsetY, z + d.offsetZ);
+				TileEntity t = world.getTileEntity(x + d.offsetX, y + d.offsetY, z + d.offsetZ);
 				if (t != null && t instanceof IEnergyConductor)
 				{
 					//LogHelper.info("&&Now Requesting from %s", t);

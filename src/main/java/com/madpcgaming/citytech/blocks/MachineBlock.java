@@ -10,12 +10,12 @@ public class MachineBlock extends Block {
 
 	protected MachineBlock(int id)
 	{
-		super(Material.field_151573_f);
+		super(Material.iron);
 		
-		func_149711_c(0.5F);
-		func_149647_a(CityTech.tabsCT);
-		func_149663_c(Strings.MACHINEBLOCK_NAME);
-		this.field_149768_d = this.func_149739_a();
+		setHardness(0.5F);
+		setCreativeTab(CityTech.tabsCT);
+		setBlockName(Strings.MACHINEBLOCK_NAME);
+		this.textureName = this.getUnlocalizedName();
 		
 	}
 }

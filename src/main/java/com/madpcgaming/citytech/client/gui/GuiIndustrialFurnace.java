@@ -20,36 +20,36 @@ public class GuiIndustrialFurnace extends GuiContainer
 	{
 		super(new ContainerIndustrialFurnace(playerInventory, tileEntity));
 		this.tileEntity = tileEntity;
-		field_147000_g = 166;
+		ySize = 166;
 	}
-	//func_146979_b = drawGuiContainerForegroundLayer
+	//drawGuiContainerForegroundLayer = drawGuiContainerForegroundLayer
 	@Override
-	protected void func_146979_b(int x, int y)
+	protected void drawGuiContainerForegroundLayer(int x, int y)
 	{
-		//field_146289_q = fontRendererObj
-        String invName = tileEntity.func_145818_k_() ? tileEntity.func_145825_b() : StatCollector.translateToLocal(tileEntity.func_145825_b());
-        field_146289_q.drawString(invName, field_146999_f / 2 - field_146289_q.getStringWidth(invName) / 2, 6, 4210752);
-		//field_146289_q.drawString(StatCollector.translateToLocal(Strings.GUI_INDUSTRIAL_FURNACE),28, 6, 4210752);
-		field_146289_q.drawString(StatCollector.translateToLocal("container.inventory"), 6, field_147000_g - 96 + 2, 4210752);
+		//fontRendererObj = fontRendererObj
+        String invName = tileEntity.hasCustomInventoryName() ? tileEntity.getInventoryName() : StatCollector.translateToLocal(tileEntity.getInventoryName());
+        fontRendererObj.drawString(invName, xSize / 2 - fontRendererObj.getStringWidth(invName) / 2, 6, 4210752);
+		//fontRendererObj.drawString(StatCollector.translateToLocal(Strings.GUI_INDUSTRIAL_FURNACE),28, 6, 4210752);
+		fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 6, ySize - 96 + 2, 4210752);
 	}
 	
-	//func_146976_a = drawGuiContainerBackgroundLayer
+	//drawGuiContainerBackgroundLayer = drawGuiContainerBackgroundLayer
 	@Override
-	protected void func_146976_a(float f, int par1, int par2)
+	protected void drawGuiContainerBackgroundLayer(float f, int par1, int par2)
 	{
 		GL11.glColor4f(1f, 1f, 1f, 1f);
-		//field_146297_k = MC
-		this.field_146297_k.getTextureManager().bindTexture(Textures.GUI_INDUSTRIAL_FURNACE);
+		//mc = MC
+		this.mc.getTextureManager().bindTexture(Textures.GUI_INDUSTRIAL_FURNACE);
 		
-		//field_146294_l = width
-		//field_146295_m = height
-		//field_146999_f = xSize
-		//field_147000_g = ySize
+		//width = width
+		//height = height
+		//xSize = xSize
+		//ySize = ySize
 		//field_147003_i = guiLeft
 		//field_147009_r = guiTop
-		int x = (field_146294_l - field_146999_f) / 2;
-		int y = (field_146295_m - field_147000_g) / 2;
-		drawTexturedModalRect(x, y, 0, 0, field_146999_f, field_147000_g);
+		int x = (width - xSize) / 2;
+		int y = (height - ySize) / 2;
+		drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
 		int i1;
 		
 		if(tileEntity.isBurning())

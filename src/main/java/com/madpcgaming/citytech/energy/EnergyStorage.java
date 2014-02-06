@@ -26,7 +26,7 @@ public class EnergyStorage implements IEnergyStorage
 		this.maxExtract = maxExtract;
 	}
 
-	public EnergyStorage func_145839_a(NBTTagCompound nbt)
+	public EnergyStorage readFromNBT(NBTTagCompound nbt)
 	{
 		this.energy = nbt.getInteger("Energy");
 
@@ -36,7 +36,7 @@ public class EnergyStorage implements IEnergyStorage
 		return this;
 	}
 
-	public NBTTagCompound func_145841_b(NBTTagCompound nbt)
+	public NBTTagCompound writeToNBT(NBTTagCompound nbt)
 	{
 		if (energy < 0) {
 			energy = 0;

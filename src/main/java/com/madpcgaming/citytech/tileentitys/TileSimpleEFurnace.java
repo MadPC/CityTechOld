@@ -34,11 +34,11 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 		furnaceBurnTime = 0;
 		currentItemBurnTime = 0;
 		
-		energy = new EnergyHandler(this.field_145851_c, this.field_145848_d, this.field_145849_e);
+		energy = new EnergyHandler(this.xCoord, this.yCoord, this.zCoord);
 	}
 	
 	@Override
-	public void func_145845_h()
+	public void updateEntity()
 	{
 		
 		boolean flag = this.furnaceBurnTime > 0;
@@ -49,9 +49,9 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
             --this.furnaceBurnTime;
         }
 
-        if (!this.field_145850_b.isRemote)
+        if (!this.worldObj.isRemote)
         {
-        	this.energy.update(field_145850_b);
+        	this.energy.update(worldObj);
         	
         	
             if (this.furnaceBurnTime == 0 && this.canSmelt())
@@ -97,7 +97,7 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 
         if (flag1)
         {
-            this.onInventoryChanged();
+            this.markDirty();
         }
 	}
 	
@@ -153,13 +153,13 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 	}
 
 	@Override
-	public String func_145825_b()
+	public String getInventoryName()
 	{
 		return Strings.GUI_SIMPLE_E_FURNACE;
 	}
 
 	@Override
-	public boolean func_145818_k_()
+	public boolean hasCustomInventoryName()
 	{
 		return false;
 	}
@@ -173,16 +173,16 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer entityPlayer)
 	{
-		return field_145850_b.func_147438_o(field_145851_c, field_145848_d, field_145849_e) != this ? false
-				: entityPlayer.getDistanceSq((double) field_145851_c + 0.5,
-						(double) field_145848_d + 0.5, (double) field_145849_e + 0.5) <= 64.0;
+		return worldObj.getTileEntity(xCoord, yCoord, zCoord) != this ? false
+				: entityPlayer.getDistanceSq((double) xCoord + 0.5,
+						(double) yCoord + 0.5, (double) zCoord + 0.5) <= 64.0;
 	}
 
 	@Override
-	public void openChest()	{}
+	public void openInventory()	{}
 
 	@Override
-	public void closeChest() {}
+	public void closeInventory() {}
 	
 	@Override
 	public boolean isItemValidForSlot(int i, ItemStack itemstack)
@@ -230,7 +230,7 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 		if (inv[0] == null)
 			return false;
 		else {
-			ItemStack itemStack = FurnaceRecipes.smelting().func_151395_a(inv[0]);
+			ItemStack itemStack = FurnaceRecipes.smelting().getSmeltingResult(inv[0]);
 			if (itemStack == null)
 				return false;
 			if (inv[1] == null)
@@ -247,7 +247,7 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 	{
 		if (canSmelt()) 
 		{
-			ItemStack itemStack = FurnaceRecipes.smelting().func_151395_a(inv[0]);
+			ItemStack itemStack = FurnaceRecipes.smelting().getSmeltingResult(inv[0]);
 
 			if (inv[1] == null)
 				inv[1] = itemStack.copy();
@@ -269,9 +269,9 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 	//Saving / Loading
 	
 	@Override
-	public void func_145841_b(NBTTagCompound tagCompound)
+	public void writeToNBT(NBTTagCompound tagCompound)
 	{
-		super.func_145841_b(tagCompound);
+		super.writeToNBT(tagCompound);
 		tagCompound.setShort("BurnTime", (short) furnaceBurnTime);
 		tagCompound.setShort("CookTime", (short) furnaceCookTime);
 		NBTTagList itemsList = new NBTTagList();
@@ -290,16 +290,16 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 	}
 	
 	@Override
-	public void func_145839_a(NBTTagCompound tagCompound)
+	public void readFromNBT(NBTTagCompound tagCompound)
 	{
-		super.func_145839_a(tagCompound);
+		super.readFromNBT(tagCompound);
 
 
-		NBTTagList itemsTag = tagCompound.func_150295_c("Items", 0);
+		NBTTagList itemsTag = tagCompound.getTagList("Items", 0);
 		inv = new ItemStack[getSizeInventory()];
 
 		for (int i = 0; i < itemsTag.tagCount(); i++) {
-			NBTTagCompound slotTag = (NBTTagCompound) itemsTag.func_150305_b(i);
+			NBTTagCompound slotTag = (NBTTagCompound) itemsTag.getCompoundTagAt(i);
 			byte slot = slotTag.getByte("slot");
 
 			if (slot >= 0 && slot < inv.length)
@@ -308,11 +308,11 @@ public class TileSimpleEFurnace extends TileEntity implements ISidedInventory, I
 
 		furnaceBurnTime = tagCompound.getShort("BurnTime");
 		furnaceCookTime = tagCompound.getShort("CookTime");
-		currentItemBurnTime = TileEntityFurnace.func_145952_a(inv[1]);
+		currentItemBurnTime = TileEntityFurnace.getItemBurnTime(inv[1]);
 		
 		if (energy == null)
 		{
-			energy = new EnergyHandler(this.field_145851_c, this.field_145848_d, this.field_145849_e);
+			energy = new EnergyHandler(this.xCoord, this.yCoord, this.zCoord);
 		}
 		energy.readFromNBT(tagCompound);
 	}

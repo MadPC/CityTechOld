@@ -24,9 +24,9 @@ public class TechocratsWorkbench extends Block
     
     public TechocratsWorkbench(int i)
     {
-        super(Material.field_151578_c);
-        this.func_149647_a(CityTech.tabsCT);
-        func_149663_c(Strings.WORKBENCH_NAME);
+        super(Material.ground);
+        this.setCreativeTab(CityTech.tabsCT);
+        setBlockName(Strings.WORKBENCH_NAME);
     }
     
     @SideOnly(Side.CLIENT)
@@ -35,7 +35,7 @@ public class TechocratsWorkbench extends Block
      */
     public IIcon getIcon(int par1, int par2)
     {
-        return par1 == 1 ? this.workbenchIconTop : (par1 == 0 ? Blocks.planks.func_149733_h(par1) : (par1 != 2 && par1 != 4 ? this.field_149761_L : this.workbenchIconFront));
+        return par1 == 1 ? this.workbenchIconTop : (par1 == 0 ? Blocks.planks.getBlockTextureFromSide(par1) : (par1 != 2 && par1 != 4 ? this.blockIcon : this.workbenchIconFront));
     }
 	
 	@SideOnly(Side.CLIENT)
@@ -46,13 +46,13 @@ public class TechocratsWorkbench extends Block
      */
     public void func_94581_a(IIconRegister par1IconRegister)
     {
-		this.field_149761_L = par1IconRegister.registerIcon("BetterTable:better_side");
+		this.blockIcon = par1IconRegister.registerIcon("BetterTable:better_side");
 		this.workbenchIconTop = par1IconRegister.registerIcon("BetterTable:better_top");
 		this.workbenchIconFront = par1IconRegister.registerIcon("BetterTable:better_front");
     }
 	
 	@Override
-	public boolean func_149727_a(World var1, int var2, int var3, int var4, EntityPlayer player, int var6, float var7, float var8, float var9)
+	public boolean onBlockActivated(World var1, int var2, int var3, int var4, EntityPlayer player, int var6, float var7, float var8, float var9)
     {
         if (!player.isSneaking())
 			{

@@ -15,14 +15,14 @@ public class AluminiumOre extends BlockMT
 	
 	public AluminiumOre(int id)
 	{
-		//field_151576_e = rock
-		super(id, Material.field_151576_e);
-		//func_149752_b = setResistence
-		this.func_149752_b(5.0F);
-		//func_149663_c  = setUnlocalizedName
-		this.func_149663_c (Strings.ALUMINIUM_ORE_NAME);
-		//func_149647_a - setcreativeTab
-		this.func_149647_a(CityTech.tabsCT);
+		//rock = rock
+		super(id, Material.rock);
+		//setResistance = setResistence
+		this.setResistance(5.0F);
+		//setBlockName  = setUnlocalizedName
+		this.setBlockName (Strings.ALUMINIUM_ORE_NAME);
+		//setCreativeTab - setcreativeTab
+		this.setCreativeTab(CityTech.tabsCT);
 	}
 	
 	public Item idDropped(int par1, Random random, int par3)
@@ -35,12 +35,12 @@ public class AluminiumOre extends BlockMT
 		return 1;
 	}
 	
-	//func_149651_a - registerBlockIcons
+	//registerBlockIcons - registerBlockIcons
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		//field_149761_L - blockIcon
-		field_149761_L = iconRegister.registerIcon("madtech:oreAluminium");
+		//blockIcon - blockIcon
+		blockIcon = iconRegister.registerIcon("madtech:oreAluminium");
 	}
 	
 }

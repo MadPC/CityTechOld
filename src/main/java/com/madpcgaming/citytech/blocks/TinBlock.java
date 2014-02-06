@@ -14,10 +14,10 @@ public class TinBlock extends BlockMT
 	
 	public TinBlock(int id)
 	{
-		super(id, Material.field_151576_e);
-		this.func_149752_b(5.0F);
-		this.func_149663_c(Strings.TIN_BLOCK_NAME);
-		this.func_149647_a(CityTech.tabsCT);
+		super(id, Material.rock);
+		this.setResistance(5.0F);
+		this.setBlockName(Strings.TIN_BLOCK_NAME);
+		this.setCreativeTab(CityTech.tabsCT);
 	}
 	
 	public int idDropped(int par1, Random random, int par3)
@@ -31,9 +31,9 @@ public class TinBlock extends BlockMT
 	}
 	
 	@Override
-	public void func_149651_a(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		field_149761_L = iconRegister.registerIcon("madtech:blockTin");
+		blockIcon = iconRegister.registerIcon("madtech:blockTin");
 	}
 	
 }
