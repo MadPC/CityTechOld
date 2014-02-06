@@ -1,8 +1,8 @@
 [
 {
- "modid": "madtech",
- "name": "MadTech",
- "description": "Technology gone mad!",
+ "modid": "citytech",
+ "name": "CityTech",
+ "description": "Cities are made possible with the right technology",
  "version": "${version}",
  "mcversion": "${mcversion}",
  "url": "",
