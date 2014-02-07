@@ -7,7 +7,9 @@ public enum PipingDisplayMode
 {
 	ALL,
 	ITEM,
-	FLUID;
+	FLUID,
+	REDSTONE,
+	POWER;
 	
 	public static PipingDisplayMode next(PipingDisplayMode mode)
 	{

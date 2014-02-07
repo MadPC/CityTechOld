@@ -27,6 +27,7 @@ import com.madpcgaming.citytech.piping.item.IItemPiping;
 import com.madpcgaming.citytech.piping.liquid.ILiquidPiping;
 import com.madpcgaming.citytech.piping.liquid.LiquidPipingNetwork;
 import com.madpcgaming.citytech.piping.redstone.IRedstonePiping;
+import com.madpcgaming.citytech.piping.redstone.RedstonePipingNetwork;
 import com.madpcgaming.citytech.piping.redstone.Signal;
 import com.madpcgaming.citytech.util.BlockCoord;
 import com.madpcgaming.citytech.util.DyeColor;
@@ -43,8 +44,7 @@ public class PipingUtil
 	{
 		if(IRedstonePiping.class.isAssignableFrom(type))
 		{
-			//TODO: Implement RedsonePipingNetwork
-			return null;//new RedstonePipingNetwork();
+			return new RedstonePipingNetwork();
 		}
 		else if(ILiquidPiping.class.isAssignableFrom(type))
 		{
@@ -231,6 +231,8 @@ public class PipingUtil
 				return pipingType == ILiquidPiping.class;
 			//case ITEM:
 				//return pipingType == IItemPiping.class;
+			case REDSTONE:
+				return pipingType == IRedstonePiping.class;
 			default:
 				break;
 		}
