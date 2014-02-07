@@ -24,7 +24,7 @@ public class CollidableCache
 		Collection<CollidableComponent> result = cache.get(key);
 		if(result == null)
 		{
-			result = piping.createCollidable(key);
+			result = piping.createCollidables(key);
 			cache.put(key, result);
 		}
 		return result;

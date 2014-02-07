@@ -6,7 +6,7 @@ import java.util.Map;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.madpcgaming.citytech.piping.IPiping;
-import com.madpcgaming.citytech.piping.item.IItemPiping;
+//import com.madpcgaming.citytech.piping.item.IItemPiping;
 import com.madpcgaming.citytech.piping.liquid.ILiquidPiping;
 
 public class Offsets
@@ -19,10 +19,11 @@ public class Offsets
 		OFFSETS.put(key(ILiquidPiping.class, Axis.Y), Offset.WEST);
 		OFFSETS.put(key(ILiquidPiping.class, Axis.Z), Offset.WEST);
 		
-		OFFSETS.put(key(IItemPiping.class, Axis.NONE), Offset.EAST);
-		OFFSETS.put(key(IItemPiping.class, Axis.X), Offset.SOUTH);
-		OFFSETS.put(key(IItemPiping.class, Axis.Y), Offset.EAST);
-		OFFSETS.put(key(IItemPiping.class, Axis.Z), Offset.EAST);
+		//TODO: Add IItemPiping
+		//OFFSETS.put(key(IItemPiping.class, Axis.NONE), Offset.EAST);
+		//OFFSETS.put(key(IItemPiping.class, Axis.X), Offset.SOUTH);
+		//OFFSETS.put(key(IItemPiping.class, Axis.Y), Offset.EAST);
+		//OFFSETS.put(key(IItemPiping.class, Axis.Z), Offset.EAST);
 	}
 	
 	public static Offset get(Class<? extends IPiping> type, ForgeDirection dir)

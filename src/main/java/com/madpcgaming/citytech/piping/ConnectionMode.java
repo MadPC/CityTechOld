@@ -32,7 +32,7 @@ public enum ConnectionMode
 		return ConnectionMode.values()[ord];
 	}
 	
-	public static ConnectionMode getPervious(ConnectionMode mode)
+	public static ConnectionMode getPrevious(ConnectionMode mode)
 	{
 		int ord = mode.ordinal() - 1;
 		if(ord < 0)

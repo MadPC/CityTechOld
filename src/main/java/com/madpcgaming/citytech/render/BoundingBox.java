@@ -5,7 +5,7 @@ import java.util.List;
 
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.madpcgaming.citytech.lib.BlockCoord;
+import com.madpcgaming.citytech.util.BlockCoord;
 import com.madpcgaming.citytech.vecmath.Vector2f;
 import com.madpcgaming.citytech.vecmath.Vector3d;
 import com.madpcgaming.citytech.vecmath.Vector3f;

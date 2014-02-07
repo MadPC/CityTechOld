@@ -84,6 +84,14 @@ public class CityTechConfig
 		tinuMinY = config.get("WorldGen", "Tin Underground Min Y", 10).getInt(10);
 		tinuMaxY = config.get("WorldGen", "Tin Underground Max Y", 55).getInt(55);
 		
+		fluidPipingExtractRate = config.get("Settings", "fluidpipingExtractRate", fluidPipingExtractRate,
+		        "Number of millibuckects per tick extract by a fluid pipings auto extract..").getInt(fluidPipingExtractRate);
+
+		fluidPipingMaxIoRate = config.get("Settings", "fluidpipingMaxIoRate", fluidPipingMaxIoRate,
+		        "Number of millibuckects per tick that can pass through a single connection to a fluid piping.").getInt(fluidPipingMaxIoRate);
+		
+		
+		
 		config.save();
 	}
 	
@@ -115,4 +123,8 @@ public class CityTechConfig
 	public static int silveruMaxY;
 	public static int tinuMinY;
 	public static int tinuMaxY;
+
+	public static int fluidPipingExtractRate;
+
+	public static int fluidPipingMaxIoRate;
 }

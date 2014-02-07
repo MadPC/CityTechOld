@@ -27,10 +27,10 @@ public abstract class AbstractPipingNetwork<T extends IPiping, I extends T>
 		
 		for(I pipe : connections)
 		{
-			AbstractPipingNetwork<?,?> network = con.getNetwork();
+			AbstractPipingNetwork<?,?> network = pipe.getNetwork();
 			if(network != null)
 			{
-				network.destoryNetwork();
+				network.destroyNetwork();
 			}
 		}
 		setNetwork(world, tile);
@@ -56,7 +56,7 @@ public abstract class AbstractPipingNetwork<T extends IPiping, I extends T>
 				} 
 				else if(pipe.getNetwork() != this)
 				{
-					pipe.getNetwork().destoryNetwork();
+					pipe.getNetwork().destroyNetwork();
 					setNetwork(world, pipe.getBundle());
 				}
 			}
@@ -71,7 +71,7 @@ public abstract class AbstractPipingNetwork<T extends IPiping, I extends T>
 		}
 	}
 	
-	public void destoryNetwork()
+	public void destroyNetwork()
 	{
 		for(I pipe : pipes)
 		{

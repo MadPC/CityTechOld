@@ -1,11 +1,18 @@
 package com.madpcgaming.citytech.piping;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import com.madpcgaming.citytech.piping.geom.CollidableCache.CacheKey;
+import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.util.BlockCoord;
 
 public interface IPiping
@@ -75,4 +82,44 @@ public interface IPiping
 	void externalConnectionRemoved(ForgeDirection fromDirection);
 	
 	boolean isConnectedTo(ForgeDirection dir);
+	
+	ConnectionMode getConnectionMode(ForgeDirection dir);
+	
+	void setConnectionMode(ForgeDirection dir, ConnectionMode mode);
+	
+	boolean hasConnectionMode(ConnectionMode mode);
+	
+	ConnectionMode getNextConnectionMode(ForgeDirection dir);
+	
+	ConnectionMode getPreviousConnectionMode(ForgeDirection dir);
+	
+	//Rendering
+	
+	IIcon getTextureForState(CollidableComponent component);
+	
+	IIcon getTransmitionTextureForState(CollidableComponent component);
+	
+	float getTransmitionGeometryScale();
+	
+	float getSelfIlluminationForState(CollidableComponent componemt);
+	
+	//Geometry
+	
+	boolean haveCollidablesChangedSinceLastCall();
+	
+	Collection<CollidableComponent> getCollidableComponents();
+	
+	Collection<CollidableComponent> createCollidables(CacheKey key);
+	
+	Class<? extends IPiping> getCollidableType();
+	
+	//Actions
+	
+	boolean onBlockActivated(EntityPlayer player, RaytraceResult res, List<RaytraceResult> all);
+	
+	void onChunkUnload(World worldObj);
+	
+	void updateEntity(World worldObj);
+	
+	boolean onNeighborBlockChange(int blockId);
 }

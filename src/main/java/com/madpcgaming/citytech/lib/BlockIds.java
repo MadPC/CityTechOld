@@ -4,6 +4,7 @@ public class BlockIds
 {
 	
 	
+	
 	public static int	ALUMINUM_ORE_DEFAULT					= 2989;
 	public static int	COPPER_ORE_DEFAULT						= 2990;
 	public static int	PALLADIUM_ORE_DEFAULT					= 2991;
@@ -25,6 +26,7 @@ public class BlockIds
 	public static int	REINFORCED_STONE_DEFAULT				= 3010;
 	public static int 	BLOCK_SE_FURNACE_DEFAULT				= 3011;
     public static int   CRAFTING_TABLE                          = 3012;
+    public static int	BLOCK_PIPING_BUNDLE						= 3013;
 	
 	public static int 	BLOCK_SE_FURNACE;
 	public static int	ALUMINUM_ORE;

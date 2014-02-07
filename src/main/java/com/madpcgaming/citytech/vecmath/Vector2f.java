@@ -76,7 +76,8 @@ public class Vector2f {
 	    return Math.sqrt(lengthSquared());
 	  }
 
-	  public double distanceSquared(Vector2f v) {
+	  @SuppressWarnings("unused")
+	public double distanceSquared(Vector2f v) {
 	    double dx, dy, dz;
 	    dx = x - v.x;
 	    dy = y - v.y;
