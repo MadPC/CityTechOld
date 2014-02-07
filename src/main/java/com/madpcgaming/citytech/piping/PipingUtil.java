@@ -229,8 +229,8 @@ public class PipingUtil
 				return true;
 			case FLUID:
 				return pipingType == ILiquidPiping.class;
-			case ITEM:
-				return pipingType == IItemPiping.class;
+			//case ITEM:
+				//return pipingType == IItemPiping.class;
 			default:
 				break;
 		}
