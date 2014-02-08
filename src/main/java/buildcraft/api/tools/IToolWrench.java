@@ -1,4 +1,4 @@
-package com.madpcgaming.buildcraft.api.tools;
+package buildcraft.api.tools;
 
 import net.minecraft.entity.player.EntityPlayer;
 

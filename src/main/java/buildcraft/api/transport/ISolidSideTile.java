@@ -1,8 +1,7 @@
-package com.madpcgaming.buildcraft.api.transport;
+package buildcraft.api.transport;
 
 import net.minecraftforge.common.util.ForgeDirection;
 
-public interface ISolidSideTile
-{
+public interface ISolidSideTile {
 	public boolean isSolidOnSide(ForgeDirection side);
 }

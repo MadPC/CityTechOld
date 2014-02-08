@@ -9,9 +9,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.IFluidHandler;
+import buildcraft.api.transport.IPipeTile;
+import buildcraft.api.transport.IPipeTile.PipeType;
 
-import com.madpcgaming.buildcraft.api.transport.IPipeTile;
-import com.madpcgaming.buildcraft.api.transport.IPipeTile.PipeType;
 import com.madpcgaming.citytech.machine.RedstoneControlMode;
 import com.madpcgaming.citytech.piping.AbstractPiping;
 import com.madpcgaming.citytech.piping.ConnectionMode;

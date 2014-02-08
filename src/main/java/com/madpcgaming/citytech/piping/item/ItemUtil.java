@@ -6,9 +6,8 @@ import net.minecraft.inventory.InventoryLargeChest;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraftforge.common.util.ForgeDirection;
-
-import com.madpcgaming.buildcraft.api.transport.IPipeTile;
-import com.madpcgaming.cofh.api.transport.IItemConduit;
+import buildcraft.api.transport.IPipeTile;
+import cofh.api.transport.IItemConduit;
 
 public class ItemUtil
 {

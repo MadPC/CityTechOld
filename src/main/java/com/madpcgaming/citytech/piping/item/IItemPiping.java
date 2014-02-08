@@ -3,11 +3,11 @@ package com.madpcgaming.citytech.piping.item;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.common.util.ForgeDirection;
+import cofh.api.transport.IItemConduit;
 
 import com.madpcgaming.citytech.machine.RedstoneControlMode;
 import com.madpcgaming.citytech.piping.IPiping;
 import com.madpcgaming.citytech.util.DyeColor;
-import com.madpcgaming.cofh.api.transport.IItemConduit;
 
 public interface IItemPiping extends IPiping, IItemConduit
 {
