@@ -51,6 +51,7 @@ public class ModBlocks
 	 */
 	public static Block	SuperDrain;
 	public static Block	itemItemPiping;
+	public static Block	itemBasicTelsaBat;
 	
 	//Piping
 
