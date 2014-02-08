@@ -10,9 +10,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.madpcgaming.citytech.energy.EnergyHandler;
-import com.madpcgaming.citytech.energy.IEnergyConductor;
 import com.madpcgaming.citytech.lib.Strings;
+import com.madpcgaming.citytech.power.EnergyHandler;
+import com.madpcgaming.citytech.power.IEnergyConductor;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

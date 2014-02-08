@@ -9,10 +9,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.madpcgaming.citytech.CityTech;
-import com.madpcgaming.citytech.energy.IEnergyConductor;
 import com.madpcgaming.citytech.helpers.LogHelper;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.Strings;
+import com.madpcgaming.citytech.power.IEnergyConductor;
 import com.madpcgaming.citytech.tileentitys.CableTE;
 
 public class SimpleCable extends BlockContainer

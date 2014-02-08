@@ -6,7 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
-import com.madpcgaming.citytech.energy.IEnergyConductor;
+import com.madpcgaming.citytech.power.IEnergyConductor;
 
 public class EnergyReader extends ItemMT
 {

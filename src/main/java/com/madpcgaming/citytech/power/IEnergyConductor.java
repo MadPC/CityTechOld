@@ -1,4 +1,4 @@
-package com.madpcgaming.citytech.energy;
+package com.madpcgaming.citytech.power;
 
 import net.minecraftforge.common.util.ForgeDirection;
 

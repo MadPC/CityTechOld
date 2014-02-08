@@ -4,9 +4,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.madpcgaming.citytech.energy.EnergyHandler;
-import com.madpcgaming.citytech.energy.IEnergyConductor;
 import com.madpcgaming.citytech.helpers.OrientationHelper;
+import com.madpcgaming.citytech.power.EnergyHandler;
+import com.madpcgaming.citytech.power.IEnergyConductor;
 
 public class CableTE extends TileEntity implements IEnergyConductor
 {
