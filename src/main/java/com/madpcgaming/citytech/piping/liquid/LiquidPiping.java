@@ -1,8 +1,13 @@
 package com.madpcgaming.citytech.piping.liquid;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
+import javax.swing.Icon;
+
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
@@ -20,11 +25,44 @@ import com.madpcgaming.citytech.piping.ConnectionMode;
 import com.madpcgaming.citytech.piping.PipingUtil;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.util.BlockCoord;
+import com.madpcgaming.citytech.util.IconUtil;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 
 public class LiquidPiping extends AbstractTankPiping
 {
 	static final int VOLUME_PER_CONNECTION = FluidContainerRegistry.BUCKET_VOLUME / 4;
+	
+	public static final String ICON_KEY = null;
+	public static final String ICON_KEY_LOCKED = null;
+	public static final String ICON_CORE_KEY = null;
+	public static final String ICON_EXTRACT_KEY = null;
+	public static final String ICON_EMPTY_EXTRACT_KEY = null;
+	public static final String ICON_INSERT_KEY = null;
+	public static final String ICON_EMPTY_INSERT_KEY = null;
+	
+	static final Map<String, Icon> ICONS = new HashMap<String, Icon>();
+	
+	@SideOnly(Side.CLIENT)
+	public static void initIcons()
+	{
+		IconUtil.addIconProvider(new IconUtil.IIconProvider()
+		{
+			@Override
+			public void registerIcons(IIconRegister register)
+			{
+				
+			}
+			
+			@Override
+			public int getTextureType()
+			{
+				return 0;
+			}
+		});
+	}
 	
 	private LiquidPipingNetwork network;
 	private float lastSyncRatio = -99;

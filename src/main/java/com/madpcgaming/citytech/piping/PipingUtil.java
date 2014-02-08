@@ -53,7 +53,6 @@ public class PipingUtil
 		}
 		else if(IItemPiping.class.isAssignableFrom(type))
 		{
-			//TODO: Implement ItemPipingNetwork
 			return new ItemPipingNetwork();
 		}
 		FMLCommonHandler.instance().raiseException(new Exception("Could not determine network type for class " + type), "PipingUtil.createNetworkForType", false);
