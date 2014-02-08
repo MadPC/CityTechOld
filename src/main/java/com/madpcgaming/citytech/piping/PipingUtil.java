@@ -24,6 +24,7 @@ import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.machine.RedstoneControlMode;
 import com.madpcgaming.citytech.piping.IPipingBundle.FacadeRenderState;
 import com.madpcgaming.citytech.piping.item.IItemPiping;
+import com.madpcgaming.citytech.piping.item.ItemPipingNetwork;
 import com.madpcgaming.citytech.piping.liquid.ILiquidPiping;
 import com.madpcgaming.citytech.piping.liquid.LiquidPipingNetwork;
 import com.madpcgaming.citytech.piping.redstone.IRedstonePiping;
@@ -53,7 +54,7 @@ public class PipingUtil
 		else if(IItemPiping.class.isAssignableFrom(type))
 		{
 			//TODO: Implement ItemPipingNetwork
-			return null;// new ItemPipingNetwork();
+			return new ItemPipingNetwork();
 		}
 		FMLCommonHandler.instance().raiseException(new Exception("Could not determine network type for class " + type), "PipingUtil.createNetworkForType", false);
 		return null;
@@ -229,8 +230,8 @@ public class PipingUtil
 				return true;
 			case FLUID:
 				return pipingType == ILiquidPiping.class;
-			//case ITEM:
-				//return pipingType == IItemPiping.class;
+			case ITEM:
+				return pipingType == IItemPiping.class;
 			case REDSTONE:
 				return pipingType == IRedstonePiping.class;
 			default:
