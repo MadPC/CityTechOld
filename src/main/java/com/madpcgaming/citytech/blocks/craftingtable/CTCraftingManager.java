@@ -16,9 +16,9 @@ import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
 
 @SuppressWarnings("unchecked")
-public class MTCraftingManager {
+public class CTCraftingManager {
 	/** The static instance of this class */
-	private static final MTCraftingManager instance = new MTCraftingManager();
+	private static final CTCraftingManager instance = new CTCraftingManager();
 
 	/** A list of all the recipes added */
 	@SuppressWarnings("rawtypes")
@@ -27,11 +27,11 @@ public class MTCraftingManager {
 	/**
 	 * Returns the static instance of this class
 	 */
-	public static final MTCraftingManager getInstance() {
+	public static final CTCraftingManager getInstance() {
 		return instance;
 	}
 
-	private MTCraftingManager() {
+	private CTCraftingManager() {
 		addMCRecipes();
 		Collections.sort(this.recipes, new RecipeSorter(this));
 	}

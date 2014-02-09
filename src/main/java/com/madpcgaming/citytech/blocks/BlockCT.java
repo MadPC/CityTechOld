@@ -5,13 +5,13 @@ import net.minecraft.block.material.Material;
 
 import com.madpcgaming.citytech.CityTech;
 
-public class BlockMT extends Block
+public class BlockCT extends Block
 {
 	
-	public BlockMT(int par1, Material par2Material)
+	public BlockCT(int par1, Material par2Material)
 	{
 		super(par2Material);
-		// LogHelper.info("&&Calling BlockMT constructor with id %d and Material %s",
+		// LogHelper.info("&&Calling BlockCT constructor with id %d and Material %s",
 		// par1, par2Material);
 		this.setCreativeTab(CityTech.tabsCT);
 		this.setHardness(3.0f);

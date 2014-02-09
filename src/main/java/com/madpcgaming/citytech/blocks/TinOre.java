@@ -10,7 +10,7 @@ import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.Strings;
 
-public class TinOre extends BlockMT
+public class TinOre extends BlockCT
 {
 	
 	public TinOre(int id)
@@ -33,7 +33,7 @@ public class TinOre extends BlockMT
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:oreTin");
+		blockIcon = iconRegister.registerIcon("citytech:oreTin");
 	}
 	
 }

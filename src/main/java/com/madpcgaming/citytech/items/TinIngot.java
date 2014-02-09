@@ -16,7 +16,7 @@ public class TinIngot extends ItemMT
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		itemIcon = iconRegister.registerIcon("madtech:ingotTin");
+		itemIcon = iconRegister.registerIcon("citytech:ingotTin");
 	}
 	
 }

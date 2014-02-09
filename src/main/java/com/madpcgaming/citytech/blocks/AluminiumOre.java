@@ -10,7 +10,7 @@ import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.Strings;
 
-public class AluminiumOre extends BlockMT
+public class AluminiumOre extends BlockCT
 {
 	
 	public AluminiumOre(int id)
@@ -40,7 +40,7 @@ public class AluminiumOre extends BlockMT
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
 		//blockIcon - blockIcon
-		blockIcon = iconRegister.registerIcon("madtech:oreAluminium");
+		blockIcon = iconRegister.registerIcon("citytech:oreAluminium");
 	}
 	
 }

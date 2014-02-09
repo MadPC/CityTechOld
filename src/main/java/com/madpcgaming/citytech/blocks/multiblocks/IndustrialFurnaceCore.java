@@ -48,9 +48,9 @@ public class IndustrialFurnaceCore extends BlockContainer {
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:brick");
-		faceIconUnlit = iconRegister.registerIcon("madtech:IndustrialFurance_Front_Unlit");
-		faceIconLit = iconRegister.registerIcon("madtech:IndustrialFurnace_Front_Lit");
+		blockIcon = iconRegister.registerIcon("citytech:brick");
+		faceIconUnlit = iconRegister.registerIcon("citytech:IndustrialFurance_Front_Unlit");
+		faceIconLit = iconRegister.registerIcon("citytech:IndustrialFurnace_Front_Lit");
 	}
 	
 

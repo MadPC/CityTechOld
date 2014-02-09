@@ -16,7 +16,7 @@ public class SilverIngot extends ItemMT
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		itemIcon = iconRegister.registerIcon("madtech:ingotSilver");
+		itemIcon = iconRegister.registerIcon("citytech:ingotSilver");
 	}
 	
 }

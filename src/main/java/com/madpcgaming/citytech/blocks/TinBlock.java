@@ -9,7 +9,7 @@ import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.BlockIds;
 import com.madpcgaming.citytech.lib.Strings;
 
-public class TinBlock extends BlockMT
+public class TinBlock extends BlockCT
 {
 	
 	public TinBlock(int id)
@@ -33,7 +33,7 @@ public class TinBlock extends BlockMT
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:blockTin");
+		blockIcon = iconRegister.registerIcon("citytech:blockTin");
 	}
 	
 }

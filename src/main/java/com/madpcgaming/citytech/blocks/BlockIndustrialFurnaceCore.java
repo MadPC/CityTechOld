@@ -45,9 +45,9 @@ public class BlockIndustrialFurnaceCore extends BlockContainer {
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:brick");
-		faceIconUnlit = iconRegister.registerIcon("madtech:IndustrialFurnace_Front_Unlit");
-		faceIconLit  = iconRegister.registerIcon("madtech:IndustrialFurnace_Front_Lit");
+		blockIcon = iconRegister.registerIcon("citytech:brick");
+		faceIconUnlit = iconRegister.registerIcon("citytech:IndustrialFurnace_Front_Unlit");
+		faceIconLit  = iconRegister.registerIcon("citytech:IndustrialFurnace_Front_Lit");
 	}
 	
 	public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entity, ItemStack itemStack)

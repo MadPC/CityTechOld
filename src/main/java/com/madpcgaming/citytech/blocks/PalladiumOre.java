@@ -10,7 +10,7 @@ import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.Strings;
 
-public class PalladiumOre extends BlockMT
+public class PalladiumOre extends BlockCT
 {
 	
 	public PalladiumOre(int id)
@@ -33,6 +33,6 @@ public class PalladiumOre extends BlockMT
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:orePalladium");
+		blockIcon = iconRegister.registerIcon("citytech:orePalladium");
 	}
 }

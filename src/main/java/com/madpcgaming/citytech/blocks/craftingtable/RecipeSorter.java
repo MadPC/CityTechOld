@@ -8,9 +8,9 @@ import net.minecraft.item.crafting.IRecipe;
 public class RecipeSorter implements Comparator
 {
     @SuppressWarnings("unused")
-	private final MTCraftingManager CraftingManager;
+	private final CTCraftingManager CraftingManager;
 
-    public RecipeSorter(MTCraftingManager par1CraftingManager)
+    public RecipeSorter(CTCraftingManager par1CraftingManager)
     {
         this.CraftingManager = par1CraftingManager;
     }

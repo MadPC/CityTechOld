@@ -16,6 +16,6 @@ public class Silicon extends ItemMT
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		itemIcon = iconRegister.registerIcon("madtech:Silicon");
+		itemIcon = iconRegister.registerIcon("citytech:Silicon");
 	}
 }

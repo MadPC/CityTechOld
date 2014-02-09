@@ -24,7 +24,7 @@ public class SuperDrain extends BlockContainer
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:BlockDrain");
+		blockIcon = iconRegister.registerIcon("citytech:BlockDrain");
 	}
 	
 	@Override

@@ -9,7 +9,7 @@ import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.BlockIds;
 import com.madpcgaming.citytech.lib.Strings;
 
-public class SilverBlock extends BlockMT
+public class SilverBlock extends BlockCT
 {
 	
 	public SilverBlock(int id)
@@ -33,7 +33,7 @@ public class SilverBlock extends BlockMT
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:oreSilver");
+		blockIcon = iconRegister.registerIcon("citytech:oreSilver");
 	}
 	
 }

@@ -10,7 +10,7 @@ import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.Strings;
 
-public class PlatinumOre extends BlockMT
+public class PlatinumOre extends BlockCT
 {
 	
 	public PlatinumOre(int id)
@@ -35,6 +35,6 @@ public class PlatinumOre extends BlockMT
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:orePlatinum");
+		blockIcon = iconRegister.registerIcon("citytech:orePlatinum");
 	}
 }

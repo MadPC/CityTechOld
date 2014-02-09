@@ -42,7 +42,7 @@ public class IndustrialFurnaceDummy extends BlockContainer
 	
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:brick");
+		blockIcon = iconRegister.registerIcon("citytech:brick");
 	}
 	
 	@Override

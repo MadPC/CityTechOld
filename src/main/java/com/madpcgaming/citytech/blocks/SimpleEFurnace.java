@@ -45,9 +45,9 @@ public class SimpleEFurnace extends BlockContainer
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:SEFurnace_Side");
-		faceIconUnlit = iconRegister.registerIcon("madtech:SEFurnace_Front_Unlit");
-		faceIconLit  = iconRegister.registerIcon("madtech:SEFurnace_Front_Lit");
+		blockIcon = iconRegister.registerIcon("citytech:SEFurnace_Side");
+		faceIconUnlit = iconRegister.registerIcon("citytech:SEFurnace_Front_Unlit");
+		faceIconLit  = iconRegister.registerIcon("citytech:SEFurnace_Front_Lit");
 	}
 
 	

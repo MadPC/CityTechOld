@@ -8,7 +8,7 @@ import com.madpcgaming.citytech.lib.Reference;
 
 public class LogHelper
 {
-	private static Logger MTLog = LogManager.getLogger(Reference.MOD_ID);
+	private static Logger CTLog = LogManager.getLogger(Reference.MOD_ID);
 	
 	
 	public static void log(Level l, String s)
@@ -19,11 +19,11 @@ public class LogHelper
 	public static void log(Level l, String s, Object... args)
 	{
 		if (!s.startsWith("&&"))
-			MTLog.log(l, s);
+			CTLog.log(l, s);
 		else
 		{
 			String msg = String.format(s.substring(2), args);
-			MTLog.log(l, msg);
+			CTLog.log(l, msg);
 		}
 	}
 	

@@ -11,7 +11,10 @@ public enum TeslaBat
 	(new BasicTeslaBat(20, 10000, 2), "basicTelsaBat"),
 	
 	ACTIVATED_TESLA_BAT
-	(new BasicTeslaBat(40, 20000, 6), "activatedTelsaBat");
+	(new BasicTeslaBat(40, 20000, 6), "activatedTelsaBat"),
+	
+	ADVANCE_TESLA_BAT
+	(new BasicTeslaBat(100, 100000, 10), "advanceTeslabat");
 	
 	public final ITeslaBat teslaBat;
 	public final String unlocalizedName;

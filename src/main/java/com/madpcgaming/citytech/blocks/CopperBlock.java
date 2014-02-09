@@ -9,7 +9,7 @@ import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.lib.BlockIds;
 import com.madpcgaming.citytech.lib.Strings;
 
-public class CopperBlock extends BlockMT
+public class CopperBlock extends BlockCT
 {
 	
 	public CopperBlock(int id)
@@ -33,7 +33,7 @@ public class CopperBlock extends BlockMT
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister)
 	{
-		blockIcon = iconRegister.registerIcon("madtech:blockCopper");
+		blockIcon = iconRegister.registerIcon("citytech:blockCopper");
 	}
 	
 }

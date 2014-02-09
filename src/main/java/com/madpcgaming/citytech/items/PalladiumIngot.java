@@ -15,7 +15,7 @@ public class PalladiumIngot extends ItemMT
 	}
 	public void registerIcons(IIconRegister iconRegister)
 	{
-		itemIcon = iconRegister.registerIcon("madtech:ingotPalladium");
+		itemIcon = iconRegister.registerIcon("citytech:ingotPalladium");
 	}
 	
 }

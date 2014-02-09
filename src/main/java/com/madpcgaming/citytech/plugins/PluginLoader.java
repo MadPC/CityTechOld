@@ -28,7 +28,7 @@ public class PluginLoader
 		{
 			String ID = plugins[i];
 			String PluginClass = pluginClasses[i];
-			LogHelper.info("&&Loading Plugin %s for MadTech", ID);
+			LogHelper.info("&&Loading Plugin %s for citytech", ID);
 			try
 			{
 				Class<?> c = Class.forName(PluginClass);

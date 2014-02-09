@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import com.madpcgaming.citytech.blocks.ModBlocks;
-import com.madpcgaming.citytech.blocks.craftingtable.MTCraftingManager;
+import com.madpcgaming.citytech.blocks.craftingtable.CTCraftingManager;
 
 public class ContainerTable extends Container {
 
@@ -58,7 +58,7 @@ public class ContainerTable extends Container {
 	}
 
 	public void onCraftMatrixChanged(IInventory iinventory) {
-		craftResult.setInventorySlotContents(0, MTCraftingManager
+		craftResult.setInventorySlotContents(0, CTCraftingManager
 				.getInstance().findMatchingRecipe(craftMatrix, worldObj));
 	}
 
