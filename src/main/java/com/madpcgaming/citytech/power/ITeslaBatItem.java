@@ -2,7 +2,7 @@ package com.madpcgaming.citytech.power;
 
 import net.minecraft.item.ItemStack;
 
-public interface ITelsaBatItem
+public interface ITeslaBatItem
 {
-	ITelsaBat getTeslaBat(ItemStack stack);
+	ITeslaBat getTeslaBat(ItemStack stack);
 }

@@ -13,12 +13,12 @@ public enum TeslaBat
 	ACTIVATED_TESLA_BAT
 	(new BasicTeslaBat(40, 20000, 6), "activatedTelsaBat");
 	
-	public final ITelsaBat teslaBat;
+	public final ITeslaBat teslaBat;
 	public final String unlocalizedName;
 	public final String uiName;
 	public final String iconKey;
 	
-	private TelsaBat(ITelsaBat telsaBat, String iconKey)
+	private TeslaBat(ITeslaBat teslaBat, String iconKey)
 	{
 		this.teslaBat = teslaBat;
 		this.uiName = Lang.localize(iconKey);

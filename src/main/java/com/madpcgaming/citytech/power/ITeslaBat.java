@@ -1,6 +1,6 @@
 package com.madpcgaming.citytech.power;
 
-public interface ITelsaBat
+public interface ITeslaBat
 {
 	int getMinEnergyReceived();
 
