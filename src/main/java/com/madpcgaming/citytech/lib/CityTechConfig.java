@@ -129,4 +129,6 @@ public class CityTechConfig
 	public static int fluidPipingMaxIoRate;
 
 	public static boolean itemPipingUsePhysicalDistance;
+
+	public static boolean	detailedPowerTrackingEnabled;
 }

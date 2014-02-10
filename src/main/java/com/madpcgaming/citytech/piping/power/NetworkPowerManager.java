@@ -9,13 +9,14 @@ import java.util.Map;
 import java.util.Set;
 
 import net.minecraft.world.World;
-
 import buildcraft.api.power.PowerHandler.PowerReceiver;
 import buildcraft.api.power.PowerHandler.Type;
 
+import com.madpcgaming.citytech.lib.CityTechConfig;
 import com.madpcgaming.citytech.machine.power.TileTeslaBat;
 import com.madpcgaming.citytech.piping.power.PowerPipingNetwork.ReceptorEntry;
 import com.madpcgaming.citytech.power.IPowerInterface;
+import com.madpcgaming.citytech.power.PowerInterfaceRF;
 import com.madpcgaming.citytech.util.BlockCoord;
 
 public class NetworkPowerManager
@@ -127,7 +128,7 @@ public class NetworkPowerManager
 		float available = energyStored + batSupply.canExtract;
 		float wasAvailable = available;
 		
-		if(available <= 0 || (receptors.isEmpty() && storageReceptors.isEmpty()))
+		if(available <= 0 || (receptors.isEmpty() && storageRecptors.isEmpty()))
 		{
 			trackerEndTick();
 			return;
@@ -187,7 +188,7 @@ public class NetworkPowerManager
 		float used = wasAvailable - available;
 		energyStored -= used;
 		
-		if(!batSupply.batBank.isEmpty())
+		if(!batSupply.teslaBat.isEmpty())
 		{
 			float batBankChange = 0;
 			if(energyStored < 0)
@@ -280,11 +281,11 @@ public class NetworkPowerManager
 	
 	private PowerTracker getOrCreateTracker(IPowerPiping pipe)
 	{
-		PowerTracker result = powerTracker.get(pipe);
+		PowerTracker result = powerTrackers.get(pipe);
 		if(result == null)
 		{
 			result = new PowerTracker();
-			powerTracker.put(pipe, result);
+			powerTrackers.put(pipe, result);
 		}
 		return result;
 	}
@@ -389,12 +390,12 @@ public class NetworkPowerManager
 	public void receptorsChanged()
 	{
 		receptors.clear();
-		storageReceptors.clear();
-		for(ReceptorsEntry rec: network.getPowerReceptors())
+		storageRecptors.clear();
+		for(ReceptorEntry rec: network.getPowerReceptors())
 		{
 			if(rec.powerInterface.getDelegate() instanceof TileTeslaBat)
 			{
-				storageReceptors.add(rec);
+				storageRecptors.add(rec);
 			} else {
 				receptors.add(rec);
 			}
@@ -435,7 +436,7 @@ public class NetworkPowerManager
 	{
 		float canExtract;
 		float canFill;
-		Set<TileTeslaBat> batBanks = new HashMap<TileTeslaBat>();
+		Set<TileTeslaBat> teslaBat = new HashSet<TileTeslaBat>();
 		float filledRatio;
 		float stored = 0;
 		float maxCap = 0;
@@ -447,21 +448,21 @@ public class NetworkPowerManager
 		
 		void init()
 		{
-			batBanks.clear();
+			teslaBat.clear();
 			enteries.clear();
 			canExtract = 0;
 			canFill = 0;
 			stored = 0;
 			maxCap = 0;
-			for(ReceptorEntry rec : storageReceptors)
+			for(ReceptorEntry rec : storageRecptors)
 			{
 				TileTeslaBat tb = (TileTeslaBat) rec.powerInterface.getDelegate();
-				boolean processed = batBanks.contains(tb);
+				boolean processed = teslaBat.contains(tb);
 				if(!processed)
 				{
 					stored += tb.getEnergyStored();
 					maxCap += tb.getMaxEnergyStored();
-					batBanks.add(tb);
+					teslaBat.add(tb);
 					
 					float canGet = 0;
 					
@@ -474,11 +475,11 @@ public class NetworkPowerManager
 					float canFill = 0;
 					if(tb.isInputEnabled(rec.direction.getOpposite()))
 					{
-						canFill = Math.min(tb.getMaxEnergyStored() - tb.getEnergyStord(), tb.getMaxInput());
+						canFill = Math.min(tb.getMaxEnergyStored() - tb.getEnergyStored(), tb.getMaxInput());
 						canFill = Math.min(canFill, rec.emitter.getMaxEnergyExtracted(rec.direction));
 						this.canFill += canFill;
 					}
-					enteries.add(new BatBankSupplyEntry(cb, canGet, canFill, rec.emitter));
+					enteries.add(new TeslaBatSupplyEntry(tb, canGet, canFill, rec.emitter));
 				}
 			}
 			
@@ -498,7 +499,7 @@ public class NetworkPowerManager
 			init();
 			int canRemove = 0;
 			int canAdd = 0;
-			for(BatBankSupplyEntry entry : enteries)
+			for(TeslaBatSupplyEntry entry : enteries)
 			{
 				entry.calcToBalance(filledRatio);
 				if(entry.toBalance < 0)
@@ -513,20 +514,20 @@ public class NetworkPowerManager
 			
 			for(int i = 0; i < enteries.size() && totalTransferAmount > 0; i ++)
 			{
-				BatBankSupplyEntry from = enteries.get(i);
+				TeslaBatSupplyEntry from = enteries.get(i);
 				float amount = from.toBalance;
 				amount = minAbs(amount, totalTransferAmount);
-				from.batBank.addEnergy(amount);
+				from.teslaBat.addEnergy(amount);
 				totalTransferAmount -= Math.abs(amount);
 				float toTransfer = Math.abs(amount);
 				
 				for(int j = i + 1; j < enteries.size() && toTransfer > 0; j++)
 				{
-					BatBankSupplyEntry to = enteries.get(j);
+					TeslaBatSupplyEntry to = enteries.get(j);
 					if(Math.signum(amount) != Math.signum(to.toBalance))
 					{
 						float toAmount = Math.min(toTransfer, Math.abs(to.toBalance));
-						to.batBank.addEnergy(toAmount * Math.signum(to.toBalance));
+						to.teslaBat.addEnergy(toAmount * Math.signum(to.toBalance));
 						toTransfer -= toAmount;
 					}
 				}
@@ -541,12 +542,12 @@ public class NetworkPowerManager
 			}
 			float ratio = amount / canExtract;
 			
-			for(BatBankSuppyEntry entry : enteries)
+			for(TeslaBatSupplyEntry entry : enteries)
 			{
-				double use = Math.ceil(ratio * entry.canExttract);
+				double use = Math.ceil(ratio * entry.canExtract);
 				use = Math.min(use, amount);
 				use = Math.min(use, entry.canExtract);
-				entry.batBank.addEnergy(-(float) use);
+				entry.teslaBat.addEnergy(-(float) use);
 				trackerreceive(entry.emitter, (float) use, true);
 				amount -= use;
 				if(amount == 0)
@@ -564,12 +565,12 @@ public class NetworkPowerManager
 			}
 			float ratio = amount /canFill;
 			
-			for(BatBankSupplyEntry entry : enteries)
+			for(TeslaBatSupplyEntry entry : enteries)
 			{
 				double add = (int) Math.ceil(ratio * entry.canFill);
 				add = Math.min(add, entry.canFill);
 				add = Math.min(add, amount);
-				entry.capBank.addEnergy((float) add);
+				entry.teslaBat.addEnergy((float) add);
 				trackerSend(entry.emitter, (float) add, true);
 				amount -= add;
 				if(amount == 0)
@@ -582,7 +583,7 @@ public class NetworkPowerManager
 	
 	private static class TeslaBatSupplyEntry
 	{
-		final TileTeslaBat telsaBat;
+		final TileTeslaBat teslaBat;
 		final float canExtract;
 		final float canFill;
 		float toBalance;
@@ -590,14 +591,14 @@ public class NetworkPowerManager
 		
 		private TeslaBatSupplyEntry(TileTeslaBat teslaBat, float available, float canFill, IPowerPiping emitter)
 		{
-			this.telsaBat = teslaBat;
+			this.teslaBat = teslaBat;
 			this.canExtract = available;
 			this.canFill = canFill;
 		}
 		
 		void calcToBalance(float targetRatio)
 		{
-			float targetAmount = telsaBat.getMaxEnergyStored() * targetRatio;
+			float targetAmount = teslaBat.getMaxEnergyStored() * targetRatio;
 			toBalance = targetAmount - teslaBat.getEnergyStored();
 			if(toBalance < 0)
 			{

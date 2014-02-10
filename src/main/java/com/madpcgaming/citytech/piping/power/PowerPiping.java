@@ -6,12 +6,23 @@ import java.util.Map;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
+
+import buildcraft.api.power.PowerHandler;
+import buildcraft.api.power.PowerHandler.PowerReceiver;
 
 import com.madpcgaming.citytech.blocks.ModBlocks;
+import com.madpcgaming.citytech.machine.RedstoneControlMode;
 import com.madpcgaming.citytech.piping.AbstractPiping;
+import com.madpcgaming.citytech.piping.AbstractPipingNetwork;
+import com.madpcgaming.citytech.piping.IPiping;
+import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.power.BasicTeslaBat;
+import com.madpcgaming.citytech.power.IPowerInterface;
 import com.madpcgaming.citytech.power.ITeslaBat;
 import com.madpcgaming.citytech.render.BoundingBox;
+import com.madpcgaming.citytech.util.DyeColor;
 import com.madpcgaming.citytech.util.IconUtil;
 import com.madpcgaming.citytech.vecmath.Vector3d;
 
@@ -70,5 +81,210 @@ public class PowerPiping extends AbstractPiping implements IPowerPiping
 	public static final BoundingBox BOUNDS = new BoundingBox(MIN, MAX);
 	
 	protected PowerPipingNetwork network;
+
+	@Override
+	public PowerHandler getPowerHandler()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void applyPerdition()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public PowerReceiver getPowerReceiver(ForgeDirection side)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void doWork(PowerHandler workProvider)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public World getWorld()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int receiveEnergy(ForgeDirection from, int maxReceive,
+			boolean simulate)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int extractEnergy(ForgeDirection from, int maxExtract,
+			boolean simulate)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean canInterface(ForgeDirection from)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int getEnergyStored(ForgeDirection from)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getMaxEnergyStored(ForgeDirection from)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Class<? extends IPiping> getBasePipingType()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ItemStack createItem()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AbstractPipingNetwork<?, ?> getNetwork()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean setNetwork(AbstractPipingNetwork<?, ?> network)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public IIcon getTextureForState(CollidableComponent component)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IIcon getTransmitionTextureForState(CollidableComponent component)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IPowerInterface getExternalPowerReceptor(ForgeDirection direction)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ITeslaBat getTeslaBat()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public float getMaxEnergyExtracted(ForgeDirection dir)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public float getMaxEnergyReceived(ForgeDirection dir)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setRedstoneMode(RedstoneControlMode mode, ForgeDirection dir)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public RedstoneControlMode getRedstoneMode(ForgeDirection dir)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setSignalColor(ForgeDirection dir, DyeColor col)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public DyeColor getSignalColor(ForgeDirection dir)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IIcon getTextureForInputMode()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IIcon getTextureForOutputMode()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void onTick()
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public float getEnergyStored()
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setEnergyStored(float give)
+	{
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
