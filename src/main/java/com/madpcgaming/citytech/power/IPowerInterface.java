@@ -7,7 +7,7 @@ public interface IPowerInterface
 
   Object getDelegate();
 
-  boolean canConduitConnect(ForgeDirection direction);
+  boolean canPipingConnect(ForgeDirection direction);
 
   float getEnergyStored(ForgeDirection dir);
 
@@ -17,6 +17,6 @@ public interface IPowerInterface
 
   float getMinEnergyReceived(ForgeDirection dir);
 
-  float recieveEnergy(ForgeDirection opposite, float canOffer);
+  float receiveEnergy(ForgeDirection opposite, float canOffer);
 
 }
