@@ -11,20 +11,27 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
 import com.madpcgaming.citytech.items.interfaces.ILevelableItem;
+import com.madpcgaming.citytech.lib.Strings;
 
 public class CySword extends ItemSword implements ILevelableItem
 {
 	private ToolMaterial mat;
 	private final Item.ToolMaterial field_150933_b;
-
+	private String unlocName = Strings.CYBERSWORD_ITEM_NAME;
 	
-	public CySword(Item cyberSword, ToolMaterial mat)
+	public CySword(ToolMaterial mat)
 	{
 		super(mat);
 		this.mat = mat;
-		 this.field_150933_b = mat;
+		this.field_150933_b = mat;
 	}
 
+	@Override
+	public String getUnlocalizedName()
+	{
+		return unlocName;
+	}
+	
 	@Override
 	public boolean getShareTag()
 	{
@@ -41,7 +48,7 @@ public class CySword extends ItemSword implements ILevelableItem
 	public int getMaxDamage(ItemStack stack)
     {
 		NBTTagCompound tag = stack.stackTagCompound;
-		return tag.getInteger("durability");
+		return tag == null ? 0 : tag.getInteger("durability");
     }
 	
 	public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLivingBase, EntityLivingBase par3EntityLivingBase)

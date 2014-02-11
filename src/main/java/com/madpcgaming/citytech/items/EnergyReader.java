@@ -6,14 +6,15 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 
+import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.power.IEnergyConductor;
 
 public class EnergyReader extends ItemMT
 {
 	
-	public EnergyReader(int par1)
+	public EnergyReader()
 	{
-		super();
+		super(Strings.ENERGYREADER_ITEM_NAME);
 		this.maxStackSize = 1;
 	}
 	

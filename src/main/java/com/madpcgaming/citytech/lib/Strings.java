@@ -8,7 +8,7 @@ package com.madpcgaming.citytech.lib;
 public class Strings
 {
 
-	public static final String	ALUMINUM_INGOT_NAME		= "ingotAluminium";
+	public static final String	ALUMINUM_INGOT_NAME		= "ingotAluminum";
 	public static final String	COPPER_INGOT_NAME		= "ingotCopper";
 	public static final String	TIN_INGOT_NAME			= "ingotTin";
 	public static final String	PLATINUM_INGOT_NAME		= "ingotPlatinum";
@@ -24,7 +24,7 @@ public class Strings
 	public static final String	SILICON_ITEM_NAME		= "silicon";
 	public static final String	SILICON_LIQUID_FLOWING	= "liquidSiliconStill";
 	public static final String	SILICON_LIQUID_STILL	= "liquidsilicon";
-	public static final String	RUBBER_ITEM_NAME		= "itemRubber";
+	public static final String	RUBBER_ITEM_NAME		= "rubber";
 	public static final String	ARMOR_HEAD				= "armorHead";
 	public static final String	ARMOR_CHEST				= "armorChest";
 	public static final String	ARMOR_LEGS				= "armorLegs";
