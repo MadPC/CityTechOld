@@ -32,10 +32,12 @@ item.ingotPlatinum.name=Platinum Ingot
 item.ingotPalladium.name=Palladium Ingot
 item.ingotSilver.name=Silver Ingot
 item.silicon.name=Silicon
-item.itemRubber.name=Rubber
+item.rubber.name=Rubber
 item.cableCopper.name=Copper Cable
 item.itemWrench.name=Wrench
 item.cybersword.name=Cyber Sword
+item.wiring.name=Wiring
+item.energyReader.name=Energy Reader
 
 #GUIs?
 container.furnaceIndustrial.name=Industrial Furnace
