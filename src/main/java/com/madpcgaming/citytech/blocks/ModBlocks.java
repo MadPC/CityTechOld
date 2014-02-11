@@ -108,6 +108,8 @@ public class ModBlocks
 		GameRegistry.registerBlock(TinBlock, Strings.TIN_BLOCK_NAME);
 		GameRegistry.registerBlock(SimpleFurnace, Strings.SIMPLE_SE_FURNACE_NAME);
 		GameRegistry.registerBlock(CraftingTable, Strings.WORKBENCH_NAME);
+		GameRegistry.registerBlock(SiliconFlowing, Strings.SILICON_LIQUID_FLOWING);
+		GameRegistry.registerBlock(SiliconStill, Strings.SILICON_LIQUID_STILL);
 		
 		//Tile Entities
 		GameRegistry.registerTileEntity(CableTE.class, "MTcableCopper");
