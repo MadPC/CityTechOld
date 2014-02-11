@@ -1,6 +1,7 @@
 package com.madpcgaming.citytech.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.madpcgaming.citytech.blocks.liquids.SiliconLiquidFlowing;
@@ -61,24 +62,24 @@ public class ModBlocks
 	{
 
 		/* Initialize each mod item individually */
-		AluminiumOre = new AluminiumOre(BlockIds.ALUMINUM_ORE);
-		CopperOre = new CopperOre(BlockIds.COPPER_ORE);
-		PalladiumOre = new PalladiumOre(BlockIds.PALLADIUM_ORE);
-		PlatinumOre = new PlatinumOre(BlockIds.PLATINUM_ORE);
-		SilverOre = new SilverOre(BlockIds.SILVER_ORE);
-		TinOre = new TinOre(BlockIds.TIN_ORE);
-		SiliconStill = new SiliconLiquidStill(BlockIds.SILICON_LIQUID_STILL);
-		SiliconFlowing = new SiliconLiquidFlowing(BlockIds.SILICON_LIQUID_STILL - 1);
-		CableCopper = new SimpleCable(BlockIds.COPPER_CABLE);
-		CraftingTable = new TechocratsWorkbench(BlockIds.CRAFTING_TABLE);
-		AluminiumBlock = new AluminiumBlock(BlockIds.ALUMINUM_BLOCK);
-		CopperBlock = new CopperBlock(BlockIds.COPPER_BLOCK);
-		PalladiumBlock = new PalladiumBlock(BlockIds.PALLADIUM_BLOCK);
-		PlatinumBlock = new PlatinumBlock(BlockIds.PLATINUM_BLOCK);
-		SilverBlock = new SilverBlock(BlockIds.SILVER_BLOCK);
-		TinBlock = new TinBlock(BlockIds.TIN_BLOCK);
-		ReinforcedGlass = new ReinforcedGlass(BlockIds.REINFORCED_GLASS);
-		ReinforcedStone = new ReinforcedStone(BlockIds.REINFORCED_STONE);
+		AluminiumOre = new BlockCT(Strings.ALUMINIUM_ORE_NAME, Material.rock, 5.0F);
+		CopperOre = new BlockCT(Strings.COPPER_ORE_NAME);
+		PalladiumOre = new BlockCT(Strings.PALLADIUM_ORE_NAME);
+		PlatinumOre = new BlockCT(Strings.PLATINUM_ORE_NAME);
+		SilverOre = new BlockCT(Strings.SILVER_ORE_NAME);
+		TinOre = new BlockCT(Strings.TIN_ORE_NAME);
+		SiliconStill = new SiliconLiquidStill();
+		SiliconFlowing = new SiliconLiquidFlowing();
+		CableCopper = new SimpleCable();
+		CraftingTable = new TechocratsWorkbench();
+		AluminiumBlock = new BlockCT(Strings.ALUMINIUM_BLOCK_NAME, Material.iron, 5.0F);
+		CopperBlock = new BlockCT(Strings.COPPER_BLOCK_NAME, Material.iron, 5.0F);
+		PalladiumBlock = new BlockCT(Strings.PALLADIUM_BLOCK_NAME, Material.iron, 5.0F);
+		PlatinumBlock = new BlockCT(Strings.PLATINUM_BLOCK_NAME, Material.iron, 5.0F);
+		SilverBlock = new BlockCT(Strings.SILVER_BLOCK_NAME, Material.iron, 5.0F);
+		TinBlock = new BlockCT(Strings.TIN_BLOCK_NAME, Material.iron, 5.0F);
+		ReinforcedGlass = new BlockCT(Strings.REINFORCED_GLASS_NAME, Material.glass, 1.0F, 2000.0F);
+		ReinforcedStone = new BlockCT(Strings.REINFORCED_STONE_NAME, Material.rock, 1.0F, 2000.0F);
 		SuperDrain = new SuperDrain(BlockIds.COPPER_CABLE + 1);
 		//BlockElectrolyser = new BlockElectrolyser(BlockIds.BLOCK_ELECTROLYSER);
 		IndustrialFurnaceCore = new IndustrialFurnaceCore(BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);

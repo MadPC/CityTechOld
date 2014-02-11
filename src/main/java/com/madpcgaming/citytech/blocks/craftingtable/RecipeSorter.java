@@ -7,7 +7,6 @@ import net.minecraft.item.crafting.IRecipe;
 @SuppressWarnings("rawtypes")
 public class RecipeSorter implements Comparator
 {
-    @SuppressWarnings("unused")
 	private final CTCraftingManager CraftingManager;
 
     public RecipeSorter(CTCraftingManager par1CraftingManager)

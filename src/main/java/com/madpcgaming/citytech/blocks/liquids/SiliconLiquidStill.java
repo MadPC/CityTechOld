@@ -9,7 +9,7 @@ import com.madpcgaming.citytech.lib.Strings;
 public class SiliconLiquidStill extends BlockStaticLiquid
 {
 	
-	public SiliconLiquidStill(int id)
+	public SiliconLiquidStill()
 	{
 		super(Material.water);
 		setHardness(100F);

@@ -18,7 +18,7 @@ import com.madpcgaming.citytech.tileentitys.CableTE;
 public class SimpleCable extends BlockContainer
 {
 	
-	protected SimpleCable(int par1)
+	protected SimpleCable()
 	{
 		super(Material.iron);
 		this.setCreativeTab(CityTech.tabsCT);

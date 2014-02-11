@@ -9,7 +9,7 @@ import com.madpcgaming.citytech.lib.Strings;
 public class SiliconLiquidFlowing extends BlockLiquid
 {
 	
-	public SiliconLiquidFlowing(int id)
+	public SiliconLiquidFlowing()
 	{
 		super(Material.water);
 		setHardness(100F);
