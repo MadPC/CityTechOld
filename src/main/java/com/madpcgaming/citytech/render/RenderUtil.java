@@ -157,7 +157,7 @@ public class RenderUtil
   public static int setTesselatorBrightness(IBlockAccess world, int x, int y, int z) 
   {
 	//TODO: Fix Anything related to BlockList
-    Block block = Block.blocksList[world.getBlock(x, y, z)];
+    Block block = world.getBlock(x, y, z);
     int res = block == null ? world.getLightBrightnessForSkyBlocks(x, y, z, 0) : block.getMixedBrightnessForBlock(world, x, y, z);
     Tessellator.instance.setBrightness(res);
     Tessellator.instance.setColorRGBA_F(1, 1, 1, 1);
@@ -228,7 +228,7 @@ public class RenderUtil
     }
   }
 
-  public static void renderConnectedTextureFace(IBlockAccess blockAccess, int x, int y, int z, ForgeDirection face, Icon texture, boolean forceAllEdges) {
+  public static void renderConnectedTextureFace(IBlockAccess blockAccess, int x, int y, int z, ForgeDirection face, IIcon texture, boolean forceAllEdges) {
     renderConnectedTextureFace(blockAccess, x, y, z, face, texture, forceAllEdges, true, true);
   }
 
@@ -240,15 +240,12 @@ public class RenderUtil
     }
 
     if(!forceAllEdges) {
-    	//TODO: Fix Anything related to BlockList
-      int blockID = blockAccess.getBlockId(x, y, z);
-    //TODO: Fix Anything related to BlockList
-      if(blockID <= 0 || Block.blocksList[blockID] == null) {
+      Block block = blockAccess.getBlock(x, y, z);
+      if(block == null) {
         return;
       }
-    //TODO: Fix Anything related to BlockList
-      if(!Block.blocksList[blockID].shouldSideBeRendered(blockAccess, x + face.offsetX, y + face.offsetY, z + face.offsetZ, face.ordinal())) {
-        return;
+      if(!block.shouldSideBeRendered(blockAccess, x + face.offsetX, y + face.offsetY, z + face.offsetZ, face.ordinal())) {
+    	  return;
       }
     }
 
@@ -304,11 +301,11 @@ public class RenderUtil
   }
 
   public static List<ForgeDirection> getNonConectedEdgesForFace(IBlockAccess blockAccess, int x, int y, int z, ForgeDirection face) {
-    int blockID = blockAccess.getBlockId(x, y, z);
-    if(blockID <= 0 || Block.blocksList[blockID] == null) {
+    Block block = blockAccess.getBlock(x, y, z);
+    if(block == null) {
       return Collections.emptyList();
     }
-    if(!Block.blocksList[blockID].shouldSideBeRendered(blockAccess, x + face.offsetX, y + face.offsetY, z + face.offsetZ, face.ordinal())) {
+    if(!block.shouldSideBeRendered(blockAccess, x + face.offsetX, y + face.offsetY, z + face.offsetZ, face.ordinal())) {
       return Collections.emptyList();
     }
     BlockCoord bc = new BlockCoord(x, y, z);
@@ -319,7 +316,7 @@ public class RenderUtil
     }
     List<ForgeDirection> result = new ArrayList<ForgeDirection>(4);
     for (EdgeNeighbour edge : edges) {
-      if(blockAccess.getBlockId(edge.bc.x, edge.bc.y, edge.bc.z) != blockID) {
+      if(blockAccess.getBlock(edge.bc.x, edge.bc.y, edge.bc.z) != block) {
         result.add(edge.dir);
       }
       // else if(blockAccess.getBlockId(edge.bc.x + face.offsetX, edge.bc.y +
