@@ -20,6 +20,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
+import static net.minecraftforge.common.util.ForgeDirection.NORTH;
+import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
+import static net.minecraftforge.common.util.ForgeDirection.EAST;
+import static net.minecraftforge.common.util.ForgeDirection.WEST;
+import static net.minecraftforge.common.util.ForgeDirection.UP;
+import static net.minecraftforge.common.util.ForgeDirection.DOWN;
 
 import org.lwjgl.opengl.GL11;
 
@@ -150,7 +156,7 @@ public class RenderUtil
 
   public static int setTesselatorBrightness(IBlockAccess world, int x, int y, int z) 
   {
-	
+	//TODO: Fix Anything related to BlockList
     Block block = Block.blocksList[world.getBlock(x, y, z)];
     int res = block == null ? world.getLightBrightnessForSkyBlocks(x, y, z, 0) : block.getMixedBrightnessForBlock(world, x, y, z);
     Tessellator.instance.setBrightness(res);
@@ -226,7 +232,7 @@ public class RenderUtil
     renderConnectedTextureFace(blockAccess, x, y, z, face, texture, forceAllEdges, true, true);
   }
 
-  public static void renderConnectedTextureFace(IBlockAccess blockAccess, int x, int y, int z, ForgeDirection face, Icon texture, boolean forceAllEdges,
+  public static void renderConnectedTextureFace(IBlockAccess blockAccess, int x, int y, int z, ForgeDirection face, IIcon texture, boolean forceAllEdges,
       boolean translateToXYZ, boolean applyFaceShading) {
 
     if((blockAccess == null && !forceAllEdges) || face == null || texture == null) {
@@ -234,10 +240,13 @@ public class RenderUtil
     }
 
     if(!forceAllEdges) {
-      int blockID = blockAccess.getBlock(x, y, z);
+    	//TODO: Fix Anything related to BlockList
+      int blockID = blockAccess.getBlockId(x, y, z);
+    //TODO: Fix Anything related to BlockList
       if(blockID <= 0 || Block.blocksList[blockID] == null) {
         return;
       }
+    //TODO: Fix Anything related to BlockList
       if(!Block.blocksList[blockID].shouldSideBeRendered(blockAccess, x + face.offsetX, y + face.offsetY, z + face.offsetZ, face.ordinal())) {
         return;
       }

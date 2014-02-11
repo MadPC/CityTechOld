@@ -1176,9 +1176,11 @@ public class TileTeslaBat extends TileEntity implements IInternalPowerReceptor, 
       inventory[i] = null;
     }
 
+    						//TODO: Fix error here.
     NBTTagList itemList = nbtRoot.getTagList("Items");
     for (int i = 0; i < itemList.tagCount(); i++) 
     {
+    	  									//TODO: Fix error here.
       NBTTagCompound itemStack = (NBTTagCompound) itemList.tagAt(i);
       byte slot = itemStack.getByte("Slot");
       if(slot >= 0 && slot < inventory.length) 
