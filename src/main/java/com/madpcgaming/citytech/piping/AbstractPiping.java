@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -448,14 +449,14 @@ public abstract class AbstractPiping implements IPiping
 	  }
 
 	  @Override
-	  public boolean onNeighborBlockChange(int blockId) {
+	  public boolean onNeighborBlockChange(Block blockId) {
 	    // Check for changes to external connections, connections to conduits are
 	    // handled by the bundle
 
 	    // NB: No need to check externals if the neighbor that changed was a
 	    // conduit bundle as this
 	    // can't effect external connections.
-	    if(blockId == 0) {
+	    if(blockId == null) {
 	      return false;
 	    }
 

@@ -25,8 +25,8 @@ public class BlockIds
 	public static int	REINFORCED_GLASS_DEFAULT				= 3009;
 	public static int	REINFORCED_STONE_DEFAULT				= 3010;
 	public static int 	BLOCK_SE_FURNACE_DEFAULT				= 3011;
-    public static int   CRAFTING_TABLE                          = 3012;
-    public static int	BLOCK_PIPING_BUNDLE						= 3013;
+    public static int   CRAFTING_TABLE_DEFAULT                  = 3012;
+    public static int	BLOCK_PIPING_BUNDLE_DEFAULT				= 3013;
 	
 	public static int 	BLOCK_SE_FURNACE;
 	public static int	ALUMINUM_ORE;
@@ -48,5 +48,6 @@ public class BlockIds
 	public static int	TIN_BLOCK;
 	public static int	REINFORCED_GLASS;
 	public static int	REINFORCED_STONE;
+	public static int	BLOCK_PIPING_BUNDLE;
 
 }

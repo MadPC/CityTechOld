@@ -55,6 +55,7 @@ public class ModBlocks
 	public static Block	itemBasicTelsaBat;
 	public static Block	blockCapacitorBank;
 	public static Block	itemPowerPiping;
+	public static Block	blockPipingBundle;
 	
 	//Piping
 

@@ -141,7 +141,7 @@ public class PipingUtil
 		    return false;
 		  }
 	
-	public static boolean forceSkylightRecalulation(World worldObj, int xCoord, int yCoord, int zCoord)
+	public static boolean forceSkylightRecalculation(World worldObj, int xCoord, int yCoord, int zCoord)
 	{
 		int height = worldObj.getHeightValue(xCoord, zCoord);
 		if(height <= yCoord)

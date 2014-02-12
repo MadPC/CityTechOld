@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -121,5 +122,5 @@ public interface IPiping
 	
 	void updateEntity(World worldObj);
 	
-	boolean onNeighborBlockChange(int blockId);
+	boolean onNeighborBlockChange(Block block);
 }

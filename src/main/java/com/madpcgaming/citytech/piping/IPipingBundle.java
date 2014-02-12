@@ -41,7 +41,7 @@ public interface IPipingBundle
 	
 	Set<ForgeDirection> getAllConnections();
 	
-	boolean cotainsConnection(ForgeDirection dir);
+	boolean containsConnection(ForgeDirection dir);
 	
 	//Geomerty
 	
