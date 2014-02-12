@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
@@ -70,7 +71,7 @@ public abstract class AbstractLiquidPiping extends AbstractPiping implements ILi
 	}
 	
 	@Override
-	public boolean onNeighborBlockChange(int blockId)
+	public boolean onNeighborBlockChange(Block blockId)
 	{
 		redstoneStateDirty = true;
 		return super.onNeighborBlockChange(blockId);
