@@ -756,7 +756,7 @@ public class TileTeslaBat extends TileEntity implements IInternalPowerReceptor,
 
 	public void onNeighborBlockChange(Block blockId)
 	{
-		if (blockId != ModBlocks.blockCapacitorBank) {
+		if (blockId != ModBlocks.blockTeslaBat) {
 			receptorsDirty = true;
 			getController().masterReceptorsDirty = true;
 		}

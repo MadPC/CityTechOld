@@ -53,9 +53,10 @@ public class ModBlocks
 	public static Block	SuperDrain;
 	public static Block	itemItemPiping;
 	public static Block	itemBasicTelsaBat;
-	public static Block	blockCapacitorBank;
 	public static Block	itemPowerPiping;
 	public static Block	blockPipingBundle;
+	public static Block	itemRedstonePiping;
+	public static Block	blockTeslaBat;
 	
 	//Piping
 
