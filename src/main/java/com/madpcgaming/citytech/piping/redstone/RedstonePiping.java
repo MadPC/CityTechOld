@@ -63,7 +63,7 @@ public class RedstonePiping extends AbstractPiping implements IRedstonePiping
 	@Override
 	public ItemStack createItem()
 	{
-		return new ItemStack(ModBlocks.blockPipingBundle, 1, 0);
+		return new ItemStack(ModBlocks.BlockPipingBundle, 1, 0);
 	}
 	
 	@Override

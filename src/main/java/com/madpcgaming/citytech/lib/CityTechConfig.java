@@ -14,7 +14,7 @@ public class CityTechConfig
 	@SuppressWarnings({ "unused", "rawtypes" })
 	public static void initProps(File location)
 	{
-		File newFile = new File(location + "/CityTech.config");
+		File newFile = new File(location + "/CityTech.cfg");
 		
 		try
 		{
@@ -57,12 +57,12 @@ public class CityTechConfig
 		{
 		}
 		
-		generateAluminium = config.get("Worldgen Disabler", "Generate Aluminum", true).getBoolean(true);
-		generateCopper = config.get("Worldgen Disabler", "Generate Copper", true).getBoolean(true);
-		generatePalladium = config.get("Worldgen Disabler", "Generate Palladium", true).getBoolean(true);
-		generatePlatinum = config.get("Worldgen Disabler", "Generate Platinum", true).getBoolean(true);
-		generateSilver = config.get("Worldgen Disabler", "Generate Silver", true).getBoolean(true);
-		generateTin = config.get("Worldgen Disabler", "Generate Tin", true).getBoolean(true);
+		generateAluminium = config.get("WorldGen Disabler", "Generate Aluminum", true).getBoolean(true);
+		generateCopper = config.get("WorldGen Disabler", "Generate Copper", true).getBoolean(true);
+		generatePalladium = config.get("WorldGen Disabler", "Generate Palladium", true).getBoolean(true);
+		generatePlatinum = config.get("WorldGen Disabler", "Generate Platinum", true).getBoolean(true);
+		generateSilver = config.get("WorldGen Disabler", "Generate Silver", true).getBoolean(true);
+		generateTin = config.get("WorldGen Disabler", "Generate Tin", true).getBoolean(true);
 		
 		aluminiumuDensity = config.get("WorldGen", "Aluminium Underground Density", 3, "Density: Chances per Chunk").getInt(3);
 		copperuDensity = config.get("WorldGen", "Copper Underground Density", 3).getInt(3);
@@ -85,12 +85,19 @@ public class CityTechConfig
 		tinuMaxY = config.get("WorldGen", "Tin Underground Max Y", 55).getInt(55);
 		
 		fluidPipingExtractRate = config.get("Settings", "fluidpipingExtractRate", fluidPipingExtractRate,
-		        "Number of millibuckects per tick extract by a fluid pipings auto extract..").getInt(fluidPipingExtractRate);
+		        "Number of millibuckets per tick extract by a fluid pipes auto extract..").getInt(fluidPipingExtractRate);
 
 		fluidPipingMaxIoRate = config.get("Settings", "fluidpipingMaxIoRate", fluidPipingMaxIoRate,
-		        "Number of millibuckects per tick that can pass through a single connection to a fluid piping.").getInt(fluidPipingMaxIoRate);
-		
-		
+		        "Number of millibuckets per tick that can pass through a single connection to a fluid piping.").getInt(fluidPipingMaxIoRate);
+		useRfAsDefault = config.get("Settings", "displayPowerAsRedstoneFlux", useRfAsDefault, "If True, all power is displayed in RF, otherwise MJ is used.")
+				.getBoolean(useRfAsDefault);
+		detailedPowerTrackingEnabled = config.get("Settings", "perInterfacePowerTrackingEnabled", detailedPowerTrackingEnabled, "Enable per tick sampling on individual power inputs and outputs. This allows slightly more detailed messages from the MJ Reader but has a negative impact on server performance.")
+				.getBoolean(detailedPowerTrackingEnabled);
+		itemPipingUsePhyscialDistance = config.get("Settings", "itemPipingUsePhyscialDistance", itemPipingUsePhyscialDistance, "If true, " +
+		        "'line of sight' distance rather than piping path distance is used to calculate priorities.")
+		        .getBoolean(itemPipingUsePhyscialDistance);
+		numPipesPerRecipe = config.get("Settings", "numPipesPerRecipes", numPipesPerRecipe, "The number of pipes crafted per Recipe.")
+				.getInt(numPipesPerRecipe);
 		
 		config.save();
 	}
@@ -103,6 +110,9 @@ public class CityTechConfig
 	public static boolean generatePlatinum;
 	public static boolean generateSilver;
 	public static boolean generateTin;
+	public static boolean useRfAsDefault = true;
+	public static boolean detailedPowerTrackingEnabled = false;
+	public static boolean itemPipingUsePhyscialDistance = false;
 	
 	public static int aluminiumuDensity;
 	public static int copperuDensity;
@@ -123,12 +133,11 @@ public class CityTechConfig
 	public static int silveruMaxY;
 	public static int tinuMinY;
 	public static int tinuMaxY;
+	public static int fluidPipingExtractRate = 50;
+	public static int fluidPipingMaxIoRate = 400;
+	public static int numPipesPerRecipe = 8;
 
-	public static int fluidPipingExtractRate;
+	
 
-	public static int fluidPipingMaxIoRate;
-
-	public static boolean itemPipingUsePhysicalDistance;
-
-	public static boolean	detailedPowerTrackingEnabled;
+	
 }

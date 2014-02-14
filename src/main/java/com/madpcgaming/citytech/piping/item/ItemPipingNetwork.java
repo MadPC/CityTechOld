@@ -396,7 +396,7 @@ public class ItemPipingNetwork extends AbstractPipingNetwork<IItemPiping, IItemP
 						&& other.canInsert()
 						&& pipe.getInputColor(pipeDir) == other.pipe.getOutputColor(other.pipeDir))
 				{
-					if(CityTechConfig.itemPipingUsePhysicalDistance)
+					if(CityTechConfig.itemPipingUsePhyscialDistance)
 					{
 						sendPriority.add(new Target(other, distanceTo(other), other.isSticky()));
 					} else {
@@ -405,7 +405,7 @@ public class ItemPipingNetwork extends AbstractPipingNetwork<IItemPiping, IItemP
 				}
 			}
 			
-			if(CityTechConfig.itemPipingUsePhysicalDistance)
+			if(CityTechConfig.itemPipingUsePhyscialDistance)
 			{
 				Collections.sort(sendPriority);
 			} else {

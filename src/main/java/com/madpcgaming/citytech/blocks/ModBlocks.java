@@ -10,6 +10,7 @@ import com.madpcgaming.citytech.blocks.multiblocks.IndustrialFurnaceCore;
 import com.madpcgaming.citytech.blocks.multiblocks.IndustrialFurnaceDummy;
 import com.madpcgaming.citytech.lib.BlockIds;
 import com.madpcgaming.citytech.lib.Strings;
+import com.madpcgaming.citytech.piping.BlockPipingBundle;
 import com.madpcgaming.citytech.tileentitys.CableTE;
 import com.madpcgaming.citytech.tileentitys.DrainTE;
 import com.madpcgaming.citytech.tileentitys.TileEntityIndustrialFurnaceCore;
@@ -51,12 +52,12 @@ public class ModBlocks
 	 * @see com.madpcgaming.mt.items.WireTester
 	 */
 	public static Block	SuperDrain;
-	public static Block	itemItemPiping;
-	public static Block	itemBasicTelsaBat;
-	public static Block	itemPowerPiping;
-	public static Block	blockPipingBundle;
-	public static Block	itemRedstonePiping;
-	public static Block	blockTeslaBat;
+	public static Block	ItemItemPiping;
+	public static Block	ItemBasicTelsaBat;
+	public static Block	ItemPowerPiping;
+	public static Block	BlockPipingBundle;
+	public static Block	ItemRedstonePiping;
+	public static Block	BlockTeslaBat;
 	
 	//Piping
 

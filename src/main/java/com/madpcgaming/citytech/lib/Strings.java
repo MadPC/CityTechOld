@@ -55,5 +55,6 @@ public class Strings
 	public static final String	GUI_WORKBENCH_NAME		= "Better Crafting";
 	public static final String  SIMPLE_CABLE_NAME 		= "cable";
 	public static final String	ABSTRACT_ITEM_PIPING	= "abstractItemPiping";
+	public static final String	PIPING_BUNDLE_NAME		= "pipingBundle";
 
 }

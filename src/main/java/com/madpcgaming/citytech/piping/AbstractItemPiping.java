@@ -62,13 +62,13 @@ public abstract class AbstractItemPiping extends Item implements IPipingItem
 		{
 			if(!world.isRemote)
 			{
-				if(world.setBlock(placeAt.x, placeAt.y, placeAt.z, ModBlocks.blockPipingBundle, 0, 1))
+				if(world.setBlock(placeAt.x, placeAt.y, placeAt.z, ModBlocks.BlockPipingBundle, 0, 1))
 				{
 					IPipingBundle bundle = (IPipingBundle) world.getTileEntity(placeAt.x, placeAt.y, placeAt.z);
 					if(bundle != null)
 					{
 						bundle.addPiping(createPiping(stack));
-						Block b = ModBlocks.blockPipingBundle;
+						Block b = ModBlocks.BlockPipingBundle;
 						world.playSoundEffect(x +  0.5F, y + 0.5F, z + 0.5F, b.stepSound.func_150496_b(), (b.stepSound.getVolume() + 1.0F) / 2.0F, b.stepSound.getPitch() * 0.8F);
 					}
 				}
@@ -84,7 +84,7 @@ public abstract class AbstractItemPiping extends Item implements IPipingItem
 			int placeY = y + dir.offsetY;
 			int placeZ = z + dir.offsetZ;
 			
-			if(world.getBlock(placeX, placeY, placeZ) == ModBlocks.blockPipingBundle)
+			if(world.getBlock(placeX, placeY, placeZ) == ModBlocks.BlockPipingBundle)
 			{
 				IPipingBundle bundle = (TilePipingBundle) world.getTileEntity(placeX, placeY, placeZ);
 				if(bundle == null)

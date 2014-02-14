@@ -41,7 +41,7 @@ public class PowerPiping extends AbstractPiping implements IPowerPiping
 	
 	static ItemStack createItemStackForSubtype(int subtype)
 	{
-		ItemStack result = new ItemStack(ModBlocks.itemPowerPiping, 1, subtype);
+		ItemStack result = new ItemStack(ModBlocks.ItemPowerPiping, 1, subtype);
 		return result;
 	}
 	

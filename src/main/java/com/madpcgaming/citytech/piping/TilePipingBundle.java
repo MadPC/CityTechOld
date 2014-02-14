@@ -61,7 +61,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 	
 	public TilePipingBundle()
 	{
-		blockType = ModBlocks.blockPipingBundle;
+		blockType = ModBlocks.BlockPipingBundle;
 	}
 
 	
