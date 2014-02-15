@@ -4,8 +4,12 @@
 *.jar
 *.war
 *.ear
-/.classpath
-/.project
-/.gradle/
-/bin/
-!gradle-wrapper.jar
+/build
+/eclipse
+/gradle
+*.gradle
+gradlew*
+gradlew*
+/bin
+
+/run

@@ -17,7 +17,6 @@ import net.minecraft.client.particle.EntityDiggingFX;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
@@ -37,7 +36,6 @@ import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.piping.geom.PipingConnectorType;
-import com.madpcgaming.citytech.piping.gui.GuiExternalConnection;
 import com.madpcgaming.citytech.piping.redstone.IInsulatedRedstonePiping;
 import com.madpcgaming.citytech.piping.redstone.IRedstonePiping;
 import com.madpcgaming.citytech.render.BoundingBox;
@@ -82,16 +80,16 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 
 	@SideOnly(Side.CLIENT)
 	@Override
-	public boolean addBlockHitEffects(World world, MovingObjectPosition target, EffectRenderer effectRenderer)
+	public boolean addHitEffects(World world, MovingObjectPosition target, EffectRenderer effectRenderer)
 	{
 		IIcon tex = null;
 
 		TilePipingBundle pb = (TilePipingBundle) world.getTileEntity(target.blockX, target.blockY, target.blockZ);
 		if (PipingUtil.isSolidFacadeRendered(pb,Minecraft.getMinecraft().thePlayer)) 
 		{
-			if (pb.getFacadeID() > 0 && pb.getFacadeID() != null)
+			if (pb.getFacadeID() > 0)
 			{
-				tex = pb.getFacadeId().getIcon(
+				tex = Block.getBlockById(pb.getFacadeID()).getIcon(
 						target.sideHit, pb.getFacadeMetadata());
 			}
 		}
@@ -115,7 +113,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public boolean addBlockDestroyEffects(World world, int x, int y, int z, int meta, EffectRenderer effectRenderer)
+	public boolean addDestroyEffects(World world, int x, int y, int z, int meta, EffectRenderer effectRenderer)
 	{
 		IIcon tex = lastRemovedComponetIcon;
 		byte b0 = 4;
@@ -185,6 +183,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 				ModBlocks.BlockPipingBundle + "TileEntity");
 
 		for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
+			// Don't exist
 			CityTech.guiHandler.registerGuiHandler(
 					GuiHandler.GUI_ID_EXTERNAL_CONNECTION_BASE + dir.ordinal(),
 					this);
@@ -223,12 +222,6 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public Item getItemDropped(int par1, Random par2Random, int par3)
-	{
-		return 0;
-	}
-
-	@Override
 	public int quantityDropped(Random r)
 	{
 		return 0;
@@ -247,7 +240,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public boolean isBlockSolidOnSide(World world, int x, int y, int z, ForgeDirection side)
+	public boolean isBlockSolid(IBlockAccess world, int x, int y, int z, int side)
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (!(te instanceof IPipingBundle)) {
@@ -436,13 +429,13 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public boolean removeBlockByPlayer(World world, EntityPlayer player, int x,	int y, int z)
+	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta)
 	{
 		IPipingBundle te = (IPipingBundle) world.getTileEntity(x, y, z);
 		if (te == null) {
-			return true;
+			return;
 		}
-
+		EntityPlayer player = world.getClosestPlayer(x, y, z, 10);
 		boolean breakBlock = true;
 		List<ItemStack> drop = new ArrayList<ItemStack>();
 		if (PipingUtil.isSolidFacadeRendered(te, player)) {
@@ -457,6 +450,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			List<RaytraceResult> results = doRayTraceAll(world, x, y, z, player);
 			RaytraceResult.sort(getEyePosition(world, player), results);
 			for (RaytraceResult rt : results) {
+				// Must implement IPipingBundle
 				if (breakPiping(te, drop, rt, player)) {
 					break;
 				}
@@ -473,10 +467,9 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 
 		if (!breakBlock) {
 			world.markBlockForUpdate(x, y, z);
-			return false;
+			return;
 		}
 		world.setBlockToAir(x, y, z);
-		return true;
 	}
 
 	private boolean breakConduit(IPipingBundle te, List<ItemStack> drop,
@@ -585,6 +578,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 						.getCurrentEquippedItem().getItem();
 				if (wrench.canWrench(player, x, y, z)) {
 					if (!world.isRemote) {
+						// Doesn't exist
 						removeBlockByPlayer(world, player, x, y, z);
 						if (player.getCurrentEquippedItem().getItem() instanceof IToolWrench) {
 							((IToolWrench) player.getCurrentEquippedItem()
@@ -628,6 +622,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			}
 			else {
 				player.openGui(CityTech.instance,
+						// Doesn't exist
 						GuiHandler.GUI_ID_EXTERNAL_CONNECTION_BASE
 								+ closest.component.dir.ordinal(), world, x, y,
 						z);
@@ -677,6 +672,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		// items, which are then sent to the client for display
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (te instanceof IPipingBundle) {
+			// Doesn't exist
 			return new ExternalConnectionContainer(player.inventory,
 					(IPipingBundle) te, ForgeDirection.values()[ID
 							- GuiHandler.GUI_ID_EXTERNAL_CONNECTION_BASE]);
@@ -690,8 +686,10 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (te instanceof IPipingBundle) {
+			// Doesn't exist
 			return new GuiExternalConnection(player.inventory,
-					(IPipingBundle) te, ForgeDirection.values()[ID
+					(IPipingBundle) te, ForgeDirection.values()[ID		
+					        // Doesn't exist
 							- GuiHandler.GUI_ID_EXTERNAL_CONNECTION_BASE]);
 		}
 		return null;
