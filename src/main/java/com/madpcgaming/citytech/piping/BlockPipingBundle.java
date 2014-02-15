@@ -7,8 +7,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-import javax.swing.Icon;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.MapColor;
@@ -19,6 +17,7 @@ import net.minecraft.client.particle.EntityDiggingFX;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
@@ -38,6 +37,7 @@ import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.piping.geom.PipingConnectorType;
+import com.madpcgaming.citytech.piping.gui.GuiExternalConnection;
 import com.madpcgaming.citytech.piping.redstone.IInsulatedRedstonePiping;
 import com.madpcgaming.citytech.piping.redstone.IRedstonePiping;
 import com.madpcgaming.citytech.render.BoundingBox;
@@ -89,9 +89,9 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		TilePipingBundle pb = (TilePipingBundle) world.getTileEntity(target.blockX, target.blockY, target.blockZ);
 		if (PipingUtil.isSolidFacadeRendered(pb,Minecraft.getMinecraft().thePlayer)) 
 		{
-			if (pb.getFacadeID() > 0 && Block.blocksList[pb.getFacadeID()] != null)
+			if (pb.getFacadeID() > 0 && pb.getFacadeID() != null)
 			{
-				tex = Block.blocksList[cb.getFacadeId()].getIcon(
+				tex = pb.getFacadeId().getIcon(
 						target.sideHit, pb.getFacadeMetadata());
 			}
 		}
@@ -223,7 +223,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public int idDropped(int par1, Random par2Random, int par3)
+	public Item getItemDropped(int par1, Random par2Random, int par3)
 	{
 		return 0;
 	}
@@ -240,7 +240,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public void registerIcons(IIconRegister iconRegister)
+	public void registerBlockIcons(IIconRegister iconRegister)
 	{
 		connectorIcon = iconRegister.registerIcon(KEY_CONNECTOR_ICON);
 		blockIcon = connectorIcon;
@@ -290,7 +290,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		return new TilePipingBundle();
 	}
 
-	@Override
+
 	public int getLightOpacity(World world, int x, int y, int z)
 	{
 		TileEntity te = world.getTileEntity(x, y, z);

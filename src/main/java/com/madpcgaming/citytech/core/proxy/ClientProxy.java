@@ -2,6 +2,7 @@ package com.madpcgaming.citytech.core.proxy;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 
 import com.madpcgaming.citytech.tileentitys.CableTE;
 import com.madpcgaming.citytech.tileentitys.renderers.CableRenderer;
@@ -22,5 +23,13 @@ public class ClientProxy extends CommonProxy
 	{
 		return Minecraft.getMinecraft().thePlayer;
 	}
+	
+	 @Override
+	  public double getReachDistanceForPlayer(EntityPlayer entityPlayer) {
+	    if(entityPlayer instanceof EntityPlayerMP) {
+	      return ((EntityPlayerMP) entityPlayer).theItemInWorldManager.getBlockReachDistance();
+	    }
+	    return super.getReachDistanceForPlayer(entityPlayer);
+	  }
 	
 }

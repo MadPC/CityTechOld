@@ -81,4 +81,9 @@ public class CommonProxy implements IGuiHandler
 	{
 		return null;
 	}
+	
+	public double getReachDistanceForPlayer(EntityPlayer entityPlayer) {
+	    return 5;
+
+	  }
 }
