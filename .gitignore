@@ -13,3 +13,5 @@ gradlew*
 /bin
 
 /run
+/.classpath
+/.project
