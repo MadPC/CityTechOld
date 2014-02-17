@@ -8,6 +8,9 @@ import net.minecraft.util.ResourceLocation;
 
 public final class IconCT
 {
+	//TODO: MAKE TEXTURE FILE
+	public static final IconCT	ACTIVE_TAB	= null;
+	public static final IconCT	INACTIVE_TAB	= null;
 	private static final int TEX_SIZE = 256;
 	private static final double PIX_SIZE = 1d / TEX_SIZE;
 	
@@ -19,6 +22,7 @@ public final class IconCT
 	public final double height;
 	
 	public static final ResourceLocation TEXTURE = Textures.GUI_WIDGET;
+	
 	
 	public IconCT(int x, int y)
 	{
