@@ -32,10 +32,14 @@ import buildcraft.api.tools.IToolWrench;
 
 import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.blocks.ModBlocks;
+import com.madpcgaming.citytech.core.proxy.CommonProxy;
 import com.madpcgaming.citytech.items.ModItems;
+import com.madpcgaming.citytech.lib.GuiIds;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.piping.geom.PipingConnectorType;
+import com.madpcgaming.citytech.piping.gui.ExternalConnectionContainer;
+import com.madpcgaming.citytech.piping.gui.GuiExternalConnection;
 import com.madpcgaming.citytech.piping.redstone.IInsulatedRedstonePiping;
 import com.madpcgaming.citytech.piping.redstone.IRedstonePiping;
 import com.madpcgaming.citytech.render.BoundingBox;
@@ -179,14 +183,11 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	private void init()
 	{
 		GameRegistry.registerBlock(this, Strings.PIPING_BUNDLE_NAME);
-		GameRegistry.registerTileEntity(TilePipingBundle.class,
-				ModBlocks.BlockPipingBundle + "TileEntity");
+		GameRegistry.registerTileEntity(TilePipingBundle.class,	ModBlocks.BlockPipingBundle + "TileEntity");
 
 		for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
 			// Don't exist
-			CityTech.guiHandler.registerGuiHandler(
-					GuiHandler.GUI_ID_EXTERNAL_CONNECTION_BASE + dir.ordinal(),
-					this);
+			CityTech.proxy.registerGuiHandler(GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE + dir.ordinal(),this);
 		}
 	}
 
@@ -450,7 +451,6 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			List<RaytraceResult> results = doRayTraceAll(world, x, y, z, player);
 			RaytraceResult.sort(getEyePosition(world, player), results);
 			for (RaytraceResult rt : results) {
-				// Must implement IPipingBundle
 				if (breakPiping(te, drop, rt, player)) {
 					break;
 				}
@@ -472,8 +472,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		world.setBlockToAir(x, y, z);
 	}
 
-	private boolean breakConduit(IPipingBundle te, List<ItemStack> drop,
-			RaytraceResult rt, EntityPlayer player)
+	private boolean breakPiping(IPipingBundle te, List<ItemStack> drop, RaytraceResult rt, EntityPlayer player)
 	{
 		if (rt == null || rt.component == null) {
 			return false;
@@ -579,7 +578,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 				if (wrench.canWrench(player, x, y, z)) {
 					if (!world.isRemote) {
 						// Doesn't exist
-						removeBlockByPlayer(world, player, x, y, z);
+						removedByPlayer(world, player, x, y, z);
 						if (player.getCurrentEquippedItem().getItem() instanceof IToolWrench) {
 							((IToolWrench) player.getCurrentEquippedItem()
 									.getItem()).wrenchUsed(player, x, y, z);
@@ -623,8 +622,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			else {
 				player.openGui(CityTech.instance,
 						// Doesn't exist
-						GuiHandler.GUI_ID_EXTERNAL_CONNECTION_BASE
-								+ closest.component.dir.ordinal(), world, x, y,
+						GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE + closest.component.dir.ordinal(), world, x, y,
 						z);
 				return true;
 			}
@@ -667,15 +665,10 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
 			int x, int y, int z)
 	{
-		// The server needs the container as it manages the adding and removing
-		// of
-		// items, which are then sent to the client for display
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (te instanceof IPipingBundle) {
 			// Doesn't exist
-			return new ExternalConnectionContainer(player.inventory,
-					(IPipingBundle) te, ForgeDirection.values()[ID
-							- GuiHandler.GUI_ID_EXTERNAL_CONNECTION_BASE]);
+			return new ExternalConnectionContainer(player.inventory,(IPipingBundle) te, ForgeDirection.values()[ID - GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE]);
 		}
 		return null;
 	}
@@ -687,10 +680,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (te instanceof IPipingBundle) {
 			// Doesn't exist
-			return new GuiExternalConnection(player.inventory,
-					(IPipingBundle) te, ForgeDirection.values()[ID		
-					        // Doesn't exist
-							- GuiHandler.GUI_ID_EXTERNAL_CONNECTION_BASE]);
+			return new GuiExternalConnection(player.inventory, (IPipingBundle) te, ForgeDirection.values()[ID - GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE]);
 		}
 		return null;
 	}
@@ -717,9 +707,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public void addCollisionBoxesToList(World world, int x, int y, int z,
-			AxisAlignedBB axisalignedbb,
-			@SuppressWarnings("rawtypes") List arraylist, Entity par7Entity)
+	public void addCollisionBoxesToList(World world, int x, int y, int z, AxisAlignedBB axisalignedbb, List arraylist, Entity par7Entity)
 	{
 
 		TileEntity te = world.getTileEntity(x, y, z);

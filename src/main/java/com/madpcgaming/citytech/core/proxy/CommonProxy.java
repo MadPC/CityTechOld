@@ -1,5 +1,8 @@
 package com.madpcgaming.citytech.core.proxy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
@@ -21,9 +24,17 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 public class CommonProxy implements IGuiHandler
 {
 	
+	
+	protected final Map<Integer, IGuiHandler> guiHandlers = new HashMap<Integer, IGuiHandler>();
+
 	public void registerRenderings()
 	{
 		NetworkRegistry.INSTANCE.registerGuiHandler(CityTech.instance, this);
+	}
+	
+	public void registerGuiHandler(int id, IGuiHandler handler) 
+	{
+	    guiHandlers.put(id, handler);
 	}
 	
 	@Override
