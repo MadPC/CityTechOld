@@ -61,5 +61,6 @@ public class Strings
 	public static final String	LIQUID_PIPING_NAME		= "liquidPiping";
 	public static final String	REDSTONE_PIPING_NAME	= "redstonePiping";
 	public static final String	TESLA_BAT_NAME			= "TeslaBat";
+	public static final String	ITEM_POWER_PIPING_NAME	= "itemPowerPiping";
 
 }

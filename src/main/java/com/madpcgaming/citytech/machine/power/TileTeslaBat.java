@@ -756,7 +756,7 @@ public class TileTeslaBat extends TileEntity implements IInternalPowerReceptor,
 
 	public void onNeighborBlockChange(Block blockId)
 	{
-		if (blockId != ModBlocks.BlockTeslaBat) {
+		if (blockId != ModBlocks.blockTeslaBat) {
 			receptorsDirty = true;
 			getController().masterReceptorsDirty = true;
 		}
@@ -924,6 +924,7 @@ public class TileTeslaBat extends TileEntity implements IInternalPowerReceptor,
 		return multiblock != null;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean isCurrentMultiblockValid()
 	{
 		if (multiblock == null) {
@@ -1068,6 +1069,7 @@ public class TileTeslaBat extends TileEntity implements IInternalPowerReceptor,
 				|| itemstack.getItem() instanceof IEnergyContainerItem;
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	public void readFromNBT(NBTTagCompound nbtRoot)
 	{

@@ -359,7 +359,6 @@ public abstract class AbstractPiping implements IPiping
 	      }
 	    }
 
-	    // then check for new ones
 	    for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
 	      if(!pipingConnections.contains(dir) && !externalConnections.contains(dir)) {
 	        if(canConnectToExternal(dir, false)) {
@@ -450,12 +449,6 @@ public abstract class AbstractPiping implements IPiping
 
 	  @Override
 	  public boolean onNeighborBlockChange(Block blockId) {
-	    // Check for changes to external connections, connections to conduits are
-	    // handled by the bundle
-
-	    // NB: No need to check externals if the neighbor that changed was a
-	    // conduit bundle as this
-	    // can't effect external connections.
 	    if(blockId == null) {
 	      return false;
 	    }

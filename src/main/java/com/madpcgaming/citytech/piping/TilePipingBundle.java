@@ -61,7 +61,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 	
 	public TilePipingBundle()
 	{
-		blockType = ModBlocks.BlockPipingBundle;
+		blockType = ModBlocks.blockPipingBundle;
 	}
 
 	
@@ -446,6 +446,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
 	private void addConnectors(List<CollidableComponent> result)
 	{
 
@@ -546,6 +547,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 
 	}
 
+	@SuppressWarnings("unused")
 	private boolean axisOfConnectionsEqual(Set<ForgeDirection> cons)
 	{
 		Axis axis = null;
@@ -585,12 +587,14 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private boolean containsOnlySingleVerticalConnections()
 	{
 		return getConnectionCount(ForgeDirection.UP) < 2
 				&& getConnectionCount(ForgeDirection.DOWN) < 2;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean containsOnlySingleHorizontalConnections()
 	{
 		return getConnectionCount(ForgeDirection.WEST) < 2
@@ -599,6 +603,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 				&& getConnectionCount(ForgeDirection.SOUTH) < 2;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean allDirectionsHaveSameConnectionCount()
 	{
 		for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
@@ -612,6 +617,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 		return true;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean containsOnlyHorizontalConnections()
 	{
 		for (IPiping con : pipes) {
@@ -802,6 +808,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 	// ---- TE Item Pipings
 
 	
+	@SuppressWarnings("deprecation")
 	public ItemStack sendItems(ItemStack item, ForgeDirection side)
 	{
 		IItemConduit ic = getPiping(IItemPiping.class);
@@ -812,6 +819,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 	}
 
 	
+	@SuppressWarnings("deprecation")
 	public ItemStack insertItem(ForgeDirection from, ItemStack item, boolean simulate)
 	{
 		IItemConduit ic = getPiping(IItemPiping.class);

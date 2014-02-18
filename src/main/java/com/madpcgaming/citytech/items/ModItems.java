@@ -5,7 +5,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 import com.madpcgaming.citytech.blocks.ModBlocks;
-import com.madpcgaming.citytech.lib.ItemIds;
 import com.madpcgaming.citytech.lib.Materials;
 import com.madpcgaming.citytech.lib.Strings;
 
@@ -27,7 +26,7 @@ public class ModItems
 	public static Item EnergyReader;
 	public static Item CyberSword;
 	public static Item itemPipingFacade;
-	public static Item	itemPowerPiping;
+	
 
 	public static void init()
 	{
@@ -44,6 +43,11 @@ public class ModItems
 		Wrench = new ItemMT(Strings.WRENCH_ITEM_NAME);
 		EnergyReader = new EnergyReader();
 		CyberSword = new CySword(Materials.cyberEnergeticMaterial);
+
+		//itemItemPiping = ItemItemPiping.create();
+		//itemLiquidPiping = ItemLiquidPiping.create();
+		//itemRedstonePiping = ItemRedstonePiping.create();
+		
 
 		// Hardcoded due to DEBUG purposes only!
 		wireTester = new ItemMT("test");

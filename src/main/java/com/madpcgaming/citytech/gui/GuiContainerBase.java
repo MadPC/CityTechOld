@@ -48,6 +48,7 @@ public abstract class GuiContainerBase extends GuiContainer implements ToolTipRe
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@Override
 	public void drawHoveringText(List list, int x, int y, FontRenderer font)
 	{
@@ -58,6 +59,7 @@ public abstract class GuiContainerBase extends GuiContainer implements ToolTipRe
 		GL11.glPopAttrib();
 	}
 	
+	@SuppressWarnings("rawtypes")
 	protected void copyOfdrawHoveringText(List list, int par2, int par3, FontRenderer font)
 	{
 		if(!list.isEmpty())
@@ -170,6 +172,7 @@ public abstract class GuiContainerBase extends GuiContainer implements ToolTipRe
 		return fontRendererObj;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public void addButton(GuiButton button)
 	{

@@ -23,6 +23,7 @@ tile.simpleMacerator.name=Macerator
 tile.drainSuper.name=Super Drain
 tile.tWorkbench.name=Techocrats Workbench
 tile.cable.name=Cable
+tile.pipingBundle.name=Piping Bundle
 
 #Items
 item.ingotAluminium.name=Aluminium Ingot
@@ -37,7 +38,8 @@ item.cableCopper.name=Copper Cable
 item.itemWrench.name=Wrench
 item.cybersword.name=Cyber Sword
 item.wiring.name=Wiring
-item.energyReader.name=Energy Reader
+item.energyreader.name=Energy Reader
+item.test.name= WireTester
 
 #GUIs?
 container.furnaceIndustrial.name=Industrial Furnace

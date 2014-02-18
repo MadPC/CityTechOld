@@ -32,7 +32,6 @@ import buildcraft.api.tools.IToolWrench;
 
 import com.madpcgaming.citytech.CityTech;
 import com.madpcgaming.citytech.blocks.ModBlocks;
-import com.madpcgaming.citytech.core.proxy.CommonProxy;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.GuiIds;
 import com.madpcgaming.citytech.lib.Strings;
@@ -54,23 +53,22 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		IConnectableRedNet, IGuiHandler
 {
 
-	private static final String	KEY_CONNECTOR_ICON	= null;
+	private static final String	KEY_CONNECTOR_ICON	= "";
 
 	public static BlockPipingBundle create()
 	{
-
 		BlockPipingBundle result = new BlockPipingBundle();
 		result.init();
 		return result;
 	}
 
-	public static int	rendererId				= -1;
+	public static int rendererId = -1;
 
-	private IIcon		connectorIcon;
+	private IIcon connectorIcon;
 
-	private IIcon		lastRemovedComponetIcon	= null;
+	private IIcon lastRemovedComponetIcon	= null;
 
-	private Random		rand					= new Random();
+	private Random rand	= new Random();
 
 	protected BlockPipingBundle()
 	{
@@ -183,7 +181,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	private void init()
 	{
 		GameRegistry.registerBlock(this, Strings.PIPING_BUNDLE_NAME);
-		GameRegistry.registerTileEntity(TilePipingBundle.class,	ModBlocks.BlockPipingBundle + "TileEntity");
+		GameRegistry.registerTileEntity(TilePipingBundle.class,	ModBlocks.blockPipingBundle + "TileEntity");
 
 		for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
 			// Don't exist

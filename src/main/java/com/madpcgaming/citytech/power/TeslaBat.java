@@ -31,6 +31,6 @@ public enum TeslaBat
 	
 	public ItemStack getItemStack()
 	{
-		return new ItemStack(ModBlocks.ItemBasicTelsaBat, 1, ordinal());
+		return new ItemStack(ModBlocks.itemBasicTelsaBat, 1, ordinal());
 	}
 }

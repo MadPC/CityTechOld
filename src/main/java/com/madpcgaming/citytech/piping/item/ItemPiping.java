@@ -385,7 +385,7 @@ public class ItemPiping extends AbstractPiping implements IItemPiping
 
 	  @Override
 	  public ItemStack createItem() {
-	    ItemStack result = new ItemStack(ModBlocks.ItemItemPiping, 1, metaData);
+	    ItemStack result = new ItemStack(ModBlocks.itemItemPiping, 1, metaData);
 	    return result;
 	  }
 
