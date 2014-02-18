@@ -15,7 +15,7 @@ import com.madpcgaming.citytech.piping.ConnectionMode;
 import com.madpcgaming.citytech.piping.IPiping;
 import com.madpcgaming.citytech.render.ColorUtil;
 
-public class BaseSettingPanel implements ISettingPanel
+public class BaseSettingsPanel implements ISettingPanel
 {
 	
 	static final int PREV_MODE_B = 327;
@@ -39,7 +39,7 @@ public class BaseSettingPanel implements ISettingPanel
 	
 	protected int customTop = 0;
 	
-	protected BaseSettingPanel(IconCT icon, String typeName, GuiExternalConnection gui, IPiping pipe)
+	protected BaseSettingsPanel(IconCT icon, String typeName, GuiExternalConnection gui, IPiping pipe)
 	{
 		this.icon = icon;
 		this.typeName = typeName;

@@ -56,5 +56,7 @@ public class Strings
 	public static final String  SIMPLE_CABLE_NAME 		= "cable";
 	public static final String	ABSTRACT_ITEM_PIPING	= "abstractItemPiping";
 	public static final String	PIPING_BUNDLE_NAME		= "pipingBundle";
+	public static final String	POWER_PIPING_NAME		= "";
+	public static final String	ITEM_PIPING_NAME		= "";
 
 }

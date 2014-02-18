@@ -16,9 +16,31 @@ public final class IconCT
 	public static final IconCT	BUTTON	= null;
 	public static final IconCT	LEFT_ARROW	= null;
 	public static final IconCT  RIGHT_ARROW = null;
+	public static final IconCT	REDSTONE_MODE_ALWAYS	= null;
+	public static final IconCT	REDSTONE_MODE_NEVER	= null;
+	public static final IconCT	REDSTONE_MODE_WITH_SIGNAL = null;
+	public static final IconCT	REDSTONE_MODE_WITHOUT_SIGNAL = null;
+	public static final IconCT	WRENCH_OVERLAY_POWER	= null;
+	public static final IconCT	WRENCH_OVERLAY_ITEM	= null;
+	public static final IconCT	BUTTON_DOWN_HIGHLIGHT	= null;
+	public static final IconCT	BUTTON_DOWN	= null;
+	public static final IconCT	FILTER_WHITELIST	= null;
+	public static final IconCT	FILTER_META_OFF	= null;
+	public static final IconCT	FILTER_META	= null;
+	public static final IconCT	FILTER_STICKY_OFF	= null;
+	public static final IconCT	FILTER_STICKY	= null;
+	public static final IconCT	FILTER_NBT_OFF	= null;
+	public static final IconCT	FILTER_NBT	= null;
+	public static final IconCT	FILTER_ORE_DICT_OFF	= null;
+	public static final IconCT	FILTER_ORE_DICT = null;
+	public static final IconCT	LOOP_OFF	= null;
+	public static final IconCT	LOOP	= null;	
+	public static final IconCT	FILTER_BLACKLIST	= null;
 	
 	private static final int TEX_SIZE = 256;
 	private static final double PIX_SIZE = 1d / TEX_SIZE;
+	
+
 	
 	public final double minU;
 	public final double maxU;
@@ -29,7 +51,7 @@ public final class IconCT
 	
 	public static final ResourceLocation TEXTURE = Textures.GUI_WIDGET;
 
-	
+
 	public IconCT(int x, int y)
 	{
 		this(x, y, 16, 16);
