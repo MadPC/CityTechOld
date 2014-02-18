@@ -22,6 +22,8 @@ public final class IconCT
 	public static final IconCT	REDSTONE_MODE_WITHOUT_SIGNAL = null;
 	public static final IconCT	WRENCH_OVERLAY_POWER	= null;
 	public static final IconCT	WRENCH_OVERLAY_ITEM	= null;
+	public static final IconCT	WRENCH_OVERLAY_FLUID	= null;
+	public static final IconCT	WRENCH_OVERLAY_REDSTONE	= null;
 	public static final IconCT	BUTTON_DOWN_HIGHLIGHT	= null;
 	public static final IconCT	BUTTON_DOWN	= null;
 	public static final IconCT	FILTER_WHITELIST	= null;
@@ -50,6 +52,8 @@ public final class IconCT
 	public final double height;
 	
 	public static final ResourceLocation TEXTURE = Textures.GUI_WIDGET;
+	
+	
 
 
 	public IconCT(int x, int y)

@@ -12,7 +12,7 @@ import com.madpcgaming.citytech.machine.RedstoneControlMode;
 import com.madpcgaming.citytech.piping.IPiping;
 import com.madpcgaming.citytech.piping.power.IPowerPiping;
 
-public class PowerSetting extends BaseSettingsPanel
+public class PowerSettings extends BaseSettingsPanel
 {
 	private static final int ID_REDSTONE_BUTTON = 796;
 	private static final int ID_COLOR_BUTTON = 797;
@@ -20,7 +20,7 @@ public class PowerSetting extends BaseSettingsPanel
 	private RedstoneModeButton rsB;
 	private ColorButton colorB;
 	
-	protected PowerSetting(final GuiExternalConnection gui, IPiping pipe)
+	protected PowerSettings(final GuiExternalConnection gui, IPiping pipe)
 	{
 		super(IconCT.WRENCH_OVERLAY_POWER, Strings.POWER_PIPING_NAME, gui, pipe);
 		pipes = (IPowerPiping) pipe;

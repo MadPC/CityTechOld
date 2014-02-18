@@ -20,23 +20,19 @@ public class TabFactory
 		Class<? extends IPiping> baseType = pipe.getBasePipingType();
 		if(baseType.isAssignableFrom(IPowerPiping.class))
 		{
-			//TODO: CREATE SETTINGS, REMOVE NULL
-			return null;//new PowerSetting(gui, pipe);
+			return new PowerSettings(gui, pipe);
 		} 
 		else if(baseType.isAssignableFrom(ILiquidPiping.class))
 		{
-			//TODO: CREATE SETTINGS, REMOVE NULL
-			return null;//new LiquidSetting(gui, pipe);
+			return new LiquidSettings(gui, pipe);
 		}
 		else if(baseType.isAssignableFrom(IItemPiping.class))
 		{
-			//TODO: CREATE SETTINGS, REMOVE NULL
-			return null;//new ItemSetting(gui, pipe);
+			return new ItemSettings(gui, pipe);
 		}
 		else if (baseType.isAssignableFrom(IRedstonePiping.class))
 		{
-			//TODO: CREATE SETTINGS, REMOVE NULL
-			return null;//new RedstoneSetting(gui, pipe);
+			return new RedstoneSettings(gui, pipe);
 		}
 		return null;
 	}
