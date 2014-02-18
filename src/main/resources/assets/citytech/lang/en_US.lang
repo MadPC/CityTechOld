@@ -21,7 +21,7 @@ tile.liquidSiliconStill.name=Liquid Silicon
 tile.machineBlock.name=Machine Block
 tile.simpleMacerator.name=Macerator
 tile.drainSuper.name=Super Drain
-tile.workbench.name=Techocrats Workbench
+tile.tWorkbench.name=Techocrats Workbench
 tile.cable.name=Cable
 
 #Items

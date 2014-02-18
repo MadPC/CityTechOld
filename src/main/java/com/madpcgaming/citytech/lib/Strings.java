@@ -51,7 +51,7 @@ public class Strings
 	public static final String	GUI_SIMPLE_E_FURNACE	= "Electric Furnace";
 	public static final String	SIMPLE_MACERATOR_NAME	= "blockMacerator";
 	public static final String	SUPER_DRAIN_NAME		= "drainSuper";
-	public static final String	WORKBENCH_NAME			= "workbench";
+	public static final String	WORKBENCH_NAME			= "tWorkbench";
 	public static final String	GUI_WORKBENCH_NAME		= "Better Crafting";
 	public static final String  SIMPLE_CABLE_NAME 		= "cable";
 	public static final String	ABSTRACT_ITEM_PIPING	= "abstractItemPiping";
@@ -60,5 +60,6 @@ public class Strings
 	public static final String	ITEM_PIPING_NAME		= "itemPiping";
 	public static final String	LIQUID_PIPING_NAME		= "liquidPiping";
 	public static final String	REDSTONE_PIPING_NAME	= "redstonePiping";
+	public static final String	TESLA_BAT_NAME			= "TeslaBat";
 
 }
