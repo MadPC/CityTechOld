@@ -76,8 +76,8 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		setHardness(0.5F);
 		setBlockBounds(0.334f, 0.334f, 0.334f, 0.667f, 0.667f, 0.667f);
 		setStepSound(Block.soundTypeMetal);
-		setBlockName(Strings.PLATINUM_BLOCK_NAME);
-		setCreativeTab(null);
+		setBlockName(Strings.PIPING_BUNDLE_NAME);
+		setCreativeTab(CityTech.tabsCT);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -91,8 +91,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		{
 			if (pb.getFacadeID() > 0)
 			{
-				tex = Block.getBlockById(pb.getFacadeID()).getIcon(
-						target.sideHit, pb.getFacadeMetadata());
+				tex = Block.getBlockById(pb.getFacadeID()).getIcon(target.sideHit, pb.getFacadeMetadata());
 			}
 		}
 		else if (target.hitInfo instanceof CollidableComponent) 
@@ -143,15 +142,9 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			int x, int y, int z, int side, IIcon tex)
 	{
 		float f = 0.1F;
-		double d0 = x + rand.nextDouble()
-				* (getBlockBoundsMaxX() - getBlockBoundsMinX() - f * 2.0F) + f
-				+ getBlockBoundsMinX();
-		double d1 = y + rand.nextDouble()
-				* (getBlockBoundsMaxY() - getBlockBoundsMinY() - f * 2.0F) + f
-				+ getBlockBoundsMinY();
-		double d2 = z + rand.nextDouble()
-				* (getBlockBoundsMaxZ() - getBlockBoundsMinZ() - f * 2.0F) + f
-				+ getBlockBoundsMinZ();
+		double d0 = x + rand.nextDouble() * (getBlockBoundsMaxX() - getBlockBoundsMinX() - f * 2.0F) + f + getBlockBoundsMinX();
+		double d1 = y + rand.nextDouble() * (getBlockBoundsMaxY() - getBlockBoundsMinY() - f * 2.0F) + f + getBlockBoundsMinY();
+		double d2 = z + rand.nextDouble() * (getBlockBoundsMaxZ() - getBlockBoundsMinZ() - f * 2.0F) + f + getBlockBoundsMinZ();
 		if (side == 0) {
 			d1 = y + getBlockBoundsMinY() - f;
 		}
@@ -170,10 +163,8 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		else if (side == 5) {
 			d0 = x + getBlockBoundsMaxX() + f;
 		}
-		EntityDiggingFX digFX = new EntityDiggingFX(world, d0, d1, d2, 0.0D,
-				0.0D, 0.0D, this, side, 0);
-		digFX.applyColourMultiplier(x, y, z).multiplyVelocity(0.2F)
-				.multipleParticleScaleBy(0.6F);
+		EntityDiggingFX digFX = new EntityDiggingFX(world, d0, d1, d2, 0.0D, 0.0D, 0.0D, this, side, 0);
+		digFX.applyColourMultiplier(x, y, z).multiplyVelocity(0.2F).multipleParticleScaleBy(0.6F);
 		digFX.setParticleIcon(tex);
 		effectRenderer.addEffect(digFX);
 	}
@@ -184,7 +175,6 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		GameRegistry.registerTileEntity(TilePipingBundle.class,	ModBlocks.blockPipingBundle + "TileEntity");
 
 		for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
-			// Don't exist
 			CityTech.proxy.registerGuiHandler(GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE + dir.ordinal(),this);
 		}
 	}
@@ -195,8 +185,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	{
 		if (target != null && target.hitInfo instanceof CollidableComponent) {
 			CollidableComponent cc = (CollidableComponent) target.hitInfo;
-			TilePipingBundle bundle = (TilePipingBundle) world.getTileEntity(x,
-					y, z);
+			TilePipingBundle bundle = (TilePipingBundle) world.getTileEntity(x, y, z);
 			IPiping pipe = bundle.getPiping(cc.pipingType);
 			if (pipe != null) {
 				return pipe.createItem();
@@ -313,8 +302,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public int isProvidingStrongPower(IBlockAccess world, int x, int y, int z,
-			int par5)
+	public int isProvidingStrongPower(IBlockAccess world, int x, int y, int z, int par5)
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (!(te instanceof IPipingBundle)) {
@@ -329,11 +317,11 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public int isProvidingWeakPower(IBlockAccess world, int x, int y, int z,
-			int par5)
+	public int isProvidingWeakPower(IBlockAccess world, int x, int y, int z, int par5)
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
-		if (!(te instanceof IPipingBundle)) {
+		if (!(te instanceof IPipingBundle))
+		{
 			return 0;
 		}
 		IPipingBundle bundle = (IPipingBundle) te;
@@ -358,49 +346,50 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public int[] getOutputValues(World world, int x, int y, int z,
-			ForgeDirection side)
+	public int[] getOutputValues(World world, int x, int y, int z, ForgeDirection side)
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
-		if (!(te instanceof IPipingBundle)) {
+		if (!(te instanceof IPipingBundle)) 
+		{
 			return new int[16];
 		}
 		IPipingBundle bundle = (IPipingBundle) te;
 		IRedstonePiping con = bundle.getPiping(IRedstonePiping.class);
-		if (con == null) {
+		if (con == null)
+		{
 			return new int[16];
 		}
 		return con.getOutputValues(world, x, y, z, side);
 	}
 
 	@Override
-	public int getOutputValue(World world, int x, int y, int z,
-			ForgeDirection side, int subnet)
+	public int getOutputValue(World world, int x, int y, int z,	ForgeDirection side, int subnet)
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
-		if (!(te instanceof IPipingBundle)) {
+		if (!(te instanceof IPipingBundle)) 
+		{
 			return 0;
 		}
 		IPipingBundle bundle = (IPipingBundle) te;
 		IRedstonePiping con = bundle.getPiping(IRedstonePiping.class);
-		if (con == null) {
+		if (con == null) 
+		{
 			return 0;
 		}
 		return con.getOutputValue(world, x, y, z, side, subnet);
 	}
 
 	@Override
-	public void onInputsChanged(World world, int x, int y, int z,
-			ForgeDirection side, int[] inputValues)
+	public void onInputsChanged(World world, int x, int y, int z,ForgeDirection side, int[] inputValues)
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (te instanceof IPipingBundle) {
 			IPipingBundle bundle = (IPipingBundle) te;
 			IRedstonePiping con = bundle.getPiping(IRedstonePiping.class);
 			if (con != null) {
-				if (con instanceof IInsulatedRedstonePiping) {
-					((IInsulatedRedstonePiping) con).onInputsChanged(side,
-							inputValues);
+				if (con instanceof IInsulatedRedstonePiping)
+				{
+					((IInsulatedRedstonePiping) con).onInputsChanged(side,inputValues);
 				}
 				con.onNeighborBlockChange(world.getBlock(x, y, z));
 			}
@@ -409,8 +398,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	}
 
 	@Override
-	public void onInputChanged(World world, int x, int y, int z,
-			ForgeDirection side, int inputValue)
+	public void onInputChanged(World world, int x, int y, int z, ForgeDirection side, int inputValue)
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (te instanceof IPipingBundle) {
@@ -418,8 +406,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			IRedstonePiping con = bundle.getPiping(IRedstonePiping.class);
 			if (con != null) {
 				if (con instanceof IInsulatedRedstonePiping) {
-					((IInsulatedRedstonePiping) con).onInputChanged(side,
-							inputValue);
+					((IInsulatedRedstonePiping)con).onInputChanged(side, inputValue);
 				}
 				con.onNeighborBlockChange(world.getBlock(x, y, z));
 			}
@@ -431,13 +418,15 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int meta)
 	{
 		IPipingBundle te = (IPipingBundle) world.getTileEntity(x, y, z);
-		if (te == null) {
+		if (te == null) 
+		{
 			return;
 		}
 		EntityPlayer player = world.getClosestPlayer(x, y, z, 10);
 		boolean breakBlock = true;
 		List<ItemStack> drop = new ArrayList<ItemStack>();
-		if (PipingUtil.isSolidFacadeRendered(te, player)) {
+		if (PipingUtil.isSolidFacadeRendered(te, player)) 
+		{
 			breakBlock = false;
 			ItemStack fac = new ItemStack(ModItems.itemPipingFacade, 1, 0);
 			drop.add(fac);
@@ -463,7 +452,8 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			}
 		}
 
-		if (!breakBlock) {
+		if (!breakBlock)
+		{
 			world.markBlockForUpdate(x, y, z);
 			return;
 		}
@@ -571,15 +561,15 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 
 		if (PipingUtil.isToolEquipped(player) && player.isSneaking()) {
 			if (player.getCurrentEquippedItem().getItem() instanceof IToolWrench) {
-				IToolWrench wrench = (IToolWrench) player
-						.getCurrentEquippedItem().getItem();
-				if (wrench.canWrench(player, x, y, z)) {
-					if (!world.isRemote) {
-						// Doesn't exist
+				IToolWrench wrench = (IToolWrench) player.getCurrentEquippedItem().getItem();
+				if (wrench.canWrench(player, x, y, z)) 
+				{
+					if (!world.isRemote)
+					{
 						removedByPlayer(world, player, x, y, z);
-						if (player.getCurrentEquippedItem().getItem() instanceof IToolWrench) {
-							((IToolWrench) player.getCurrentEquippedItem()
-									.getItem()).wrenchUsed(player, x, y, z);
+						if (player.getCurrentEquippedItem().getItem() instanceof IToolWrench) 
+						{
+							((IToolWrench) player.getCurrentEquippedItem().getItem()).wrenchUsed(player, x, y, z);
 						}
 					}
 					return true;
@@ -587,27 +577,21 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			}
 		}
 
-		// Check conduit defined actions
 		RaytraceResult closest = doRayTrace(world, x, y, z, player);
 		List<RaytraceResult> all = null;
 		if (closest != null) {
 			all = doRayTraceAll(world, x, y, z, player);
 		}
 
-		if (closest != null && closest.component != null
-				&& closest.component.data instanceof PipingConnectorType) {
+		if (closest != null && closest.component != null && closest.component.data instanceof PipingConnectorType) {
 
 			PipingConnectorType conType = (PipingConnectorType) closest.component.data;
 			if (conType == PipingConnectorType.INTERNAL) {
 				boolean result = false;
 				// if its a connector pass the event on to all conduits
 				for (IPiping con : bundle.getPiping()) {
-					if (PipingUtil
-							.renderPiping(player, con.getCollidableType())
-							&& con.onBlockActivated(
-									player,
-									getHitForPipingType(all,
-											con.getCollidableType()), all)) {
+					if (PipingUtil.renderPiping(player, con.getCollidableType()) && con.onBlockActivated(player, getHitForPipingType(all, con.getCollidableType()), all)) 
+					{
 						bundle.getEntity().markDirty();
 						result = true;
 					}
@@ -618,24 +602,19 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 				}
 			}
 			else {
-				player.openGui(CityTech.instance,
-						// Doesn't exist
-						GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE + closest.component.dir.ordinal(), world, x, y,
-						z);
+				player.openGui(CityTech.instance, GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE + closest.component.dir.ordinal(), world, x, y, z);
 				return true;
 			}
 		}
 
-		if (closest == null || closest.component == null
-				|| closest.component.pipingType == null && all == null) {
+		if (closest == null || closest.component == null || closest.component.pipingType == null && all == null) {
 			return false;
 		}
 
 		if (all != null) {
 			RaytraceResult.sort(getEyePosition(world, player), all);
 			for (RaytraceResult rr : all) {
-				if (PipingUtil.renderPiping(player, rr.component.pipingType)
-						&& !(rr.component.data instanceof PipingConnectorType)) {
+				if (PipingUtil.renderPiping(player, rr.component.pipingType) && !(rr.component.data instanceof PipingConnectorType)) {
 
 					IPiping con = bundle.getPiping(rr.component.pipingType);
 					if (con != null && con.onBlockActivated(player, rr, all)) {
@@ -646,11 +625,9 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			}
 		}
 		else {
-			IPiping closestPiping = bundle
-					.getPiping(closest.component.pipingType);
-			if (closestPiping != null
-					&& PipingUtil.renderPiping(player, closestPiping)
-					&& closestPiping.onBlockActivated(player, closest, all)) {
+			IPiping closestPiping = bundle.getPiping(closest.component.pipingType);
+			if (closestPiping != null && PipingUtil.renderPiping(player, closestPiping) && closestPiping.onBlockActivated(player, closest, all)) 
+			{
 				bundle.getEntity().markDirty();
 				return true;
 			}
@@ -665,7 +642,6 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	{
 		TileEntity te = world.getTileEntity(x, y, z);
 		if (te instanceof IPipingBundle) {
-			// Doesn't exist
 			return new ExternalConnectionContainer(player.inventory,(IPipingBundle) te, ForgeDirection.values()[ID - GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE]);
 		}
 		return null;
@@ -723,16 +699,14 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			Collection<CollidableComponent> bounds = con
 					.getCollidableComponents();
 			for (CollidableComponent bnd : bounds) {
-				setBlockBounds(bnd.bound.minX, bnd.bound.minY, bnd.bound.minZ,
-						bnd.bound.maxX, bnd.bound.maxY, bnd.bound.maxZ);
-				super.addCollisionBoxesToList(world, x, y, z, axisalignedbb,
-						arraylist, par7Entity);
+				setBlockBounds(bnd.bound.minX, bnd.bound.minY, bnd.bound.minZ, bnd.bound.maxX, bnd.bound.maxY, bnd.bound.maxZ);
+				super.addCollisionBoxesToList(world, x, y, z, axisalignedbb, arraylist, par7Entity);
 			}
 
-			if (con.getPiping().isEmpty()) { // just in case
+			if (con.getPiping().isEmpty()) 
+			{
 				setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-				super.addCollisionBoxesToList(world, x, y, z, axisalignedbb,
-						arraylist, par7Entity);
+				super.addCollisionBoxesToList(world, x, y, z, axisalignedbb, arraylist, par7Entity);
 			}
 		}
 
@@ -755,8 +729,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		if (!PipingUtil.isSolidFacadeRendered(con,
 				CityTech.proxy.getClientPlayer())) {
 
-			Collection<CollidableComponent> bounds = con
-					.getCollidableComponents();
+			Collection<CollidableComponent> bounds = con.getCollidableComponents();
 			for (CollidableComponent bnd : bounds) {
 				minBB = minBB.expandBy(bnd.bound);
 			}
@@ -770,16 +743,13 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			minBB = new BoundingBox(0, 0, 0, 1, 1, 1);
 		}
 
-		return AxisAlignedBB.getBoundingBox(x + minBB.minX, y + minBB.minY, z
-				+ minBB.minZ, x + minBB.maxX, y + minBB.maxY, z + minBB.maxZ);
+		return AxisAlignedBB.getBoundingBox(x + minBB.minX, y + minBB.minY, z + minBB.minZ, x + minBB.maxX, y + minBB.maxY, z + minBB.maxZ);
 	}
 
 	@Override
-	public MovingObjectPosition collisionRayTrace(World world, int x, int y,
-			int z, Vec3 origin, Vec3 direction)
+	public MovingObjectPosition collisionRayTrace(World world, int x, int y, int z, Vec3 origin, Vec3 direction)
 	{
-		RaytraceResult raytraceResult = doRayTrace(world, x, y, z, origin,
-				direction, null);
+		RaytraceResult raytraceResult = doRayTrace(world, x, y, z, origin,	direction, null);
 		if (raytraceResult == null) {
 			return null;
 		}
@@ -791,11 +761,9 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		return raytraceResult.movingObjectPosition;
 	}
 
-	public RaytraceResult doRayTrace(World world, int x, int y, int z,
-			EntityPlayer entityPlayer)
+	public RaytraceResult doRayTrace(World world, int x, int y, int z, EntityPlayer entityPlayer)
 	{
-		List<RaytraceResult> allHits = doRayTraceAll(world, x, y, z,
-				entityPlayer);
+		List<RaytraceResult> allHits = doRayTraceAll(world, x, y, z,entityPlayer);
 		if (allHits == null) {
 			return null;
 		}
@@ -814,8 +782,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		return origin;
 	}
 
-	public List<RaytraceResult> doRayTraceAll(World world, int x, int y, int z,
-			EntityPlayer entityPlayer)
+	public List<RaytraceResult> doRayTraceAll(World world, int x, int y, int z,	EntityPlayer entityPlayer)
 	{
 		double pitch = Math.toRadians(entityPlayer.rotationPitch);
 		double yaw = Math.toRadians(entityPlayer.rotationYaw);
@@ -844,8 +811,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		return RaytraceResult.getClosestHit(origin, allHits);
 	}
 
-	protected List<RaytraceResult> doRayTraceAll(World world, int x, int y,
-			int z, Vec3 origin, Vec3 direction, EntityPlayer player)
+	protected List<RaytraceResult> doRayTraceAll(World world, int x, int y,	int z, Vec3 origin, Vec3 direction, EntityPlayer player)
 	{
 
 		TileEntity te = world.getTileEntity(x, y, z);
@@ -857,12 +823,9 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 
 		if (PipingUtil.isSolidFacadeRendered(bundle, player)) {
 			setBlockBounds(0, 0, 0, 1, 1, 1);
-			MovingObjectPosition hitPos = super.collisionRayTrace(world, x, y,
-					z, origin, direction);
+			MovingObjectPosition hitPos = super.collisionRayTrace(world, x, y, z, origin, direction);
 			if (hitPos != null) {
-				hits.add(new RaytraceResult(new CollidableComponent(null,
-						BoundingBox.UNIT_CUBE, ForgeDirection.UNKNOWN, null),
-						hitPos));
+				hits.add(new RaytraceResult(new CollidableComponent(null, BoundingBox.UNIT_CUBE, ForgeDirection.UNKNOWN, null),	hitPos));
 			}
 		}
 		else {
@@ -870,11 +833,8 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			Collection<CollidableComponent> components = new ArrayList<CollidableComponent>(
 					bundle.getCollidableComponents());
 			for (CollidableComponent component : components) {
-				setBlockBounds(component.bound.minX, component.bound.minY,
-						component.bound.minZ, component.bound.maxX,
-						component.bound.maxY, component.bound.maxZ);
-				MovingObjectPosition hitPos = super.collisionRayTrace(world, x,
-						y, z, origin, direction);
+				setBlockBounds(component.bound.minX, component.bound.minY, component.bound.minZ, component.bound.maxX, component.bound.maxY, component.bound.maxZ);
+				MovingObjectPosition hitPos = super.collisionRayTrace(world, x,	y, z, origin, direction);
 				if (hitPos != null) {
 					hits.add(new RaytraceResult(component, hitPos));
 				}
@@ -882,8 +842,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 			if (bundle.getPiping().isEmpty()
 					&& !PipingUtil.isFacadeHidden(bundle, player)) {
 				setBlockBounds(0, 0, 0, 1, 1, 1);
-				MovingObjectPosition hitPos = super.collisionRayTrace(world, x,
-						y, z, origin, direction);
+				MovingObjectPosition hitPos = super.collisionRayTrace(world, x, y, z, origin, direction);
 				if (hitPos != null) {
 					hits.add(new RaytraceResult(null, hitPos));
 				}

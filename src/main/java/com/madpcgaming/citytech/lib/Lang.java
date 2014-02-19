@@ -5,7 +5,7 @@ import net.minecraft.util.StatCollector;
 public class Lang
 {
 	public static String localize(String s) {
-	    s = "cityech." + s;
+	    s = "citytech." + s;
 	    return StatCollector.translateToLocal(s);
 	  }
 

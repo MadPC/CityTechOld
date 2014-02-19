@@ -15,6 +15,8 @@ import com.madpcgaming.citytech.inventory.ContainerIndustrialFurnace;
 import com.madpcgaming.citytech.inventory.ContainerSimpleEFurnace;
 import com.madpcgaming.citytech.inventory.ContainerTable;
 import com.madpcgaming.citytech.lib.GuiIds;
+import com.madpcgaming.citytech.piping.IPiping;
+import com.madpcgaming.citytech.piping.render.PipingRenderer;
 import com.madpcgaming.citytech.tileentitys.TileEntityIndustrialFurnaceCore;
 import com.madpcgaming.citytech.tileentitys.TileSimpleEFurnace;
 
@@ -93,8 +95,13 @@ public class CommonProxy implements IGuiHandler
 		return null;
 	}
 	
-	public double getReachDistanceForPlayer(EntityPlayer entityPlayer) {
+	public double getReachDistanceForPlayer(EntityPlayer entityPlayer)
+	{
 	    return 5;
-
-	  }
+	}
+	
+	public PipingRenderer getRendererForPiping(IPiping piping)
+	{
+		return null;
+	}
 }

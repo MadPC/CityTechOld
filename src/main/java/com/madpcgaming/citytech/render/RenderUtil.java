@@ -1,11 +1,16 @@
 package com.madpcgaming.citytech.render;
 
+import static net.minecraftforge.common.util.ForgeDirection.DOWN;
+import static net.minecraftforge.common.util.ForgeDirection.EAST;
+import static net.minecraftforge.common.util.ForgeDirection.NORTH;
+import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
+import static net.minecraftforge.common.util.ForgeDirection.UP;
+import static net.minecraftforge.common.util.ForgeDirection.WEST;
+
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import javax.swing.Icon;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -20,12 +25,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-import static net.minecraftforge.common.util.ForgeDirection.NORTH;
-import static net.minecraftforge.common.util.ForgeDirection.SOUTH;
-import static net.minecraftforge.common.util.ForgeDirection.EAST;
-import static net.minecraftforge.common.util.ForgeDirection.WEST;
-import static net.minecraftforge.common.util.ForgeDirection.UP;
-import static net.minecraftforge.common.util.ForgeDirection.DOWN;
 
 import org.lwjgl.opengl.GL11;
 
@@ -156,7 +155,6 @@ public class RenderUtil
 
   public static int setTesselatorBrightness(IBlockAccess world, int x, int y, int z) 
   {
-	//TODO: Fix Anything related to BlockList
     Block block = world.getBlock(x, y, z);
     int res = block == null ? world.getLightBrightnessForSkyBlocks(x, y, z, 0) : block.getMixedBrightnessForBlock(world, x, y, z);
     Tessellator.instance.setBrightness(res);

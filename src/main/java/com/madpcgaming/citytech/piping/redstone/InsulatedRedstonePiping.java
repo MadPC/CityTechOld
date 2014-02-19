@@ -56,7 +56,9 @@ public class InsulatedRedstonePiping extends RedstonePiping implements IInsulate
 			@Override
 			public void registerIcons(IIconRegister register)
 			{
-				// TODO Texturing
+				ICONS.put(KEY_INS_CORE_OFF_ICON, register.registerIcon(KEY_INS_CORE_OFF_ICON));
+		        ICONS.put(KEY_INS_CORE_ON_ICON, register.registerIcon(KEY_INS_CORE_ON_ICON));
+		        ICONS.put(KEY_INS_CONDUIT_ICON, register.registerIcon(KEY_INS_CONDUIT_ICON));
 
 			}
 

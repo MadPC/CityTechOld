@@ -45,3 +45,10 @@ item.test.name= WireTester
 container.furnaceIndustrial.name=Industrial Furnace
 container.furnaceElectric.name=Electric Furnace
 
+#Piping
+citytech.itemPowerPiping.name=Power Pipe
+
+citytech.power.maxOutput=Max Output:
+citytech.power.rf=RF/
+citytech.power.tick=tick
+

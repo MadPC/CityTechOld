@@ -11,6 +11,7 @@ import com.madpcgaming.citytech.blocks.multiblocks.IndustrialFurnaceDummy;
 import com.madpcgaming.citytech.lib.BlockIds;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.piping.BlockPipingBundle;
+import com.madpcgaming.citytech.piping.power.ItemPowerPiping;
 import com.madpcgaming.citytech.tileentitys.CableTE;
 import com.madpcgaming.citytech.tileentitys.DrainTE;
 import com.madpcgaming.citytech.tileentitys.TileEntityIndustrialFurnaceCore;
@@ -52,15 +53,15 @@ public class ModBlocks
 	 * @see com.madpcgaming.mt.items.WireTester
 	 */
 	public static Block	SuperDrain;
-	public static BlockPipingBundle	blockPipingBundle;
+	public static Block	blockPipingBundle;
 	public static Block	blockTeslaBat;
 	public static Block itemItemPiping;
 	public static Block itemPowerPiping;
 	public static Block itemLiquidPiping;
 	public static Block itemRedstonePiping;
 	public static Block itemBasicTelsaBat;
+	public static Block	blockPipingFacade;
 	
-	//Piping
 
 	public static void init()
 	{
@@ -90,6 +91,8 @@ public class ModBlocks
 		IndustrialFurnaceDummy = new IndustrialFurnaceDummy(BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
 		SimpleFurnace = new SimpleEFurnace(BlockIds.BLOCK_SE_FURNACE);
 		blockPipingBundle = BlockPipingBundle.create();
+		ItemPowerPiping.create();
+		
 		
 		//GameRegistery stuff
 		GameRegistry.registerBlock(AluminiumOre, Strings.ALUMINIUM_ORE_NAME);
@@ -115,7 +118,6 @@ public class ModBlocks
 		GameRegistry.registerBlock(CraftingTable, Strings.WORKBENCH_NAME);
 		GameRegistry.registerBlock(SiliconFlowing, Strings.SILICON_LIQUID_FLOWING);
 		GameRegistry.registerBlock(SiliconStill, Strings.SILICON_LIQUID_STILL);
-		GameRegistry.registerBlock(blockPipingBundle, Strings.PIPING_BUNDLE_NAME);
 		
 		//Tile Entities
 		GameRegistry.registerTileEntity(CableTE.class, "MTcableCopper");
