@@ -60,7 +60,7 @@ public class DefaultPipingRenderer implements PipingRenderer {
         tex = piping.getTextureForState(component);
         if(tex != null) {
           tessellator.setBrightness((int) (worldLight));
-          renderConduit(tex, piping, component, selfIllum);
+          renderPiping(tex, piping, component, selfIllum);
         }
       }
 
@@ -74,7 +74,7 @@ public class DefaultPipingRenderer implements PipingRenderer {
 
   }
 
-  protected void renderConduit(IIcon tex, IPiping piping, CollidableComponent component, float brightness) {
+  protected void renderPiping(IIcon tex, IPiping piping, CollidableComponent component, float brightness) {
 
     if(isNSEWUD(component.dir)) {
 

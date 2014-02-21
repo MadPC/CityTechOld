@@ -53,7 +53,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		IConnectableRedNet, IGuiHandler
 {
 
-	private static final String	KEY_CONNECTOR_ICON	= "";
+	private static final String	KEY_CONNECTOR_ICON	= "CityTech:pipingConnector";
 
 	public static BlockPipingBundle create()
 	{

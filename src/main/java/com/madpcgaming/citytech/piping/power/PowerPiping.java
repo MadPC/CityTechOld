@@ -52,7 +52,7 @@ public class PowerPiping extends AbstractPiping implements IPowerPiping {
       new BasicTeslaBat(2048, 5000, 2048)
   };
 
-  static final String[] POSTFIX = new String[] { "", "Enhanced", "Advanced" };
+  static final String[] POSTFIX = new String[] {"", "Enhanced", "Advanced" };
 
   static ItemStack createItemStackForSubtype(int subtype) {
     ItemStack result = new ItemStack(ModBlocks.itemPowerPiping, 1, subtype);

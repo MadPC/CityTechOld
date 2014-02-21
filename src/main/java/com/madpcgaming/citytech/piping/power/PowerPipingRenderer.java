@@ -50,7 +50,7 @@ public class PowerPipingRenderer extends DefaultPipingRenderer {
   }
 
   @Override
-  protected void renderConduit(IIcon tex, IPiping piping, CollidableComponent component, float selfIllum) {
+  protected void renderPiping(IIcon tex, IPiping piping, CollidableComponent component, float selfIllum) {
     if(IPowerPiping.COLOR_CONTROLLER_ID.equals(component.data)) {
       IPowerPiping pp = (IPowerPiping) piping;
       ConnectionMode conMode = pp.getConnectionMode(component.dir);
@@ -70,7 +70,7 @@ public class PowerPipingRenderer extends DefaultPipingRenderer {
         tessellator.setColorOpaque(255, 255, 255);
       }
     } else {
-      super.renderConduit(tex, piping, component, selfIllum);
+      super.renderPiping(tex, piping, component, selfIllum);
     }
   }
 }

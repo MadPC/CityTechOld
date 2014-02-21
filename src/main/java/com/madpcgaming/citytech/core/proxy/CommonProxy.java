@@ -19,6 +19,7 @@ import com.madpcgaming.citytech.piping.IPiping;
 import com.madpcgaming.citytech.piping.render.PipingRenderer;
 import com.madpcgaming.citytech.tileentitys.TileEntityIndustrialFurnaceCore;
 import com.madpcgaming.citytech.tileentitys.TileSimpleEFurnace;
+import com.madpcgaming.citytech.util.DebugGuiTPS;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -28,6 +29,15 @@ public class CommonProxy implements IGuiHandler
 	
 	
 	protected final Map<Integer, IGuiHandler> guiHandlers = new HashMap<Integer, IGuiHandler>();
+	private boolean showTpdGUI;
+	
+	public void load()
+	{
+		if(showTpdGUI)
+		{
+			DebugGuiTPS.showTpsGUI();
+		}
+	}
 
 	public void registerRenderings()
 	{
