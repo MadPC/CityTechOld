@@ -13,10 +13,10 @@ import com.madpcgaming.citytech.util.DyeColor;
 public interface IPowerPiping extends IInternalPowerReceptor, IPiping
 {
 	public static final String ICON_KEY = "CityTech:powerPiping";
-	public static final String ICON_KEY_INPUT = "CityTech:powerPiping";
-	public static final String ICON_KEY_OUTPUT = "CityTech:powerPiping";
-	public static final String ICON_CORE_KEY = "CityTech:powerPiping";
-	public static final String ICON_TRANSMISSION_KEY = "CityTech:powerPiping";
+	public static final String ICON_KEY_INPUT = null;
+	public static final String ICON_KEY_OUTPUT = null;
+	public static final String ICON_CORE_KEY = null;
+	public static final String ICON_TRANSMISSION_KEY = null;
 	public static final String COLOR_CONTROLLER_ID = "ColorConnector";
 	
 	IPowerInterface getExternalPowerReceptor(ForgeDirection direction);

@@ -40,7 +40,7 @@ public class CityTech
 		CityTechConfig.initProps(event.getModConfigurationDirectory());
 		ModBlocks.init();
 		ModItems.init();
-		
+		proxy.load();
 		MinecraftForge.EVENT_BUS.register(new com.madpcgaming.citytech.handlers.EventHandler());
 		
 		GameRegistry.registerWorldGenerator(new CityTechWorldGenerator(), 0);

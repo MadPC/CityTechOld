@@ -23,9 +23,9 @@ public class ItemPowerPiping extends AbstractItemPiping {
   private static String POSTFIX;
 
   static ItemPipingSubtype[] subtypes = new ItemPipingSubtype[] {
-      new ItemPipingSubtype(Strings.ITEM_POWER_PIPING_NAME, "enderio:itemPowerConduit"),
-      new ItemPipingSubtype(Strings.ITEM_POWER_PIPING_NAME + "Enhanced", "enderio:itemPowerPipingEnhanced"),
-      new ItemPipingSubtype(Strings.ITEM_POWER_PIPING_NAME + "Advanced", "enderio:itemPowerPipingAdvanced")
+      new ItemPipingSubtype(Strings.ITEM_POWER_PIPING_NAME, "CityTech:itemPowerPiping"),
+      new ItemPipingSubtype(Strings.ITEM_POWER_PIPING_NAME + "Enhanced", "CityTech:itemPowerPipingEnhanced"),
+      new ItemPipingSubtype(Strings.ITEM_POWER_PIPING_NAME + "Advanced", "CityTech:itemPowerPipingAdvanced")
   };
 
   public static ItemPowerPiping create() {
