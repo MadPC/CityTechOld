@@ -27,7 +27,7 @@ archivesBaseName = 'CityTech'
 logger.lifecycle ""+version
 
 minecraft {
-        version = "1.7.2-10.12.0.1025" // grab latest forge
+        version = "1.7.2-10.12.0.1034" // grab latest forge
         assetDir = "run/assets"
 }
 
