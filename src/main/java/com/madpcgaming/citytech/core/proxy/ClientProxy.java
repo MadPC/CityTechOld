@@ -8,9 +8,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.client.MinecraftForgeClient;
 
-import com.madpcgaming.citytech.items.ModItems;
+import com.madpcgaming.citytech.lib.CityTechConfig;
+import com.madpcgaming.citytech.piping.BlockPipingBundle;
 import com.madpcgaming.citytech.piping.IPiping;
+import com.madpcgaming.citytech.piping.ModPiping;
+import com.madpcgaming.citytech.piping.TilePipingBundle;
 import com.madpcgaming.citytech.piping.power.PowerPiping;
+import com.madpcgaming.citytech.piping.power.PowerPipingRenderer;
 import com.madpcgaming.citytech.piping.render.DefaultPipingRenderer;
 import com.madpcgaming.citytech.piping.render.ItemPipingRenderer;
 import com.madpcgaming.citytech.piping.render.PipingBundleRenderer;
@@ -19,6 +23,7 @@ import com.madpcgaming.citytech.tileentitys.CableTE;
 import com.madpcgaming.citytech.tileentitys.renderers.CableRenderer;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy
 {
@@ -60,9 +65,14 @@ public class ClientProxy extends CommonProxy
 		super.load();
 		ItemPipingRenderer itemPipeRenderer = new ItemPipingRenderer();
 		//MinecraftForgeClient.registerItemRenderer(EnderIO.itemLiquidConduit.itemID, itemPipeRenderer);
-	    MinecraftForgeClient.registerItemRenderer(ModItems.itemPowerPiping, itemPipeRenderer);
+	    MinecraftForgeClient.registerItemRenderer(ModPiping.itemPowerPiping, itemPipeRenderer);
 	    //MinecraftForgeClient.registerItemRenderer(EnderIO.itemRedstoneConduit.itemID, itemPipeRenderer);
 	    //MinecraftForgeClient.registerItemRenderer(EnderIO.itemItemConduit.itemID, itemPipeRenderer);
+	    pbr = new PipingBundleRenderer((float) CityTechConfig.pipingScale);
+	    BlockPipingBundle.rendererId = RenderingRegistry.getNextAvailableRenderId();
+	    RenderingRegistry.registerBlockHandler(pbr);
+	    ClientRegistry.bindTileEntitySpecialRenderer(TilePipingBundle.class, pbr);
+	    pipingRenderers.add(new PowerPipingRenderer());
 	}
 	
 	

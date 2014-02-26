@@ -9,6 +9,7 @@ import com.madpcgaming.citytech.handlers.MaterialHandler;
 import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.CityTechConfig;
 import com.madpcgaming.citytech.lib.Reference;
+import com.madpcgaming.citytech.piping.ModPiping;
 import com.madpcgaming.citytech.world.CityTechWorldGenerator;
 
 import cpw.mods.fml.common.Mod;
@@ -33,23 +34,23 @@ public class CityTech
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(this, CityTech.proxy);
-		instance = this;
 		MaterialHandler.addToolMaterials();
-		
 		CityTechConfig.initProps(event.getModConfigurationDirectory());
 		ModBlocks.init();
 		ModItems.init();
-		proxy.load();
-		MinecraftForge.EVENT_BUS.register(new com.madpcgaming.citytech.handlers.EventHandler());
-		
-		GameRegistry.registerWorldGenerator(new CityTechWorldGenerator(), 0);
+		ModPiping.init();
 	}
 
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, CityTech.proxy);
+		instance = this;
 
+		MinecraftForge.EVENT_BUS.register(new com.madpcgaming.citytech.handlers.EventHandler());
+		
+		GameRegistry.registerWorldGenerator(new CityTechWorldGenerator(), 0);
+		proxy.load();
 	}
 
 	@EventHandler

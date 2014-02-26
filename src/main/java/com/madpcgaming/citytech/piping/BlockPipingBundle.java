@@ -31,8 +31,6 @@ import powercrystals.minefactoryreloaded.api.rednet.RedNetConnectionType;
 import buildcraft.api.tools.IToolWrench;
 
 import com.madpcgaming.citytech.CityTech;
-import com.madpcgaming.citytech.blocks.ModBlocks;
-import com.madpcgaming.citytech.items.ModItems;
 import com.madpcgaming.citytech.lib.GuiIds;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
@@ -172,7 +170,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 	private void init()
 	{
 		GameRegistry.registerBlock(this, Strings.PIPING_BUNDLE_NAME);
-		GameRegistry.registerTileEntity(TilePipingBundle.class,	ModBlocks.blockPipingBundle + "TileEntity");
+		GameRegistry.registerTileEntity(TilePipingBundle.class,	ModPiping.blockPipingBundle + "TileEntity");
 
 		for (ForgeDirection dir : ForgeDirection.VALID_DIRECTIONS) {
 			CityTech.proxy.registerGuiHandler(GuiIds.GUI_ID_EXTERNAL_CONNECTION_BASE + dir.ordinal(),this);
@@ -191,7 +189,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 				return pipe.createItem();
 			}
 			else if (cc.pipingType == null && bundle.getFacadeID() > 0) {
-				ItemStack fac = new ItemStack(ModItems.itemPipingFacade, 1, 0);
+				ItemStack fac = new ItemStack(ModPiping.itemPipingFacade, 1, 0);
 				return fac;
 			}
 		}
@@ -428,7 +426,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		if (PipingUtil.isSolidFacadeRendered(te, player)) 
 		{
 			breakBlock = false;
-			ItemStack fac = new ItemStack(ModItems.itemPipingFacade, 1, 0);
+			ItemStack fac = new ItemStack(ModPiping.itemPipingFacade, 1, 0);
 			drop.add(fac);
 			te.setFacadeId(-1);
 			te.setFacadeMetadata(0);
@@ -524,7 +522,7 @@ public class BlockPipingBundle extends Block implements ITileEntityProvider,
 		}
 
 		ItemStack stack = player.getCurrentEquippedItem();
-		if (stack != null && stack.getItem() == ModItems.itemPipingFacade
+		if (stack != null && stack.getItem() == ModPiping.itemPipingFacade
 				&& !bundle.hasFacade()) {
 			// Add facade
 			if (player.isSneaking()) {

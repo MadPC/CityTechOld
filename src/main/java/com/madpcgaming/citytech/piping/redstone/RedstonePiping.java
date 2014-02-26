@@ -13,10 +13,10 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.madpcgaming.citytech.blocks.ModBlocks;
 import com.madpcgaming.citytech.piping.AbstractPiping;
 import com.madpcgaming.citytech.piping.AbstractPipingNetwork;
 import com.madpcgaming.citytech.piping.IPiping;
+import com.madpcgaming.citytech.piping.ModPiping;
 import com.madpcgaming.citytech.piping.PipingUtil;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.util.BlockCoord;
@@ -63,7 +63,7 @@ public class RedstonePiping extends AbstractPiping implements IRedstonePiping
 	@Override
 	public ItemStack createItem()
 	{
-		return new ItemStack(ModBlocks.blockPipingBundle, 1, 0);
+		return new ItemStack(ModPiping.blockPipingBundle, 1, 0);
 	}
 	
 	@Override

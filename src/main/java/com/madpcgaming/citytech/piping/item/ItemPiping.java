@@ -15,7 +15,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.madpcgaming.citytech.blocks.ModBlocks;
 import com.madpcgaming.citytech.lib.Log;
 import com.madpcgaming.citytech.machine.RedstoneControlMode;
 import com.madpcgaming.citytech.piping.AbstractPiping;
@@ -23,6 +22,7 @@ import com.madpcgaming.citytech.piping.AbstractPipingNetwork;
 import com.madpcgaming.citytech.piping.ConnectionMode;
 import com.madpcgaming.citytech.piping.IPiping;
 import com.madpcgaming.citytech.piping.IPipingBundle;
+import com.madpcgaming.citytech.piping.ModPiping;
 import com.madpcgaming.citytech.piping.PipingUtil;
 import com.madpcgaming.citytech.piping.RaytraceResult;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
@@ -385,7 +385,7 @@ public class ItemPiping extends AbstractPiping implements IItemPiping
 
 	  @Override
 	  public ItemStack createItem() {
-	    ItemStack result = new ItemStack(ModBlocks.itemItemPiping, 1, metaData);
+	    ItemStack result = new ItemStack(ModPiping.itemItemPiping, 1, metaData);
 	    return result;
 	  }
 

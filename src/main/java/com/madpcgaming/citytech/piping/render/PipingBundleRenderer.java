@@ -21,13 +21,13 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
 import com.madpcgaming.citytech.CityTech;
-import com.madpcgaming.citytech.blocks.ModBlocks;
 import com.madpcgaming.citytech.lib.Strings;
 import com.madpcgaming.citytech.piping.BlockPipingBundle;
 import com.madpcgaming.citytech.piping.ConnectionMode;
 import com.madpcgaming.citytech.piping.IPiping;
 import com.madpcgaming.citytech.piping.IPipingBundle;
 import com.madpcgaming.citytech.piping.IPipingBundle.FacadeRenderState;
+import com.madpcgaming.citytech.piping.ModPiping;
 import com.madpcgaming.citytech.piping.PipingDisplayMode;
 import com.madpcgaming.citytech.piping.PipingUtil;
 import com.madpcgaming.citytech.piping.facade.BlockPipingFacade;
@@ -180,7 +180,7 @@ public class PipingBundleRenderer extends TileEntitySpecialRenderer implements I
         }
 
       } else if(PipingUtil.getDisplayMode(player) == PipingDisplayMode.ALL) {
-        IIcon tex = ((BlockPipingBundle) ModBlocks.blockPipingBundle).getConnectorIcon();
+        IIcon tex = ((BlockPipingBundle) ModPiping.blockPipingBundle).getConnectorIcon();
         CubeRenderer.render(component.bound, tex);
       }
     }
@@ -188,7 +188,7 @@ public class PipingBundleRenderer extends TileEntitySpecialRenderer implements I
     //render these after the 'normal' conduits so help with proper blending
     for (BoundingBox wireBound : wireBounds) {
       Tessellator.instance.setColorRGBA_F(1, 1, 1, 0.25f);
-      CubeRenderer.render(wireBound, ModBlocks.blockPipingFacade.getIcon(0, 0));
+      CubeRenderer.render(wireBound, ModPiping.blockPipingFacade.getIcon(0, 0));
     }
 
     Tessellator.instance.setColorRGBA_F(1, 1, 1, 1f);
@@ -202,7 +202,7 @@ public class PipingBundleRenderer extends TileEntitySpecialRenderer implements I
   }
 
   private void renderExternalConnection(ForgeDirection dir) {
-    IIcon tex = ((BlockPipingBundle) ModBlocks.blockPipingBundle).getConnectorIcon();
+    IIcon tex = ((BlockPipingBundle) ModPiping.blockPipingBundle).getConnectorIcon();
     BoundingBox[] bbs = PipingGeometryUtil.instance.getExternalConnectorBoundingBoxes(dir);
     for (BoundingBox bb : bbs) {
       CubeRenderer.render(bb, tex, true);

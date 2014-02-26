@@ -21,7 +21,6 @@ import buildcraft.api.power.PowerHandler.PowerReceiver;
 import cofh.api.transport.IItemConduit;
 
 import com.madpcgaming.citytech.CityTech;
-import com.madpcgaming.citytech.blocks.ModBlocks;
 import com.madpcgaming.citytech.piping.geom.CollidableCache;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.piping.geom.Offset;
@@ -61,7 +60,7 @@ public class TilePipingBundle extends TileEntity implements IPipingBundle
 	
 	public TilePipingBundle()
 	{
-		blockType = ModBlocks.blockPipingBundle;
+		blockType = ModPiping.blockPipingBundle;
 	}
 
 	

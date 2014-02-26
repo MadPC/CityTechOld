@@ -29,6 +29,7 @@ import com.madpcgaming.citytech.blocks.ModBlocks;
 import com.madpcgaming.citytech.lib.Log;
 import com.madpcgaming.citytech.piping.ConnectionMode;
 import com.madpcgaming.citytech.piping.IPiping;
+import com.madpcgaming.citytech.piping.ModPiping;
 import com.madpcgaming.citytech.piping.PipingUtil;
 import com.madpcgaming.citytech.piping.RaytraceResult;
 import com.madpcgaming.citytech.piping.geom.CollidableCache.CacheKey;
@@ -109,7 +110,7 @@ public class InsulatedRedstonePiping extends RedstonePiping implements IInsulate
 
 	            BlockCoord loc = getLocation().getLocation(faceHit);
 	            Block id = world.getBlock(loc.x, loc.y, loc.z);
-	            if(id == ModBlocks.blockPipingBundle) {
+	            if(id == ModPiping.blockPipingBundle) {
 	              IRedstonePiping neighbour = PipingUtil.getPiping(world, loc.x, loc.y, loc.z, IRedstonePiping.class);
 	              if(neighbour != null && neighbour.getConnectionMode(faceHit.getOpposite()) == ConnectionMode.DISABLED) {
 	                neighbour.setConnectionMode(faceHit.getOpposite(), ConnectionMode.NOT_SET);
@@ -204,7 +205,7 @@ public class InsulatedRedstonePiping extends RedstonePiping implements IInsulate
 	@Override
 	public ItemStack createItem()
 	{
-		return new ItemStack(ModBlocks.itemRedstonePiping, 1, 2);
+		return new ItemStack(ModPiping.itemRedstonePiping, 1, 2);
 	}
 
 	@Override
@@ -274,7 +275,7 @@ public class InsulatedRedstonePiping extends RedstonePiping implements IInsulate
 			return true;
 		}
 		
-		if(id == ModBlocks.blockPipingBundle)
+		if(id == ModPiping.blockPipingBundle)
 		{
 			return false;
 		}

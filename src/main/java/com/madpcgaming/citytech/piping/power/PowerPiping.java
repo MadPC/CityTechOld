@@ -21,13 +21,13 @@ import buildcraft.api.power.PowerHandler;
 import buildcraft.api.power.PowerHandler.PowerReceiver;
 import buildcraft.api.power.PowerHandler.Type;
 
-import com.madpcgaming.citytech.blocks.ModBlocks;
 import com.madpcgaming.citytech.machine.RedstoneControlMode;
 import com.madpcgaming.citytech.piping.AbstractPiping;
 import com.madpcgaming.citytech.piping.AbstractPipingNetwork;
 import com.madpcgaming.citytech.piping.ConnectionMode;
 import com.madpcgaming.citytech.piping.IPiping;
 import com.madpcgaming.citytech.piping.IPipingBundle;
+import com.madpcgaming.citytech.piping.ModPiping;
 import com.madpcgaming.citytech.piping.PipingUtil;
 import com.madpcgaming.citytech.piping.RaytraceResult;
 import com.madpcgaming.citytech.piping.geom.CollidableCache.CacheKey;
@@ -55,7 +55,7 @@ public class PowerPiping extends AbstractPiping implements IPowerPiping {
   static final String[] POSTFIX = new String[] {"", "Enhanced", "Advanced" };
 
   static ItemStack createItemStackForSubtype(int subtype) {
-    ItemStack result = new ItemStack(ModBlocks.itemPowerPiping, 1, subtype);
+    ItemStack result = new ItemStack(ModPiping.itemPowerPiping, 1, subtype);
     return result;
   }
 

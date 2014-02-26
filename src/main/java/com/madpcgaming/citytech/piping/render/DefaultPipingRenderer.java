@@ -17,11 +17,11 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.madpcgaming.citytech.blocks.ModBlocks;
 import com.madpcgaming.citytech.piping.BlockPipingBundle;
 import com.madpcgaming.citytech.piping.ConnectionMode;
 import com.madpcgaming.citytech.piping.IPiping;
 import com.madpcgaming.citytech.piping.IPipingBundle;
+import com.madpcgaming.citytech.piping.ModPiping;
 import com.madpcgaming.citytech.piping.geom.CollidableComponent;
 import com.madpcgaming.citytech.render.BoundingBox;
 import com.madpcgaming.citytech.render.RenderUtil;
@@ -88,7 +88,7 @@ public class DefaultPipingRenderer implements PipingRenderer {
       drawSection(bb, tex.getMinU(), tex.getMaxU(), tex.getMinV(), tex.getMaxV(), component.dir, false);
 
       if(piping.getConnectionMode(component.dir) == ConnectionMode.DISABLED) {
-        tex = ((BlockPipingBundle) ModBlocks.blockPipingBundle).getConnectorIcon();
+        tex = ((BlockPipingBundle) ModPiping.blockPipingBundle).getConnectorIcon();
         List<Vertex> corners = component.bound.getCornersWithUvForFace(component.dir, tex.getMinU(), tex.getMaxU(), tex.getMinV(), tex.getMaxV());
         Tessellator tessellator = Tessellator.instance;
         for (Vertex c : corners) {
@@ -134,10 +134,7 @@ public class DefaultPipingRenderer implements PipingRenderer {
       setupVertices(bound);
     }
 
-    if(dir == NORTH || dir == UP || dir == EAST) { // maintain consistent
-                                                   // texture
-      // dir relative to the cneter
-      // of the conduit
+    if(dir == NORTH || dir == UP || dir == EAST) { 
       float tmp = minU;
       minU = maxU;
       maxU = tmp;

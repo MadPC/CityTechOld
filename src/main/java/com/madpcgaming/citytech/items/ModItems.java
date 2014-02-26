@@ -25,8 +25,7 @@ public class ModItems
 	public static Item Wrench;
 	public static Item EnergyReader;
 	public static Item CyberSword;
-	public static Item itemPipingFacade;
-	public static Item itemPowerPiping;
+	
 	
 
 	public static void init()

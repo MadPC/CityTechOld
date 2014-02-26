@@ -7,7 +7,7 @@ import net.minecraftforge.client.IItemRenderer;
 
 import org.lwjgl.opengl.GL11;
 
-import com.madpcgaming.citytech.items.ModItems;
+import com.madpcgaming.citytech.piping.ModPiping;
 
 public class FacadeRenderer implements IItemRenderer {
 
@@ -48,7 +48,7 @@ public class FacadeRenderer implements IItemRenderer {
 
   private void renderToInventory(ItemStack item, RenderBlocks renderBlocks) 
   {
-      renderBlocks.setOverrideBlockTexture(ModItems.itemPipingFacade.getIconFromDamage(0));
+      renderBlocks.setOverrideBlockTexture(ModPiping.itemPipingFacade.getIconFromDamage(0));
       renderBlocks.renderBlockAsItem(Blocks.stone, 0, 1.0F);
       renderBlocks.clearOverrideBlockTexture();
     }

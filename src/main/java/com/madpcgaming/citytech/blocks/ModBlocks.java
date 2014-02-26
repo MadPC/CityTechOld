@@ -61,7 +61,6 @@ public class ModBlocks
 	public static Block itemLiquidPiping;
 	public static Block itemRedstonePiping;
 	public static Block itemBasicTelsaBat;
-	public static Block	blockPipingFacade;
 	
 
 	public static void init()
@@ -91,8 +90,6 @@ public class ModBlocks
 		IndustrialFurnaceCore = new IndustrialFurnaceCore(BlockIds.BLOCK_INDUSTRIAL_FURNACE_CORE);
 		IndustrialFurnaceDummy = new IndustrialFurnaceDummy(BlockIds.BLOCK_INDUSTRIAL_FURNACE_DUMMY);
 		SimpleFurnace = new SimpleEFurnace(BlockIds.BLOCK_SE_FURNACE);
-		blockPipingBundle = BlockPipingBundle.create();
-		ItemPowerPiping.create();
 		
 		
 		//GameRegistery stuff

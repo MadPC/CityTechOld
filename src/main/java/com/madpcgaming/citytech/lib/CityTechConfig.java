@@ -136,8 +136,6 @@ public class CityTechConfig
 	public static int fluidPipingExtractRate = 50;
 	public static int fluidPipingMaxIoRate = 400;
 	public static int numPipesPerRecipe = 8;
-
-	
-
-	
+	public static final double DEFAULT_PIPING_SCALE = 0.2;
+	public static double pipingScale = DEFAULT_PIPING_SCALE;
 }
